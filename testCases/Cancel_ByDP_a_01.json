@@ -1,0 +1,280 @@
+{
+  "name": "3312b57b-00f9-4a56-82c6-9962862605ec",
+  "tags": [ "#Live_Order_Bot", "#Orange_Family_Intent", "#Cancel_ByDP", "#Happy_Path" ],
+  "displayName": "Cancel_ByDP_a_01",
+  "testCaseConversationTurns": [ {
+    "userInput": {
+      "injectedParameters": {
+        "pcDeliveryStatus": "not_arrived_resto"
+      },
+      "isWebhookEnabled": true,
+      "input": {
+        "languageCode": "en",
+        "event": {
+          "event": "welcome"
+        }
+      }
+    },
+    "virtualAgentOutput": {
+      "sessionParameters": {
+        "pcAddressChanged": "false",
+        "pcContainsAlcohol": "false",
+        "pcCourierPrestartOneTracking": "false",
+        "pcCourierPrestartTwoTracking": "false",
+        "pcDeliveryStatus": "not_arrived_resto",
+        "pcInteractionType": "default",
+        "pcIsVirtualRestaurant": "false",
+        "pcMiscPaymentAbuseBlock": "false",
+        "pcStoreAddress": "default",
+        "pcStorePhoneNumber": "default"
+      },
+      "differences": [ {
+        "type": "PAGE",
+        "description": "Page mismatch:\nExpected: \nActual:   Main_Menu_Page",
+        "assertionType": "EQUAL",
+        "expectedValue": "",
+        "actualValue": "Main_Menu_Page"
+      }, {
+        "type": "UTTERANCE",
+        "description": "Agent response mismatch",
+        "warning": true,
+        "assertionType": "EQUAL",
+        "expectedValue": "",
+        "actualValue": "\u003cspeak\u003eIn a few words, how can I help you with your current order. You can say things like, the order was already picked up by someone else, ore, problem with customers address.\u003c/speak\u003e"
+      } ],
+      "currentPage": {
+        "name": "Main_Menu_Page",
+        "flow": "Default Start Flow"
+      },
+      "textResponses": [ {
+        "text": [ "\u003cspeak\u003eIn a few words, how can I help you with your current order. You can say things like, the order was already picked up by someone else, ore, problem with customers address.\u003c/speak\u003e" ]
+      } ],
+      "currentFlow": {
+        "name": "Default Start Flow"
+      },
+      "actions": [ {
+        "agentUtterance": {
+          "text": "\u003cspeak\u003eIn a few words, how can I help you with your current order. You can say things like, the order was already picked up by someone else, ore, problem with customers address.\u003c/speak\u003e"
+        }
+      } ]
+    }
+  }, {
+    "userInput": {
+      "isWebhookEnabled": true,
+      "input": {
+        "text": {
+          "text": "want to cancel an order"
+        },
+        "languageCode": "en"
+      }
+    },
+    "virtualAgentOutput": {
+      "sessionParameters": {
+        "intentName": "Cancel_ByDP",
+        "isRepeat": "no",
+        "pcAddressChanged": "false",
+        "pcContainsAlcohol": "false",
+        "pcCourierPrestartOneTracking": "false",
+        "pcCourierPrestartTwoTracking": "false",
+        "pcDeliveryStatus": "not_arrived_resto",
+        "pcInteractionType": "default",
+        "pcIsVirtualRestaurant": "false",
+        "pcMiscPaymentAbuseBlock": "false",
+        "pcStoreAddress": "default",
+        "pcStorePhoneNumber": "default"
+      },
+      "differences": [ {
+        "type": "PAGE",
+        "description": "Page mismatch:\nExpected: \nActual:   Cancel_ByDP_Confirmation",
+        "assertionType": "EQUAL",
+        "expectedValue": "",
+        "actualValue": "Cancel_ByDP_Confirmation"
+      }, {
+        "type": "INTENT",
+        "description": "Intent mismatch:\nExpected: \nActual:   Cancel_ByDP",
+        "assertionType": "EQUAL",
+        "expectedValue": "",
+        "actualValue": "Cancel_ByDP"
+      }, {
+        "type": "UTTERANCE",
+        "description": "Agent response mismatch",
+        "warning": true,
+        "assertionType": "EQUAL",
+        "expectedValue": "",
+        "actualValue": "\u003cspeak\u003eI think you're calling to cancel a delivery, is that correct?\u003c/speak\u003e"
+      } ],
+      "triggeredIntent": {
+        "name": "Cancel_ByDP"
+      },
+      "currentPage": {
+        "name": "Cancel_ByDP_Confirmation",
+        "flow": "Orange Flow"
+      },
+      "textResponses": [ {
+        "text": [ "\u003cspeak\u003eI think you're calling to cancel a delivery, is that correct?\u003c/speak\u003e" ]
+      } ],
+      "currentFlow": {
+        "name": "Orange Flow"
+      },
+      "actions": [ {
+        "userUtterance": {
+          "text": "want to cancel an order"
+        }
+      }, {
+        "agentUtterance": {
+          "text": "\u003cspeak\u003eI think you're calling to cancel a delivery, is that correct?\u003c/speak\u003e"
+        }
+      } ]
+    }
+  }, {
+    "userInput": {
+      "isWebhookEnabled": true,
+      "input": {
+        "text": {
+          "text": "yes"
+        },
+        "languageCode": "en"
+      }
+    },
+    "virtualAgentOutput": {
+      "sessionParameters": {
+        "dfLastCallerIntent": "Cancel_ByDP",
+        "intentName": "Cancel_ByDP",
+        "isRepeat": "no",
+        "pcAddressChanged": "false",
+        "pcContainsAlcohol": "false",
+        "pcCourierPrestartOneTracking": "false",
+        "pcCourierPrestartTwoTracking": "false",
+        "pcDeliveryStatus": "not_arrived_resto",
+        "pcInteractionType": "default",
+        "pcIsVirtualRestaurant": "false",
+        "pcMiscPaymentAbuseBlock": "false",
+        "pcStoreAddress": "default",
+        "pcStorePhoneNumber": "default"
+      },
+      "differences": [ {
+        "type": "PAGE",
+        "description": "Page mismatch:\nExpected: \nActual:   Cancel_ByDP-yes-notAtResto_Response",
+        "assertionType": "EQUAL",
+        "expectedValue": "",
+        "actualValue": "Cancel_ByDP-yes-notAtResto_Response"
+      }, {
+        "type": "INTENT",
+        "description": "Intent mismatch:\nExpected: \nActual:   Confirmation.Yes",
+        "assertionType": "EQUAL",
+        "expectedValue": "",
+        "actualValue": "Confirmation.Yes"
+      }, {
+        "type": "UTTERANCE",
+        "description": "Agent response mismatch",
+        "warning": true,
+        "assertionType": "EQUAL",
+        "expectedValue": "",
+        "actualValue": "\u003cspeak\u003eI see that you're on your way to the pick up location. So I can better understand why you'd like to cancel, are you having trouble finding the store, \u003cbreak time=\"400ms\"/\u003e is the location too far, \u003cbreak time=\"400ms\"/\u003e or, having problem parking your car? You can also say, it is something else.\u003c/speak\u003e"
+      } ],
+      "triggeredIntent": {
+        "name": "Confirmation.Yes"
+      },
+      "currentPage": {
+        "name": "Cancel_ByDP-yes-notAtResto_Response",
+        "flow": "Orange Flow"
+      },
+      "textResponses": [ {
+        "text": [ "\u003cspeak\u003eI see that you're on your way to the pick up location. So I can better understand why you'd like to cancel, are you having trouble finding the store, \u003cbreak time=\"400ms\"/\u003e is the location too far, \u003cbreak time=\"400ms\"/\u003e or, having problem parking your car? You can also say, it is something else.\u003c/speak\u003e" ]
+      } ],
+      "currentFlow": {
+        "name": "Orange Flow"
+      },
+      "actions": [ {
+        "userUtterance": {
+          "text": "yes"
+        }
+      }, {
+        "agentUtterance": {
+          "text": "\u003cspeak\u003eI see that you're on your way to the pick up location. So I can better understand why you'd like to cancel, are you having trouble finding the store, \u003cbreak time=\"400ms\"/\u003e is the location too far, \u003cbreak time=\"400ms\"/\u003e or, having problem parking your car? You can also say, it is something else.\u003c/speak\u003e"
+        }
+      } ]
+    }
+  }, {
+    "userInput": {
+      "isWebhookEnabled": true,
+      "input": {
+        "text": {
+          "text": "having trouble finding the store"
+        },
+        "languageCode": "en"
+      }
+    },
+    "virtualAgentOutput": {
+      "sessionParameters": {
+        "dfLastCallerIntent": "Resto_Address",
+        "intentName": "Cancel_ByDP-yes-notAtResto-cantResto",
+        "isRepeat": "no",
+        "pcAddressChanged": "false",
+        "pcContainsAlcohol": "false",
+        "pcCourierPrestartOneTracking": "false",
+        "pcCourierPrestartTwoTracking": "false",
+        "pcDeliveryStatus": "not_arrived_resto",
+        "pcInteractionType": "default",
+        "pcIsVirtualRestaurant": "false",
+        "pcMiscPaymentAbuseBlock": "false",
+        "pcStoreAddress": "default",
+        "pcStorePhoneNumber": "default",
+        "store": [ "store" ]
+      },
+      "differences": [ {
+        "type": "PAGE",
+        "description": "Page mismatch:\nExpected: \nActual:   Resto_Address-yes-failOrNotVirtual_Response",
+        "assertionType": "EQUAL",
+        "expectedValue": "",
+        "actualValue": "Resto_Address-yes-failOrNotVirtual_Response"
+      }, {
+        "type": "INTENT",
+        "description": "Intent mismatch:\nExpected: \nActual:   Cancel_ByDP-yes-notAtResto-cantResto",
+        "assertionType": "EQUAL",
+        "expectedValue": "",
+        "actualValue": "Cancel_ByDP-yes-notAtResto-cantResto"
+      }, {
+        "type": "UTTERANCE",
+        "description": "Agent response mismatch",
+        "warning": true,
+        "assertionType": "EQUAL",
+        "expectedValue": "",
+        "actualValue": "\u003cspeak\u003eI'm sorry you're having trouble finding the store, and I know how frustrating this can be. Please call the store directly for help. Some locations also have multiple businesses sharing the same space. If this is the case, go to the address in your app, and the staff at that location will help you. If you have already called the store, you can say, I already called them.\u003cbreak time=\"750ms\"/\u003e \u003c/speak\u003e\u003cspeak\u003eTo listen to this message again, just say, repeat it. \u003cbreak time=\"700ms\"/\u003e Is there anything else I can help you with today?\u003c/speak\u003e"
+      } ],
+      "triggeredIntent": {
+        "name": "Cancel_ByDP-yes-notAtResto-cantResto"
+      },
+      "currentPage": {
+        "name": "Resto_Address-yes-failOrNotVirtual_Response",
+        "flow": "Orange Flow"
+      },
+      "textResponses": [ {
+        "text": [ "\u003cspeak\u003eI'm sorry you're having trouble finding the store, and I know how frustrating this can be. Please call the store directly for help. Some locations also have multiple businesses sharing the same space. If this is the case, go to the address in your app, and the staff at that location will help you. If you have already called the store, you can say, I already called them.\u003cbreak time=\"750ms\"/\u003e \u003c/speak\u003e" ]
+      }, {
+        "text": [ "\u003cspeak\u003eTo listen to this message again, just say, repeat it. \u003cbreak time=\"700ms\"/\u003e Is there anything else I can help you with today?\u003c/speak\u003e" ]
+      } ],
+      "currentFlow": {
+        "name": "Orange Flow"
+      },
+      "actions": [ {
+        "userUtterance": {
+          "text": "having trouble finding the store"
+        }
+      }, {
+        "agentUtterance": {
+          "text": "\u003cspeak\u003eI'm sorry you're having trouble finding the store, and I know how frustrating this can be. Please call the store directly for help. Some locations also have multiple businesses sharing the same space. If this is the case, go to the address in your app, and the staff at that location will help you. If you have already called the store, you can say, I already called them.\u003cbreak time=\"750ms\"/\u003e \u003c/speak\u003e\n\u003cspeak\u003eTo listen to this message again, just say, repeat it. \u003cbreak time=\"700ms\"/\u003e Is there anything else I can help you with today?\u003c/speak\u003e"
+        }
+      } ]
+    }
+  } ],
+  "creationTime": {
+    "seconds": 1704785340,
+    "nanos": 968996000
+  },
+  "testConfig": {
+    "flow": "Default Start Flow",
+    "page": "Start Page"
+  },
+  "languageCode": "en"
+}

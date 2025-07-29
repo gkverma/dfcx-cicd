@@ -1,0 +1,142 @@
+{
+  "trainingPhrases": [ {
+    "parts": [ {
+      "text": "about the "
+    }, {
+      "text": "store ",
+      "parameterId": "Store"
+    }, {
+      "text": "address "
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "can't find a "
+    }, {
+      "text": "store ",
+      "parameterId": "Store"
+    }, {
+      "text": "location "
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "for the "
+    }, {
+      "text": "restaurant ",
+      "parameterId": "Store"
+    }, {
+      "text": "pick up "
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "I need the address to pick up "
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "no I'm I'm calling about the pick up address pick up address "
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "no "
+    }, {
+      "text": "restaurant ",
+      "parameterId": "Store"
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "no "
+    }, {
+      "text": "restaurant ",
+      "parameterId": "Store"
+    }, {
+      "text": "address "
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "no "
+    }, {
+      "text": "store ",
+      "parameterId": "Store"
+    }, {
+      "text": "address "
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "no the pickup address "
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "no the "
+    }, {
+      "text": "restaurant ",
+      "parameterId": "Store"
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "no the "
+    }, {
+      "text": "restaurant ",
+      "parameterId": "Store"
+    }, {
+      "text": "address "
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "no the "
+    }, {
+      "text": "store ",
+      "parameterId": "Store"
+    }, {
+      "text": "address "
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "pick up address "
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "store ",
+      "parameterId": "Store"
+    }, {
+      "text": "address "
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "the "
+    }, {
+      "text": "restaurant ",
+      "parameterId": "Store"
+    }, {
+      "text": "address "
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  } ]
+}

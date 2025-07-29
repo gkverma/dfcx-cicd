@@ -1,0 +1,595 @@
+{
+  "name": "cfb424ea-a5d3-48da-bcb4-c5d2e68af49a",
+  "displayName": "RouteGroups-FAQ",
+  "transitionRoutes": [ {
+    "intent": "AccidentalAccept_Vague",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "intentName",
+        "value": "AccidentalAccept_Vague"
+      } ]
+    },
+    "targetFlow": "Island Flow",
+    "name": "9cba5913-0c05-4740-8f8a-ddf0a8057d09"
+  }, {
+    "intent": "AccidentalCancel_Vague",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "intentName",
+        "value": "AccidentalCancel_Vague"
+      } ]
+    },
+    "targetFlow": "Immediate Transfer Flow",
+    "name": "2f7869a3-6711-4dd9-b1f4-5c2474bafa1e"
+  }, {
+    "intent": "AccidentalComplete_Vague",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "intentName",
+        "value": "AccidentalComplete_Vague"
+      } ]
+    },
+    "targetFlow": "Island Flow",
+    "name": "f87e842a-4675-452f-93ab-0137a413de63"
+  }, {
+    "intent": "Address_TooFar",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "intentName",
+        "value": "Address_TooFar"
+      } ]
+    },
+    "targetFlow": "Orange Flow",
+    "name": "4252e70a-107b-4fcc-8562-c4d0bd70f4df"
+  }, {
+    "intent": "Address_Vague",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "intentName",
+        "value": "Address_Vague"
+      } ]
+    },
+    "targetFlow": "Green Flow",
+    "name": "d9f26074-d24f-417b-bbd2-aff61b0f034c"
+  }, {
+    "intent": "Agent_Vague",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "intentName",
+        "value": "Agent_Vague"
+      } ]
+    },
+    "targetFlow": "Immediate Transfer Flow",
+    "name": "804b5130-c4b5-4555-b7fc-854c29c2e9c8"
+  }, {
+    "intent": "Alcohol_Vague",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "intentName",
+        "value": "Alcohol_Vague"
+      } ]
+    },
+    "targetFlow": "FAQ Flow",
+    "name": "f5b62bf6-4e88-4903-9ee0-68a536abb178"
+  }, {
+    "intent": "Cancel_ByCustResto",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "intentName",
+        "value": "Cancel_ByCustResto"
+      } ]
+    },
+    "targetFlow": "Purple Flow",
+    "name": "3d8f1e1b-7ec1-43c3-a998-c58209811403"
+  }, {
+    "intent": "Cancel_ByDP",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "intentName",
+        "value": "Cancel_ByDP"
+      } ]
+    },
+    "targetFlow": "Orange Flow",
+    "name": "a901b933-f1e5-4ca6-bdfd-bd437bba732f"
+  }, {
+    "intent": "Cancel_Vague",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "intentName",
+        "value": "Cancel_Vague"
+      } ]
+    },
+    "targetFlow": "Green Flow",
+    "name": "40f21019-8676-4d20-8bf2-130fd59dedda"
+  }, {
+    "intent": "Dropoff_Address",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "intentName",
+        "value": "Dropoff_Address"
+      } ]
+    },
+    "targetFlow": "Orange Flow",
+    "name": "deb0c3b3-dae5-4514-8963-e24f5887bbf8"
+  }, {
+    "intent": "Dropoff_CustChangedAddr",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "intentName",
+        "value": "Dropoff_CustChangedAddr"
+      } ]
+    },
+    "targetFlow": "Purple Flow",
+    "name": "5d7cbb26-6bf0-4b6c-b4e9-a16191f0829b"
+  }, {
+    "intent": "Dropoff_CustMissing",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "intentName",
+        "value": "Dropoff_CustMissing"
+      } ]
+    },
+    "targetFlow": "Orange Flow",
+    "name": "f5f658f3-0186-498d-b19d-49235f36fdbf"
+  }, {
+    "intent": "Dropoff_FoodPhoto",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "intentName",
+        "value": "Dropoff_FoodPhoto"
+      } ]
+    },
+    "targetFlow": "Purple Flow",
+    "name": "71a4fcfa-57a8-4f9f-8840-e7fdda1f2aa4"
+  }, {
+    "intent": "Dropoff_Gated",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "intentName",
+        "value": "Dropoff_Gated"
+      } ]
+    },
+    "targetFlow": "FAQ Flow",
+    "name": "a48a2451-7f27-4e2f-b854-5c0736b7bb92"
+  }, {
+    "intent": "Dropoff_PIN",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "intentName",
+        "value": "Dropoff_PIN"
+      } ]
+    },
+    "targetFlow": "FAQ Flow",
+    "name": "9bfeb6c9-2530-4bd3-b333-9b7dfb493664"
+  }, {
+    "intent": "Dropoff_Vague",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "intentName",
+        "value": "Dropoff_Vague"
+      } ]
+    },
+    "targetFlow": "Orange Flow",
+    "name": "9cb05e76-b38a-462b-a029-5335b386316d"
+  }, {
+    "intent": "Dropoff_VerifyID",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "intentName",
+        "value": "Dropoff_VerifyID"
+      } ]
+    },
+    "targetFlow": "Immediate Transfer Flow",
+    "name": "43247485-dad6-4c08-aeb3-1b5dc20eedf4"
+  }, {
+    "intent": "Dropoff_WrongHouse",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "intentName",
+        "value": "Dropoff_WrongHouse"
+      } ]
+    },
+    "targetFlow": "Immediate Transfer Flow",
+    "name": "8d3b268d-b06a-4b18-9fa1-04467bb828f7"
+  }, {
+    "intent": "Feedback_Vague",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "intentName",
+        "value": "Feedback_Vague"
+      } ]
+    },
+    "targetFlow": "Immediate Transfer Flow",
+    "name": "733d186d-1f97-488e-8d10-dde2fe23be98"
+  }, {
+    "intent": "Food_Damaged",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "intentName",
+        "value": "Food_Damaged"
+      } ]
+    },
+    "targetFlow": "Purple Flow",
+    "name": "64e3c7c1-168f-4ba5-a2c1-cc379322f70d"
+  }, {
+    "intent": "Food_ItemMissing",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "intentName",
+        "value": "Food_ItemMissing"
+      } ]
+    },
+    "targetFlow": "Purple Flow",
+    "name": "c00e3433-daa7-4a3b-b7b0-1d6f693897a8"
+  }, {
+    "intent": "Food_Taken",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "intentName",
+        "value": "Food_Taken"
+      } ]
+    },
+    "targetFlow": "Purple Flow",
+    "name": "b442a0e3-9ff3-4fb8-ba75-e5aa7ba837fb"
+  }, {
+    "intent": "Food_Wrong",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "intentName",
+        "value": "Food_Wrong"
+      } ]
+    },
+    "targetFlow": "Green Flow",
+    "name": "c4340357-fa19-4f89-ab23-18e0fa8bd6d3"
+  }, {
+    "intent": "Food_WrongMealTime",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "intentName",
+        "value": "Food_WrongMealTime"
+      } ]
+    },
+    "targetFlow": "Immediate Transfer Flow",
+    "name": "e300767f-6fe5-4d56-96f4-f9e228ad1470"
+  }, {
+    "intent": "LiveOrder_Vague",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "intentName",
+        "value": "Liveorder_Vague"
+      } ]
+    },
+    "targetFlow": "Disambiguation Flow",
+    "name": "b817a92c-e0c9-4f2c-acd6-abb74b4c2faf"
+  }, {
+    "intent": "LongWait_Vague",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "intentName",
+        "value": "LongWait_Vague"
+      } ]
+    },
+    "targetFlow": "Orange Flow",
+    "name": "89e3bb11-8e5b-4e04-8c30-c5cad7f73230"
+  }, {
+    "intent": "Other_Greeting",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "intentName",
+        "value": "Other_Greeting"
+      } ]
+    },
+    "targetFlow": "Disambiguation Flow",
+    "name": "4a0c11f5-4ed9-4829-bb86-1d9f24c4b711"
+  }, {
+    "intent": "Other_Help",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "intentName",
+        "value": "Other_Help"
+      } ]
+    },
+    "targetFlow": "Disambiguation Flow",
+    "name": "8bfe7aff-68ee-4780-884d-d8fc2f25cc5a"
+  }, {
+    "intent": "Other_InDomain",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "intentName",
+        "value": "Other_InDomain"
+      } ]
+    },
+    "targetFlow": "Immediate Transfer Flow",
+    "name": "c02e7c1d-1912-447e-ae49-e1bca0202d49"
+  }, {
+    "intent": "Other_Spanish",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "intentName",
+        "value": "Other_Spanish"
+      } ]
+    },
+    "targetFlow": "FAQ Flow",
+    "name": "0c460d53-96fd-42be-b5a6-c84e8555c48d"
+  }, {
+    "intent": "Payment_Problem",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "intentName",
+        "value": "Payment_Problem"
+      } ]
+    },
+    "targetFlow": "FAQ Flow",
+    "name": "6e9e8207-d2a1-4aa3-a48a-d11a212a4bed"
+  }, {
+    "intent": "Payment_Vague",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "intentName",
+        "value": "Payment_Vague"
+      } ]
+    },
+    "targetFlow": "FAQ Flow",
+    "name": "cd76d907-a8c3-44b7-8594-9860f299188f"
+  }, {
+    "intent": "PlusCard_CantActivate",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "intentName",
+        "value": "PlusCard_CantActivate"
+      } ]
+    },
+    "targetFlow": "FAQ Flow",
+    "name": "87761fef-bc68-432f-9bff-238597c51050"
+  }, {
+    "intent": "PlusCard_Declined",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "intentName",
+        "value": "PlusCard_Declined"
+      } ]
+    },
+    "targetFlow": "Orange Flow",
+    "name": "190d8973-095f-4ddb-85b2-73aee69d96db"
+  }, {
+    "intent": "PlusCard_Forgot",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "intentName",
+        "value": "PlusCard_Forgot"
+      } ]
+    },
+    "targetFlow": "Orange Flow",
+    "name": "c049cb57-686f-4645-a8cb-2efa1b948e99"
+  }, {
+    "intent": "PlusCard_Lost",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "intentName",
+        "value": "PlusCard_Lost"
+      } ]
+    },
+    "targetFlow": "FAQ Flow",
+    "name": "57bf224c-2dd8-4ab9-ad82-007f7b4baa15"
+  }, {
+    "intent": "PlusCard_Receipt",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "intentName",
+        "value": "PlusCard_Receipt"
+      } ]
+    },
+    "targetFlow": "FAQ Flow",
+    "name": "b37b46c2-5908-4727-9fe7-7d29bcd46a3b"
+  }, {
+    "intent": "PlusCard_ReimburseStatus",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "intentName",
+        "value": "PlusCard_ReimburseStatus"
+      } ]
+    },
+    "targetFlow": "FAQ Flow",
+    "name": "94a0fd3e-6998-4303-becb-5a505c365832"
+  }, {
+    "intent": "PlusCard_Vague",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "intentName",
+        "value": "PlusCard_Vague"
+      } ]
+    },
+    "targetFlow": "Green Flow",
+    "name": "73a9eb0d-619c-42c7-afaa-ae20243c3c72"
+  }, {
+    "intent": "Resto_Address",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "intentName",
+        "value": "Resto_Address"
+      } ]
+    },
+    "targetFlow": "Orange Flow",
+    "name": "a0f8fa69-5ce9-4ae2-9310-181c85474388"
+  }, {
+    "intent": "Resto_Closed",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "intentName",
+        "value": "Resto_Closed"
+      } ]
+    },
+    "targetFlow": "Purple Flow",
+    "name": "d8545675-327e-4715-b3f9-5dd517aa4a38"
+  }, {
+    "intent": "Resto_Fault",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "intentName",
+        "value": "Resto_Fault"
+      } ]
+    },
+    "targetFlow": "Immediate Transfer Flow",
+    "name": "3417c0d2-e31c-407b-8e9a-bc29b3d08d43"
+  }, {
+    "intent": "Resto_NoOrder",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "intentName",
+        "value": "Resto_NoOrder"
+      } ]
+    },
+    "targetFlow": "Immediate Transfer Flow",
+    "name": "0dd7eb10-05ce-4ded-8ee3-74f53130479b"
+  }, {
+    "intent": "Resto_Vague",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "intentName",
+        "value": "Resto_Vague"
+      } ]
+    },
+    "targetFlow": "Green Flow",
+    "name": "494cbb02-d400-44a1-935c-c36cf5dcd55b"
+  }, {
+    "intent": "Road_Blocked",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "intentName",
+        "value": "Road_Blocked"
+      } ]
+    },
+    "targetFlow": "Island Flow",
+    "name": "c999788e-315a-450b-9470-37f31a5b9144"
+  }, {
+    "intent": "Safety_Accident",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "intentName",
+        "value": "Safety_Accident"
+      } ]
+    },
+    "targetFlow": "Immediate Transfer Flow",
+    "name": "3337497d-261f-41d3-8568-1f35a443dee3"
+  }, {
+    "intent": "Safety_Vague",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "intentName",
+        "value": "Safety_Vague"
+      } ]
+    },
+    "targetFlow": "Immediate Transfer Flow",
+    "name": "f7c26802-65c7-4056-ac97-932748127d17"
+  }, {
+    "intent": "Safety_VehicleBroke",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "intentName",
+        "value": "Safety_VehicleBroke"
+      } ]
+    },
+    "targetFlow": "FAQ Flow",
+    "name": "82b4b9d8-7bd2-4271-9125-d86fea6654c3"
+  }, {
+    "intent": "TechIssues_Vague",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "intentName",
+        "value": "TechIssues_Vague"
+      } ]
+    },
+    "targetFlow": "Island Flow",
+    "name": "1ce04e83-d1e6-4a29-b0ef-eac8c42661a7"
+  }, {
+    "intent": "Trip_CustIssue",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "intentName",
+        "value": "Trip_CustIssue"
+      } ]
+    },
+    "targetFlow": "Immediate Transfer Flow",
+    "name": "85f519b7-ab9d-4a65-80f8-9f277ff8bf61"
+  }, {
+    "intent": "Trip_FareReview",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "intentName",
+        "value": "Trip_FareReview"
+      } ]
+    },
+    "targetFlow": "FAQ Flow",
+    "name": "0caf10b6-38ef-4329-b715-c3797a4725d4"
+  }, {
+    "intent": "Trip_Missing",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "intentName",
+        "value": "Trip_Missing"
+      } ]
+    },
+    "targetFlow": "FAQ Flow",
+    "name": "5836dd0c-0c73-47f9-bc63-acb52a968f4a"
+  }, {
+    "intent": "Trip_ThankCust",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "intentName",
+        "value": "Trip_ThankCust"
+      } ]
+    },
+    "targetFlow": "FAQ Flow",
+    "name": "24bfed73-5d81-4577-b811-b2a8c2f36e6b"
+  }, {
+    "intent": "UberApp_CantDeliver",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "intentName",
+        "value": "UberApp_CantDeliver"
+      } ]
+    },
+    "targetFlow": "Island Flow",
+    "name": "3d77c43b-5975-4694-85be-7a94b24a5096"
+  }, {
+    "intent": "UberApp_CantEnd",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "intentName",
+        "value": "UberApp_CantEnd"
+      } ]
+    },
+    "targetFlow": "Green Flow",
+    "name": "b3a29028-5608-43c2-a18f-b2a847b8007a"
+  }, {
+    "intent": "UberApp_Error",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "intentName",
+        "value": "UberApp_Error"
+      } ]
+    },
+    "targetFlow": "Immediate Transfer Flow",
+    "name": "f36be7dd-614c-4937-9a90-b261cb35d7b2"
+  }, {
+    "intent": "UberApp_Nav",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "intentName",
+        "value": "UberApp_Nav"
+      } ]
+    },
+    "targetFlow": "Immediate Transfer Flow",
+    "name": "e7d36c0d-9a68-4630-b343-55e8462caeea"
+  }, {
+    "intent": "UberApp_Vague",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "intentName",
+        "value": "UberApp_Vague"
+      } ]
+    },
+    "targetFlow": "Immediate Transfer Flow",
+    "name": "d0ee41f6-80b2-4f90-b547-2832b77099dd"
+  } ]
+}

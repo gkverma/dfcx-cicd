@@ -1,0 +1,156 @@
+{
+  "name": "84f8fcaf-a37a-4552-90aa-574b31fc4531",
+  "displayName": "Trip_FareReview_Confirmation",
+  "form": {
+    "parameters": [ {
+      "displayName": "dtmf_input",
+      "required": true,
+      "entityType": "@dtmf",
+      "fillBehavior": {
+        "initialPromptFulfillment": {
+        
+        },
+        "repromptEventHandlers": [ {
+          "event": "sys.no-match-1",
+          "triggerFulfillment": {
+            "messages": [ {
+              "text": {
+                "text": [ "\u003cspeak\u003eI didn't get that.\u003c/speak\u003e\n\n\u003cspeak\u003eFor a recent fare issue, say yes. Otherwise, say no.\u003c/speak\u003e" ]
+              },
+              "languageCode": "en"
+            } ]
+          },
+          "name": "54c47444-2f9b-4bb1-8a0e-44e19456202d"
+        }, {
+          "event": "sys.no-match-2",
+          "triggerFulfillment": {
+            "messages": [ {
+              "text": {
+                "text": [ "\u003cspeak\u003eI'm having trouble understanding you.\u003c/speak\u003e\n\n\u003cspeak\u003eFor fare review, press 1. For something else, press 2.\u003c/speak\u003e" ]
+              },
+              "languageCode": "en"
+            } ]
+          },
+          "name": "ae042c9d-8057-4ed0-88a4-9a904d488651"
+        }, {
+          "targetFlow": "ZExit",
+          "event": "sys.no-match-3",
+          "triggerFulfillment": {
+            "messages": [ {
+              "text": {
+                "text": [ "\u003cspeak\u003e\u003cbreak time=\"10ms\"/\u003e\u003c/speak\u003e" ]
+              },
+              "languageCode": "en"
+            } ],
+            "setParameterActions": [ {
+              "parameter": "zIntent",
+              "value": "ZAgent"
+            } ]
+          },
+          "name": "b24e698e-aae9-414e-ad16-6ef3a439b010"
+        }, {
+          "event": "sys.no-input-1",
+          "triggerFulfillment": {
+            "messages": [ {
+              "text": {
+                "text": [ "\u003cspeak\u003eFor a recent fare issue, say yes. Otherwise, say no.\u003c/speak\u003e" ]
+              },
+              "languageCode": "en"
+            } ]
+          },
+          "name": "57d3d11c-0540-4648-891e-612b5d335c93"
+        }, {
+          "event": "sys.no-input-2",
+          "triggerFulfillment": {
+            "messages": [ {
+              "text": {
+                "text": [ "\u003cspeak\u003eI didn't hear you.\u003c/speak\u003e\n\n\u003cspeak\u003eFor fare review, press 1. For something else, press 2.\u003c/speak\u003e" ]
+              },
+              "languageCode": "en"
+            } ]
+          },
+          "name": "25eee306-b461-44be-94bb-b487adc75d15"
+        }, {
+          "targetFlow": "ZExit",
+          "event": "sys.no-input-3",
+          "triggerFulfillment": {
+            "messages": [ {
+              "text": {
+                "text": [ "\u003cspeak\u003eI am having trouble hearing you.\u003c/speak\u003e" ]
+              },
+              "languageCode": "en"
+            } ],
+            "setParameterActions": [ {
+              "parameter": "zIntent",
+              "value": "ZHangup"
+            } ]
+          },
+          "name": "e79bb0fa-1ba5-49c0-9113-c387fd0d1649"
+        } ]
+      },
+      "advancedSettings": {
+        "dtmfSettings": {
+          "enabled": true,
+          "useSystemEntityRule": false
+        }
+      }
+    } ]
+  },
+  "entryFulfillment": {
+    "messages": [ {
+      "text": {
+        "text": [ "\u003cspeak\u003eI think you are calling about a recent fare. Is that correct?\u003c/speak\u003e" ]
+      },
+      "languageCode": "en"
+    } ]
+  },
+  "transitionRoutes": [ {
+    "intent": "Confirmation.Yes",
+    "triggerFulfillment": {
+    
+    },
+    "targetPage": "Trip_FareReview_Response",
+    "name": "f93e2ec5-37e6-4794-8948-d564baacbc9a"
+  }, {
+    "intent": "Confirmation.No",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "\u003cspeak\u003eNo problem. How can I help?\u003c/speak\u003e\n\n\u003cspeak\u003eFor example, you can say, the order is missing items, or, question about a recent fare.\u003c/speak\u003e" ]
+        },
+        "languageCode": "en"
+      } ]
+    },
+    "targetFlow": "Default Start Flow",
+    "name": "5008ce11-820e-4a29-baaf-85b92dba4dff"
+  }, {
+    "condition": "$session.params.dtmf_input = \"1\"",
+    "triggerFulfillment": {
+    
+    },
+    "targetPage": "Trip_FareReview_Response",
+    "name": "6bb92563-a431-49ec-aa92-77621e2b1f89"
+  }, {
+    "condition": "$session.params.dtmf_input = \"2\"",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "\u003cspeak\u003eNo problem. How can I help?\u003c/speak\u003e\n\n\u003cspeak\u003eFor example, you can say, the order is missing items, or, question about a recent fare.\u003c/speak\u003e" ]
+        },
+        "languageCode": "en"
+      } ]
+    },
+    "targetFlow": "Default Start Flow",
+    "name": "8dfa5e58-5790-43ff-b7d3-bcae43c0143e"
+  }, {
+    "condition": "$session.params.dtmf_input = \"0\"",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "intentName",
+        "value": "Agent_vague"
+      } ]
+    },
+    "targetFlow": "Immediate Transfer Flow",
+    "name": "cd006ae5-160a-4c2f-9087-adc313a70c23"
+  } ]
+}

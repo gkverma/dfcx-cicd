@@ -1,0 +1,11 @@
+{
+  "name": "e4eecd99-f206-4e8c-80be-ec366abd338b",
+  "displayName": "Cancel_ByDP",
+  "parameters": [ {
+    "id": "Store",
+    "entityType": "@Store",
+    "isList": true
+  } ],
+  "priority": 500000,
+  "numTrainingPhrases": 193
+}

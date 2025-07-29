@@ -1,0 +1,278 @@
+{
+  "name": "9c5737ba-ddbd-480e-a8e2-34c95b0af99c",
+  "tags": [ "#Live_Order_Bot", "#FAQ", "#Dropoff_Gated", "#Happy_Path" ],
+  "displayName": "faqs_310_csv",
+  "testCaseConversationTurns": [ {
+    "userInput": {
+      "isWebhookEnabled": true,
+      "input": {
+        "languageCode": "en",
+        "event": {
+          "event": "WELCOME"
+        }
+      }
+    },
+    "virtualAgentOutput": {
+      "sessionParameters": {
+        "pcAddressChanged": "false",
+        "pcContainsAlcohol": "false",
+        "pcCourierPrestartOneTracking": "false",
+        "pcCourierPrestartTwoTracking": "false",
+        "pcDeliveryStatus": "default",
+        "pcInteractionType": "default",
+        "pcIsVirtualRestaurant": "false",
+        "pcMiscPaymentAbuseBlock": "false",
+        "pcStoreAddress": "default",
+        "pcStorePhoneNumber": "default"
+      },
+      "differences": [ {
+        "type": "PAGE",
+        "description": "Page mismatch:\nExpected: \nActual:   Main_Menu_Page",
+        "assertionType": "EQUAL",
+        "expectedValue": "",
+        "actualValue": "Main_Menu_Page"
+      }, {
+        "type": "UTTERANCE",
+        "description": "Agent response mismatch",
+        "warning": true,
+        "assertionType": "EQUAL",
+        "expectedValue": "",
+        "actualValue": "\u003cspeak\u003eIn a few words, how can I help you with your current order. You can say things like, the order was already picked up by someone else, ore, problem with customers address.\u003c/speak\u003e"
+      } ],
+      "currentPage": {
+        "name": "Main_Menu_Page",
+        "flow": "Default Start Flow"
+      },
+      "textResponses": [ {
+        "text": [ "\u003cspeak\u003eIn a few words, how can I help you with your current order. You can say things like, the order was already picked up by someone else, ore, problem with customers address.\u003c/speak\u003e" ]
+      } ],
+      "currentFlow": {
+        "name": "Default Start Flow"
+      },
+      "actions": [ {
+        "agentUtterance": {
+          "text": "\u003cspeak\u003eIn a few words, how can I help you with your current order. You can say things like, the order was already picked up by someone else, ore, problem with customers address.\u003c/speak\u003e"
+        }
+      } ]
+    }
+  }, {
+    "userInput": {
+      "isWebhookEnabled": true,
+      "input": {
+        "text": {
+          "text": "it is a military base"
+        },
+        "languageCode": "en"
+      }
+    },
+    "virtualAgentOutput": {
+      "sessionParameters": {
+        "intentName": "Dropoff_Gated",
+        "isRepeat": "no",
+        "pcAddressChanged": "false",
+        "pcContainsAlcohol": "false",
+        "pcCourierPrestartOneTracking": "false",
+        "pcCourierPrestartTwoTracking": "false",
+        "pcDeliveryStatus": "default",
+        "pcInteractionType": "default",
+        "pcIsVirtualRestaurant": "false",
+        "pcMiscPaymentAbuseBlock": "false",
+        "pcStoreAddress": "default",
+        "pcStorePhoneNumber": "default"
+      },
+      "differences": [ {
+        "type": "PAGE",
+        "description": "Page mismatch:\nExpected: \nActual:   Dropoff_Gated_Confirmation",
+        "assertionType": "EQUAL",
+        "expectedValue": "",
+        "actualValue": "Dropoff_Gated_Confirmation"
+      }, {
+        "type": "INTENT",
+        "description": "Intent mismatch:\nExpected: \nActual:   Dropoff_Gated",
+        "assertionType": "EQUAL",
+        "expectedValue": "",
+        "actualValue": "Dropoff_Gated"
+      }, {
+        "type": "UTTERANCE",
+        "description": "Agent response mismatch",
+        "warning": true,
+        "assertionType": "EQUAL",
+        "expectedValue": "",
+        "actualValue": "\u003cspeak\u003eI think you're calling because you are blocked \u003cbreak time='100ms'/\u003e from reaching the exact drop off location, is that correct?\u003c/speak\u003e"
+      } ],
+      "triggeredIntent": {
+        "name": "Dropoff_Gated"
+      },
+      "currentPage": {
+        "name": "Dropoff_Gated_Confirmation",
+        "flow": "FAQ Flow"
+      },
+      "textResponses": [ {
+        "text": [ "\u003cspeak\u003eI think you're calling because you are blocked \u003cbreak time='100ms'/\u003e from reaching the exact drop off location, is that correct?\u003c/speak\u003e" ]
+      } ],
+      "currentFlow": {
+        "name": "FAQ Flow"
+      },
+      "actions": [ {
+        "userUtterance": {
+          "text": "it is a military base"
+        }
+      }, {
+        "agentUtterance": {
+          "text": "\u003cspeak\u003eI think you're calling because you are blocked \u003cbreak time='100ms'/\u003e from reaching the exact drop off location, is that correct?\u003c/speak\u003e"
+        }
+      } ]
+    }
+  }, {
+    "userInput": {
+      "isWebhookEnabled": true,
+      "input": {
+        "text": {
+          "text": "yes"
+        },
+        "languageCode": "en"
+      }
+    },
+    "virtualAgentOutput": {
+      "sessionParameters": {
+        "dfLastCallerIntent": "Dropoff_Gated",
+        "intentName": "Dropoff_Gated",
+        "isRepeat": "no",
+        "pcAddressChanged": "false",
+        "pcContainsAlcohol": "false",
+        "pcCourierPrestartOneTracking": "false",
+        "pcCourierPrestartTwoTracking": "false",
+        "pcDeliveryStatus": "default",
+        "pcInteractionType": "default",
+        "pcIsVirtualRestaurant": "false",
+        "pcMiscPaymentAbuseBlock": "false",
+        "pcStoreAddress": "default",
+        "pcStorePhoneNumber": "default"
+      },
+      "differences": [ {
+        "type": "PAGE",
+        "description": "Page mismatch:\nExpected: \nActual:   Dropoff_Gated_Response",
+        "assertionType": "EQUAL",
+        "expectedValue": "",
+        "actualValue": "Dropoff_Gated_Response"
+      }, {
+        "type": "INTENT",
+        "description": "Intent mismatch:\nExpected: \nActual:   Confirmation.Yes",
+        "assertionType": "EQUAL",
+        "expectedValue": "",
+        "actualValue": "Confirmation.Yes"
+      }, {
+        "type": "UTTERANCE",
+        "description": "Agent response mismatch",
+        "warning": true,
+        "assertionType": "EQUAL",
+        "expectedValue": "",
+        "actualValue": "\u003cspeak\u003eIf you're not able to get to the exact drop off location, because of a gate, or a barrier, please contact the customer, and follow their guidance. You may be able to leave the order at the gate, or the customer might come to you.\u003c/speak\u003e\u003cspeak\u003eTo listen to this message again, just say, repeat it. \u003cbreak time=\"700ms\"/\u003e Is there anything else I can help you with today?\u003c/speak\u003e"
+      } ],
+      "triggeredIntent": {
+        "name": "Confirmation.Yes"
+      },
+      "currentPage": {
+        "name": "Dropoff_Gated_Response",
+        "flow": "FAQ Flow"
+      },
+      "textResponses": [ {
+        "text": [ "\u003cspeak\u003eIf you're not able to get to the exact drop off location, because of a gate, or a barrier, please contact the customer, and follow their guidance. You may be able to leave the order at the gate, or the customer might come to you.\u003c/speak\u003e" ]
+      }, {
+        "text": [ "\u003cspeak\u003eTo listen to this message again, just say, repeat it. \u003cbreak time=\"700ms\"/\u003e Is there anything else I can help you with today?\u003c/speak\u003e" ]
+      } ],
+      "currentFlow": {
+        "name": "FAQ Flow"
+      },
+      "actions": [ {
+        "userUtterance": {
+          "text": "yes"
+        }
+      }, {
+        "agentUtterance": {
+          "text": "\u003cspeak\u003eIf you're not able to get to the exact drop off location, because of a gate, or a barrier, please contact the customer, and follow their guidance. You may be able to leave the order at the gate, or the customer might come to you.\u003c/speak\u003e\n\u003cspeak\u003eTo listen to this message again, just say, repeat it. \u003cbreak time=\"700ms\"/\u003e Is there anything else I can help you with today?\u003c/speak\u003e"
+        }
+      } ]
+    }
+  }, {
+    "userInput": {
+      "isWebhookEnabled": true,
+      "input": {
+        "text": {
+          "text": "no"
+        },
+        "languageCode": "en"
+      }
+    },
+    "virtualAgentOutput": {
+      "sessionParameters": {
+        "dfLastCallerIntent": "Dropoff_Gated",
+        "isRepeat": "no",
+        "pcAddressChanged": "false",
+        "pcContainsAlcohol": "false",
+        "pcCourierPrestartOneTracking": "false",
+        "pcCourierPrestartTwoTracking": "false",
+        "pcDeliveryStatus": "default",
+        "pcInteractionType": "default",
+        "pcIsVirtualRestaurant": "false",
+        "pcMiscPaymentAbuseBlock": "false",
+        "pcStoreAddress": "default",
+        "pcStorePhoneNumber": "default",
+        "zIntent": "ZHangup"
+      },
+      "differences": [ {
+        "type": "PAGE",
+        "description": "Page mismatch:\nExpected: \nActual:   End Session",
+        "assertionType": "EQUAL",
+        "expectedValue": "",
+        "actualValue": "End Session"
+      }, {
+        "type": "INTENT",
+        "description": "Intent mismatch:\nExpected: \nActual:   Confirmation.No",
+        "assertionType": "EQUAL",
+        "expectedValue": "",
+        "actualValue": "Confirmation.No"
+      }, {
+        "type": "UTTERANCE",
+        "description": "Agent response mismatch",
+        "warning": true,
+        "assertionType": "EQUAL",
+        "expectedValue": "",
+        "actualValue": "\u003cspeak\u003eThank you for contacting Uber Phone Support.\u003c/speak\u003e\n\u003cspeak\u003e\u003cbreak time=\"10ms\"/\u003e\u003c/speak\u003e"
+      } ],
+      "triggeredIntent": {
+        "name": "Confirmation.No"
+      },
+      "currentPage": {
+        "name": "End Session",
+        "flow": "ZExit"
+      },
+      "textResponses": [ {
+        "text": [ "\u003cspeak\u003eThank you for contacting Uber Phone Support.\u003c/speak\u003e\n" ]
+      }, {
+        "text": [ "\u003cspeak\u003e\u003cbreak time=\"10ms\"/\u003e\u003c/speak\u003e" ]
+      } ],
+      "currentFlow": {
+        "name": "ZExit"
+      },
+      "actions": [ {
+        "userUtterance": {
+          "text": "no"
+        }
+      }, {
+        "agentUtterance": {
+          "text": "\u003cspeak\u003eThank you for contacting Uber Phone Support.\u003c/speak\u003e\n\n\u003cspeak\u003e\u003cbreak time=\"10ms\"/\u003e\u003c/speak\u003e"
+        }
+      } ]
+    }
+  } ],
+  "creationTime": {
+    "seconds": 1703150827,
+    "nanos": 257163000
+  },
+  "testConfig": {
+    "flow": "Default Start Flow",
+    "page": "Start Page"
+  },
+  "languageCode": "en"
+}

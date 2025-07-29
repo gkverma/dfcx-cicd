@@ -1,0 +1,11 @@
+{
+  "name": "8029c255-5d48-4f19-846e-0bbe9dc45058",
+  "displayName": "UberApp_CantEnd",
+  "parameters": [ {
+    "id": "Store",
+    "entityType": "@Store",
+    "isList": true
+  } ],
+  "priority": 500000,
+  "numTrainingPhrases": 256
+}

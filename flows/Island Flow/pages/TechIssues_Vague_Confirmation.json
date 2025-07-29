@@ -1,0 +1,44 @@
+{
+  "name": "3cc3332e-d694-4a09-8c22-81cd335cbe95",
+  "displayName": "TechIssues_Vague_Confirmation",
+  "form": {
+  
+  },
+  "entryFulfillment": {
+  
+  },
+  "transitionRoutes": [ {
+    "condition": "$session.params.pcContainsAlcohol = \"false\" OR $session.params.pcContainsAlcohol = \"default\"",
+    "triggerFulfillment": {
+    
+    },
+    "targetPage": "TechIssues_Vague_Response",
+    "name": "1950fae5-163c-4e13-8132-c35e341e6d36"
+  }, {
+    "condition": "$session.params.pcContainsAlcohol = \"true\"",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "\u003cspeak\u003eOkay, technical support.\u003c/speak\u003e" ]
+        },
+        "languageCode": "en"
+      } ],
+      "setParameterActions": [ {
+        "parameter": "zIntent",
+        "value": "ZAgent"
+      }, {
+        "parameter": "dfLastCallerIntent",
+        "value": "TechIssues_Vague"
+      } ]
+    },
+    "targetFlow": "ZExit",
+    "name": "e661c272-10b1-4b40-9292-cad60fbfeb8c"
+  }, {
+    "condition": "true",
+    "triggerFulfillment": {
+    
+    },
+    "targetPage": "TechIssues_Vague_Response",
+    "name": "bc3f7fff-500d-432b-9c6d-ac7a1adecfa5"
+  } ]
+}

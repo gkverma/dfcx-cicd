@@ -1,0 +1,169 @@
+{
+  "name": "cfb8ea53-3deb-456d-85e4-9fb9ac555b18",
+  "displayName": "Address_TooFar_Confirmation",
+  "form": {
+    "parameters": [ {
+      "displayName": "dtmf_input",
+      "required": true,
+      "entityType": "@dtmf",
+      "fillBehavior": {
+        "initialPromptFulfillment": {
+        
+        },
+        "repromptEventHandlers": [ {
+          "event": "sys.no-match-1",
+          "triggerFulfillment": {
+            "messages": [ {
+              "text": {
+                "text": [ "\u003cspeak\u003eI didn't get that.\u003c/speak\u003e\n\n\u003cspeak\u003eIf the destination is too far, say yes. Otherwise, say no.\u003c/speak\u003e" ]
+              },
+              "languageCode": "en"
+            } ]
+          },
+          "name": "b20327b6-0620-44c7-85a5-246cc2d263ab"
+        }, {
+          "event": "sys.no-match-2",
+          "triggerFulfillment": {
+            "messages": [ {
+              "text": {
+                "text": [ "\u003cspeak\u003eI'm having trouble understanding you. If the destination is too far, press 1. For something else, press 2.\u003c/speak\u003e" ]
+              },
+              "languageCode": "en"
+            } ]
+          },
+          "name": "4d491f1f-ed5f-49fa-afbd-f0913bb9c9a3"
+        }, {
+          "targetFlow": "ZExit",
+          "event": "sys.no-match-3",
+          "triggerFulfillment": {
+            "messages": [ {
+              "text": {
+                "text": [ "\u003cspeak\u003e\u003cbreak time=\"10ms\"/\u003e\u003c/speak\u003e" ]
+              },
+              "languageCode": "en"
+            } ],
+            "setParameterActions": [ {
+              "parameter": "zIntent",
+              "value": "ZAgent"
+            } ]
+          },
+          "name": "41e471ef-5408-4e8c-9aaa-9c8be58f0d43"
+        }, {
+          "event": "sys.no-input-1",
+          "triggerFulfillment": {
+            "messages": [ {
+              "text": {
+                "text": [ "\u003cspeak\u003eIf the destination is too far, say yes. Otherwise, say no.\u003c/speak\u003e" ]
+              },
+              "languageCode": "en"
+            } ]
+          },
+          "name": "95863cf6-7392-4af7-a62d-32ee4ebd19aa"
+        }, {
+          "event": "sys.no-input-2",
+          "triggerFulfillment": {
+            "messages": [ {
+              "text": {
+                "text": [ "\u003cspeak\u003eI didn't hear you.\u003c/speak\u003e\n\n\u003cspeak\u003eIf the destination is too far, press 1. For something else, press 2.\u003c/speak\u003e" ]
+              },
+              "languageCode": "en"
+            } ]
+          },
+          "name": "51454b5d-6a36-4d85-b3d9-972056e8b557"
+        }, {
+          "targetFlow": "ZExit",
+          "event": "sys.no-input-3",
+          "triggerFulfillment": {
+            "messages": [ {
+              "text": {
+                "text": [ "\u003cspeak\u003eI am having trouble hearing you.\u003c/speak\u003e" ]
+              },
+              "languageCode": "en"
+            } ],
+            "setParameterActions": [ {
+              "parameter": "zIntent",
+              "value": "ZHangup"
+            } ]
+          },
+          "name": "c36054fd-b545-4635-84f0-5eb133521cb2"
+        } ]
+      },
+      "advancedSettings": {
+        "dtmfSettings": {
+          "enabled": true,
+          "useSystemEntityRule": false
+        }
+      }
+    }, {
+      "displayName": "Store",
+      "entityType": "@Store",
+      "isList": true,
+      "fillBehavior": {
+        "initialPromptFulfillment": {
+        
+        }
+      }
+    } ]
+  },
+  "entryFulfillment": {
+    "messages": [ {
+      "text": {
+        "text": [ "\u003cspeak\u003eI think you're calling because the destination is too far, is that correct?\u003c/speak\u003e" ]
+      },
+      "languageCode": "en"
+    } ]
+  },
+  "transitionRoutes": [ {
+    "intent": "Confirmation.Yes",
+    "triggerFulfillment": {
+    
+    },
+    "targetPage": "Address_TooFar-yes_Confirmation",
+    "name": "fd21c984-b894-4cc3-85e6-874ca94b1fcf"
+  }, {
+    "intent": "Confirmation.No",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "\u003cspeak\u003eNo problem. How can I help?\u003c/speak\u003e\n\n\u003cspeak\u003eFor example, you can say, i picked up the wrong order, or, customer changed the address.\u003c/speak\u003e" ]
+        },
+        "languageCode": "en"
+      } ]
+    },
+    "targetFlow": "Default Start Flow",
+    "name": "3b065528-9ebf-40c7-ae28-ca7093a6e8ef"
+  }, {
+    "condition": "$session.params.dtmf_input = \"1\"",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "dtmf_input",
+        "value": null
+      } ]
+    },
+    "targetPage": "Address_TooFar-yes_Confirmation",
+    "name": "d371fb7c-d897-4b56-bb3f-ba8f3bf13735"
+  }, {
+    "condition": "$session.params.dtmf_input = \"2\"",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "\u003cspeak\u003eNo problem. How can I help?\u003c/speak\u003e\n\n\u003cspeak\u003eFor example, you can say, i picked up the wrong order, or, customer changed the address.\u003c/speak\u003e" ]
+        },
+        "languageCode": "en"
+      } ]
+    },
+    "targetFlow": "Default Start Flow",
+    "name": "1b967727-e398-47c9-ad5c-3788ea8a5428"
+  }, {
+    "condition": "$session.params.dtmf_input = \"0\"",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "intentName",
+        "value": "Agent_Vague"
+      } ]
+    },
+    "targetFlow": "Immediate Transfer Flow",
+    "name": "4bfb95b3-6005-4eb7-9982-fa907c770a79"
+  } ],
+  "agentTransitionRouteGroups": [ "RouteGroups-FAQ" ]
+}

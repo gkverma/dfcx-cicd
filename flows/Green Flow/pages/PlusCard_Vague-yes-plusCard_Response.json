@@ -1,0 +1,202 @@
+{
+  "name": "f077cb68-4721-4ee6-b2ce-ba8a780b2a56",
+  "displayName": "PlusCard_Vague-yes-plusCard_Response",
+  "form": {
+    "parameters": [ {
+      "displayName": "dtmf_input",
+      "required": true,
+      "entityType": "@dtmf_1234",
+      "fillBehavior": {
+        "initialPromptFulfillment": {
+        
+        },
+        "repromptEventHandlers": [ {
+          "event": "sys.no-match-1",
+          "triggerFulfillment": {
+            "messages": [ {
+              "text": {
+                "text": [ "\u003cspeak\u003eI didn't get that.\u003c/speak\u003e\n\n\u003cspeak\u003eYou can say, \u003cbreak time=\"500ms\"/\u003e the card was declined at the store, \u003cbreak time=\"700ms\"/\u003e I can't activate it, \u003cbreak time=\"700ms\"/\u003e I forgot the Plus card, \u003cbreak time=\"700ms\"/\u003e ore, \u003cbreak time=\"700ms\"/\u003e I lost the Plus card.\u003c/speak\u003e" ]
+              },
+              "languageCode": "en"
+            } ]
+          },
+          "name": "2933113e-a42a-493c-86eb-4cec5c6ace4a"
+        }, {
+          "event": "sys.no-match-2",
+          "triggerFulfillment": {
+            "messages": [ {
+              "text": {
+                "text": [ "\u003cspeak\u003eI'm having trouble understanding you.\u003c/speak\u003e\n\n\u003cspeak\u003eIf the card was declined at the store, press 1.\u003cbreak time=\"700ms\"/\u003e For card activation problem, press 2. \u003cbreak time=\"700ms\"/\u003e If you forgot to bring the card to the store, press 3. \u003cbreak time=\"700ms\"/\u003e Or, \u003cbreak time=\"500ms\"/\u003e For lost or stolen card, press 4.\u003c/speak\u003e" ]
+              },
+              "languageCode": "en"
+            } ]
+          },
+          "name": "ed4495fc-9d9a-4935-8847-ed5a36fb4689"
+        }, {
+          "targetFlow": "ZExit",
+          "event": "sys.no-match-3",
+          "triggerFulfillment": {
+            "messages": [ {
+              "text": {
+                "text": [ "\u003cspeak\u003e\u003cbreak time=\"10ms\"/\u003e\u003c/speak\u003e" ]
+              },
+              "languageCode": "en"
+            } ],
+            "setParameterActions": [ {
+              "parameter": "zIntent",
+              "value": "ZAgent"
+            } ]
+          },
+          "name": "05f1deb1-c006-4f09-87b1-e6a2b15370f8"
+        }, {
+          "event": "sys.no-input-1",
+          "triggerFulfillment": {
+            "messages": [ {
+              "text": {
+                "text": [ "\u003cspeak\u003eYou can say, \u003cbreak time=\"500ms\"/\u003e the card was declined at the store, \u003cbreak time=\"700ms\"/\u003e I can't activate it, \u003cbreak time=\"700ms\"/\u003e I forgot the Plus card, \u003cbreak time=\"700ms\"/\u003e ore, \u003cbreak time=\"700ms\"/\u003e I lost the Plus card.\u003c/speak\u003e" ]
+              },
+              "languageCode": "en"
+            } ]
+          },
+          "name": "54bc4548-1c05-4d5c-b6b8-5e5de80fdf9c"
+        }, {
+          "event": "sys.no-input-2",
+          "triggerFulfillment": {
+            "messages": [ {
+              "text": {
+                "text": [ "\u003cspeak\u003eI didn't hear you.\u003c/speak\u003e\n\n\u003cspeak\u003eIf the card was declined at the store, press 1.\u003cbreak time=\"700ms\"/\u003e For card activation problem, press 2. \u003cbreak time=\"700ms\"/\u003e If you forgot to bring the card to the store, press 3. \u003cbreak time=\"700ms\"/\u003e Or, \u003cbreak time=\"500ms\"/\u003e For lost or stolen card, press 4.\u003c/speak\u003e" ]
+              },
+              "languageCode": "en"
+            } ]
+          },
+          "name": "cf09428f-d34f-4ee6-af2c-cee44fee3762"
+        }, {
+          "targetFlow": "ZExit",
+          "event": "sys.no-input-3",
+          "triggerFulfillment": {
+            "messages": [ {
+              "text": {
+                "text": [ "\u003cspeak\u003eI am having trouble hearing you.\u003c/speak\u003e" ]
+              },
+              "languageCode": "en"
+            } ],
+            "setParameterActions": [ {
+              "parameter": "zIntent",
+              "value": "ZHangup"
+            } ]
+          },
+          "name": "8435b938-45c4-46a7-9ba0-a82b968aa094"
+        } ]
+      },
+      "advancedSettings": {
+        "dtmfSettings": {
+          "enabled": true,
+          "useSystemEntityRule": false
+        }
+      }
+    } ]
+  },
+  "entryFulfillment": {
+    "messages": [ {
+      "text": {
+        "text": [ "\u003cspeak\u003eOK, how can I help you with your Plus card? You can say, \u003cbreak time=\"500ms\"/\u003e it was declined at the store, \u003cbreak time=\"700ms\"/\u003e I can't activate it, \u003cbreak time=\"700ms\"/\u003e I forgot the Plus card, \u003cbreak time=\"700ms\"/\u003e ore, \u003cbreak time=\"700ms\"/\u003e I lost the Plus card.\u003c/speak\u003e" ]
+      },
+      "languageCode": "en"
+    } ],
+    "setParameterActions": [ {
+      "parameter": "dtmf_input",
+      "value": null
+    } ]
+  },
+  "transitionRoutes": [ {
+    "intent": "PlusCard_Vague-yes-plusCard-declined",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "intentName",
+        "value": "PlusCard_Vague-yes-plusCard-declined"
+      } ]
+    },
+    "targetFlow": "Orange Flow",
+    "name": "aa4eab28-2e82-4bc1-a567-ebfa5e29d9ff"
+  }, {
+    "intent": "PlusCard_Vague-yes-plusCard-activation",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "intentName",
+        "value": "PlusCard_Vague-yes-plusCard-activation"
+      } ]
+    },
+    "targetFlow": "FAQ Flow",
+    "name": "bd64eecb-d7f2-406a-a199-47443d65e777"
+  }, {
+    "intent": "PlusCard_Vague-yes-plusCard-forgot",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "intentName",
+        "value": "PlusCard_Vague-yes-plusCard-forgot"
+      } ]
+    },
+    "targetFlow": "Orange Flow",
+    "name": "00349628-0926-460a-a7a9-d90ced1bc245"
+  }, {
+    "intent": "PlusCard_Vague-yes-plusCard-lost",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "intentName",
+        "value": "PlusCard_Vague-yes-plusCard-lost"
+      } ]
+    },
+    "targetFlow": "FAQ Flow",
+    "name": "c6200efd-d7a5-4ab4-a79a-6ec1ba33447e"
+  }, {
+    "condition": "$session.params.dtmf_input = \"1\"",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "intentName",
+        "value": "PlusCard_Vague-yes-plusCard-declined"
+      } ]
+    },
+    "targetFlow": "Orange Flow",
+    "name": "f583c61e-6694-4f67-892e-ce5ed7f4dd62"
+  }, {
+    "condition": "$session.params.dtmf_input = \"2\"",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "intentName",
+        "value": "PlusCard_Vague-yes-plusCard-activation"
+      } ]
+    },
+    "targetFlow": "FAQ Flow",
+    "name": "c46185c8-db61-4088-8c6f-2c5db41149be"
+  }, {
+    "condition": "$session.params.dtmf_input = \"3\"",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "intentName",
+        "value": "PlusCard_Vague-yes-plusCard-forgot"
+      } ]
+    },
+    "targetFlow": "Orange Flow",
+    "name": "4276e135-673b-476e-8406-f0a0d9a567b0"
+  }, {
+    "condition": "$session.params.dtmf_input = \"4\"",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "intentName",
+        "value": "PlusCard_Vague-yes-plusCard-lost"
+      } ]
+    },
+    "targetFlow": "FAQ Flow",
+    "name": "89bd0653-d645-4d6a-b0f2-9482bac99af8"
+  }, {
+    "condition": "$session.params.dtmf_input = \"0\"",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "intentName",
+        "value": "Agent_Vague"
+      } ]
+    },
+    "targetFlow": "Immediate Transfer Flow",
+    "name": "ae5e41c3-1cc0-47be-9021-2c957d3460cb"
+  } ]
+}

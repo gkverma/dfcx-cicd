@@ -1,0 +1,159 @@
+{
+  "name": "81d716eb-25e3-43d6-8945-d866d9b8e307",
+  "displayName": "PlusCard_Forgot_Confirmation",
+  "form": {
+    "parameters": [ {
+      "displayName": "dtmf_input",
+      "required": true,
+      "entityType": "@dtmf",
+      "fillBehavior": {
+        "initialPromptFulfillment": {
+        
+        },
+        "repromptEventHandlers": [ {
+          "event": "sys.no-match-1",
+          "triggerFulfillment": {
+            "messages": [ {
+              "text": {
+                "text": [ "\u003cspeak\u003eI didn't get that.\u003c/speak\u003e\n\n\u003cspeak\u003eIf you don't have the Plus Card, press 1. For something else, press 2.\u003c/speak\u003e" ]
+              },
+              "languageCode": "en"
+            } ]
+          },
+          "name": "0a082814-22f8-4cb6-be73-0ee776d8c60c"
+        }, {
+          "event": "sys.no-match-2",
+          "triggerFulfillment": {
+            "messages": [ {
+              "text": {
+                "text": [ "\u003cspeak\u003eI'm having trouble understanding you. If you forgot the Plus Card, press 1. Otherwise, press 2.\u003c/speak\u003e" ]
+              },
+              "languageCode": "en"
+            } ]
+          },
+          "name": "f808e522-27e5-4b7b-b1cd-ac86d9648ad9"
+        }, {
+          "targetFlow": "ZExit",
+          "event": "sys.no-match-3",
+          "triggerFulfillment": {
+            "messages": [ {
+              "text": {
+                "text": [ "\u003cspeak\u003e\u003cbreak time=\"10ms\"/\u003e\u003c/speak\u003e" ]
+              },
+              "languageCode": "en"
+            } ],
+            "setParameterActions": [ {
+              "parameter": "zIntent",
+              "value": "ZAgent"
+            } ]
+          },
+          "name": "a7c24dac-ea5e-4541-85e5-bc903be5ded0"
+        }, {
+          "event": "sys.no-input-1",
+          "triggerFulfillment": {
+            "messages": [ {
+              "text": {
+                "text": [ "\u003cspeak\u003eIf you don't have the Plus Card, press 1. For something else, press 2.\u003c/speak\u003e" ]
+              },
+              "languageCode": "en"
+            } ]
+          },
+          "name": "416a3bd3-4051-4f58-9a01-7df5487d1de2"
+        }, {
+          "event": "sys.no-input-2",
+          "triggerFulfillment": {
+            "messages": [ {
+              "text": {
+                "text": [ "\u003cspeak\u003eI didn't hear you.\u003c/speak\u003e\n\n\u003cspeak\u003eIf you forgot the Plus Card, press 1. Otherwise, press 2.\u003c/speak\u003e" ]
+              },
+              "languageCode": "en"
+            } ]
+          },
+          "name": "ea537f59-d10a-4409-b5e8-59d1428d6905"
+        }, {
+          "targetFlow": "ZExit",
+          "event": "sys.no-input-3",
+          "triggerFulfillment": {
+            "messages": [ {
+              "text": {
+                "text": [ "\u003cspeak\u003eI am having trouble hearing you.\u003c/speak\u003e" ]
+              },
+              "languageCode": "en"
+            } ],
+            "setParameterActions": [ {
+              "parameter": "zIntent",
+              "value": "ZHangup"
+            } ]
+          },
+          "name": "fb7b6681-570c-4353-bbe2-412fe1da1125"
+        } ]
+      },
+      "advancedSettings": {
+        "dtmfSettings": {
+          "enabled": true,
+          "useSystemEntityRule": false
+        }
+      }
+    } ]
+  },
+  "entryFulfillment": {
+    "messages": [ {
+      "text": {
+        "text": [ "\u003cspeak\u003eI think you're calling because you don't have the Plus card with you, is that correct?\u003c/speak\u003e" ]
+      },
+      "languageCode": "en"
+    } ]
+  },
+  "transitionRoutes": [ {
+    "intent": "Confirmation.Yes",
+    "triggerFulfillment": {
+    
+    },
+    "targetPage": "PlusCard_Forgot_Conditional_Routes",
+    "name": "5510bc85-01a5-4c2a-9364-7cb0c52a3462"
+  }, {
+    "intent": "Confirmation.No",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "\u003cspeak\u003eNo problem. How can I help?\u003c/speak\u003e\n\n\u003cspeak\u003eFor example, you can say, i picked up the wrong order, or, trip missing from my account.\u003c/speak\u003e" ]
+        },
+        "languageCode": "en"
+      } ]
+    },
+    "targetFlow": "Default Start Flow",
+    "name": "dfbf3888-9b0b-4cad-b98e-b436b5e2546c"
+  }, {
+    "condition": "$session.params.dtmf_input = \"1\"",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "dtmf_input",
+        "value": null
+      } ]
+    },
+    "targetPage": "PlusCard_Forgot_Conditional_Routes",
+    "name": "ec73106a-8733-43b4-9c5e-f5ca3bcf61ec"
+  }, {
+    "condition": "$session.params.dtmf_input = \"2\"",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "\u003cspeak\u003eNo problem. How can I help?\u003c/speak\u003e\n\n\u003cspeak\u003eFor example, you can say, i picked up the wrong order, or, trip missing from my account.\u003c/speak\u003e" ]
+        },
+        "languageCode": "en"
+      } ]
+    },
+    "targetFlow": "Default Start Flow",
+    "name": "766bcf9c-39d2-487a-83e6-2cf5e8cc2ee2"
+  }, {
+    "condition": "$session.params.dtmf_input = \"0\"",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "intentName",
+        "value": "Agent_Vague"
+      } ]
+    },
+    "targetFlow": "Immediate Transfer Flow",
+    "name": "dbf76d19-7628-4251-9c00-d2b12f0d1388"
+  } ]
+}

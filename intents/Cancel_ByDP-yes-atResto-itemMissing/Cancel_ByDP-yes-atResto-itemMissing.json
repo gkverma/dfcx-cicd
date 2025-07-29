@@ -1,0 +1,11 @@
+{
+  "name": "bdba136f-ba35-48fd-b450-d15314967baf",
+  "displayName": "Cancel_ByDP-yes-atResto-itemMissing",
+  "parameters": [ {
+    "id": "Store",
+    "entityType": "@Store",
+    "isList": true
+  } ],
+  "priority": 500000,
+  "numTrainingPhrases": 11
+}

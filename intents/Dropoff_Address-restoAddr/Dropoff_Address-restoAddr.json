@@ -1,0 +1,14 @@
+{
+  "name": "56181ee3-9f56-4db6-beda-36e05edbb9e5",
+  "displayName": "Dropoff_Address-restoAddr",
+  "parameters": [ {
+    "id": "dfLastCallerIntent",
+    "entityType": "@sys.any"
+  }, {
+    "id": "Store",
+    "entityType": "@Store",
+    "isList": true
+  } ],
+  "priority": 500000,
+  "numTrainingPhrases": 15
+}

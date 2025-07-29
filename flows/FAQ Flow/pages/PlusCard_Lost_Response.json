@@ -1,0 +1,271 @@
+{
+  "name": "f59e9b18-424e-4181-829f-44e3bd543fac",
+  "displayName": "PlusCard_Lost_Response",
+  "form": {
+    "parameters": [ {
+      "displayName": "dtmf_input",
+      "required": true,
+      "entityType": "@dtmf_0",
+      "fillBehavior": {
+        "initialPromptFulfillment": {
+        
+        },
+        "repromptEventHandlers": [ {
+          "event": "sys.no-match-1",
+          "triggerFulfillment": {
+            "messages": [ {
+              "text": {
+                "text": [ "\u003cspeak\u003eSorry. To hear the message again, just say, repeat it. Is there anything else I can help you with today? \u003c/speak\u003e" ]
+              },
+              "languageCode": "en"
+            } ]
+          },
+          "name": "f66acafa-f9cc-4d89-8983-010d694aa5a0"
+        }, {
+          "event": "sys.no-match-2",
+          "triggerFulfillment": {
+            "messages": [ {
+              "text": {
+                "text": [ "\u003cspeak\u003e I didn't get that. To listen to the message again, you can say, repeat it. What else can I help you with today? If you are done, feel free to hang up.\u003c/speak\u003e" ]
+              },
+              "languageCode": "en"
+            } ]
+          },
+          "name": "f553beb7-aacb-4221-bd12-a58febaccc2a"
+        }, {
+          "targetFlow": "ZExit",
+          "event": "sys.no-match-3",
+          "triggerFulfillment": {
+            "messages": [ {
+              "text": {
+                "text": [ "\u003cspeak\u003e\u003cbreak time=\"10ms\"/\u003e\u003c/speak\u003e" ]
+              },
+              "languageCode": "en"
+            } ],
+            "setParameterActions": [ {
+              "parameter": "zIntent",
+              "value": "ZAgent"
+            } ]
+          },
+          "name": "14dfe318-72fe-49fb-ab29-ff1f3d1ea7cc"
+        }, {
+          "event": "sys.no-input-1",
+          "triggerFulfillment": {
+            "messages": [ {
+              "text": {
+                "text": [ "\u003cspeak\u003eTo hear the message again, just say, repeat it. Is there anything else I can help you with today? \u003c/speak\u003e" ]
+              },
+              "languageCode": "en"
+            } ]
+          },
+          "name": "93f6b089-eed8-49e8-be99-82b29bb88268"
+        }, {
+          "event": "sys.no-input-2",
+          "triggerFulfillment": {
+            "messages": [ {
+              "text": {
+                "text": [ "\u003cspeak\u003e I didn't hear you. To listen to the message again, you can say, repeat it. What else can I help you with today? If you are done, feel free to hang up.\u003c/speak\u003e" ]
+              },
+              "languageCode": "en"
+            } ]
+          },
+          "name": "b0fb1877-e689-4b69-b6b4-004b944665dd"
+        }, {
+          "targetFlow": "ZExit",
+          "event": "sys.no-input-3",
+          "triggerFulfillment": {
+            "messages": [ {
+              "text": {
+                "text": [ "\u003cspeak\u003eI am having trouble hearing you.\u003c/speak\u003e" ]
+              },
+              "languageCode": "en"
+            } ],
+            "setParameterActions": [ {
+              "parameter": "zIntent",
+              "value": "ZHangup"
+            } ]
+          },
+          "name": "f1cde926-fe43-4b76-8b41-c9427d3f5849"
+        } ]
+      },
+      "advancedSettings": {
+        "dtmfSettings": {
+          "enabled": true,
+          "useSystemEntityRule": false
+        }
+      }
+    } ]
+  },
+  "entryFulfillment": {
+    "setParameterActions": [ {
+      "parameter": "dfLastCallerIntent",
+      "value": "PlusCard_Lost"
+    }, {
+      "parameter": "dtmf_input",
+      "value": null
+    } ],
+    "conditionalCases": [ {
+      "cases": [ {
+        "condition": "$session.params.isRepeat != \"yes\"",
+        "caseContent": [ {
+          "message": {
+            "text": {
+              "text": [ "\u003cspeak\u003eI understand you lost the Plus Card. To request a new one, open your app and go to Account Settings, then tap Plus Card, then tap Replace Card. While you wait for your replacement, the job preferences for, \u003cbreak time=\"100ms\"/\u003e Order and Pay, and, Shop and Pay, will be turned off.\u003c/speak\u003e" ]
+            },
+            "languageCode": "en"
+          }
+        }, {
+          "message": {
+            "text": {
+              "text": [ "\u003cspeak\u003eTo listen to this message again, just say, repeat it. \u003cbreak time=\"700ms\"/\u003e Is there anything else I can help you with today?\u003c/speak\u003e" ]
+            },
+            "languageCode": "en"
+          }
+        } ]
+      }, {
+        "caseContent": [ {
+          "message": {
+            "text": {
+              "text": [ "\u003cspeak\u003eI understand you lost the Plus Card. To request a new one, open your app and go to Account Settings, then tap Plus Card, then tap Replace Card. While you wait for your replacement, the job preferences for, \u003cbreak time=\"100ms\"/\u003e Order and Pay, and, Shop and Pay, will be turned off.\u003c/speak\u003e" ]
+            },
+            "languageCode": "en"
+          }
+        }, {
+          "message": {
+            "text": {
+              "text": [ "\u003cspeak\u003eIs there anything else I can help you with today? Or, if you're done, you can hang up.\u003c/speak\u003e" ]
+            },
+            "languageCode": "en"
+          }
+        } ]
+      } ]
+    } ]
+  },
+  "transitionRoutes": [ {
+    "intent": "Intent.Repeat",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "isRepeat",
+        "value": "yes"
+      } ]
+    },
+    "targetPage": "Current Page",
+    "name": "88a8efef-65d5-4305-a23c-5fd6b67b1cea"
+  }, {
+    "intent": "Confirmation.Yes",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "\u003cspeak\u003eSure. How can I help you?\u003c/speak\u003e" ]
+        },
+        "languageCode": "en"
+      } ]
+    },
+    "targetFlow": "Default Start Flow",
+    "name": "3a4d03a6-7fde-49b5-a623-2f49eda2cd45"
+  }, {
+    "intent": "Confirmation.No",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "\u003cspeak\u003eThank you for contacting Uber Phone Support.\u003c/speak\u003e\n" ]
+        },
+        "languageCode": "en"
+      } ],
+      "setParameterActions": [ {
+        "parameter": "zIntent",
+        "value": "ZHangup"
+      } ]
+    },
+    "targetFlow": "ZExit",
+    "name": "71c99f07-377e-4675-8368-0fa0bb24e575"
+  }, {
+    "condition": "$session.params.dtmf_input = \"0\"",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "intentName",
+        "value": "Agent_Vague"
+      } ]
+    },
+    "targetFlow": "Immediate Transfer Flow",
+    "name": "fd75cd4d-7998-4582-8116-84797f135d30"
+  } ],
+  "eventHandlers": [ {
+    "event": "sys.no-match-1",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "\u003cspeak\u003eSorry. To hear the message again, just say, repeat it. Is there anything else I can help you with today? \u003c/speak\u003e" ]
+        },
+        "languageCode": "en"
+      } ]
+    },
+    "name": "ec77d1ce-81f2-42fc-9a97-8bd02ff467dc"
+  }, {
+    "event": "sys.no-match-2",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "\u003cspeak\u003e I didn't get that. To listen to the message again, you can say, repeat it. What else can I help you with today? If you are done, feel free to hang up.\u003c/speak\u003e" ]
+        },
+        "languageCode": "en"
+      } ]
+    },
+    "name": "52c31c0b-2219-4c93-9103-3904becba9ff"
+  }, {
+    "targetFlow": "ZExit",
+    "event": "sys.no-match-3",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "\u003cspeak\u003e\u003cbreak time=\"10ms\"/\u003e\u003c/speak\u003e" ]
+        },
+        "languageCode": "en"
+      } ],
+      "setParameterActions": [ {
+        "parameter": "zIntent",
+        "value": "ZAgent"
+      } ]
+    },
+    "name": "dad42228-2ec8-4ca6-9dbd-fa88e21204fa"
+  }, {
+    "event": "sys.no-input-1",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "\u003cspeak\u003eTo hear the message again, just say, repeat it. Is there anything else I can help you with today? \u003c/speak\u003e" ]
+        },
+        "languageCode": "en"
+      } ]
+    },
+    "name": "b1f63704-dc7b-4363-822e-5d7c62f0c557"
+  }, {
+    "event": "sys.no-input-2",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "\u003cspeak\u003e I didn't hear you. To listen to the message again, you can say, repeat it. What else can I help you with today? If you are done, feel free to hang up.\u003c/speak\u003e" ]
+        },
+        "languageCode": "en"
+      } ]
+    },
+    "name": "7c3c5eff-ac11-414d-8618-1746f87bc0e1"
+  }, {
+    "targetFlow": "ZExit",
+    "event": "sys.no-input-3",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "\u003cspeak\u003eI am having trouble hearing you.\u003c/speak\u003e" ]
+        },
+        "languageCode": "en"
+      } ],
+      "setParameterActions": [ {
+        "parameter": "zIntent",
+        "value": "ZHangup"
+      } ]
+    },
+    "name": "b1c3abed-f84f-454a-801b-ffef130bbdbd"
+  } ],
+  "agentTransitionRouteGroups": [ "RouteGroups-FAQ" ]
+}

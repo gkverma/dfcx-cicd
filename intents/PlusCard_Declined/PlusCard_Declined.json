@@ -1,0 +1,11 @@
+{
+  "name": "b93e194a-b4ff-4579-8e93-8f124238ef54",
+  "displayName": "PlusCard_Declined",
+  "parameters": [ {
+    "id": "Store",
+    "entityType": "@Store",
+    "isList": true
+  } ],
+  "priority": 500000,
+  "numTrainingPhrases": 30
+}

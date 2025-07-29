@@ -1,0 +1,278 @@
+{
+  "name": "c91de88c-722b-42e7-a848-4884b5fdbc3c",
+  "tags": [ "#Live_Order_Bot", "#Immediate_unconfirmed_transfr", "#Agent_Vague", "#Happy_Path" ],
+  "displayName": "Agent_Vague_1",
+  "testCaseConversationTurns": [ {
+    "userInput": {
+      "isWebhookEnabled": true,
+      "input": {
+        "languageCode": "en",
+        "event": {
+          "event": "WELCOME"
+        }
+      }
+    },
+    "virtualAgentOutput": {
+      "sessionParameters": {
+        "pcAddressChanged": "false",
+        "pcContainsAlcohol": "false",
+        "pcCourierPrestartOneTracking": "false",
+        "pcCourierPrestartTwoTracking": "false",
+        "pcDeliveryStatus": "default",
+        "pcInteractionType": "default",
+        "pcIsVirtualRestaurant": "false",
+        "pcMiscPaymentAbuseBlock": "false",
+        "pcStoreAddress": "default",
+        "pcStorePhoneNumber": "default"
+      },
+      "differences": [ {
+        "type": "PAGE",
+        "description": "Page mismatch:\nExpected: \nActual:   Main_Menu_Page",
+        "assertionType": "EQUAL",
+        "expectedValue": "",
+        "actualValue": "Main_Menu_Page"
+      }, {
+        "type": "UTTERANCE",
+        "description": "Agent response mismatch",
+        "warning": true,
+        "assertionType": "EQUAL",
+        "expectedValue": "",
+        "actualValue": "\u003cspeak\u003eIn a few words, how can I help you with your current order. You can say things like, the order was already picked up by someone else, ore, problem with customers address.\u003c/speak\u003e"
+      } ],
+      "currentPage": {
+        "name": "Main_Menu_Page",
+        "flow": "Default Start Flow"
+      },
+      "textResponses": [ {
+        "text": [ "\u003cspeak\u003eIn a few words, how can I help you with your current order. You can say things like, the order was already picked up by someone else, ore, problem with customers address.\u003c/speak\u003e" ]
+      } ],
+      "currentFlow": {
+        "name": "Default Start Flow"
+      },
+      "actions": [ {
+        "agentUtterance": {
+          "text": "\u003cspeak\u003eIn a few words, how can I help you with your current order. You can say things like, the order was already picked up by someone else, ore, problem with customers address.\u003c/speak\u003e"
+        }
+      } ]
+    }
+  }, {
+    "userInput": {
+      "isWebhookEnabled": true,
+      "input": {
+        "text": {
+          "text": "customer did not have PIN"
+        },
+        "languageCode": "en"
+      }
+    },
+    "virtualAgentOutput": {
+      "sessionParameters": {
+        "intentName": "Dropoff_PIN",
+        "isRepeat": "no",
+        "pcAddressChanged": "false",
+        "pcContainsAlcohol": "false",
+        "pcCourierPrestartOneTracking": "false",
+        "pcCourierPrestartTwoTracking": "false",
+        "pcDeliveryStatus": "default",
+        "pcInteractionType": "default",
+        "pcIsVirtualRestaurant": "false",
+        "pcMiscPaymentAbuseBlock": "false",
+        "pcStoreAddress": "default",
+        "pcStorePhoneNumber": "default"
+      },
+      "differences": [ {
+        "type": "PAGE",
+        "description": "Page mismatch:\nExpected: \nActual:   Dropoff_PIN_Confirmation",
+        "assertionType": "EQUAL",
+        "expectedValue": "",
+        "actualValue": "Dropoff_PIN_Confirmation"
+      }, {
+        "type": "INTENT",
+        "description": "Intent mismatch:\nExpected: \nActual:   Dropoff_PIN",
+        "assertionType": "EQUAL",
+        "expectedValue": "",
+        "actualValue": "Dropoff_PIN"
+      }, {
+        "type": "UTTERANCE",
+        "description": "Agent response mismatch",
+        "warning": true,
+        "assertionType": "EQUAL",
+        "expectedValue": "",
+        "actualValue": "\u003cspeak\u003eI think you're calling because you need a PIN number from the customer, is that correct?\u003c/speak\u003e"
+      } ],
+      "triggeredIntent": {
+        "name": "Dropoff_PIN"
+      },
+      "currentPage": {
+        "name": "Dropoff_PIN_Confirmation",
+        "flow": "FAQ Flow"
+      },
+      "textResponses": [ {
+        "text": [ "\u003cspeak\u003eI think you're calling because you need a PIN number from the customer, is that correct?\u003c/speak\u003e" ]
+      } ],
+      "currentFlow": {
+        "name": "FAQ Flow"
+      },
+      "actions": [ {
+        "userUtterance": {
+          "text": "customer did not have PIN"
+        }
+      }, {
+        "agentUtterance": {
+          "text": "\u003cspeak\u003eI think you're calling because you need a PIN number from the customer, is that correct?\u003c/speak\u003e"
+        }
+      } ]
+    }
+  }, {
+    "userInput": {
+      "isWebhookEnabled": true,
+      "input": {
+        "text": {
+          "text": "Yes"
+        },
+        "languageCode": "en"
+      }
+    },
+    "virtualAgentOutput": {
+      "sessionParameters": {
+        "dfLastCallerIntent": "Dropoff_PIN",
+        "intentName": "Dropoff_PIN",
+        "isRepeat": "no",
+        "pcAddressChanged": "false",
+        "pcContainsAlcohol": "false",
+        "pcCourierPrestartOneTracking": "false",
+        "pcCourierPrestartTwoTracking": "false",
+        "pcDeliveryStatus": "default",
+        "pcInteractionType": "default",
+        "pcIsVirtualRestaurant": "false",
+        "pcMiscPaymentAbuseBlock": "false",
+        "pcStoreAddress": "default",
+        "pcStorePhoneNumber": "default"
+      },
+      "differences": [ {
+        "type": "PAGE",
+        "description": "Page mismatch:\nExpected: \nActual:   Dropoff_PIN_Response",
+        "assertionType": "EQUAL",
+        "expectedValue": "",
+        "actualValue": "Dropoff_PIN_Response"
+      }, {
+        "type": "INTENT",
+        "description": "Intent mismatch:\nExpected: \nActual:   Confirmation.Yes",
+        "assertionType": "EQUAL",
+        "expectedValue": "",
+        "actualValue": "Confirmation.Yes"
+      }, {
+        "type": "UTTERANCE",
+        "description": "Agent response mismatch",
+        "warning": true,
+        "assertionType": "EQUAL",
+        "expectedValue": "",
+        "actualValue": "\u003cspeak\u003eI understand you need help with the order PIN. If you're with the customer and they can't find the PIN, please enter the last 4 digits of the customer's phone number. You can also deliver the order without it. To do so, select, “I need help” from the PIN page, then tap, “It’s delivered”.\u003c/speak\u003e\u003cspeak\u003eTo listen to this message again, just say, repeat it. \u003cbreak time=\"700ms\"/\u003e Is there anything else I can help you with today?\u003c/speak\u003e"
+      } ],
+      "triggeredIntent": {
+        "name": "Confirmation.Yes"
+      },
+      "currentPage": {
+        "name": "Dropoff_PIN_Response",
+        "flow": "FAQ Flow"
+      },
+      "textResponses": [ {
+        "text": [ "\u003cspeak\u003eI understand you need help with the order PIN. If you're with the customer and they can't find the PIN, please enter the last 4 digits of the customer's phone number. You can also deliver the order without it. To do so, select, “I need help” from the PIN page, then tap, “It’s delivered”.\u003c/speak\u003e" ]
+      }, {
+        "text": [ "\u003cspeak\u003eTo listen to this message again, just say, repeat it. \u003cbreak time=\"700ms\"/\u003e Is there anything else I can help you with today?\u003c/speak\u003e" ]
+      } ],
+      "currentFlow": {
+        "name": "FAQ Flow"
+      },
+      "actions": [ {
+        "userUtterance": {
+          "text": "Yes"
+        }
+      }, {
+        "agentUtterance": {
+          "text": "\u003cspeak\u003eI understand you need help with the order PIN. If you're with the customer and they can't find the PIN, please enter the last 4 digits of the customer's phone number. You can also deliver the order without it. To do so, select, “I need help” from the PIN page, then tap, “It’s delivered”.\u003c/speak\u003e\n\u003cspeak\u003eTo listen to this message again, just say, repeat it. \u003cbreak time=\"700ms\"/\u003e Is there anything else I can help you with today?\u003c/speak\u003e"
+        }
+      } ]
+    }
+  }, {
+    "userInput": {
+      "isWebhookEnabled": true,
+      "input": {
+        "text": {
+          "text": "agent"
+        },
+        "languageCode": "en"
+      }
+    },
+    "virtualAgentOutput": {
+      "sessionParameters": {
+        "dfLastCallerIntent": "Dropoff_PIN",
+        "isRepeat": "no",
+        "pcAddressChanged": "false",
+        "pcContainsAlcohol": "false",
+        "pcCourierPrestartOneTracking": "false",
+        "pcCourierPrestartTwoTracking": "false",
+        "pcDeliveryStatus": "default",
+        "pcInteractionType": "default",
+        "pcIsVirtualRestaurant": "false",
+        "pcMiscPaymentAbuseBlock": "false",
+        "pcStoreAddress": "default",
+        "pcStorePhoneNumber": "default",
+        "zIntent": "ZAgent"
+      },
+      "differences": [ {
+        "type": "PAGE",
+        "description": "Page mismatch:\nExpected: \nActual:   End Session",
+        "assertionType": "EQUAL",
+        "expectedValue": "",
+        "actualValue": "End Session"
+      }, {
+        "type": "INTENT",
+        "description": "Intent mismatch:\nExpected: \nActual:   Agent_Vague",
+        "assertionType": "EQUAL",
+        "expectedValue": "",
+        "actualValue": "Agent_Vague"
+      }, {
+        "type": "UTTERANCE",
+        "description": "Agent response mismatch",
+        "warning": true,
+        "assertionType": "EQUAL",
+        "expectedValue": "",
+        "actualValue": "\u003cspeak\u003e\u003cbreak time=\"10ms\"/\u003e\u003c/speak\u003e\u003cspeak\u003e\u003cbreak time=\"10ms\"/\u003e\u003c/speak\u003e"
+      } ],
+      "triggeredIntent": {
+        "name": "Agent_Vague"
+      },
+      "currentPage": {
+        "name": "End Session",
+        "flow": "ZExit"
+      },
+      "textResponses": [ {
+        "text": [ "\u003cspeak\u003e\u003cbreak time=\"10ms\"/\u003e\u003c/speak\u003e" ]
+      }, {
+        "text": [ "\u003cspeak\u003e\u003cbreak time=\"10ms\"/\u003e\u003c/speak\u003e" ]
+      } ],
+      "currentFlow": {
+        "name": "ZExit"
+      },
+      "actions": [ {
+        "userUtterance": {
+          "text": "agent"
+        }
+      }, {
+        "agentUtterance": {
+          "text": "\u003cspeak\u003e\u003cbreak time=\"10ms\"/\u003e\u003c/speak\u003e\n\u003cspeak\u003e\u003cbreak time=\"10ms\"/\u003e\u003c/speak\u003e"
+        }
+      } ]
+    }
+  } ],
+  "creationTime": {
+    "seconds": 1704272640,
+    "nanos": 891892000
+  },
+  "testConfig": {
+    "flow": "Default Start Flow",
+    "page": "Start Page"
+  },
+  "languageCode": "en"
+}

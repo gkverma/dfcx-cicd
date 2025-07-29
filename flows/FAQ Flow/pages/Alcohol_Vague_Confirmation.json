@@ -1,0 +1,156 @@
+{
+  "name": "79854dd0-8281-436b-89b9-2654a9944d18",
+  "displayName": "Alcohol_Vague_Confirmation",
+  "form": {
+    "parameters": [ {
+      "displayName": "dtmf_input",
+      "required": true,
+      "entityType": "@dtmf",
+      "fillBehavior": {
+        "initialPromptFulfillment": {
+        
+        },
+        "repromptEventHandlers": [ {
+          "event": "sys.no-match-1",
+          "triggerFulfillment": {
+            "messages": [ {
+              "text": {
+                "text": [ "\u003cspeak\u003eI didn't get that.\u003c/speak\u003e\n\n\u003cspeak\u003eIf you're calling about alcohol delivery say yes. Otherwise, say no.\u003c/speak\u003e\n" ]
+              },
+              "languageCode": "en"
+            } ]
+          },
+          "name": "bdcebe5b-d835-4b38-ae01-b34d0c45c088"
+        }, {
+          "event": "sys.no-match-2",
+          "triggerFulfillment": {
+            "messages": [ {
+              "text": {
+                "text": [ "\u003cspeak\u003eI'm having trouble understanding you.\u003c/speak\u003e\n\n\u003cspeak\u003eFor question on alcohol delivery, press 1. For something else, press 2.\u003c/speak\u003e" ]
+              },
+              "languageCode": "en"
+            } ]
+          },
+          "name": "bc4e6380-f67a-4631-ac3e-d54a1a93421a"
+        }, {
+          "targetFlow": "ZExit",
+          "event": "sys.no-match-3",
+          "triggerFulfillment": {
+            "messages": [ {
+              "text": {
+                "text": [ "\u003cspeak\u003e\u003cbreak time=\"10ms\"/\u003e\u003c/speak\u003e" ]
+              },
+              "languageCode": "en"
+            } ],
+            "setParameterActions": [ {
+              "parameter": "zIntent",
+              "value": "ZAgent"
+            } ]
+          },
+          "name": "f1a87c0e-40fe-40a6-bb1a-7fb51ced35f6"
+        }, {
+          "event": "sys.no-input-1",
+          "triggerFulfillment": {
+            "messages": [ {
+              "text": {
+                "text": [ "\u003cspeak\u003eIf you're calling about alcohol delivery say yes. Otherwise, say no.\u003c/speak\u003e" ]
+              },
+              "languageCode": "en"
+            } ]
+          },
+          "name": "a823ef51-e77c-415e-8fa5-0941344b03a2"
+        }, {
+          "event": "sys.no-input-2",
+          "triggerFulfillment": {
+            "messages": [ {
+              "text": {
+                "text": [ "\u003cspeak\u003eI didn't hear you.\u003c/speak\u003e\n\n\u003cspeak\u003eFor question on alcohol delivery, press 1. For something else, press 2.\u003c/speak\u003e" ]
+              },
+              "languageCode": "en"
+            } ]
+          },
+          "name": "03f26954-771e-41fd-8be5-d496abf82438"
+        }, {
+          "targetFlow": "ZExit",
+          "event": "sys.no-input-3",
+          "triggerFulfillment": {
+            "messages": [ {
+              "text": {
+                "text": [ "\u003cspeak\u003eI am having trouble hearing you.\u003c/speak\u003e" ]
+              },
+              "languageCode": "en"
+            } ],
+            "setParameterActions": [ {
+              "parameter": "zIntent",
+              "value": "ZHangup"
+            } ]
+          },
+          "name": "c02bc9c9-182c-42ff-9ecb-a373bfcb93ea"
+        } ]
+      },
+      "advancedSettings": {
+        "dtmfSettings": {
+          "enabled": true,
+          "useSystemEntityRule": false
+        }
+      }
+    } ]
+  },
+  "entryFulfillment": {
+    "messages": [ {
+      "text": {
+        "text": [ "\u003cspeak\u003eI think you're calling about alcohol delivery, is that correct?\u003c/speak\u003e" ]
+      },
+      "languageCode": "en"
+    } ]
+  },
+  "transitionRoutes": [ {
+    "intent": "Confirmation.Yes",
+    "triggerFulfillment": {
+    
+    },
+    "targetPage": "Alcohol_Vague_Response",
+    "name": "8d2c13ac-7b4b-4a9a-8191-adf93cd32b13"
+  }, {
+    "intent": "Confirmation.No",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "\u003cspeak\u003eNo problem. How can I help?\u003c/speak\u003e\n\n\u003cspeak\u003eFor example, you can say, the food is damaged, or, I accidentally completed an order.\u003c/speak\u003e" ]
+        },
+        "languageCode": "en"
+      } ]
+    },
+    "targetFlow": "Default Start Flow",
+    "name": "8de108b3-ef55-4efe-9e62-424229696924"
+  }, {
+    "condition": "$session.params.dtmf_input = \"1\"",
+    "triggerFulfillment": {
+    
+    },
+    "targetPage": "Alcohol_Vague_Response",
+    "name": "1f9a226e-864e-4bae-a263-35d75f7fa314"
+  }, {
+    "condition": "$session.params.dtmf_input = \"2\"",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "\u003cspeak\u003eNo problem. How can I help?\u003c/speak\u003e\n\n\u003cspeak\u003eFor example, you can say, the food is damaged, or, I accidentally completed an order.\u003c/speak\u003e" ]
+        },
+        "languageCode": "en"
+      } ]
+    },
+    "targetFlow": "Default Start Flow",
+    "name": "5501a561-9a9a-4ff8-b400-53318bb8b754"
+  }, {
+    "condition": "$session.params.dtmf_input = \"0\"",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "intentName",
+        "value": "Agent_Vague"
+      } ]
+    },
+    "targetFlow": "Immediate Transfer Flow",
+    "name": "f665c9b5-8317-416f-a2b1-d0c60369aa5d"
+  } ]
+}

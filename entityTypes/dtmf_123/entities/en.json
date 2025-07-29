@@ -1,0 +1,19 @@
+{
+  "entities": [ {
+    "value": "1",
+    "synonyms": [ "1", "dtmf_digits_1" ],
+    "languageCode": "en"
+  }, {
+    "value": "2",
+    "synonyms": [ "2", "dtmf_digits_2" ],
+    "languageCode": "en"
+  }, {
+    "value": "3",
+    "synonyms": [ "3", "dtmf_digits_3" ],
+    "languageCode": "en"
+  }, {
+    "value": "0",
+    "synonyms": [ "00", "000", "0000", "00000", "000000", "0000000", "00000000", "000000000", "0000000000", "dtmf_digits_0", "0" ],
+    "languageCode": "en"
+  } ]
+}

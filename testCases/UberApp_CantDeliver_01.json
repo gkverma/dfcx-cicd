@@ -1,0 +1,721 @@
+{
+  "name": "73a6f391-4f3b-432f-bc4b-156eab9a5938",
+  "tags": [ "#Live_Order_Bot", "#Island_Family_Intent", "#UberApp_CantDeliver", "#Negative_Path" ],
+  "displayName": "UberApp_CantDeliver_01",
+  "testCaseConversationTurns": [ {
+    "userInput": {
+      "injectedParameters": {
+        "pcDeliveryStatus": "arrived_resto_1"
+      },
+      "isWebhookEnabled": true,
+      "input": {
+        "languageCode": "en",
+        "event": {
+          "event": "WELCOME"
+        }
+      }
+    },
+    "virtualAgentOutput": {
+      "sessionParameters": {
+        "pcAddressChanged": "false",
+        "pcContainsAlcohol": "false",
+        "pcCourierPrestartOneTracking": "false",
+        "pcCourierPrestartTwoTracking": "false",
+        "pcDeliveryStatus": "arrived_resto_1",
+        "pcInteractionType": "default",
+        "pcIsVirtualRestaurant": "false",
+        "pcMiscPaymentAbuseBlock": "false",
+        "pcStoreAddress": "default",
+        "pcStorePhoneNumber": "default"
+      },
+      "differences": [ {
+        "type": "PAGE",
+        "description": "Page mismatch:\nExpected: \nActual:   Main_Menu_Page",
+        "assertionType": "EQUAL",
+        "expectedValue": "",
+        "actualValue": "Main_Menu_Page"
+      }, {
+        "type": "UTTERANCE",
+        "description": "Agent response mismatch",
+        "warning": true,
+        "assertionType": "EQUAL",
+        "expectedValue": "",
+        "actualValue": "\u003cspeak\u003eIn a few words, how can I help you with your current order. You can say things like, the order was already picked up by someone else, ore, problem with customers address.\u003c/speak\u003e"
+      } ],
+      "currentPage": {
+        "name": "Main_Menu_Page",
+        "flow": "Default Start Flow"
+      },
+      "textResponses": [ {
+        "text": [ "\u003cspeak\u003eIn a few words, how can I help you with your current order. You can say things like, the order was already picked up by someone else, ore, problem with customers address.\u003c/speak\u003e" ]
+      } ],
+      "currentFlow": {
+        "name": "Default Start Flow"
+      },
+      "actions": [ {
+        "agentUtterance": {
+          "text": "\u003cspeak\u003eIn a few words, how can I help you with your current order. You can say things like, the order was already picked up by someone else, ore, problem with customers address.\u003c/speak\u003e"
+        }
+      } ]
+    }
+  }, {
+    "userInput": {
+      "isWebhookEnabled": true,
+      "input": {
+        "text": {
+          "text": "cannot swipe to start delivery"
+        },
+        "languageCode": "en"
+      }
+    },
+    "virtualAgentOutput": {
+      "sessionParameters": {
+        "intentName": "UberApp_CantDeliver",
+        "isRepeat": "no",
+        "pcAddressChanged": "false",
+        "pcContainsAlcohol": "false",
+        "pcCourierPrestartOneTracking": "false",
+        "pcCourierPrestartTwoTracking": "false",
+        "pcDeliveryStatus": "arrived_resto_1",
+        "pcInteractionType": "default",
+        "pcIsVirtualRestaurant": "false",
+        "pcMiscPaymentAbuseBlock": "false",
+        "pcStoreAddress": "default",
+        "pcStorePhoneNumber": "default"
+      },
+      "differences": [ {
+        "type": "PAGE",
+        "description": "Page mismatch:\nExpected: \nActual:   UberApp_CantDeliver_Confirmation",
+        "assertionType": "EQUAL",
+        "expectedValue": "",
+        "actualValue": "UberApp_CantDeliver_Confirmation"
+      }, {
+        "type": "INTENT",
+        "description": "Intent mismatch:\nExpected: \nActual:   UberApp_CantDeliver",
+        "assertionType": "EQUAL",
+        "expectedValue": "",
+        "actualValue": "UberApp_CantDeliver"
+      }, {
+        "type": "UTTERANCE",
+        "description": "Agent response mismatch",
+        "warning": true,
+        "assertionType": "EQUAL",
+        "expectedValue": "",
+        "actualValue": "\u003cspeak\u003eI think you're having problems \u003cbreak time=\"20ms\"/\u003e starting a delivery \u003cbreak time=\"20ms\"/\u003e on the Uber app. Is that correct?\u003c/speak\u003e"
+      } ],
+      "triggeredIntent": {
+        "name": "UberApp_CantDeliver"
+      },
+      "currentPage": {
+        "name": "UberApp_CantDeliver_Confirmation",
+        "flow": "Island Flow"
+      },
+      "textResponses": [ {
+        "text": [ "\u003cspeak\u003eI think you're having problems \u003cbreak time=\"20ms\"/\u003e starting a delivery \u003cbreak time=\"20ms\"/\u003e on the Uber app. Is that correct?\u003c/speak\u003e" ]
+      } ],
+      "currentFlow": {
+        "name": "Island Flow"
+      },
+      "actions": [ {
+        "userUtterance": {
+          "text": "cannot swipe to start delivery"
+        }
+      }, {
+        "agentUtterance": {
+          "text": "\u003cspeak\u003eI think you're having problems \u003cbreak time=\"20ms\"/\u003e starting a delivery \u003cbreak time=\"20ms\"/\u003e on the Uber app. Is that correct?\u003c/speak\u003e"
+        }
+      } ]
+    }
+  }, {
+    "userInput": {
+      "isWebhookEnabled": true,
+      "input": {
+        "text": {
+          "text": "yes"
+        },
+        "languageCode": "en"
+      }
+    },
+    "virtualAgentOutput": {
+      "sessionParameters": {
+        "dfLastCallerIntent": "UberApp_CantDeliver",
+        "intentName": "UberApp_CantDeliver",
+        "isRepeat": "no",
+        "pcAddressChanged": "false",
+        "pcContainsAlcohol": "false",
+        "pcCourierPrestartOneTracking": "false",
+        "pcCourierPrestartTwoTracking": "false",
+        "pcDeliveryStatus": "arrived_resto_1",
+        "pcInteractionType": "default",
+        "pcIsVirtualRestaurant": "false",
+        "pcMiscPaymentAbuseBlock": "false",
+        "pcStoreAddress": "default",
+        "pcStorePhoneNumber": "default"
+      },
+      "differences": [ {
+        "type": "PAGE",
+        "description": "Page mismatch:\nExpected: \nActual:   UberApp_CantDeliver_Response",
+        "assertionType": "EQUAL",
+        "expectedValue": "",
+        "actualValue": "UberApp_CantDeliver_Response"
+      }, {
+        "type": "INTENT",
+        "description": "Intent mismatch:\nExpected: \nActual:   Confirmation.Yes",
+        "assertionType": "EQUAL",
+        "expectedValue": "",
+        "actualValue": "Confirmation.Yes"
+      }, {
+        "type": "UTTERANCE",
+        "description": "Agent response mismatch",
+        "warning": true,
+        "assertionType": "EQUAL",
+        "expectedValue": "",
+        "actualValue": "\u003cspeak\u003eI'm sorry to hear that you're having problems starting the delivery. First, check to make sure you're connected to the internet. Then, try restarting your device, and log out, and log back in. If that still doesn't work, try installing the latest version of the app. If you still can't start the delivery on your app, I recommend calling the customer, to get delivery instructions directly from them. Once you've delivered the order, call us back, and ask for an agent. They will make sure that you receive payment for your order.\u003c/speak\u003e\u003cspeak\u003eTo listen to this message again, just say, repeat it. \u003cbreak time=\"700ms\"/\u003e Is there anything else I can help you with today?\u003c/speak\u003e"
+      } ],
+      "triggeredIntent": {
+        "name": "Confirmation.Yes"
+      },
+      "currentPage": {
+        "name": "UberApp_CantDeliver_Response",
+        "flow": "Island Flow"
+      },
+      "textResponses": [ {
+        "text": [ "\u003cspeak\u003eI'm sorry to hear that you're having problems starting the delivery. First, check to make sure you're connected to the internet. Then, try restarting your device, and log out, and log back in. If that still doesn't work, try installing the latest version of the app. If you still can't start the delivery on your app, I recommend calling the customer, to get delivery instructions directly from them. Once you've delivered the order, call us back, and ask for an agent. They will make sure that you receive payment for your order.\u003c/speak\u003e" ]
+      }, {
+        "text": [ "\u003cspeak\u003eTo listen to this message again, just say, repeat it. \u003cbreak time=\"700ms\"/\u003e Is there anything else I can help you with today?\u003c/speak\u003e" ]
+      } ],
+      "currentFlow": {
+        "name": "Island Flow"
+      },
+      "actions": [ {
+        "userUtterance": {
+          "text": "yes"
+        }
+      }, {
+        "agentUtterance": {
+          "text": "\u003cspeak\u003eI'm sorry to hear that you're having problems starting the delivery. First, check to make sure you're connected to the internet. Then, try restarting your device, and log out, and log back in. If that still doesn't work, try installing the latest version of the app. If you still can't start the delivery on your app, I recommend calling the customer, to get delivery instructions directly from them. Once you've delivered the order, call us back, and ask for an agent. They will make sure that you receive payment for your order.\u003c/speak\u003e\n\u003cspeak\u003eTo listen to this message again, just say, repeat it. \u003cbreak time=\"700ms\"/\u003e Is there anything else I can help you with today?\u003c/speak\u003e"
+        }
+      } ]
+    }
+  }, {
+    "userInput": {
+      "isWebhookEnabled": true,
+      "input": {
+        "text": {
+          "text": "repeat"
+        },
+        "languageCode": "en"
+      }
+    },
+    "virtualAgentOutput": {
+      "sessionParameters": {
+        "dfLastCallerIntent": "UberApp_CantDeliver",
+        "intentName": "UberApp_CantDeliver",
+        "isRepeat": "yes",
+        "pcAddressChanged": "false",
+        "pcContainsAlcohol": "false",
+        "pcCourierPrestartOneTracking": "false",
+        "pcCourierPrestartTwoTracking": "false",
+        "pcDeliveryStatus": "arrived_resto_1",
+        "pcInteractionType": "default",
+        "pcIsVirtualRestaurant": "false",
+        "pcMiscPaymentAbuseBlock": "false",
+        "pcStoreAddress": "default",
+        "pcStorePhoneNumber": "default"
+      },
+      "differences": [ {
+        "type": "PAGE",
+        "description": "Page mismatch:\nExpected: \nActual:   UberApp_CantDeliver_Response",
+        "assertionType": "EQUAL",
+        "expectedValue": "",
+        "actualValue": "UberApp_CantDeliver_Response"
+      }, {
+        "type": "INTENT",
+        "description": "Intent mismatch:\nExpected: \nActual:   Intent.Repeat",
+        "assertionType": "EQUAL",
+        "expectedValue": "",
+        "actualValue": "Intent.Repeat"
+      }, {
+        "type": "UTTERANCE",
+        "description": "Agent response mismatch",
+        "warning": true,
+        "assertionType": "EQUAL",
+        "expectedValue": "",
+        "actualValue": "\u003cspeak\u003eI'm sorry to hear that you're having problems starting the delivery. First, check to make sure you're connected to the internet. Then, try restarting your device, and log out, and log back in. If that still doesn't work, try installing the latest version of the app. If you still can't start the delivery on your app, I recommend calling the customer, to get delivery instructions directly from them. Once you've delivered the order, call us back, and ask for an agent. They will make sure that you receive payment for your order.\u003c/speak\u003e\u003cspeak\u003eIs there anything else I can help you with today? Or, if you're done, you can hang up.\u003c/speak\u003e"
+      } ],
+      "triggeredIntent": {
+        "name": "Intent.Repeat"
+      },
+      "currentPage": {
+        "name": "UberApp_CantDeliver_Response",
+        "flow": "Island Flow"
+      },
+      "textResponses": [ {
+        "text": [ "\u003cspeak\u003eI'm sorry to hear that you're having problems starting the delivery. First, check to make sure you're connected to the internet. Then, try restarting your device, and log out, and log back in. If that still doesn't work, try installing the latest version of the app. If you still can't start the delivery on your app, I recommend calling the customer, to get delivery instructions directly from them. Once you've delivered the order, call us back, and ask for an agent. They will make sure that you receive payment for your order.\u003c/speak\u003e" ]
+      }, {
+        "text": [ "\u003cspeak\u003eIs there anything else I can help you with today? Or, if you're done, you can hang up.\u003c/speak\u003e" ]
+      } ],
+      "currentFlow": {
+        "name": "Island Flow"
+      },
+      "actions": [ {
+        "userUtterance": {
+          "text": "repeat"
+        }
+      }, {
+        "agentUtterance": {
+          "text": "\u003cspeak\u003eI'm sorry to hear that you're having problems starting the delivery. First, check to make sure you're connected to the internet. Then, try restarting your device, and log out, and log back in. If that still doesn't work, try installing the latest version of the app. If you still can't start the delivery on your app, I recommend calling the customer, to get delivery instructions directly from them. Once you've delivered the order, call us back, and ask for an agent. They will make sure that you receive payment for your order.\u003c/speak\u003e\n\u003cspeak\u003eIs there anything else I can help you with today? Or, if you're done, you can hang up.\u003c/speak\u003e"
+        }
+      } ]
+    }
+  }, {
+    "userInput": {
+      "isWebhookEnabled": true,
+      "input": {
+        "text": {
+          "text": "testing testing"
+        },
+        "languageCode": "en"
+      }
+    },
+    "virtualAgentOutput": {
+      "sessionParameters": {
+        "dfLastCallerIntent": "UberApp_CantDeliver",
+        "intentName": "UberApp_CantDeliver",
+        "isRepeat": "yes",
+        "pcAddressChanged": "false",
+        "pcContainsAlcohol": "false",
+        "pcCourierPrestartOneTracking": "false",
+        "pcCourierPrestartTwoTracking": "false",
+        "pcDeliveryStatus": "arrived_resto_1",
+        "pcInteractionType": "default",
+        "pcIsVirtualRestaurant": "false",
+        "pcMiscPaymentAbuseBlock": "false",
+        "pcStoreAddress": "default",
+        "pcStorePhoneNumber": "default"
+      },
+      "differences": [ {
+        "type": "PAGE",
+        "description": "Page mismatch:\nExpected: \nActual:   UberApp_CantDeliver_Response",
+        "assertionType": "EQUAL",
+        "expectedValue": "",
+        "actualValue": "UberApp_CantDeliver_Response"
+      }, {
+        "type": "UTTERANCE",
+        "description": "Agent response mismatch",
+        "warning": true,
+        "assertionType": "EQUAL",
+        "expectedValue": "",
+        "actualValue": "\u003cspeak\u003eSorry. To hear the message again, just say, repeat it. Is there anything else I can help you with today? \u003c/speak\u003e"
+      } ],
+      "currentPage": {
+        "name": "UberApp_CantDeliver_Response",
+        "flow": "Island Flow"
+      },
+      "textResponses": [ {
+        "text": [ "\u003cspeak\u003eSorry. To hear the message again, just say, repeat it. Is there anything else I can help you with today? \u003c/speak\u003e" ]
+      } ],
+      "currentFlow": {
+        "name": "Island Flow"
+      },
+      "actions": [ {
+        "userUtterance": {
+          "text": "testing testing"
+        }
+      }, {
+        "agentUtterance": {
+          "text": "\u003cspeak\u003eSorry. To hear the message again, just say, repeat it. Is there anything else I can help you with today? \u003c/speak\u003e"
+        }
+      } ]
+    }
+  }, {
+    "userInput": {
+      "isWebhookEnabled": true,
+      "input": {
+        "text": {
+          "text": "repeat"
+        },
+        "languageCode": "en"
+      }
+    },
+    "virtualAgentOutput": {
+      "sessionParameters": {
+        "dfLastCallerIntent": "UberApp_CantDeliver",
+        "intentName": "UberApp_CantDeliver",
+        "isRepeat": "yes",
+        "pcAddressChanged": "false",
+        "pcContainsAlcohol": "false",
+        "pcCourierPrestartOneTracking": "false",
+        "pcCourierPrestartTwoTracking": "false",
+        "pcDeliveryStatus": "arrived_resto_1",
+        "pcInteractionType": "default",
+        "pcIsVirtualRestaurant": "false",
+        "pcMiscPaymentAbuseBlock": "false",
+        "pcStoreAddress": "default",
+        "pcStorePhoneNumber": "default"
+      },
+      "differences": [ {
+        "type": "PAGE",
+        "description": "Page mismatch:\nExpected: \nActual:   UberApp_CantDeliver_Response",
+        "assertionType": "EQUAL",
+        "expectedValue": "",
+        "actualValue": "UberApp_CantDeliver_Response"
+      }, {
+        "type": "INTENT",
+        "description": "Intent mismatch:\nExpected: \nActual:   Intent.Repeat",
+        "assertionType": "EQUAL",
+        "expectedValue": "",
+        "actualValue": "Intent.Repeat"
+      }, {
+        "type": "UTTERANCE",
+        "description": "Agent response mismatch",
+        "warning": true,
+        "assertionType": "EQUAL",
+        "expectedValue": "",
+        "actualValue": "\u003cspeak\u003eI'm sorry to hear that you're having problems starting the delivery. First, check to make sure you're connected to the internet. Then, try restarting your device, and log out, and log back in. If that still doesn't work, try installing the latest version of the app. If you still can't start the delivery on your app, I recommend calling the customer, to get delivery instructions directly from them. Once you've delivered the order, call us back, and ask for an agent. They will make sure that you receive payment for your order.\u003c/speak\u003e\u003cspeak\u003eIs there anything else I can help you with today? Or, if you're done, you can hang up.\u003c/speak\u003e"
+      } ],
+      "triggeredIntent": {
+        "name": "Intent.Repeat"
+      },
+      "currentPage": {
+        "name": "UberApp_CantDeliver_Response",
+        "flow": "Island Flow"
+      },
+      "textResponses": [ {
+        "text": [ "\u003cspeak\u003eI'm sorry to hear that you're having problems starting the delivery. First, check to make sure you're connected to the internet. Then, try restarting your device, and log out, and log back in. If that still doesn't work, try installing the latest version of the app. If you still can't start the delivery on your app, I recommend calling the customer, to get delivery instructions directly from them. Once you've delivered the order, call us back, and ask for an agent. They will make sure that you receive payment for your order.\u003c/speak\u003e" ]
+      }, {
+        "text": [ "\u003cspeak\u003eIs there anything else I can help you with today? Or, if you're done, you can hang up.\u003c/speak\u003e" ]
+      } ],
+      "currentFlow": {
+        "name": "Island Flow"
+      },
+      "actions": [ {
+        "userUtterance": {
+          "text": "repeat"
+        }
+      }, {
+        "agentUtterance": {
+          "text": "\u003cspeak\u003eI'm sorry to hear that you're having problems starting the delivery. First, check to make sure you're connected to the internet. Then, try restarting your device, and log out, and log back in. If that still doesn't work, try installing the latest version of the app. If you still can't start the delivery on your app, I recommend calling the customer, to get delivery instructions directly from them. Once you've delivered the order, call us back, and ask for an agent. They will make sure that you receive payment for your order.\u003c/speak\u003e\n\u003cspeak\u003eIs there anything else I can help you with today? Or, if you're done, you can hang up.\u003c/speak\u003e"
+        }
+      } ]
+    }
+  }, {
+    "userInput": {
+      "isWebhookEnabled": true,
+      "input": {
+        "text": {
+        
+        },
+        "languageCode": "en"
+      }
+    },
+    "virtualAgentOutput": {
+      "sessionParameters": {
+        "dfLastCallerIntent": "UberApp_CantDeliver",
+        "intentName": "UberApp_CantDeliver",
+        "isRepeat": "yes",
+        "pcAddressChanged": "false",
+        "pcContainsAlcohol": "false",
+        "pcCourierPrestartOneTracking": "false",
+        "pcCourierPrestartTwoTracking": "false",
+        "pcDeliveryStatus": "arrived_resto_1",
+        "pcInteractionType": "default",
+        "pcIsVirtualRestaurant": "false",
+        "pcMiscPaymentAbuseBlock": "false",
+        "pcStoreAddress": "default",
+        "pcStorePhoneNumber": "default"
+      },
+      "differences": [ {
+        "type": "PAGE",
+        "description": "Page mismatch:\nExpected: \nActual:   UberApp_CantDeliver_Response",
+        "assertionType": "EQUAL",
+        "expectedValue": "",
+        "actualValue": "UberApp_CantDeliver_Response"
+      }, {
+        "type": "UTTERANCE",
+        "description": "Agent response mismatch",
+        "warning": true,
+        "assertionType": "EQUAL",
+        "expectedValue": "",
+        "actualValue": "\u003cspeak\u003eTo hear the message again, just say, repeat it. Is there anything else I can help you with today? \u003c/speak\u003e"
+      } ],
+      "currentPage": {
+        "name": "UberApp_CantDeliver_Response",
+        "flow": "Island Flow"
+      },
+      "textResponses": [ {
+        "text": [ "\u003cspeak\u003eTo hear the message again, just say, repeat it. Is there anything else I can help you with today? \u003c/speak\u003e" ]
+      } ],
+      "currentFlow": {
+        "name": "Island Flow"
+      },
+      "actions": [ {
+        "agentUtterance": {
+          "text": "\u003cspeak\u003eTo hear the message again, just say, repeat it. Is there anything else I can help you with today? \u003c/speak\u003e"
+        }
+      } ]
+    }
+  }, {
+    "userInput": {
+      "isWebhookEnabled": true,
+      "input": {
+        "text": {
+          "text": "repeat"
+        },
+        "languageCode": "en"
+      }
+    },
+    "virtualAgentOutput": {
+      "sessionParameters": {
+        "dfLastCallerIntent": "UberApp_CantDeliver",
+        "intentName": "UberApp_CantDeliver",
+        "isRepeat": "yes",
+        "pcAddressChanged": "false",
+        "pcContainsAlcohol": "false",
+        "pcCourierPrestartOneTracking": "false",
+        "pcCourierPrestartTwoTracking": "false",
+        "pcDeliveryStatus": "arrived_resto_1",
+        "pcInteractionType": "default",
+        "pcIsVirtualRestaurant": "false",
+        "pcMiscPaymentAbuseBlock": "false",
+        "pcStoreAddress": "default",
+        "pcStorePhoneNumber": "default"
+      },
+      "differences": [ {
+        "type": "PAGE",
+        "description": "Page mismatch:\nExpected: \nActual:   UberApp_CantDeliver_Response",
+        "assertionType": "EQUAL",
+        "expectedValue": "",
+        "actualValue": "UberApp_CantDeliver_Response"
+      }, {
+        "type": "INTENT",
+        "description": "Intent mismatch:\nExpected: \nActual:   Intent.Repeat",
+        "assertionType": "EQUAL",
+        "expectedValue": "",
+        "actualValue": "Intent.Repeat"
+      }, {
+        "type": "UTTERANCE",
+        "description": "Agent response mismatch",
+        "warning": true,
+        "assertionType": "EQUAL",
+        "expectedValue": "",
+        "actualValue": "\u003cspeak\u003eI'm sorry to hear that you're having problems starting the delivery. First, check to make sure you're connected to the internet. Then, try restarting your device, and log out, and log back in. If that still doesn't work, try installing the latest version of the app. If you still can't start the delivery on your app, I recommend calling the customer, to get delivery instructions directly from them. Once you've delivered the order, call us back, and ask for an agent. They will make sure that you receive payment for your order.\u003c/speak\u003e\u003cspeak\u003eIs there anything else I can help you with today? Or, if you're done, you can hang up.\u003c/speak\u003e"
+      } ],
+      "triggeredIntent": {
+        "name": "Intent.Repeat"
+      },
+      "currentPage": {
+        "name": "UberApp_CantDeliver_Response",
+        "flow": "Island Flow"
+      },
+      "textResponses": [ {
+        "text": [ "\u003cspeak\u003eI'm sorry to hear that you're having problems starting the delivery. First, check to make sure you're connected to the internet. Then, try restarting your device, and log out, and log back in. If that still doesn't work, try installing the latest version of the app. If you still can't start the delivery on your app, I recommend calling the customer, to get delivery instructions directly from them. Once you've delivered the order, call us back, and ask for an agent. They will make sure that you receive payment for your order.\u003c/speak\u003e" ]
+      }, {
+        "text": [ "\u003cspeak\u003eIs there anything else I can help you with today? Or, if you're done, you can hang up.\u003c/speak\u003e" ]
+      } ],
+      "currentFlow": {
+        "name": "Island Flow"
+      },
+      "actions": [ {
+        "userUtterance": {
+          "text": "repeat"
+        }
+      }, {
+        "agentUtterance": {
+          "text": "\u003cspeak\u003eI'm sorry to hear that you're having problems starting the delivery. First, check to make sure you're connected to the internet. Then, try restarting your device, and log out, and log back in. If that still doesn't work, try installing the latest version of the app. If you still can't start the delivery on your app, I recommend calling the customer, to get delivery instructions directly from them. Once you've delivered the order, call us back, and ask for an agent. They will make sure that you receive payment for your order.\u003c/speak\u003e\n\u003cspeak\u003eIs there anything else I can help you with today? Or, if you're done, you can hang up.\u003c/speak\u003e"
+        }
+      } ]
+    }
+  }, {
+    "userInput": {
+      "isWebhookEnabled": true,
+      "input": {
+        "text": {
+          "text": "testing testing"
+        },
+        "languageCode": "en"
+      }
+    },
+    "virtualAgentOutput": {
+      "sessionParameters": {
+        "dfLastCallerIntent": "UberApp_CantDeliver",
+        "intentName": "UberApp_CantDeliver",
+        "isRepeat": "yes",
+        "pcAddressChanged": "false",
+        "pcContainsAlcohol": "false",
+        "pcCourierPrestartOneTracking": "false",
+        "pcCourierPrestartTwoTracking": "false",
+        "pcDeliveryStatus": "arrived_resto_1",
+        "pcInteractionType": "default",
+        "pcIsVirtualRestaurant": "false",
+        "pcMiscPaymentAbuseBlock": "false",
+        "pcStoreAddress": "default",
+        "pcStorePhoneNumber": "default"
+      },
+      "differences": [ {
+        "type": "PAGE",
+        "description": "Page mismatch:\nExpected: \nActual:   UberApp_CantDeliver_Response",
+        "assertionType": "EQUAL",
+        "expectedValue": "",
+        "actualValue": "UberApp_CantDeliver_Response"
+      }, {
+        "type": "UTTERANCE",
+        "description": "Agent response mismatch",
+        "warning": true,
+        "assertionType": "EQUAL",
+        "expectedValue": "",
+        "actualValue": "\u003cspeak\u003eSorry. To hear the message again, just say, repeat it. Is there anything else I can help you with today? \u003c/speak\u003e"
+      } ],
+      "currentPage": {
+        "name": "UberApp_CantDeliver_Response",
+        "flow": "Island Flow"
+      },
+      "textResponses": [ {
+        "text": [ "\u003cspeak\u003eSorry. To hear the message again, just say, repeat it. Is there anything else I can help you with today? \u003c/speak\u003e" ]
+      } ],
+      "currentFlow": {
+        "name": "Island Flow"
+      },
+      "actions": [ {
+        "userUtterance": {
+          "text": "testing testing"
+        }
+      }, {
+        "agentUtterance": {
+          "text": "\u003cspeak\u003eSorry. To hear the message again, just say, repeat it. Is there anything else I can help you with today? \u003c/speak\u003e"
+        }
+      } ]
+    }
+  }, {
+    "userInput": {
+      "isWebhookEnabled": true,
+      "input": {
+        "text": {
+          "text": "testing testing"
+        },
+        "languageCode": "en"
+      }
+    },
+    "virtualAgentOutput": {
+      "sessionParameters": {
+        "dfLastCallerIntent": "UberApp_CantDeliver",
+        "intentName": "UberApp_CantDeliver",
+        "isRepeat": "yes",
+        "pcAddressChanged": "false",
+        "pcContainsAlcohol": "false",
+        "pcCourierPrestartOneTracking": "false",
+        "pcCourierPrestartTwoTracking": "false",
+        "pcDeliveryStatus": "arrived_resto_1",
+        "pcInteractionType": "default",
+        "pcIsVirtualRestaurant": "false",
+        "pcMiscPaymentAbuseBlock": "false",
+        "pcStoreAddress": "default",
+        "pcStorePhoneNumber": "default"
+      },
+      "differences": [ {
+        "type": "PAGE",
+        "description": "Page mismatch:\nExpected: \nActual:   UberApp_CantDeliver_Response",
+        "assertionType": "EQUAL",
+        "expectedValue": "",
+        "actualValue": "UberApp_CantDeliver_Response"
+      }, {
+        "type": "UTTERANCE",
+        "description": "Agent response mismatch",
+        "warning": true,
+        "assertionType": "EQUAL",
+        "expectedValue": "",
+        "actualValue": "\u003cspeak\u003e I didn't get that. To listen to the message again, you can say, repeat it. What else can I help you with today? If you are done, feel free to hang up.\u003c/speak\u003e"
+      } ],
+      "currentPage": {
+        "name": "UberApp_CantDeliver_Response",
+        "flow": "Island Flow"
+      },
+      "textResponses": [ {
+        "text": [ "\u003cspeak\u003e I didn't get that. To listen to the message again, you can say, repeat it. What else can I help you with today? If you are done, feel free to hang up.\u003c/speak\u003e" ]
+      } ],
+      "currentFlow": {
+        "name": "Island Flow"
+      },
+      "actions": [ {
+        "userUtterance": {
+          "text": "testing testing"
+        }
+      }, {
+        "agentUtterance": {
+          "text": "\u003cspeak\u003e I didn't get that. To listen to the message again, you can say, repeat it. What else can I help you with today? If you are done, feel free to hang up.\u003c/speak\u003e"
+        }
+      } ]
+    }
+  }, {
+    "userInput": {
+      "isWebhookEnabled": true,
+      "input": {
+        "text": {
+          "text": "testing testing"
+        },
+        "languageCode": "en"
+      }
+    },
+    "virtualAgentOutput": {
+      "sessionParameters": {
+        "dfLastCallerIntent": "UberApp_CantDeliver",
+        "isRepeat": "yes",
+        "pcAddressChanged": "false",
+        "pcContainsAlcohol": "false",
+        "pcCourierPrestartOneTracking": "false",
+        "pcCourierPrestartTwoTracking": "false",
+        "pcDeliveryStatus": "arrived_resto_1",
+        "pcInteractionType": "default",
+        "pcIsVirtualRestaurant": "false",
+        "pcMiscPaymentAbuseBlock": "false",
+        "pcStoreAddress": "default",
+        "pcStorePhoneNumber": "default",
+        "zIntent": "ZAgent"
+      },
+      "differences": [ {
+        "type": "PAGE",
+        "description": "Page mismatch:\nExpected: \nActual:   End Session",
+        "assertionType": "EQUAL",
+        "expectedValue": "",
+        "actualValue": "End Session"
+      }, {
+        "type": "UTTERANCE",
+        "description": "Agent response mismatch",
+        "warning": true,
+        "assertionType": "EQUAL",
+        "expectedValue": "",
+        "actualValue": "\u003cspeak\u003e\u003cbreak time=\"10ms\"/\u003e\u003c/speak\u003e\u003cspeak\u003e\u003cbreak time=\"10ms\"/\u003e\u003c/speak\u003e"
+      } ],
+      "currentPage": {
+        "name": "End Session",
+        "flow": "ZExit"
+      },
+      "textResponses": [ {
+        "text": [ "\u003cspeak\u003e\u003cbreak time=\"10ms\"/\u003e\u003c/speak\u003e" ]
+      }, {
+        "text": [ "\u003cspeak\u003e\u003cbreak time=\"10ms\"/\u003e\u003c/speak\u003e" ]
+      } ],
+      "currentFlow": {
+        "name": "ZExit"
+      },
+      "actions": [ {
+        "userUtterance": {
+          "text": "testing testing"
+        }
+      }, {
+        "agentUtterance": {
+          "text": "\u003cspeak\u003e\u003cbreak time=\"10ms\"/\u003e\u003c/speak\u003e\n\u003cspeak\u003e\u003cbreak time=\"10ms\"/\u003e\u003c/speak\u003e"
+        }
+      } ]
+    }
+  } ],
+  "creationTime": {
+    "seconds": 1704435486,
+    "nanos": 3708000
+  },
+  "testConfig": {
+    "flow": "Default Start Flow",
+    "page": "Start Page"
+  },
+  "languageCode": "en"
+}

@@ -1,0 +1,27 @@
+{
+  "name": "adec7ea9-d9d5-40f5-aadb-958867fe8def",
+  "displayName": "Other_Spanish_Response",
+  "form": {
+  
+  },
+  "entryFulfillment": {
+  
+  },
+  "transitionRoutes": [ {
+    "condition": "true",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "\u003cspeak\u003e\u003cbreak time=\"10ms\"/\u003e\u003c/speak\u003e" ]
+        },
+        "languageCode": "en"
+      } ],
+      "setParameterActions": [ {
+        "parameter": "zIntent",
+        "value": "ZPCIVR"
+      } ]
+    },
+    "targetFlow": "ZExit",
+    "name": "baf98b3a-846d-4069-a21e-5a75e6864a72"
+  } ]
+}

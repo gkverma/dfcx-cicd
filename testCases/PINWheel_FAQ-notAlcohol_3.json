@@ -1,0 +1,280 @@
+{
+  "name": "f30278a5-5c62-4b0f-bff3-0871f90a9c73",
+  "tags": [ "#Live_Order_Bot", "#FAQ_Flow", "#PINWheel_FAQ-notAlcohol", "#Happy_Path" ],
+  "displayName": "PINWheel_FAQ-notAlcohol_3",
+  "testCaseConversationTurns": [ {
+    "userInput": {
+      "injectedParameters": {
+        "pcContainsAlcohol": false,
+        "pcDeliveryStatus": "arrived_dropoff_2"
+      },
+      "isWebhookEnabled": true,
+      "input": {
+        "languageCode": "en",
+        "event": {
+          "event": "WELCOME"
+        }
+      }
+    },
+    "virtualAgentOutput": {
+      "sessionParameters": {
+        "pcAddressChanged": "false",
+        "pcContainsAlcohol": "false",
+        "pcCourierPrestartOneTracking": "false",
+        "pcCourierPrestartTwoTracking": "false",
+        "pcDeliveryStatus": "arrived_dropoff_2",
+        "pcInteractionType": "default",
+        "pcIsVirtualRestaurant": "false",
+        "pcMiscPaymentAbuseBlock": "false",
+        "pcStoreAddress": "default",
+        "pcStorePhoneNumber": "default"
+      },
+      "differences": [ {
+        "type": "PAGE",
+        "description": "Page mismatch:\nExpected: \nActual:   Main_Menu_Page",
+        "assertionType": "EQUAL",
+        "expectedValue": "",
+        "actualValue": "Main_Menu_Page"
+      }, {
+        "type": "UTTERANCE",
+        "description": "Agent response mismatch",
+        "warning": true,
+        "assertionType": "EQUAL",
+        "expectedValue": "",
+        "actualValue": "\u003cspeak\u003eIn a few words, how can I help you with your current order. You can say things like, the order was already picked up by someone else, ore, problem with customers address.\u003c/speak\u003e"
+      } ],
+      "currentPage": {
+        "name": "Main_Menu_Page",
+        "flow": "Default Start Flow"
+      },
+      "textResponses": [ {
+        "text": [ "\u003cspeak\u003eIn a few words, how can I help you with your current order. You can say things like, the order was already picked up by someone else, ore, problem with customers address.\u003c/speak\u003e" ]
+      } ],
+      "currentFlow": {
+        "name": "Default Start Flow"
+      },
+      "actions": [ {
+        "agentUtterance": {
+          "text": "\u003cspeak\u003eIn a few words, how can I help you with your current order. You can say things like, the order was already picked up by someone else, ore, problem with customers address.\u003c/speak\u003e"
+        }
+      } ]
+    }
+  }, {
+    "userInput": {
+      "isWebhookEnabled": true,
+      "input": {
+        "text": {
+          "text": "I waited a long time "
+        },
+        "languageCode": "en"
+      }
+    },
+    "virtualAgentOutput": {
+      "sessionParameters": {
+        "intentName": "LongWait_Vague",
+        "isRepeat": "no",
+        "pcAddressChanged": "false",
+        "pcContainsAlcohol": "false",
+        "pcCourierPrestartOneTracking": "false",
+        "pcCourierPrestartTwoTracking": "false",
+        "pcDeliveryStatus": "arrived_dropoff_2",
+        "pcInteractionType": "default",
+        "pcIsVirtualRestaurant": "false",
+        "pcMiscPaymentAbuseBlock": "false",
+        "pcStoreAddress": "default",
+        "pcStorePhoneNumber": "default"
+      },
+      "differences": [ {
+        "type": "PAGE",
+        "description": "Page mismatch:\nExpected: \nActual:   LongWait_Vague_Confirmation",
+        "assertionType": "EQUAL",
+        "expectedValue": "",
+        "actualValue": "LongWait_Vague_Confirmation"
+      }, {
+        "type": "INTENT",
+        "description": "Intent mismatch:\nExpected: \nActual:   LongWait_Vague",
+        "assertionType": "EQUAL",
+        "expectedValue": "",
+        "actualValue": "LongWait_Vague"
+      }, {
+        "type": "UTTERANCE",
+        "description": "Agent response mismatch",
+        "warning": true,
+        "assertionType": "EQUAL",
+        "expectedValue": "",
+        "actualValue": "\u003cspeak\u003eI think you're calling about a long wait time, is that correct?\u003c/speak\u003e"
+      } ],
+      "triggeredIntent": {
+        "name": "LongWait_Vague"
+      },
+      "currentPage": {
+        "name": "LongWait_Vague_Confirmation",
+        "flow": "Orange Flow"
+      },
+      "textResponses": [ {
+        "text": [ "\u003cspeak\u003eI think you're calling about a long wait time, is that correct?\u003c/speak\u003e" ]
+      } ],
+      "currentFlow": {
+        "name": "Orange Flow"
+      },
+      "actions": [ {
+        "userUtterance": {
+          "text": "I waited a long time"
+        }
+      }, {
+        "agentUtterance": {
+          "text": "\u003cspeak\u003eI think you're calling about a long wait time, is that correct?\u003c/speak\u003e"
+        }
+      } ]
+    }
+  }, {
+    "userInput": {
+      "isWebhookEnabled": true,
+      "input": {
+        "text": {
+          "text": "yes"
+        },
+        "languageCode": "en"
+      }
+    },
+    "virtualAgentOutput": {
+      "sessionParameters": {
+        "dfLastCallerIntent": "LongWait_Vague",
+        "intentName": "PINWheel_FAQ-notAlcohol",
+        "isRepeat": "no",
+        "pcAddressChanged": "false",
+        "pcContainsAlcohol": "false",
+        "pcCourierPrestartOneTracking": "false",
+        "pcCourierPrestartTwoTracking": "false",
+        "pcDeliveryStatus": "arrived_dropoff_2",
+        "pcInteractionType": "default",
+        "pcIsVirtualRestaurant": "false",
+        "pcMiscPaymentAbuseBlock": "false",
+        "pcStoreAddress": "default",
+        "pcStorePhoneNumber": "default"
+      },
+      "differences": [ {
+        "type": "PAGE",
+        "description": "Page mismatch:\nExpected: \nActual:   PINWheel_FAQ-notAlcohol_Response",
+        "assertionType": "EQUAL",
+        "expectedValue": "",
+        "actualValue": "PINWheel_FAQ-notAlcohol_Response"
+      }, {
+        "type": "INTENT",
+        "description": "Intent mismatch:\nExpected: \nActual:   Confirmation.Yes",
+        "assertionType": "EQUAL",
+        "expectedValue": "",
+        "actualValue": "Confirmation.Yes"
+      }, {
+        "type": "UTTERANCE",
+        "description": "Agent response mismatch",
+        "warning": true,
+        "assertionType": "EQUAL",
+        "expectedValue": "",
+        "actualValue": "\u003cspeak\u003eI'm sorry to hear that you're having trouble reaching the customer. Since you are already at the drop off location, you can start the timer by calling, or texting the customer. When the timer expires, you can leave the order at the door. Don't worry -- you'll still be paid for the delivery.\u003cbreak time=\"750ms\"/\u003e\u003c/speak\u003e\u003cspeak\u003eTo listen to this message again, just say, repeat it. \u003cbreak time=\"700ms\"/\u003e Is there anything else I can help you with today?\u003c/speak\u003e"
+      } ],
+      "triggeredIntent": {
+        "name": "Confirmation.Yes"
+      },
+      "currentPage": {
+        "name": "PINWheel_FAQ-notAlcohol_Response",
+        "flow": "FAQ Flow"
+      },
+      "textResponses": [ {
+        "text": [ "\u003cspeak\u003eI'm sorry to hear that you're having trouble reaching the customer. Since you are already at the drop off location, you can start the timer by calling, or texting the customer. When the timer expires, you can leave the order at the door. Don't worry -- you'll still be paid for the delivery.\u003cbreak time=\"750ms\"/\u003e\u003c/speak\u003e" ]
+      }, {
+        "text": [ "\u003cspeak\u003eTo listen to this message again, just say, repeat it. \u003cbreak time=\"700ms\"/\u003e Is there anything else I can help you with today?\u003c/speak\u003e" ]
+      } ],
+      "currentFlow": {
+        "name": "FAQ Flow"
+      },
+      "actions": [ {
+        "userUtterance": {
+          "text": "yes"
+        }
+      }, {
+        "agentUtterance": {
+          "text": "\u003cspeak\u003eI'm sorry to hear that you're having trouble reaching the customer. Since you are already at the drop off location, you can start the timer by calling, or texting the customer. When the timer expires, you can leave the order at the door. Don't worry -- you'll still be paid for the delivery.\u003cbreak time=\"750ms\"/\u003e\u003c/speak\u003e\n\u003cspeak\u003eTo listen to this message again, just say, repeat it. \u003cbreak time=\"700ms\"/\u003e Is there anything else I can help you with today?\u003c/speak\u003e"
+        }
+      } ]
+    }
+  }, {
+    "userInput": {
+      "isWebhookEnabled": true,
+      "input": {
+        "text": {
+          "text": "drop off"
+        },
+        "languageCode": "en"
+      }
+    },
+    "virtualAgentOutput": {
+      "sessionParameters": {
+        "dfLastCallerIntent": "LongWait_Vague",
+        "intentName": "Dropoff_Vague",
+        "isRepeat": "no",
+        "pcAddressChanged": "false",
+        "pcContainsAlcohol": "false",
+        "pcCourierPrestartOneTracking": "false",
+        "pcCourierPrestartTwoTracking": "false",
+        "pcDeliveryStatus": "arrived_dropoff_2",
+        "pcInteractionType": "default",
+        "pcIsVirtualRestaurant": "false",
+        "pcMiscPaymentAbuseBlock": "false",
+        "pcStoreAddress": "default",
+        "pcStorePhoneNumber": "default"
+      },
+      "differences": [ {
+        "type": "PAGE",
+        "description": "Page mismatch:\nExpected: \nActual:   Dropoff_Vague_Confirmation",
+        "assertionType": "EQUAL",
+        "expectedValue": "",
+        "actualValue": "Dropoff_Vague_Confirmation"
+      }, {
+        "type": "INTENT",
+        "description": "Intent mismatch:\nExpected: \nActual:   Dropoff_Vague",
+        "assertionType": "EQUAL",
+        "expectedValue": "",
+        "actualValue": "Dropoff_Vague"
+      }, {
+        "type": "UTTERANCE",
+        "description": "Agent response mismatch",
+        "warning": true,
+        "assertionType": "EQUAL",
+        "expectedValue": "",
+        "actualValue": "\u003cspeak\u003eI think you're calling about drop off issues, is that correct?\u003c/speak\u003e"
+      } ],
+      "triggeredIntent": {
+        "name": "Dropoff_Vague"
+      },
+      "currentPage": {
+        "name": "Dropoff_Vague_Confirmation",
+        "flow": "Orange Flow"
+      },
+      "textResponses": [ {
+        "text": [ "\u003cspeak\u003eI think you're calling about drop off issues, is that correct?\u003c/speak\u003e" ]
+      } ],
+      "currentFlow": {
+        "name": "Orange Flow"
+      },
+      "actions": [ {
+        "userUtterance": {
+          "text": "drop off"
+        }
+      }, {
+        "agentUtterance": {
+          "text": "\u003cspeak\u003eI think you're calling about drop off issues, is that correct?\u003c/speak\u003e"
+        }
+      } ]
+    }
+  } ],
+  "creationTime": {
+    "seconds": 1704445757,
+    "nanos": 893453000
+  },
+  "testConfig": {
+    "flow": "Default Start Flow",
+    "page": "Start Page"
+  },
+  "languageCode": "en"
+}

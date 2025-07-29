@@ -1,0 +1,35 @@
+{
+  "name": "a151b689-56e0-46ed-b35a-cc34f5d64cb2",
+  "displayName": "Food_ItemMissing_Conditional_Routes",
+  "form": {
+  
+  },
+  "entryFulfillment": {
+    "setParameterActions": [ {
+      "parameter": "dfLastCallerIntent",
+      "value": "Food_ItemMissing"
+    } ]
+  },
+  "transitionRoutes": [ {
+    "condition": "$session.params.pcMiscPaymentAbuseBlock = \"true\"",
+    "triggerFulfillment": {
+    
+    },
+    "targetPage": "Food_ItemMissing-yes-fraud_Response",
+    "name": "4aa67f56-89f2-4c17-9351-ac1b08877413"
+  }, {
+    "condition": "$session.params.pcMiscPaymentAbuseBlock = \"false\" OR $session.params.pcMiscPaymentAbuseBlock = \"default\"",
+    "triggerFulfillment": {
+    
+    },
+    "targetPage": "Food_ItemMissing-yes-notFraud_Response",
+    "name": "02a4661b-cb05-440f-8bb5-59af24ce561f"
+  }, {
+    "condition": "true",
+    "triggerFulfillment": {
+    
+    },
+    "targetPage": "Food_ItemMissing-yes-notFraud_Response",
+    "name": "26195adb-007b-4e0d-9b3e-f961bc118425"
+  } ]
+}

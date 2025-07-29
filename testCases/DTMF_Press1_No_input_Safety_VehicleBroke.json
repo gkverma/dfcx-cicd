@@ -1,0 +1,305 @@
+{
+  "name": "1ae1111b-cffe-496a-b1ed-f761fe1b24b2",
+  "tags": [ "#Live_Order_Bot", "#FAQ", "#Safety_VehicleBroke", "#Happy_Path" ],
+  "displayName": "DTMF_Press1_No_input_Safety_VehicleBroke",
+  "testCaseConversationTurns": [ {
+    "userInput": {
+      "isWebhookEnabled": true,
+      "input": {
+        "languageCode": "en",
+        "event": {
+          "event": "WELCOME"
+        }
+      }
+    },
+    "virtualAgentOutput": {
+      "sessionParameters": {
+        "pcAddressChanged": "false",
+        "pcContainsAlcohol": "false",
+        "pcCourierPrestartOneTracking": "false",
+        "pcCourierPrestartTwoTracking": "false",
+        "pcDeliveryStatus": "default",
+        "pcInteractionType": "default",
+        "pcIsVirtualRestaurant": "false",
+        "pcMiscPaymentAbuseBlock": "false",
+        "pcStoreAddress": "default",
+        "pcStorePhoneNumber": "default"
+      },
+      "differences": [ {
+        "type": "PAGE",
+        "description": "Page mismatch:\nExpected: \nActual:   Main_Menu_Page",
+        "assertionType": "EQUAL",
+        "expectedValue": "",
+        "actualValue": "Main_Menu_Page"
+      }, {
+        "type": "UTTERANCE",
+        "description": "Agent response mismatch",
+        "warning": true,
+        "assertionType": "EQUAL",
+        "expectedValue": "",
+        "actualValue": "\u003cspeak\u003eIn a few words, how can I help you with your current order. You can say things like, the order was already picked up by someone else, ore, problem with customers address.\u003c/speak\u003e"
+      } ],
+      "currentPage": {
+        "name": "Main_Menu_Page",
+        "flow": "Default Start Flow"
+      },
+      "textResponses": [ {
+        "text": [ "\u003cspeak\u003eIn a few words, how can I help you with your current order. You can say things like, the order was already picked up by someone else, ore, problem with customers address.\u003c/speak\u003e" ]
+      } ],
+      "currentFlow": {
+        "name": "Default Start Flow"
+      },
+      "actions": [ {
+        "agentUtterance": {
+          "text": "\u003cspeak\u003eIn a few words, how can I help you with your current order. You can say things like, the order was already picked up by someone else, ore, problem with customers address.\u003c/speak\u003e"
+        }
+      } ]
+    }
+  }, {
+    "userInput": {
+      "isWebhookEnabled": true,
+      "input": {
+        "text": {
+          "text": "my car broke down"
+        },
+        "languageCode": "en"
+      }
+    },
+    "virtualAgentOutput": {
+      "sessionParameters": {
+        "intentName": "Safety_VehicleBroke",
+        "isRepeat": "no",
+        "pcAddressChanged": "false",
+        "pcContainsAlcohol": "false",
+        "pcCourierPrestartOneTracking": "false",
+        "pcCourierPrestartTwoTracking": "false",
+        "pcDeliveryStatus": "default",
+        "pcInteractionType": "default",
+        "pcIsVirtualRestaurant": "false",
+        "pcMiscPaymentAbuseBlock": "false",
+        "pcStoreAddress": "default",
+        "pcStorePhoneNumber": "default"
+      },
+      "differences": [ {
+        "type": "PAGE",
+        "description": "Page mismatch:\nExpected: \nActual:   Safety_VehicleBroke_Confirmation",
+        "assertionType": "EQUAL",
+        "expectedValue": "",
+        "actualValue": "Safety_VehicleBroke_Confirmation"
+      }, {
+        "type": "INTENT",
+        "description": "Intent mismatch:\nExpected: \nActual:   Safety_VehicleBroke",
+        "assertionType": "EQUAL",
+        "expectedValue": "",
+        "actualValue": "Safety_VehicleBroke"
+      }, {
+        "type": "UTTERANCE",
+        "description": "Agent response mismatch",
+        "warning": true,
+        "assertionType": "EQUAL",
+        "expectedValue": "",
+        "actualValue": "\u003cspeak\u003eI think you're calling because you are having issue with your vehicle. Is that correct?\u003c/speak\u003e"
+      } ],
+      "triggeredIntent": {
+        "name": "Safety_VehicleBroke"
+      },
+      "currentPage": {
+        "name": "Safety_VehicleBroke_Confirmation",
+        "flow": "FAQ Flow"
+      },
+      "textResponses": [ {
+        "text": [ "\u003cspeak\u003eI think you're calling because you are having issue with your vehicle. Is that correct?\u003c/speak\u003e" ]
+      } ],
+      "currentFlow": {
+        "name": "FAQ Flow"
+      },
+      "actions": [ {
+        "userUtterance": {
+          "text": "my car broke down"
+        }
+      }, {
+        "agentUtterance": {
+          "text": "\u003cspeak\u003eI think you're calling because you are having issue with your vehicle. Is that correct?\u003c/speak\u003e"
+        }
+      } ]
+    }
+  }, {
+    "userInput": {
+      "isWebhookEnabled": true,
+      "input": {
+        "text": {
+        
+        },
+        "languageCode": "en"
+      }
+    },
+    "virtualAgentOutput": {
+      "sessionParameters": {
+        "intentName": "Safety_VehicleBroke",
+        "isRepeat": "no",
+        "pcAddressChanged": "false",
+        "pcContainsAlcohol": "false",
+        "pcCourierPrestartOneTracking": "false",
+        "pcCourierPrestartTwoTracking": "false",
+        "pcDeliveryStatus": "default",
+        "pcInteractionType": "default",
+        "pcIsVirtualRestaurant": "false",
+        "pcMiscPaymentAbuseBlock": "false",
+        "pcStoreAddress": "default",
+        "pcStorePhoneNumber": "default"
+      },
+      "differences": [ {
+        "type": "PAGE",
+        "description": "Page mismatch:\nExpected: \nActual:   Safety_VehicleBroke_Confirmation",
+        "assertionType": "EQUAL",
+        "expectedValue": "",
+        "actualValue": "Safety_VehicleBroke_Confirmation"
+      }, {
+        "type": "UTTERANCE",
+        "description": "Agent response mismatch",
+        "warning": true,
+        "assertionType": "EQUAL",
+        "expectedValue": "",
+        "actualValue": "\u003cspeak\u003eIf you are having vehicle issue, say yes. Otherwise, say no.\u003c/speak\u003e"
+      } ],
+      "currentPage": {
+        "name": "Safety_VehicleBroke_Confirmation",
+        "flow": "FAQ Flow"
+      },
+      "textResponses": [ {
+        "text": [ "\u003cspeak\u003eIf you are having vehicle issue, say yes. Otherwise, say no.\u003c/speak\u003e" ]
+      } ],
+      "currentFlow": {
+        "name": "FAQ Flow"
+      },
+      "actions": [ {
+        "agentUtterance": {
+          "text": "\u003cspeak\u003eIf you are having vehicle issue, say yes. Otherwise, say no.\u003c/speak\u003e"
+        }
+      } ]
+    }
+  }, {
+    "userInput": {
+      "isWebhookEnabled": true,
+      "input": {
+        "text": {
+        
+        },
+        "languageCode": "en"
+      }
+    },
+    "virtualAgentOutput": {
+      "sessionParameters": {
+        "intentName": "Safety_VehicleBroke",
+        "isRepeat": "no",
+        "pcAddressChanged": "false",
+        "pcContainsAlcohol": "false",
+        "pcCourierPrestartOneTracking": "false",
+        "pcCourierPrestartTwoTracking": "false",
+        "pcDeliveryStatus": "default",
+        "pcInteractionType": "default",
+        "pcIsVirtualRestaurant": "false",
+        "pcMiscPaymentAbuseBlock": "false",
+        "pcStoreAddress": "default",
+        "pcStorePhoneNumber": "default"
+      },
+      "differences": [ {
+        "type": "PAGE",
+        "description": "Page mismatch:\nExpected: \nActual:   Safety_VehicleBroke_Confirmation",
+        "assertionType": "EQUAL",
+        "expectedValue": "",
+        "actualValue": "Safety_VehicleBroke_Confirmation"
+      }, {
+        "type": "UTTERANCE",
+        "description": "Agent response mismatch",
+        "warning": true,
+        "assertionType": "EQUAL",
+        "expectedValue": "",
+        "actualValue": "\u003cspeak\u003eI didn't hear you.\u003c/speak\u003e\n\n\u003cspeak\u003eFor vehicle issue, press1. For something else, press 2.\u003c/speak\u003e"
+      } ],
+      "currentPage": {
+        "name": "Safety_VehicleBroke_Confirmation",
+        "flow": "FAQ Flow"
+      },
+      "textResponses": [ {
+        "text": [ "\u003cspeak\u003eI didn't hear you.\u003c/speak\u003e\n\n\u003cspeak\u003eFor vehicle issue, press1. For something else, press 2.\u003c/speak\u003e" ]
+      } ],
+      "currentFlow": {
+        "name": "FAQ Flow"
+      },
+      "actions": [ {
+        "agentUtterance": {
+          "text": "\u003cspeak\u003eI didn't hear you.\u003c/speak\u003e\n\n\u003cspeak\u003eFor vehicle issue, press1. For something else, press 2.\u003c/speak\u003e"
+        }
+      } ]
+    }
+  }, {
+    "userInput": {
+      "isWebhookEnabled": true,
+      "input": {
+        "languageCode": "en",
+        "dtmf": {
+          "digits": "1"
+        }
+      }
+    },
+    "virtualAgentOutput": {
+      "sessionParameters": {
+        "dfLastCallerIntent": "Safety_VehicleBroke",
+        "dtmf_input": "1",
+        "intentName": "Safety_VehicleBroke",
+        "isRepeat": "no",
+        "pcAddressChanged": "false",
+        "pcContainsAlcohol": "false",
+        "pcCourierPrestartOneTracking": "false",
+        "pcCourierPrestartTwoTracking": "false",
+        "pcDeliveryStatus": "default",
+        "pcInteractionType": "default",
+        "pcIsVirtualRestaurant": "false",
+        "pcMiscPaymentAbuseBlock": "false",
+        "pcStoreAddress": "default",
+        "pcStorePhoneNumber": "default"
+      },
+      "differences": [ {
+        "type": "PAGE",
+        "description": "Page mismatch:\nExpected: \nActual:   Safety_VehicleBroke_Response",
+        "assertionType": "EQUAL",
+        "expectedValue": "",
+        "actualValue": "Safety_VehicleBroke_Response"
+      }, {
+        "type": "UTTERANCE",
+        "description": "Agent response mismatch",
+        "warning": true,
+        "assertionType": "EQUAL",
+        "expectedValue": "",
+        "actualValue": "\u003cspeak\u003eI'm so sorry to hear that you are having issue with your vehicle. Our top priority is your safety, so please go offline, and get medical help if you need to. If you can't complete the order, go ahead and cancel it. Once you're safe, please reach out to our in-app support teams, through the Help section of the Uber Driver app, and we'll get back to you as soon as possible.\u003cbreak time=\"750ms\"/\u003e \u003c/speak\u003e\u003cspeak\u003eTo listen to this message again, just say, repeat it. \u003cbreak time=\"700ms\"/\u003e Is there anything else I can help you with today?\u003c/speak\u003e"
+      } ],
+      "currentPage": {
+        "name": "Safety_VehicleBroke_Response",
+        "flow": "FAQ Flow"
+      },
+      "textResponses": [ {
+        "text": [ "\u003cspeak\u003eI'm so sorry to hear that you are having issue with your vehicle. Our top priority is your safety, so please go offline, and get medical help if you need to. If you can't complete the order, go ahead and cancel it. Once you're safe, please reach out to our in-app support teams, through the Help section of the Uber Driver app, and we'll get back to you as soon as possible.\u003cbreak time=\"750ms\"/\u003e \u003c/speak\u003e" ]
+      }, {
+        "text": [ "\u003cspeak\u003eTo listen to this message again, just say, repeat it. \u003cbreak time=\"700ms\"/\u003e Is there anything else I can help you with today?\u003c/speak\u003e" ]
+      } ],
+      "currentFlow": {
+        "name": "FAQ Flow"
+      },
+      "actions": [ {
+        "agentUtterance": {
+          "text": "\u003cspeak\u003eI'm so sorry to hear that you are having issue with your vehicle. Our top priority is your safety, so please go offline, and get medical help if you need to. If you can't complete the order, go ahead and cancel it. Once you're safe, please reach out to our in-app support teams, through the Help section of the Uber Driver app, and we'll get back to you as soon as possible.\u003cbreak time=\"750ms\"/\u003e \u003c/speak\u003e\n\u003cspeak\u003eTo listen to this message again, just say, repeat it. \u003cbreak time=\"700ms\"/\u003e Is there anything else I can help you with today?\u003c/speak\u003e"
+        }
+      } ]
+    }
+  } ],
+  "creationTime": {
+    "seconds": 1703153089,
+    "nanos": 757640000
+  },
+  "testConfig": {
+    "flow": "Default Start Flow",
+    "page": "Start Page"
+  },
+  "languageCode": "en"
+}

@@ -1,0 +1,14 @@
+{
+  "name": "929f5a9d-a58d-4bc8-b39f-38111789c2f6",
+  "displayName": "Feedback_Vague",
+  "parameters": [ {
+    "id": "dfLastCallerIntent",
+    "entityType": "@sys.any"
+  }, {
+    "id": "Store",
+    "entityType": "@Store",
+    "isList": true
+  } ],
+  "priority": 500000,
+  "numTrainingPhrases": 38
+}

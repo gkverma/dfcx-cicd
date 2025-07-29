@@ -1,0 +1,14 @@
+{
+  "name": "31e4f189-6469-44c8-ad7b-33eecedf5ee7",
+  "displayName": "Resto_Fault",
+  "parameters": [ {
+    "id": "dfLastCallerIntent",
+    "entityType": "@sys.any"
+  }, {
+    "id": "Store",
+    "entityType": "@Store",
+    "isList": true
+  } ],
+  "priority": 500000,
+  "numTrainingPhrases": 650
+}

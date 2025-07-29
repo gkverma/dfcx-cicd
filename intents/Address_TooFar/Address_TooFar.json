@@ -1,0 +1,11 @@
+{
+  "name": "c30865a3-1963-46fe-a9f5-b03f58356a9a",
+  "displayName": "Address_TooFar",
+  "parameters": [ {
+    "id": "Store",
+    "entityType": "@Store",
+    "isList": true
+  } ],
+  "priority": 500000,
+  "numTrainingPhrases": 42
+}

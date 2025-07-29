@@ -1,0 +1,44 @@
+{
+  "name": "a85c70b7-1210-40c4-a45e-163fd98f0705",
+  "displayName": "Address_TooFar-yes-resto_Conditional_Routes",
+  "form": {
+    "parameters": [ {
+      "displayName": "Store",
+      "entityType": "@Store",
+      "isList": true,
+      "fillBehavior": {
+        "initialPromptFulfillment": {
+        
+        }
+      }
+    } ]
+  },
+  "entryFulfillment": {
+    "setParameterActions": [ {
+      "parameter": "dfLastCallerIntent",
+      "value": "Resto_TooFar"
+    } ]
+  },
+  "transitionRoutes": [ {
+    "condition": "$session.params.pcCourierPrestartOneTracking = true OR $session.params.pcCourierPrestartTwoTracking = true",
+    "triggerFulfillment": {
+    
+    },
+    "targetPage": "Address_TooFar-yes-resto-prestart_Response",
+    "name": "3da9b196-a3a6-4b46-a404-933b55ecdf61"
+  }, {
+    "condition": "$session.params.pcCourierPrestartOneTracking = false OR $session.params.pcCourierPrestartTwoTracking = false",
+    "triggerFulfillment": {
+    
+    },
+    "targetPage": "Address_TooFar-yes-resto-notPrestart_Response",
+    "name": "c1283140-1037-42de-a733-7274eba6d792"
+  }, {
+    "condition": "true",
+    "triggerFulfillment": {
+    
+    },
+    "targetPage": "Address_TooFar-yes-resto-notPrestart_Response",
+    "name": "e555fdc6-a64b-4227-bce4-81a0ff11e5b3"
+  } ]
+}

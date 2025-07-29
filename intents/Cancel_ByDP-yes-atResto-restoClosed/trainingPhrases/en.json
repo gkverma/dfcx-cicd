@@ -1,0 +1,75 @@
+{
+  "trainingPhrases": [ {
+    "parts": [ {
+      "text": "3 "
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "closed "
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "it is closed "
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "it is not open "
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "it's closed "
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "restaurant ",
+      "parameterId": "Store"
+    }, {
+      "text": "closed "
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "restaurant ",
+      "parameterId": "Store"
+    }, {
+      "text": "is closed "
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "store ",
+      "parameterId": "Store"
+    }, {
+      "text": "closed "
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "store ",
+      "parameterId": "Store"
+    }, {
+      "text": "is closed "
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "the door is closed "
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  } ]
+}

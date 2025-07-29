@@ -1,0 +1,11 @@
+{
+  "name": "2b8c9592-5d93-47f4-a62f-2e1e6f6a904c",
+  "displayName": "Payment_Vague",
+  "parameters": [ {
+    "id": "Store",
+    "entityType": "@Store",
+    "isList": true
+  } ],
+  "priority": 500000,
+  "numTrainingPhrases": 88
+}

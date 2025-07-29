@@ -1,0 +1,31 @@
+{
+  "name": "8b92c97b-386f-4449-8a70-8f2e2e23abd6",
+  "displayName": "ZDFMainMenu",
+  "form": {
+  
+  },
+  "entryFulfillment": {
+    "messages": [ {
+      "liveAgentHandoff": {
+        "metadata": {
+          "dfLastCallerIntent": "$session.params.dfLastCallerIntent",
+          "zIntent": "$session.params.zIntent"
+        }
+      },
+      "languageCode": "en"
+    }, {
+      "text": {
+        "text": [ "\u003cspeak\u003e\u003cbreak time=\"10ms\"/\u003e\u003c/speak\u003e" ]
+      },
+      "languageCode": "en"
+    } ]
+  },
+  "transitionRoutes": [ {
+    "condition": "true",
+    "triggerFulfillment": {
+    
+    },
+    "targetPage": "End Session",
+    "name": "1d2b6f42-3f46-4be2-8000-ec05b43cc358"
+  } ]
+}

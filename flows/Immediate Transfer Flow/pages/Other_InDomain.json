@@ -1,0 +1,23 @@
+{
+  "name": "5688e4c6-dae9-4386-820c-2d312df65e03",
+  "displayName": "Other_InDomain",
+  "form": {
+  
+  },
+  "entryFulfillment": {
+    "messages": [ {
+      "text": {
+        "text": [ "Other_InDomain" ]
+      },
+      "languageCode": "en"
+    } ]
+  },
+  "transitionRoutes": [ {
+    "condition": "true",
+    "triggerFulfillment": {
+    
+    },
+    "targetFlow": "ZExit",
+    "name": "ee5e0597-2726-43a2-ac42-713d6df96611"
+  } ]
+}

@@ -1,0 +1,268 @@
+{
+  "name": "02406c4f-6f2f-41c0-9ead-dac11a0cc0bd",
+  "displayName": "Dropoff_CustChangedAddr-S4_Response",
+  "form": {
+    "parameters": [ {
+      "displayName": "dtmf_input",
+      "required": true,
+      "entityType": "@dtmf_0",
+      "fillBehavior": {
+        "initialPromptFulfillment": {
+        
+        },
+        "repromptEventHandlers": [ {
+          "event": "sys.no-match-1",
+          "triggerFulfillment": {
+            "messages": [ {
+              "text": {
+                "text": [ "\u003cspeak\u003eSorry. To hear the message again, just say, repeat it. Is there anything else I can help you with today? \u003c/speak\u003e" ]
+              },
+              "languageCode": "en"
+            } ]
+          },
+          "name": "f9a27a9c-9c70-46f4-85e1-67c96f11d32e"
+        }, {
+          "event": "sys.no-match-2",
+          "triggerFulfillment": {
+            "messages": [ {
+              "text": {
+                "text": [ "\u003cspeak\u003e I didn't get that. To listen to the message again, you can say, repeat it. What else can I help you with today?  If you are done, feel free to hang up.\u003c/speak\u003e" ]
+              },
+              "languageCode": "en"
+            } ]
+          },
+          "name": "e8cec429-47fb-4a28-883b-c8f774ff897a"
+        }, {
+          "targetFlow": "ZExit",
+          "event": "sys.no-match-3",
+          "triggerFulfillment": {
+            "messages": [ {
+              "text": {
+                "text": [ "\u003cspeak\u003e\u003cbreak time=\"10ms\"/\u003e\u003c/speak\u003e" ]
+              },
+              "languageCode": "en"
+            } ],
+            "setParameterActions": [ {
+              "parameter": "zIntent",
+              "value": "ZAgent"
+            } ]
+          },
+          "name": "22dbeb53-c62d-4453-b06f-42e023474bed"
+        }, {
+          "event": "sys.no-input-1",
+          "triggerFulfillment": {
+            "messages": [ {
+              "text": {
+                "text": [ "\u003cspeak\u003eTo hear the message again, just say, repeat it. Is there anything else I can help you with today? \u003c/speak\u003e" ]
+              },
+              "languageCode": "en"
+            } ]
+          },
+          "name": "3cd36efe-4559-442a-8ad3-5f137b1a470e"
+        }, {
+          "event": "sys.no-input-2",
+          "triggerFulfillment": {
+            "messages": [ {
+              "text": {
+                "text": [ "\u003cspeak\u003e I didn't hear you. To listen to the message again, you can say, repeat it. What else can I help you with today?  If you are done, feel free to hang up.\u003c/speak\u003e" ]
+              },
+              "languageCode": "en"
+            } ]
+          },
+          "name": "ebb7649d-5f57-4412-a220-71233c19bdae"
+        }, {
+          "targetFlow": "ZExit",
+          "event": "sys.no-input-3",
+          "triggerFulfillment": {
+            "messages": [ {
+              "text": {
+                "text": [ "\u003cspeak\u003eI am having trouble hearing you.\u003c/speak\u003e" ]
+              },
+              "languageCode": "en"
+            } ],
+            "setParameterActions": [ {
+              "parameter": "zIntent",
+              "value": "ZHangup"
+            } ]
+          },
+          "name": "8bf71dec-1eaa-404b-af76-a238f9362b2e"
+        } ]
+      },
+      "advancedSettings": {
+        "dtmfSettings": {
+          "enabled": true,
+          "useSystemEntityRule": false
+        }
+      }
+    } ]
+  },
+  "entryFulfillment": {
+    "setParameterActions": [ {
+      "parameter": "dfLastCallerIntent",
+      "value": "Dropoff_CustChangedAddr"
+    }, {
+      "parameter": "intentName",
+      "value": "Dropoff_CustChangedAddr-yes-S4"
+    }, {
+      "parameter": "dtmf_input",
+      "value": null
+    } ],
+    "conditionalCases": [ {
+      "cases": [ {
+        "condition": "$session.params.isRepeat != \"yes\"",
+        "caseContent": [ {
+          "message": {
+            "text": {
+              "text": [ "\u003cspeak\u003eI see that the customer requested an address change through the app. Please go ahead, and complete the delivery.  Don't worry, your earnings will be updated. Thanks for helping the customer.\u003cbreak time=\"750ms\"/\u003e\u003c/speak\u003e" ]
+            },
+            "languageCode": "en"
+          }
+        }, {
+          "message": {
+            "text": {
+              "text": [ "\u003cspeak\u003eTo listen to this message again, just say, repeat it. \u003cbreak time=\"700ms\"/\u003e Is there anything else I can help you with today?\u003c/speak\u003e" ]
+            },
+            "languageCode": "en"
+          }
+        } ]
+      }, {
+        "caseContent": [ {
+          "message": {
+            "text": {
+              "text": [ "\u003cspeak\u003eI see that the customer requested an address change through the app. Please go ahead, and complete the delivery.  Don't worry, your earnings will be updated. Thanks for helping the customer.\u003cbreak time=\"750ms\"/\u003e\u003c/speak\u003e" ]
+            },
+            "languageCode": "en"
+          }
+        }, {
+          "message": {
+            "text": {
+              "text": [ "\u003cspeak\u003eIs there anything else I can help you with today? Or, if you're done, you can hang up.\u003c/speak\u003e" ]
+            },
+            "languageCode": "en"
+          }
+        } ]
+      } ]
+    } ]
+  },
+  "transitionRoutes": [ {
+    "intent": "Intent.Repeat",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "isRepeat",
+        "value": "yes"
+      } ]
+    },
+    "targetPage": "Current Page",
+    "name": "57e64d7b-9093-4834-9ee8-1811f72273b2"
+  }, {
+    "intent": "Confirmation.Yes",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "\u003cspeak\u003eSure. How can I help?\u003c/speak\u003e" ]
+        },
+        "languageCode": "en"
+      } ]
+    },
+    "targetFlow": "Default Start Flow",
+    "name": "679fbcaf-f2c1-4454-bec4-4ee96dd8701d"
+  }, {
+    "intent": "Confirmation.No",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "zIntent",
+        "value": "ZHangup"
+      } ]
+    },
+    "targetFlow": "ZExit",
+    "name": "79b286d7-65d9-4cb9-825c-44cd72af5641"
+  }, {
+    "condition": "$session.params.dtmf_input = \"0\"",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "intentName",
+        "value": "Agent_Vague"
+      } ]
+    },
+    "targetFlow": "Immediate Transfer Flow",
+    "name": "75045223-bd68-4cfa-8a75-52cc842982ea"
+  } ],
+  "eventHandlers": [ {
+    "event": "sys.no-match-1",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "\u003cspeak\u003eSorry. To hear the message again, just say, repeat it. Is there anything else I can help you with today? \u003c/speak\u003e" ]
+        },
+        "languageCode": "en"
+      } ]
+    },
+    "name": "f0c7a8e9-66bc-4ad0-8a3c-5de835fc6921"
+  }, {
+    "event": "sys.no-match-2",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "\u003cspeak\u003e I didn't get that. To listen to the message again, you can say, repeat it. What else can I help you with today?  If you are done, feel free to hang up.\u003c/speak\u003e" ]
+        },
+        "languageCode": "en"
+      } ]
+    },
+    "name": "f8cf5aeb-1c39-4ac9-bc3a-3e79354668bf"
+  }, {
+    "targetFlow": "ZExit",
+    "event": "sys.no-match-3",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "\u003cspeak\u003e\u003cbreak time=\"10ms\"/\u003e\u003c/speak\u003e" ]
+        },
+        "languageCode": "en"
+      } ],
+      "setParameterActions": [ {
+        "parameter": "zIntent",
+        "value": "ZAgent"
+      } ]
+    },
+    "name": "cf72c54a-3b18-4983-9095-dbd7e9daea36"
+  }, {
+    "event": "sys.no-input-1",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "\u003cspeak\u003eTo hear the message again, just say, repeat it. Is there anything else I can help you with today? \u003c/speak\u003e" ]
+        },
+        "languageCode": "en"
+      } ]
+    },
+    "name": "d5fad69f-de1f-41db-b5c7-2eece03669bc"
+  }, {
+    "event": "sys.no-input-2",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "\u003cspeak\u003e I didn't hear you. To listen to the message again, you can say, repeat it. What else can I help you with today?  If you are done, feel free to hang up.\u003c/speak\u003e" ]
+        },
+        "languageCode": "en"
+      } ]
+    },
+    "name": "38653b9e-6258-4ff5-944b-166332e43003"
+  }, {
+    "targetFlow": "ZExit",
+    "event": "sys.no-input-3",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "\u003cspeak\u003eI am having trouble hearing you.\u003c/speak\u003e" ]
+        },
+        "languageCode": "en"
+      } ],
+      "setParameterActions": [ {
+        "parameter": "zIntent",
+        "value": "ZHangup"
+      } ]
+    },
+    "name": "3b889427-e4a4-4545-9fed-4256f5fa17dc"
+  } ],
+  "agentTransitionRouteGroups": [ "RouteGroups-FAQ" ]
+}

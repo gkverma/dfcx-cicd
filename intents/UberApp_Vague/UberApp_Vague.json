@@ -1,0 +1,14 @@
+{
+  "name": "b09da02e-b06c-4d6f-91f5-601577a9cf2e",
+  "displayName": "UberApp_Vague",
+  "parameters": [ {
+    "id": "dfLastCallerIntent",
+    "entityType": "@sys.any"
+  }, {
+    "id": "Store",
+    "entityType": "@Store",
+    "isList": true
+  } ],
+  "priority": 500000,
+  "numTrainingPhrases": 332
+}

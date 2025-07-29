@@ -1,0 +1,11 @@
+{
+  "name": "eac7a1d0-8074-465a-b3a0-9452c780ee2b",
+  "displayName": "Food_Wrong-restoNoOrder",
+  "parameters": [ {
+    "id": "Store",
+    "entityType": "@Store",
+    "isList": true
+  } ],
+  "priority": 500000,
+  "numTrainingPhrases": 17
+}

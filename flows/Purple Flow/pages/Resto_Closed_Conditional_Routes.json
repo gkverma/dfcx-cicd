@@ -1,0 +1,30 @@
+{
+  "name": "b6b281cd-5a52-49b5-a0c2-ecc004aba67e",
+  "displayName": "Resto_Closed_Conditional_Routes",
+  "form": {
+  
+  },
+  "entryFulfillment": {
+    "setParameterActions": [ {
+      "parameter": "dfLastCallerIntent",
+      "value": "Resto_Closed"
+    } ]
+  },
+  "transitionRoutes": [ {
+    "condition": "true",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "\u003cspeak\u003e\u003cbreak time=\"10ms\"/\u003e\u003c/speak\u003e" ]
+        },
+        "languageCode": "en"
+      } ],
+      "setParameterActions": [ {
+        "parameter": "zIntent",
+        "value": "ZAgent"
+      } ]
+    },
+    "targetFlow": "ZExit",
+    "name": "18adcf4f-539d-44d4-a9b1-5c13b19545d5"
+  } ]
+}

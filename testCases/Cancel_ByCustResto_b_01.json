@@ -1,0 +1,209 @@
+{
+  "name": "29623e58-43ba-46eb-904a-4ae205c62c81",
+  "tags": [ "#Live_Order_Bot", "#Purple_Family_Intent", "#Cancel_ByCustResto", "#Happy_Path" ],
+  "displayName": "Cancel_ByCustResto_b_01",
+  "testCaseConversationTurns": [ {
+    "userInput": {
+      "injectedParameters": {
+        "pcDeliveryStatus": "arrived_resto_1"
+      },
+      "isWebhookEnabled": true,
+      "input": {
+        "languageCode": "en",
+        "event": {
+          "event": "WELCOME"
+        }
+      }
+    },
+    "virtualAgentOutput": {
+      "sessionParameters": {
+        "pcAddressChanged": "false",
+        "pcContainsAlcohol": "false",
+        "pcCourierPrestartOneTracking": "false",
+        "pcCourierPrestartTwoTracking": "false",
+        "pcDeliveryStatus": "arrived_resto_1",
+        "pcInteractionType": "default",
+        "pcIsVirtualRestaurant": "false",
+        "pcMiscPaymentAbuseBlock": "false",
+        "pcStoreAddress": "default",
+        "pcStorePhoneNumber": "default"
+      },
+      "differences": [ {
+        "type": "PAGE",
+        "description": "Page mismatch:\nExpected: \nActual:   Main_Menu_Page",
+        "assertionType": "EQUAL",
+        "expectedValue": "",
+        "actualValue": "Main_Menu_Page"
+      }, {
+        "type": "UTTERANCE",
+        "description": "Agent response mismatch",
+        "warning": true,
+        "assertionType": "EQUAL",
+        "expectedValue": "",
+        "actualValue": "\u003cspeak\u003eIn a few words, how can I help you with your current order. You can say things like, the order was already picked up by someone else, ore, problem with customers address.\u003c/speak\u003e"
+      } ],
+      "currentPage": {
+        "name": "Main_Menu_Page",
+        "flow": "Default Start Flow"
+      },
+      "textResponses": [ {
+        "text": [ "\u003cspeak\u003eIn a few words, how can I help you with your current order. You can say things like, the order was already picked up by someone else, ore, problem with customers address.\u003c/speak\u003e" ]
+      } ],
+      "currentFlow": {
+        "name": "Default Start Flow"
+      },
+      "actions": [ {
+        "agentUtterance": {
+          "text": "\u003cspeak\u003eIn a few words, how can I help you with your current order. You can say things like, the order was already picked up by someone else, ore, problem with customers address.\u003c/speak\u003e"
+        }
+      } ]
+    }
+  }, {
+    "userInput": {
+      "isWebhookEnabled": true,
+      "input": {
+        "text": {
+          "text": "the order was cancelled "
+        },
+        "languageCode": "en"
+      }
+    },
+    "virtualAgentOutput": {
+      "sessionParameters": {
+        "intentName": "Cancel_ByCustResto",
+        "isRepeat": "no",
+        "pcAddressChanged": "false",
+        "pcContainsAlcohol": "false",
+        "pcCourierPrestartOneTracking": "false",
+        "pcCourierPrestartTwoTracking": "false",
+        "pcDeliveryStatus": "arrived_resto_1",
+        "pcInteractionType": "default",
+        "pcIsVirtualRestaurant": "false",
+        "pcMiscPaymentAbuseBlock": "false",
+        "pcStoreAddress": "default",
+        "pcStorePhoneNumber": "default"
+      },
+      "differences": [ {
+        "type": "PAGE",
+        "description": "Page mismatch:\nExpected: \nActual:   Cancel_ByCustResto-toBeCancel_Confirmation",
+        "assertionType": "EQUAL",
+        "expectedValue": "",
+        "actualValue": "Cancel_ByCustResto-toBeCancel_Confirmation"
+      }, {
+        "type": "INTENT",
+        "description": "Intent mismatch:\nExpected: \nActual:   Cancel_ByCustResto",
+        "assertionType": "EQUAL",
+        "expectedValue": "",
+        "actualValue": "Cancel_ByCustResto"
+      }, {
+        "type": "UTTERANCE",
+        "description": "Agent response mismatch",
+        "warning": true,
+        "assertionType": "EQUAL",
+        "expectedValue": "",
+        "actualValue": "\u003cspeak\u003eI think you're calling because the store or the customer is asking you to cancel the order, is that correct?\u003c/speak\u003e"
+      } ],
+      "triggeredIntent": {
+        "name": "Cancel_ByCustResto"
+      },
+      "currentPage": {
+        "name": "Cancel_ByCustResto-toBeCancel_Confirmation",
+        "flow": "Purple Flow"
+      },
+      "textResponses": [ {
+        "text": [ "\u003cspeak\u003eI think you're calling because the store or the customer is asking you to cancel the order, is that correct?\u003c/speak\u003e" ]
+      } ],
+      "currentFlow": {
+        "name": "Purple Flow"
+      },
+      "actions": [ {
+        "userUtterance": {
+          "text": "the order was cancelled"
+        }
+      }, {
+        "agentUtterance": {
+          "text": "\u003cspeak\u003eI think you're calling because the store or the customer is asking you to cancel the order, is that correct?\u003c/speak\u003e"
+        }
+      } ]
+    }
+  }, {
+    "userInput": {
+      "isWebhookEnabled": true,
+      "input": {
+        "text": {
+          "text": "already cancelled"
+        },
+        "languageCode": "en"
+      }
+    },
+    "virtualAgentOutput": {
+      "sessionParameters": {
+        "intentName": "Cancel_ByCustResto",
+        "isRepeat": "no",
+        "pcAddressChanged": "false",
+        "pcContainsAlcohol": "false",
+        "pcCourierPrestartOneTracking": "false",
+        "pcCourierPrestartTwoTracking": "false",
+        "pcDeliveryStatus": "arrived_resto_1",
+        "pcInteractionType": "default",
+        "pcIsVirtualRestaurant": "false",
+        "pcMiscPaymentAbuseBlock": "false",
+        "pcStoreAddress": "default",
+        "pcStorePhoneNumber": "default"
+      },
+      "differences": [ {
+        "type": "PAGE",
+        "description": "Page mismatch:\nExpected: \nActual:   Cancel_ByCustResto-toBeCancel-alreadyCancel_Response",
+        "assertionType": "EQUAL",
+        "expectedValue": "",
+        "actualValue": "Cancel_ByCustResto-toBeCancel-alreadyCancel_Response"
+      }, {
+        "type": "INTENT",
+        "description": "Intent mismatch:\nExpected: \nActual:   Cancel_ByCustResto-toBeCancel-alreadyCancel",
+        "assertionType": "EQUAL",
+        "expectedValue": "",
+        "actualValue": "Cancel_ByCustResto-toBeCancel-alreadyCancel"
+      }, {
+        "type": "UTTERANCE",
+        "description": "Agent response mismatch",
+        "warning": true,
+        "assertionType": "EQUAL",
+        "expectedValue": "",
+        "actualValue": "\u003cspeak\u003eWhen the customer, or the store cancels an order, you may receive a cancelation fee for your time. Please safely dispose of any items you have picked up. And you can proceed with your new deliveries. If you still have questions, please send us a message from your Uber Driver app.\u003c/speak\u003e\u003cspeak\u003eTo listen to this message again, just say, repeat it. \u003cbreak time=\"700ms\"/\u003e Is there anything else I can help you with today?\u003c/speak\u003e"
+      } ],
+      "triggeredIntent": {
+        "name": "Cancel_ByCustResto-toBeCancel-alreadyCancel"
+      },
+      "currentPage": {
+        "name": "Cancel_ByCustResto-toBeCancel-alreadyCancel_Response",
+        "flow": "Purple Flow"
+      },
+      "textResponses": [ {
+        "text": [ "\u003cspeak\u003eWhen the customer, or the store cancels an order, you may receive a cancelation fee for your time. Please safely dispose of any items you have picked up. And you can proceed with your new deliveries. If you still have questions, please send us a message from your Uber Driver app.\u003c/speak\u003e" ]
+      }, {
+        "text": [ "\u003cspeak\u003eTo listen to this message again, just say, repeat it. \u003cbreak time=\"700ms\"/\u003e Is there anything else I can help you with today?\u003c/speak\u003e" ]
+      } ],
+      "currentFlow": {
+        "name": "Purple Flow"
+      },
+      "actions": [ {
+        "userUtterance": {
+          "text": "already cancelled"
+        }
+      }, {
+        "agentUtterance": {
+          "text": "\u003cspeak\u003eWhen the customer, or the store cancels an order, you may receive a cancelation fee for your time. Please safely dispose of any items you have picked up. And you can proceed with your new deliveries. If you still have questions, please send us a message from your Uber Driver app.\u003c/speak\u003e\n\u003cspeak\u003eTo listen to this message again, just say, repeat it. \u003cbreak time=\"700ms\"/\u003e Is there anything else I can help you with today?\u003c/speak\u003e"
+        }
+      } ]
+    }
+  } ],
+  "creationTime": {
+    "seconds": 1704690935,
+    "nanos": 544363000
+  },
+  "testConfig": {
+    "flow": "Default Start Flow",
+    "page": "Start Page"
+  },
+  "languageCode": "en"
+}

@@ -1,0 +1,49 @@
+{
+  "name": "afaeb983-e1c7-47fc-a0fa-4e2210f1f16d",
+  "displayName": "Purple Flow",
+  "transitionRoutes": [ {
+    "intent": "Agent_Vague",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "intentName",
+        "value": "Agent_Vague"
+      } ]
+    },
+    "targetFlow": "Immediate Transfer Flow",
+    "name": "8d8afaa7-fd2b-4b26-987a-3cb52789753f"
+  }, {
+    "condition": "true",
+    "triggerFulfillment": {
+    
+    },
+    "targetPage": "Purple_Start_Page",
+    "name": "464d16bd-5b9a-498a-a78b-73220ba03dc6"
+  } ],
+  "eventHandlers": [ {
+    "event": "sys.no-match-default",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "\u003cspeak\u003e\u003cbreak time=\"10ms\"/\u003e\u003c/speak\u003e" ]
+        },
+        "languageCode": "en"
+      } ]
+    },
+    "name": "95fe49aa-7d52-4cf4-b4b7-8c09947f25b7"
+  }, {
+    "event": "sys.no-input-default",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "\u003cspeak\u003eI didn't hear you.\u003c/speak\u003e\n\n\u003cspeak\u003eIn your own words, describe why you're calling today. For example, you can say things like, order was already picked up, or, customer gave wrong address. Now, what can I help you with?\u003c/speak\u003e" ]
+        },
+        "languageCode": "en"
+      } ]
+    },
+    "name": "73200c7b-b40f-48b4-8d18-727c7fffdbc7"
+  } ],
+  "nluSettings": {
+    "modelType": "MODEL_TYPE_STANDARD",
+    "classificationThreshold": 0.30000001
+  }
+}

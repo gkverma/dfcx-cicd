@@ -1,0 +1,143 @@
+{
+  "name": "76dcebd7-fe1b-4e90-857f-93bbb70e6d30",
+  "tags": [ "#Live_Order_Bot", "#Island_Family_Intent", "#TechIssues_Vague", "#Happy_Path" ],
+  "displayName": "TechIssues_Vague_bB_01",
+  "testCaseConversationTurns": [ {
+    "userInput": {
+      "injectedParameters": {
+        "pcContainsAlcohol": false,
+        "pcDeliveryStatus": "arrived_resto_1"
+      },
+      "isWebhookEnabled": true,
+      "input": {
+        "languageCode": "en",
+        "event": {
+          "event": "WELCOME"
+        }
+      }
+    },
+    "virtualAgentOutput": {
+      "sessionParameters": {
+        "pcAddressChanged": "false",
+        "pcContainsAlcohol": "false",
+        "pcCourierPrestartOneTracking": "false",
+        "pcCourierPrestartTwoTracking": "false",
+        "pcDeliveryStatus": "arrived_resto_1",
+        "pcInteractionType": "default",
+        "pcIsVirtualRestaurant": "false",
+        "pcMiscPaymentAbuseBlock": "false",
+        "pcStoreAddress": "default",
+        "pcStorePhoneNumber": "default"
+      },
+      "differences": [ {
+        "type": "PAGE",
+        "description": "Page mismatch:\nExpected: \nActual:   Main_Menu_Page",
+        "assertionType": "EQUAL",
+        "expectedValue": "",
+        "actualValue": "Main_Menu_Page"
+      }, {
+        "type": "UTTERANCE",
+        "description": "Agent response mismatch",
+        "warning": true,
+        "assertionType": "EQUAL",
+        "expectedValue": "",
+        "actualValue": "\u003cspeak\u003eIn a few words, how can I help you with your current order. You can say things like, the order was already picked up by someone else, ore, problem with customers address.\u003c/speak\u003e"
+      } ],
+      "currentPage": {
+        "name": "Main_Menu_Page",
+        "flow": "Default Start Flow"
+      },
+      "textResponses": [ {
+        "text": [ "\u003cspeak\u003eIn a few words, how can I help you with your current order. You can say things like, the order was already picked up by someone else, ore, problem with customers address.\u003c/speak\u003e" ]
+      } ],
+      "currentFlow": {
+        "name": "Default Start Flow"
+      },
+      "actions": [ {
+        "agentUtterance": {
+          "text": "\u003cspeak\u003eIn a few words, how can I help you with your current order. You can say things like, the order was already picked up by someone else, ore, problem with customers address.\u003c/speak\u003e"
+        }
+      } ]
+    }
+  }, {
+    "userInput": {
+      "isWebhookEnabled": true,
+      "input": {
+        "text": {
+          "text": "yeah i have other problem they they broken the phone"
+        },
+        "languageCode": "en"
+      }
+    },
+    "virtualAgentOutput": {
+      "sessionParameters": {
+        "dfLastCallerIntent": "TechIssues_Vague",
+        "intentName": "TechIssues_Vague",
+        "isRepeat": "no",
+        "pcAddressChanged": "false",
+        "pcContainsAlcohol": "false",
+        "pcCourierPrestartOneTracking": "false",
+        "pcCourierPrestartTwoTracking": "false",
+        "pcDeliveryStatus": "arrived_resto_1",
+        "pcInteractionType": "default",
+        "pcIsVirtualRestaurant": "false",
+        "pcMiscPaymentAbuseBlock": "false",
+        "pcStoreAddress": "default",
+        "pcStorePhoneNumber": "default"
+      },
+      "differences": [ {
+        "type": "PAGE",
+        "description": "Page mismatch:\nExpected: \nActual:   TechIssues_Vague_Response",
+        "assertionType": "EQUAL",
+        "expectedValue": "",
+        "actualValue": "TechIssues_Vague_Response"
+      }, {
+        "type": "INTENT",
+        "description": "Intent mismatch:\nExpected: \nActual:   TechIssues_Vague",
+        "assertionType": "EQUAL",
+        "expectedValue": "",
+        "actualValue": "TechIssues_Vague"
+      }, {
+        "type": "UTTERANCE",
+        "description": "Agent response mismatch",
+        "warning": true,
+        "assertionType": "EQUAL",
+        "expectedValue": "",
+        "actualValue": "\u003cspeak\u003eI’m sorry to hear you’re experiencing technical issues with your app. Most issues can be resolved by turning your phone off, and back on. You can also log out of your app, and log back in. In addition, make sure your device is connected to the internet. It is always helpful to have the latest version of the app installed. If you’ve tried these steps, and you still need further help, call us back and we can work with you to resolve it.\u003cbreak time=\"750ms\"/\u003e\u003c/speak\u003e\u003cspeak\u003eTo listen to this message again, just say, repeat it. \u003cbreak time=\"700ms\"/\u003e Is there anything else I can help you with today?\u003c/speak\u003e"
+      } ],
+      "triggeredIntent": {
+        "name": "TechIssues_Vague"
+      },
+      "currentPage": {
+        "name": "TechIssues_Vague_Response",
+        "flow": "Island Flow"
+      },
+      "textResponses": [ {
+        "text": [ "\u003cspeak\u003eI’m sorry to hear you’re experiencing technical issues with your app. Most issues can be resolved by turning your phone off, and back on. You can also log out of your app, and log back in. In addition, make sure your device is connected to the internet. It is always helpful to have the latest version of the app installed. If you’ve tried these steps, and you still need further help, call us back and we can work with you to resolve it.\u003cbreak time=\"750ms\"/\u003e\u003c/speak\u003e" ]
+      }, {
+        "text": [ "\u003cspeak\u003eTo listen to this message again, just say, repeat it. \u003cbreak time=\"700ms\"/\u003e Is there anything else I can help you with today?\u003c/speak\u003e" ]
+      } ],
+      "currentFlow": {
+        "name": "Island Flow"
+      },
+      "actions": [ {
+        "userUtterance": {
+          "text": "yeah i have other problem they they broken the phone"
+        }
+      }, {
+        "agentUtterance": {
+          "text": "\u003cspeak\u003eI’m sorry to hear you’re experiencing technical issues with your app. Most issues can be resolved by turning your phone off, and back on. You can also log out of your app, and log back in. In addition, make sure your device is connected to the internet. It is always helpful to have the latest version of the app installed. If you’ve tried these steps, and you still need further help, call us back and we can work with you to resolve it.\u003cbreak time=\"750ms\"/\u003e\u003c/speak\u003e\n\u003cspeak\u003eTo listen to this message again, just say, repeat it. \u003cbreak time=\"700ms\"/\u003e Is there anything else I can help you with today?\u003c/speak\u003e"
+        }
+      } ]
+    }
+  } ],
+  "creationTime": {
+    "seconds": 1704379201,
+    "nanos": 898553000
+  },
+  "testConfig": {
+    "flow": "Default Start Flow",
+    "page": "Start Page"
+  },
+  "languageCode": "en"
+}

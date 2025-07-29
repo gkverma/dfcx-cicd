@@ -1,0 +1,15 @@
+{
+  "trainingPhrases": [ {
+    "parts": [ {
+      "text": "OK"
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "okay"
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  } ]
+}

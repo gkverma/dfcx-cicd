@@ -1,0 +1,145 @@
+{
+  "name": "117b3938-fe4c-48eb-8dd6-956faae8b489",
+  "tags": [ "#Live_Order_Bot", "#Green_Family_Intent", "#Address_Vague", "#Happy_Path" ],
+  "displayName": "Address_Vague_aV_01",
+  "testCaseConversationTurns": [ {
+    "userInput": {
+      "injectedParameters": {
+        "pcDeliveryStatus": "not_arrived_resto",
+        "pcIsVirtualRestaurant": true,
+        "pcStoreAddress": "address",
+        "pcStorePhoneNumber": 6102597204
+      },
+      "isWebhookEnabled": true,
+      "input": {
+        "languageCode": "en",
+        "event": {
+          "event": "WELCOME"
+        }
+      }
+    },
+    "virtualAgentOutput": {
+      "sessionParameters": {
+        "pcAddressChanged": "false",
+        "pcContainsAlcohol": "false",
+        "pcCourierPrestartOneTracking": "false",
+        "pcCourierPrestartTwoTracking": "false",
+        "pcDeliveryStatus": "not_arrived_resto",
+        "pcInteractionType": "default",
+        "pcIsVirtualRestaurant": "true",
+        "pcMiscPaymentAbuseBlock": "false",
+        "pcStoreAddress": "address",
+        "pcStorePhoneNumber": "default"
+      },
+      "differences": [ {
+        "type": "PAGE",
+        "description": "Page mismatch:\nExpected: \nActual:   Main_Menu_Page",
+        "assertionType": "EQUAL",
+        "expectedValue": "",
+        "actualValue": "Main_Menu_Page"
+      }, {
+        "type": "UTTERANCE",
+        "description": "Agent response mismatch",
+        "warning": true,
+        "assertionType": "EQUAL",
+        "expectedValue": "",
+        "actualValue": "\u003cspeak\u003eIn a few words, how can I help you with your current order. You can say things like, the order was already picked up by someone else, ore, problem with customers address.\u003c/speak\u003e"
+      } ],
+      "currentPage": {
+        "name": "Main_Menu_Page",
+        "flow": "Default Start Flow"
+      },
+      "textResponses": [ {
+        "text": [ "\u003cspeak\u003eIn a few words, how can I help you with your current order. You can say things like, the order was already picked up by someone else, ore, problem with customers address.\u003c/speak\u003e" ]
+      } ],
+      "currentFlow": {
+        "name": "Default Start Flow"
+      },
+      "actions": [ {
+        "agentUtterance": {
+          "text": "\u003cspeak\u003eIn a few words, how can I help you with your current order. You can say things like, the order was already picked up by someone else, ore, problem with customers address.\u003c/speak\u003e"
+        }
+      } ]
+    }
+  }, {
+    "userInput": {
+      "isWebhookEnabled": true,
+      "input": {
+        "text": {
+          "text": "address"
+        },
+        "languageCode": "en"
+      }
+    },
+    "virtualAgentOutput": {
+      "sessionParameters": {
+        "dfLastCallerIntent": "Resto_Address",
+        "intentName": "Address_Vague-pickup",
+        "isRepeat": "no",
+        "pcAddressChanged": "false",
+        "pcContainsAlcohol": "false",
+        "pcCourierPrestartOneTracking": "false",
+        "pcCourierPrestartTwoTracking": "false",
+        "pcDeliveryStatus": "not_arrived_resto",
+        "pcInteractionType": "default",
+        "pcIsVirtualRestaurant": "true",
+        "pcMiscPaymentAbuseBlock": "false",
+        "pcStoreAddress": "address",
+        "pcStorePhoneNumber": "default"
+      },
+      "differences": [ {
+        "type": "PAGE",
+        "description": "Page mismatch:\nExpected: \nActual:   Resto_Address-yes-virtual_Response",
+        "assertionType": "EQUAL",
+        "expectedValue": "",
+        "actualValue": "Resto_Address-yes-virtual_Response"
+      }, {
+        "type": "INTENT",
+        "description": "Intent mismatch:\nExpected: \nActual:   Address_Vague",
+        "assertionType": "EQUAL",
+        "expectedValue": "",
+        "actualValue": "Address_Vague"
+      }, {
+        "type": "UTTERANCE",
+        "description": "Agent response mismatch",
+        "warning": true,
+        "assertionType": "EQUAL",
+        "expectedValue": "",
+        "actualValue": "\u003cspeak\u003eThe store is located at address. If you're having trouble finding it, it is best to call them directly at \u003csay-as interpret-as=\"telephone\"\u003e default \u003c/say-as\u003e. Or you can say, I already called them.\u003c/speak\u003e\u003cspeak\u003eTo listen to this message again, just say, repeat it. \u003cbreak time=\"700ms\"/\u003e Is there anything else I can help you with today?\u003c/speak\u003e"
+      } ],
+      "triggeredIntent": {
+        "name": "Address_Vague"
+      },
+      "currentPage": {
+        "name": "Resto_Address-yes-virtual_Response",
+        "flow": "Orange Flow"
+      },
+      "textResponses": [ {
+        "text": [ "\u003cspeak\u003eThe store is located at address. If you're having trouble finding it, it is best to call them directly at \u003csay-as interpret-as=\"telephone\"\u003e default \u003c/say-as\u003e. Or you can say, I already called them.\u003c/speak\u003e" ]
+      }, {
+        "text": [ "\u003cspeak\u003eTo listen to this message again, just say, repeat it. \u003cbreak time=\"700ms\"/\u003e Is there anything else I can help you with today?\u003c/speak\u003e" ]
+      } ],
+      "currentFlow": {
+        "name": "Orange Flow"
+      },
+      "actions": [ {
+        "userUtterance": {
+          "text": "address"
+        }
+      }, {
+        "agentUtterance": {
+          "text": "\u003cspeak\u003eThe store is located at address. If you're having trouble finding it, it is best to call them directly at \u003csay-as interpret-as=\"telephone\"\u003e default \u003c/say-as\u003e. Or you can say, I already called them.\u003c/speak\u003e\n\u003cspeak\u003eTo listen to this message again, just say, repeat it. \u003cbreak time=\"700ms\"/\u003e Is there anything else I can help you with today?\u003c/speak\u003e"
+        }
+      } ]
+    }
+  } ],
+  "creationTime": {
+    "seconds": 1705491483,
+    "nanos": 535834000
+  },
+  "testConfig": {
+    "flow": "Default Start Flow",
+    "page": "Start Page"
+  },
+  "languageCode": "en"
+}

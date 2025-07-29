@@ -1,0 +1,33 @@
+{
+  "trainingPhrases": [ {
+    "parts": [ {
+      "text": "4"
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "lost plus card"
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "lost my card"
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "i lost the card"
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "i lost the plus card"
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  } ]
+}

@@ -1,0 +1,10 @@
+{
+  "name": "898e79b0-a34b-4f73-8c3f-0ea3f498a44e",
+  "displayName": "Trip_CustIssue",
+  "parameters": [ {
+    "id": "dfLastCallerIntent",
+    "entityType": "@sys.any"
+  } ],
+  "priority": 500000,
+  "numTrainingPhrases": 45
+}

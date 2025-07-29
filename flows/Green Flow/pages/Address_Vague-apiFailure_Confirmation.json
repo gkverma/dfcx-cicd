@@ -1,0 +1,269 @@
+{
+  "name": "5215454e-61e8-404a-981d-df4b1c611e87",
+  "displayName": "Address_Vague-apiFailure_Confirmation",
+  "form": {
+    "parameters": [ {
+      "displayName": "dtmf_input",
+      "required": true,
+      "entityType": "@dtmf_123",
+      "fillBehavior": {
+        "initialPromptFulfillment": {
+        
+        },
+        "repromptEventHandlers": [ {
+          "event": "sys.no-match-1",
+          "triggerFulfillment": {
+            "messages": [ {
+              "text": {
+                "text": [ "\u003cspeak\u003eI didn't get that.\u003c/speak\u003e\n\n\u003cspeak\u003eYou can say, the store's address, the dropoff address. or, Something else.\u003c/speak\u003e" ]
+              },
+              "languageCode": "en"
+            } ]
+          },
+          "name": "83c9da23-6529-4361-86fd-146eb74426cc"
+        }, {
+          "event": "sys.no-match-2",
+          "triggerFulfillment": {
+            "messages": [ {
+              "text": {
+                "text": [ "\u003cspeak\u003eI'm having trouble understanding you. For the store's address, press 1. For the customer's delivery address, press 2. Or, to get help with something else, press 3.\u003c/speak\u003e" ]
+              },
+              "languageCode": "en"
+            } ]
+          },
+          "name": "6a0ba1b4-0804-4b15-b521-de243647a25b"
+        }, {
+          "targetFlow": "ZExit",
+          "event": "sys.no-match-3",
+          "triggerFulfillment": {
+            "messages": [ {
+              "text": {
+                "text": [ "\u003cspeak\u003e\u003cbreak time=\"10ms\"/\u003e\u003c/speak\u003e" ]
+              },
+              "languageCode": "en"
+            } ],
+            "setParameterActions": [ {
+              "parameter": "zIntent",
+              "value": "ZAgent"
+            } ]
+          },
+          "name": "8e11a549-8051-4641-8beb-a1342484818b"
+        }, {
+          "event": "sys.no-input-1",
+          "triggerFulfillment": {
+            "messages": [ {
+              "text": {
+                "text": [ "\u003cspeak\u003eYou can say, the store's address, the dropoff address. or, Something else.\u003c/speak\u003e" ]
+              },
+              "languageCode": "en"
+            } ]
+          },
+          "name": "65158728-3750-4b2f-a4fd-507301c448d5"
+        }, {
+          "event": "sys.no-input-2",
+          "triggerFulfillment": {
+            "messages": [ {
+              "text": {
+                "text": [ "\u003cspeak\u003eI didn't hear you.\u003c/speak\u003e\n\n\u003cspeak\u003eFor the store's address, press 1. For the customer's delivery address, press 2. Or, to get help with something else, press 3.\u003c/speak\u003e" ]
+              },
+              "languageCode": "en"
+            } ]
+          },
+          "name": "48ea45f2-d9bc-4fc9-bcc4-d3bdb62af943"
+        }, {
+          "targetFlow": "ZExit",
+          "event": "sys.no-input-3",
+          "triggerFulfillment": {
+            "messages": [ {
+              "text": {
+                "text": [ "\u003cspeak\u003eI am having trouble hearing you.\u003c/speak\u003e" ]
+              },
+              "languageCode": "en"
+            } ],
+            "setParameterActions": [ {
+              "parameter": "zIntent",
+              "value": "ZHangup"
+            } ]
+          },
+          "name": "a488453b-c320-4eaf-8a72-ba6efe64b1f2"
+        } ]
+      },
+      "advancedSettings": {
+        "dtmfSettings": {
+          "enabled": true,
+          "useSystemEntityRule": false
+        }
+      }
+    } ]
+  },
+  "entryFulfillment": {
+    "messages": [ {
+      "text": {
+        "text": [ "\u003cspeak\u003eTo confirm, which are you calling about? the store's address, or the customer's delivery address? Or you can say, Get help with something else.\u003c/speak\u003e" ]
+      },
+      "languageCode": "en"
+    } ]
+  },
+  "transitionRoutes": [ {
+    "intent": "Address_Vague-apiFailure-pickup",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "intentName",
+        "value": "Address_Vague-apiFailure-pickup"
+      } ]
+    },
+    "targetFlow": "Orange Flow",
+    "name": "f55d2207-6caa-4848-abbe-be160f0563bb"
+  }, {
+    "intent": "Address_Vague-apiFailure-dropoff",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "intentName",
+        "value": "Address_Vague-apiFailure-dropoff"
+      } ]
+    },
+    "targetFlow": "Orange Flow",
+    "name": "79c9ed89-973a-4e5a-92f6-9010459059fe"
+  }, {
+    "intent": "Address_Vague-apiFailure-other",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "\u003cspeak\u003eOkay, something else.\u003c/speak\u003e\n\n\u003cspeak\u003eWhat would you like help with? For example, you can say things like, I can't find the customer, or, the store is taking too long.\u003c/speak\u003e" ]
+        },
+        "languageCode": "en"
+      } ]
+    },
+    "targetFlow": "Default Start Flow",
+    "name": "aa545bd0-2379-4c3d-b4af-e0c3a5d82b44"
+  }, {
+    "intent": "Agent_Vague",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "intentName",
+        "value": "Agent_Vague"
+      } ]
+    },
+    "targetFlow": "Immediate Transfer Flow",
+    "name": "367f72fe-0ca3-4dc2-9b89-1789f1d8fb04"
+  }, {
+    "condition": "$session.params.dtmf_input = \"1\"",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "intentName",
+        "value": "Address_Vague-apiFailure-pickup"
+      } ]
+    },
+    "targetFlow": "Orange Flow",
+    "name": "b9004ff7-b57b-43a5-80ab-22e9ad4e90fe"
+  }, {
+    "condition": "$session.params.dtmf_input = \"2\"",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "intentName",
+        "value": "Address_Vague-apiFailure-dropoff"
+      } ]
+    },
+    "targetFlow": "Orange Flow",
+    "name": "f63ea8e6-e688-446e-ba47-585b9aca4965"
+  }, {
+    "condition": "$session.params.dtmf_input = \"3\"",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "\u003cspeak\u003eOkay, something else.\u003c/speak\u003e\n\n\u003cspeak\u003eWhat would you like help with? For example, you can say things like, I can't find the customer, or, the store is taking too long.\u003c/speak\u003e" ]
+        },
+        "languageCode": "en"
+      } ]
+    },
+    "targetFlow": "Default Start Flow",
+    "name": "50128292-2f98-4b4d-a59d-b7f8c62a9311"
+  }, {
+    "condition": "$session.params.dtmf_input = \"0\"",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "intentName",
+        "value": "Agent_Vague"
+      } ]
+    },
+    "targetFlow": "Immediate Transfer Flow",
+    "name": "ff3d4b17-6c57-437f-b1fd-3f86b70ffcd1"
+  } ],
+  "eventHandlers": [ {
+    "event": "sys.no-match-1",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "\u003cspeak\u003eI didn't get that.\u003c/speak\u003e\n\n\u003cspeak\u003eYou can say, the store's address, the dropoff address. or, Something else.\u003c/speak\u003e" ]
+        },
+        "languageCode": "en"
+      } ]
+    },
+    "name": "c5021678-1f84-4973-b991-55b561e8ec81"
+  }, {
+    "event": "sys.no-match-2",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "\u003cspeak\u003eI'm having trouble understanding you. For the store's address, press 1. For the customer's delivery address, press 2. Or, to get help with something else, press 3.\u003c/speak\u003e" ]
+        },
+        "languageCode": "en"
+      } ]
+    },
+    "name": "eade6bd3-afdb-4f4a-9cf8-db7ebb7f575f"
+  }, {
+    "targetFlow": "ZExit",
+    "event": "sys.no-match-3",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "\u003cspeak\u003e\u003cbreak time=\"10ms\"/\u003e\u003c/speak\u003e" ]
+        },
+        "languageCode": "en"
+      } ],
+      "setParameterActions": [ {
+        "parameter": "zIntent",
+        "value": "ZAgent"
+      } ]
+    },
+    "name": "65d94d0b-673f-4d27-b2a5-6b3ef62bbe14"
+  }, {
+    "event": "sys.no-input-1",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "\u003cspeak\u003eYou can say, the store's address, the dropoff address. or, Something else.\u003c/speak\u003e" ]
+        },
+        "languageCode": "en"
+      } ]
+    },
+    "name": "d6315d71-1a3c-4915-ba72-573520f919e6"
+  }, {
+    "event": "sys.no-input-2",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "\u003cspeak\u003eI didn't hear you.\u003c/speak\u003e\n\n\u003cspeak\u003eFor the store's address, press 1. For the customer's delivery address, press 2. Or, to get help with something else, press 3.\u003c/speak\u003e" ]
+        },
+        "languageCode": "en"
+      } ]
+    },
+    "name": "5e9373d4-46f9-4c21-ba4c-3395835ebf53"
+  }, {
+    "targetFlow": "ZExit",
+    "event": "sys.no-input-3",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "\u003cspeak\u003eI am having trouble hearing you.\u003c/speak\u003e" ]
+        },
+        "languageCode": "en"
+      } ],
+      "setParameterActions": [ {
+        "parameter": "zIntent",
+        "value": "ZHangup"
+      } ]
+    },
+    "name": "cb177a97-4f93-466b-81c5-61af79a4100a"
+  } ]
+}

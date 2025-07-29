@@ -1,0 +1,33 @@
+{
+  "trainingPhrases": [ {
+    "parts": [ {
+      "text": "2 "
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "i picked up the wrong order "
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "picked up the wrong bag "
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "picked up wrong order "
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "wrong order "
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  } ]
+}

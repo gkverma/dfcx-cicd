@@ -1,0 +1,251 @@
+{
+  "name": "2fa8fd26-8051-4332-b6e9-0b579b95fa80",
+  "tags": [ "#Live_Order_Bot", "#Green_Family_Intent", "#Cancel_Vague", "#Happy_Path" ],
+  "displayName": "Cancel_Vague_16_csv",
+  "testCaseConversationTurns": [ {
+    "userInput": {
+      "isWebhookEnabled": true,
+      "input": {
+        "languageCode": "en",
+        "event": {
+          "event": "WELCOME"
+        }
+      }
+    },
+    "virtualAgentOutput": {
+      "sessionParameters": {
+        "pcAddressChanged": "false",
+        "pcContainsAlcohol": "false",
+        "pcCourierPrestartOneTracking": "false",
+        "pcCourierPrestartTwoTracking": "false",
+        "pcDeliveryStatus": "default",
+        "pcInteractionType": "default",
+        "pcIsVirtualRestaurant": "false",
+        "pcMiscPaymentAbuseBlock": "false",
+        "pcStoreAddress": "default",
+        "pcStorePhoneNumber": "default"
+      },
+      "differences": [ {
+        "type": "PAGE",
+        "description": "Page mismatch:\nExpected: \nActual:   Main_Menu_Page",
+        "assertionType": "EQUAL",
+        "expectedValue": "",
+        "actualValue": "Main_Menu_Page"
+      }, {
+        "type": "UTTERANCE",
+        "description": "Agent response mismatch",
+        "warning": true,
+        "assertionType": "EQUAL",
+        "expectedValue": "",
+        "actualValue": "\u003cspeak\u003eIn a few words, how can I help you with your current order. You can say things like, the order was already picked up by someone else, ore, problem with customers address.\u003c/speak\u003e"
+      } ],
+      "currentPage": {
+        "name": "Main_Menu_Page",
+        "flow": "Default Start Flow"
+      },
+      "textResponses": [ {
+        "text": [ "\u003cspeak\u003eIn a few words, how can I help you with your current order. You can say things like, the order was already picked up by someone else, ore, problem with customers address.\u003c/speak\u003e" ]
+      } ],
+      "currentFlow": {
+        "name": "Default Start Flow"
+      },
+      "actions": [ {
+        "agentUtterance": {
+          "text": "\u003cspeak\u003eIn a few words, how can I help you with your current order. You can say things like, the order was already picked up by someone else, ore, problem with customers address.\u003c/speak\u003e"
+        }
+      } ]
+    }
+  }, {
+    "userInput": {
+      "isWebhookEnabled": true,
+      "input": {
+        "text": {
+          "text": "cancel"
+        },
+        "languageCode": "en"
+      }
+    },
+    "virtualAgentOutput": {
+      "sessionParameters": {
+        "dfLastCallerIntent": "Cancel_Vague",
+        "intentName": "Cancel_Vague",
+        "isRepeat": "no",
+        "pcAddressChanged": "false",
+        "pcContainsAlcohol": "false",
+        "pcCourierPrestartOneTracking": "false",
+        "pcCourierPrestartTwoTracking": "false",
+        "pcDeliveryStatus": "default",
+        "pcInteractionType": "default",
+        "pcIsVirtualRestaurant": "false",
+        "pcMiscPaymentAbuseBlock": "false",
+        "pcStoreAddress": "default",
+        "pcStorePhoneNumber": "default"
+      },
+      "differences": [ {
+        "type": "PAGE",
+        "description": "Page mismatch:\nExpected: \nActual:   Cancel_Vague_Confirmation",
+        "assertionType": "EQUAL",
+        "expectedValue": "",
+        "actualValue": "Cancel_Vague_Confirmation"
+      }, {
+        "type": "INTENT",
+        "description": "Intent mismatch:\nExpected: \nActual:   Cancel_Vague",
+        "assertionType": "EQUAL",
+        "expectedValue": "",
+        "actualValue": "Cancel_Vague"
+      }, {
+        "type": "UTTERANCE",
+        "description": "Agent response mismatch",
+        "warning": true,
+        "assertionType": "EQUAL",
+        "expectedValue": "",
+        "actualValue": "\u003cspeak\u003eTo confirm, which would you like? Do you want to cancel the order.  or, was the order already canceled by someone else? You can also say, Get help with something else.\u003c/speak\u003e"
+      } ],
+      "triggeredIntent": {
+        "name": "Cancel_Vague"
+      },
+      "currentPage": {
+        "name": "Cancel_Vague_Confirmation",
+        "flow": "Green Flow"
+      },
+      "textResponses": [ {
+        "text": [ "\u003cspeak\u003eTo confirm, which would you like? Do you want to cancel the order.  or, was the order already canceled by someone else? You can also say, Get help with something else.\u003c/speak\u003e" ]
+      } ],
+      "currentFlow": {
+        "name": "Green Flow"
+      },
+      "actions": [ {
+        "userUtterance": {
+          "text": "cancel"
+        }
+      }, {
+        "agentUtterance": {
+          "text": "\u003cspeak\u003eTo confirm, which would you like? Do you want to cancel the order.  or, was the order already canceled by someone else? You can also say, Get help with something else.\u003c/speak\u003e"
+        }
+      } ]
+    }
+  }, {
+    "userInput": {
+      "isWebhookEnabled": true,
+      "input": {
+        "text": {
+        
+        },
+        "languageCode": "en"
+      }
+    },
+    "virtualAgentOutput": {
+      "sessionParameters": {
+        "dfLastCallerIntent": "Cancel_Vague",
+        "intentName": "Cancel_Vague",
+        "isRepeat": "no",
+        "pcAddressChanged": "false",
+        "pcContainsAlcohol": "false",
+        "pcCourierPrestartOneTracking": "false",
+        "pcCourierPrestartTwoTracking": "false",
+        "pcDeliveryStatus": "default",
+        "pcInteractionType": "default",
+        "pcIsVirtualRestaurant": "false",
+        "pcMiscPaymentAbuseBlock": "false",
+        "pcStoreAddress": "default",
+        "pcStorePhoneNumber": "default"
+      },
+      "differences": [ {
+        "type": "PAGE",
+        "description": "Page mismatch:\nExpected: \nActual:   Cancel_Vague_Confirmation",
+        "assertionType": "EQUAL",
+        "expectedValue": "",
+        "actualValue": "Cancel_Vague_Confirmation"
+      }, {
+        "type": "UTTERANCE",
+        "description": "Agent response mismatch",
+        "warning": true,
+        "assertionType": "EQUAL",
+        "expectedValue": "",
+        "actualValue": "\u003cspeak\u003eYou can say, I want to cancel my order. someone ask me to cancel the order. or, the order was already canceled by someone else\u003c/speak\u003e"
+      } ],
+      "currentPage": {
+        "name": "Cancel_Vague_Confirmation",
+        "flow": "Green Flow"
+      },
+      "textResponses": [ {
+        "text": [ "\u003cspeak\u003eYou can say, I want to cancel my order. someone ask me to cancel the order. or, the order was already canceled by someone else\u003c/speak\u003e" ]
+      } ],
+      "currentFlow": {
+        "name": "Green Flow"
+      },
+      "actions": [ {
+        "agentUtterance": {
+          "text": "\u003cspeak\u003eYou can say, I want to cancel my order. someone ask me to cancel the order. or, the order was already canceled by someone else\u003c/speak\u003e"
+        }
+      } ]
+    }
+  }, {
+    "userInput": {
+      "isWebhookEnabled": true,
+      "input": {
+        "languageCode": "en",
+        "dtmf": {
+          "digits": "3"
+        }
+      }
+    },
+    "virtualAgentOutput": {
+      "sessionParameters": {
+        "dfLastCallerIntent": "Cancel_ByCustResto",
+        "intentName": "Cancel_ByCustResto-alreadyCancel-yes",
+        "isRepeat": "no",
+        "pcAddressChanged": "false",
+        "pcContainsAlcohol": "false",
+        "pcCourierPrestartOneTracking": "false",
+        "pcCourierPrestartTwoTracking": "false",
+        "pcDeliveryStatus": "default",
+        "pcInteractionType": "default",
+        "pcIsVirtualRestaurant": "false",
+        "pcMiscPaymentAbuseBlock": "false",
+        "pcStoreAddress": "default",
+        "pcStorePhoneNumber": "default"
+      },
+      "differences": [ {
+        "type": "PAGE",
+        "description": "Page mismatch:\nExpected: \nActual:   Cancel_ByCustResto-alreadyCancel_Response",
+        "assertionType": "EQUAL",
+        "expectedValue": "",
+        "actualValue": "Cancel_ByCustResto-alreadyCancel_Response"
+      }, {
+        "type": "UTTERANCE",
+        "description": "Agent response mismatch",
+        "warning": true,
+        "assertionType": "EQUAL",
+        "expectedValue": "",
+        "actualValue": "\u003cspeak\u003eWhen the customer, or the store cancels an order, you may receive a cancelation fee for your time. Please safely dispose of any items you have picked up. And you can proceed with your new deliveries. If you still have questions, please send us a message from your Uber Driver app.\u003c/speak\u003e\u003cspeak\u003eTo listen to this message again, just say, repeat it. \u003cbreak time=\"700ms\"/\u003e Is there anything else I can help you with today?\u003c/speak\u003e"
+      } ],
+      "currentPage": {
+        "name": "Cancel_ByCustResto-alreadyCancel_Response",
+        "flow": "Purple Flow"
+      },
+      "textResponses": [ {
+        "text": [ "\u003cspeak\u003eWhen the customer, or the store cancels an order, you may receive a cancelation fee for your time. Please safely dispose of any items you have picked up. And you can proceed with your new deliveries. If you still have questions, please send us a message from your Uber Driver app.\u003c/speak\u003e" ]
+      }, {
+        "text": [ "\u003cspeak\u003eTo listen to this message again, just say, repeat it. \u003cbreak time=\"700ms\"/\u003e Is there anything else I can help you with today?\u003c/speak\u003e" ]
+      } ],
+      "currentFlow": {
+        "name": "Purple Flow"
+      },
+      "actions": [ {
+        "agentUtterance": {
+          "text": "\u003cspeak\u003eWhen the customer, or the store cancels an order, you may receive a cancelation fee for your time. Please safely dispose of any items you have picked up. And you can proceed with your new deliveries. If you still have questions, please send us a message from your Uber Driver app.\u003c/speak\u003e\n\u003cspeak\u003eTo listen to this message again, just say, repeat it. \u003cbreak time=\"700ms\"/\u003e Is there anything else I can help you with today?\u003c/speak\u003e"
+        }
+      } ]
+    }
+  } ],
+  "creationTime": {
+    "seconds": 1705388395,
+    "nanos": 2700000
+  },
+  "testConfig": {
+    "flow": "Default Start Flow",
+    "page": "Start Page"
+  },
+  "languageCode": "en"
+}

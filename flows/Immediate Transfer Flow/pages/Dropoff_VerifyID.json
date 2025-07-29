@@ -1,0 +1,23 @@
+{
+  "name": "26834b60-ad75-4973-bfa1-6c34f17b5cb1",
+  "displayName": "Dropoff_VerifyID",
+  "form": {
+  
+  },
+  "entryFulfillment": {
+    "messages": [ {
+      "text": {
+        "text": [ "\u003cspeak\u003eOkay, help with ID verification.\u003c/speak\u003e" ]
+      },
+      "languageCode": "en"
+    } ]
+  },
+  "transitionRoutes": [ {
+    "condition": "true",
+    "triggerFulfillment": {
+    
+    },
+    "targetFlow": "ZExit",
+    "name": "99fc2d63-06b8-48cb-b5f5-3befa37c7d8b"
+  } ]
+}

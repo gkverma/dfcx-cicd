@@ -1,0 +1,11 @@
+{
+  "name": "0fe830ef-8a6d-4c54-bad8-6dfb868bc5b6",
+  "displayName": "Other_Help",
+  "parameters": [ {
+    "id": "Store",
+    "entityType": "@Store",
+    "isList": true
+  } ],
+  "priority": 500000,
+  "numTrainingPhrases": 149
+}

@@ -1,0 +1,10 @@
+{
+  "name": "776d704e-3cd1-464b-bd1a-14be8049650f",
+  "displayName": "Resto_Address-custAddr",
+  "parameters": [ {
+    "id": "dfLastCallerIntent",
+    "entityType": "@sys.any"
+  } ],
+  "priority": 500000,
+  "numTrainingPhrases": 11
+}

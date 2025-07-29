@@ -1,0 +1,286 @@
+{
+  "name": "77fe1fa6-17e0-4bd9-ba6d-7bd7a8d3cd50",
+  "displayName": "PlusCard_Forgot_Response",
+  "form": {
+    "parameters": [ {
+      "displayName": "dtmf_input",
+      "required": true,
+      "entityType": "@dtmf_123",
+      "fillBehavior": {
+        "initialPromptFulfillment": {
+        
+        },
+        "repromptEventHandlers": [ {
+          "event": "sys.no-match-1",
+          "triggerFulfillment": {
+            "messages": [ {
+              "text": {
+                "text": [ "\u003cspeak\u003eSorry. To hear the message again, just say, repeat it. You can also say, reimbursement info, or, job preferences.\u003c/speak\u003e" ]
+              },
+              "languageCode": "en"
+            } ]
+          },
+          "name": "08becb63-7203-4ad3-88bd-1a27d71fc161"
+        }, {
+          "event": "sys.no-match-2",
+          "triggerFulfillment": {
+            "messages": [ {
+              "text": {
+                "text": [ "\u003cspeak\u003e I didn't get that. To listen to the message again, press 1. For more information on reimbursement, press 2. To learn how to change job preferences, press 3.\u003c/speak\u003e" ]
+              },
+              "languageCode": "en"
+            } ]
+          },
+          "name": "1d33b820-8ac0-47a8-b3eb-db4db277edc5"
+        }, {
+          "targetFlow": "ZExit",
+          "event": "sys.no-match-3",
+          "triggerFulfillment": {
+            "messages": [ {
+              "text": {
+                "text": [ "\u003cspeak\u003e\u003cbreak time=\"10ms\"/\u003e\u003c/speak\u003e" ]
+              },
+              "languageCode": "en"
+            } ],
+            "setParameterActions": [ {
+              "parameter": "zIntent",
+              "value": "ZAgent"
+            } ]
+          },
+          "name": "b6049505-0569-45ce-b38c-1f1392a1978e"
+        }, {
+          "event": "sys.no-input-1",
+          "triggerFulfillment": {
+            "messages": [ {
+              "text": {
+                "text": [ "\u003cspeak\u003eSorry. To hear the message again, just say, repeat it. You can also say, reimbursement info, or, job preferences.\u003c/speak\u003e" ]
+              },
+              "languageCode": "en"
+            } ]
+          },
+          "name": "244429b1-8ec1-451f-9fd4-952ad2f4be31"
+        }, {
+          "event": "sys.no-input-2",
+          "triggerFulfillment": {
+            "messages": [ {
+              "text": {
+                "text": [ "\u003cspeak\u003e I didn't hear you. To listen to the message again, press 1. For more information on reimbursement, press 2. To learn how to change job preferences, press 3.\u003c\u003c/speak\u003e" ]
+              },
+              "languageCode": "en"
+            } ]
+          },
+          "name": "293cb726-effd-4ca9-9697-d510f787564b"
+        }, {
+          "targetFlow": "ZExit",
+          "event": "sys.no-input-3",
+          "triggerFulfillment": {
+            "messages": [ {
+              "text": {
+                "text": [ "\u003cspeak\u003eI am having trouble hearing you.\u003c/speak\u003e" ]
+              },
+              "languageCode": "en"
+            } ],
+            "setParameterActions": [ {
+              "parameter": "zIntent",
+              "value": "ZHangup"
+            } ]
+          },
+          "name": "dcc1f599-58b0-4014-a1ce-a0c4889381fa"
+        } ]
+      },
+      "advancedSettings": {
+        "dtmfSettings": {
+          "enabled": true,
+          "useSystemEntityRule": false
+        }
+      }
+    } ]
+  },
+  "entryFulfillment": {
+    "setParameterActions": [ {
+      "parameter": "dtmf_input",
+      "value": null
+    } ],
+    "conditionalCases": [ {
+      "cases": [ {
+        "condition": "$session.params.isRepeat != \"yes\"",
+        "caseContent": [ {
+          "message": {
+            "text": {
+              "text": [ "\u003cspeak\u003eI understand you don't have the Plus Card. If you want, you can choose to use your own payment method to complete this delivery, and get reimbursed later. In the app, you can change the payment method, from Plus Card, to Personal Funds. For more information on how this works, say, reimbursement info. Or, to learn how to stop receiving this type of delivery job in the future, you can say, job preferences.\u003cbreak time=\"750ms\"/\u003e\u003c/speak\u003e" ]
+            },
+            "languageCode": "en"
+          }
+        }, {
+          "message": {
+            "text": {
+              "text": [ "\u003cspeak\u003eTo listen to this message again, just say, repeat it. \u003c/speak\u003e" ]
+            },
+            "languageCode": "en"
+          }
+        } ]
+      }, {
+        "caseContent": [ {
+          "message": {
+            "text": {
+              "text": [ "\u003cspeak\u003eI understand you don't have the Plus Card. If you want, you can choose to use your own payment method to complete this delivery, and get reimbursed later. In the app, you can change the payment method, from Plus Card, to Personal Funds. For more information on how this works, say, reimbursement info. Or, to learn how to stop receiving this type of delivery job in the future, you can say, job preferences.\u003cbreak time=\"750ms\"/\u003e\u003c/speak\u003e" ]
+            },
+            "languageCode": "en"
+          }
+        } ]
+      } ]
+    } ]
+  },
+  "transitionRoutes": [ {
+    "intent": "Intent.Repeat",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "isRepeat",
+        "value": "yes"
+      } ]
+    },
+    "targetPage": "Current Page",
+    "name": "d9e225a7-c17a-4915-8180-b4cc087285c1"
+  }, {
+    "intent": "PlusCard_Forgot-yes-reimburse",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "intentName",
+        "value": "PlusCard_Forgot-yes-reimburse"
+      } ]
+    },
+    "targetFlow": "FAQ Flow",
+    "name": "6f065836-8a25-4f9d-8a05-019feb562527"
+  }, {
+    "intent": "PlusCard_Forgot-yes-jobPreferences",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "isRepeat",
+        "value": "no"
+      } ]
+    },
+    "targetPage": "PlusCard_Forgot-yes-jobPreferences_Response",
+    "name": "db47d768-1350-4b08-8553-6ecbaf1c0540"
+  }, {
+    "condition": "$session.params.dtmf_input = \"0\"",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "intentName",
+        "value": "Agent_Vague"
+      } ]
+    },
+    "targetFlow": "Immediate Transfer Flow",
+    "name": "001e66a8-74be-4c4a-aa9f-ab993f7efdeb"
+  }, {
+    "condition": "$session.params.dtmf_input = \"1\"",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "isRepeat",
+        "value": "yes"
+      }, {
+        "parameter": "dtmf_input",
+        "value": null
+      } ]
+    },
+    "targetPage": "Current Page",
+    "name": "fea014fe-adbf-44ab-b7b2-a8016d3f83af"
+  }, {
+    "condition": "$session.params.dtmf_input = \"2\"",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "intentName",
+        "value": "PlusCard_Forgot-yes-reimburse"
+      } ]
+    },
+    "targetFlow": "FAQ Flow",
+    "name": "4829b3a4-87b9-4c4e-b3fb-aa0c835ccd1b"
+  }, {
+    "condition": "$session.params.dtmf_input = \"3\"",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "isRepeat",
+        "value": "no"
+      } ]
+    },
+    "targetPage": "PlusCard_Forgot-yes-jobPreferences_Response",
+    "name": "dd46edc1-7457-4795-9f84-23a5d1929e37"
+  } ],
+  "eventHandlers": [ {
+    "event": "sys.no-match-1",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "\u003cspeak\u003eSorry. To hear the message again, just say, repeat it. You can also say, reimbursement info, or, job preferences.\u003c/speak\u003e" ]
+        },
+        "languageCode": "en"
+      } ]
+    },
+    "name": "184366a1-ac71-46d7-9915-8e52bdf8acaa"
+  }, {
+    "event": "sys.no-match-2",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "\u003cspeak\u003e I didn't get that. To listen to the message again, press 1. For more information on reimbursement, press 2. To learn how to change job preferences, press 3.\u003c/speak\u003e" ]
+        },
+        "languageCode": "en"
+      } ]
+    },
+    "name": "a6758305-410e-4636-865c-2e65597d504f"
+  }, {
+    "targetFlow": "ZExit",
+    "event": "sys.no-match-3",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "\u003cspeak\u003e\u003cbreak time=\"10ms\"/\u003e\u003c/speak\u003e" ]
+        },
+        "languageCode": "en"
+      } ],
+      "setParameterActions": [ {
+        "parameter": "zIntent",
+        "value": "ZAgent"
+      } ]
+    },
+    "name": "007a2fc5-bbec-4ef0-978c-1793918d3452"
+  }, {
+    "event": "sys.no-input-1",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "\u003cspeak\u003eSorry. To hear the message again, just say, repeat it. You can also say, reimbursement info, or, job preferences.\u003c/speak\u003e" ]
+        },
+        "languageCode": "en"
+      } ]
+    },
+    "name": "490e0b13-8d39-48d9-b78f-06d77e6f1471"
+  }, {
+    "event": "sys.no-input-2",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "\u003cspeak\u003e I didn't hear you. To listen to the message again, press 1. For more information on reimbursement, press 2. To learn how to change job preferences, press 3.\u003c\u003c/speak\u003e" ]
+        },
+        "languageCode": "en"
+      } ]
+    },
+    "name": "491cd0e6-6fe8-4b10-abbb-ac193759597f"
+  }, {
+    "targetFlow": "ZExit",
+    "event": "sys.no-input-3",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "\u003cspeak\u003eI am having trouble hearing you.\u003c/speak\u003e" ]
+        },
+        "languageCode": "en"
+      } ],
+      "setParameterActions": [ {
+        "parameter": "zIntent",
+        "value": "ZHangup"
+      } ]
+    },
+    "name": "5b8083c5-1b3a-4f9f-9cfe-8b7ae7b41f4c"
+  } ],
+  "agentTransitionRouteGroups": [ "RouteGroups-FAQ" ]
+}

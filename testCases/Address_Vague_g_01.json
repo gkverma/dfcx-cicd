@@ -1,0 +1,213 @@
+{
+  "name": "ea6563dc-758a-4ff2-8d93-b4734039b5cc",
+  "tags": [ "#Live_Order_Bot", "#Green_Family_Intent", "#Address_Vague", "#Happy_Path" ],
+  "displayName": "Address_Vague_g_01",
+  "testCaseConversationTurns": [ {
+    "userInput": {
+      "injectedParameters": {
+        "pcDeliveryStatus": "arrived_dropoff_2"
+      },
+      "isWebhookEnabled": true,
+      "input": {
+        "languageCode": "en",
+        "event": {
+          "event": "WELCOME"
+        }
+      }
+    },
+    "virtualAgentOutput": {
+      "sessionParameters": {
+        "pcAddressChanged": "false",
+        "pcContainsAlcohol": "false",
+        "pcCourierPrestartOneTracking": "false",
+        "pcCourierPrestartTwoTracking": "false",
+        "pcDeliveryStatus": "arrived_dropoff_2",
+        "pcInteractionType": "default",
+        "pcIsVirtualRestaurant": "false",
+        "pcMiscPaymentAbuseBlock": "false",
+        "pcStoreAddress": "default",
+        "pcStorePhoneNumber": "default"
+      },
+      "differences": [ {
+        "type": "PAGE",
+        "description": "Page mismatch:\nExpected: \nActual:   Main_Menu_Page",
+        "assertionType": "EQUAL",
+        "expectedValue": "",
+        "actualValue": "Main_Menu_Page"
+      }, {
+        "type": "UTTERANCE",
+        "description": "Agent response mismatch",
+        "warning": true,
+        "assertionType": "EQUAL",
+        "expectedValue": "",
+        "actualValue": "\u003cspeak\u003eIn a few words, how can I help you with your current order. You can say things like, the order was already picked up by someone else, ore, problem with customers address.\u003c/speak\u003e"
+      } ],
+      "currentPage": {
+        "name": "Main_Menu_Page",
+        "flow": "Default Start Flow"
+      },
+      "textResponses": [ {
+        "text": [ "\u003cspeak\u003eIn a few words, how can I help you with your current order. You can say things like, the order was already picked up by someone else, ore, problem with customers address.\u003c/speak\u003e" ]
+      } ],
+      "currentFlow": {
+        "name": "Default Start Flow"
+      },
+      "actions": [ {
+        "agentUtterance": {
+          "text": "\u003cspeak\u003eIn a few words, how can I help you with your current order. You can say things like, the order was already picked up by someone else, ore, problem with customers address.\u003c/speak\u003e"
+        }
+      } ]
+    }
+  }, {
+    "userInput": {
+      "isWebhookEnabled": true,
+      "input": {
+        "text": {
+          "text": "address"
+        },
+        "languageCode": "en"
+      }
+    },
+    "virtualAgentOutput": {
+      "sessionParameters": {
+        "dfLastCallerIntent": "Dropoff_Address",
+        "intentName": "Dropoff_Address-yes-atDropoff-notAlcohol-meetAtDoor",
+        "isRepeat": "no",
+        "pcAddressChanged": "false",
+        "pcContainsAlcohol": "false",
+        "pcCourierPrestartOneTracking": "false",
+        "pcCourierPrestartTwoTracking": "false",
+        "pcDeliveryStatus": "arrived_dropoff_2",
+        "pcInteractionType": "default",
+        "pcIsVirtualRestaurant": "false",
+        "pcMiscPaymentAbuseBlock": "false",
+        "pcStoreAddress": "default",
+        "pcStorePhoneNumber": "default"
+      },
+      "differences": [ {
+        "type": "PAGE",
+        "description": "Page mismatch:\nExpected: \nActual:   Dropoff_Address-yes-atDropoff-notAlcohol-meetAtDoor_Response",
+        "assertionType": "EQUAL",
+        "expectedValue": "",
+        "actualValue": "Dropoff_Address-yes-atDropoff-notAlcohol-meetAtDoor_Response"
+      }, {
+        "type": "INTENT",
+        "description": "Intent mismatch:\nExpected: \nActual:   Address_Vague",
+        "assertionType": "EQUAL",
+        "expectedValue": "",
+        "actualValue": "Address_Vague"
+      }, {
+        "type": "UTTERANCE",
+        "description": "Agent response mismatch",
+        "warning": true,
+        "assertionType": "EQUAL",
+        "expectedValue": "",
+        "actualValue": "\u003cspeak\u003eI see that you've arrived at the drop off location. Once the timer is over, and you’ve tried to contact the customer two times, please leave the order in a safe place, and let the customer know, by taking a photo, and leaving a note using the app. Then mark the order as delivered, and continue onto your next delivery.\u003cbreak time=\"750ms\"/\u003e\u003c/speak\u003e\u003cspeak\u003eTo listen to this message again, just say, repeat it. \u003cbreak time=\"700ms\"/\u003e Is there anything else I can help you with today?\u003c/speak\u003e"
+      } ],
+      "triggeredIntent": {
+        "name": "Address_Vague"
+      },
+      "currentPage": {
+        "name": "Dropoff_Address-yes-atDropoff-notAlcohol-meetAtDoor_Response",
+        "flow": "Orange Flow"
+      },
+      "textResponses": [ {
+        "text": [ "\u003cspeak\u003eI see that you've arrived at the drop off location. Once the timer is over, and you’ve tried to contact the customer two times, please leave the order in a safe place, and let the customer know, by taking a photo, and leaving a note using the app. Then mark the order as delivered, and continue onto your next delivery.\u003cbreak time=\"750ms\"/\u003e\u003c/speak\u003e" ]
+      }, {
+        "text": [ "\u003cspeak\u003eTo listen to this message again, just say, repeat it. \u003cbreak time=\"700ms\"/\u003e Is there anything else I can help you with today?\u003c/speak\u003e" ]
+      } ],
+      "currentFlow": {
+        "name": "Orange Flow"
+      },
+      "actions": [ {
+        "userUtterance": {
+          "text": "address"
+        }
+      }, {
+        "agentUtterance": {
+          "text": "\u003cspeak\u003eI see that you've arrived at the drop off location. Once the timer is over, and you’ve tried to contact the customer two times, please leave the order in a safe place, and let the customer know, by taking a photo, and leaving a note using the app. Then mark the order as delivered, and continue onto your next delivery.\u003cbreak time=\"750ms\"/\u003e\u003c/speak\u003e\n\u003cspeak\u003eTo listen to this message again, just say, repeat it. \u003cbreak time=\"700ms\"/\u003e Is there anything else I can help you with today?\u003c/speak\u003e"
+        }
+      } ]
+    }
+  }, {
+    "userInput": {
+      "isWebhookEnabled": true,
+      "input": {
+        "text": {
+          "text": "the stores address"
+        },
+        "languageCode": "en"
+      }
+    },
+    "virtualAgentOutput": {
+      "sessionParameters": {
+        "dfLastCallerIntent": "Dropoff_Address",
+        "intentName": "Dropoff_Address-yes-atDropoff-notAlcohol-meetAtDoor",
+        "isRepeat": "no",
+        "pcAddressChanged": "false",
+        "pcContainsAlcohol": "false",
+        "pcCourierPrestartOneTracking": "false",
+        "pcCourierPrestartTwoTracking": "false",
+        "pcDeliveryStatus": "arrived_dropoff_2",
+        "pcInteractionType": "default",
+        "pcIsVirtualRestaurant": "false",
+        "pcMiscPaymentAbuseBlock": "false",
+        "pcStoreAddress": "default",
+        "pcStorePhoneNumber": "default"
+      },
+      "differences": [ {
+        "type": "PAGE",
+        "description": "Page mismatch:\nExpected: \nActual:   Dropoff_Address-yes-atDropoff-notAlcohol-wrongAddr_Response",
+        "assertionType": "EQUAL",
+        "expectedValue": "",
+        "actualValue": "Dropoff_Address-yes-atDropoff-notAlcohol-wrongAddr_Response"
+      }, {
+        "type": "INTENT",
+        "description": "Intent mismatch:\nExpected: \nActual:   Dropoff_Address-yes-atDropoff-notAlcohol-wrongAddr",
+        "assertionType": "EQUAL",
+        "expectedValue": "",
+        "actualValue": "Dropoff_Address-yes-atDropoff-notAlcohol-wrongAddr"
+      }, {
+        "type": "UTTERANCE",
+        "description": "Agent response mismatch",
+        "warning": true,
+        "assertionType": "EQUAL",
+        "expectedValue": "",
+        "actualValue": "\u003cspeak\u003eI'm sorry to hear that. Once you've arrived at the drop off location by following the navigation on the app, \u003cemphasis level=\"strong\"\u003ecall\u003c/emphasis\u003e or text the customer to start the timer. If the customer has not responded, when the timer expires, you can cancel the order, and dispose of the items. Don't worry - you'll still be paid for the delivery.\u003cbreak time=\"750ms\"/\u003e \u003c/speak\u003e\u003cspeak\u003eTo listen to this message again, just say, repeat it. \u003cbreak time=\"700ms\"/\u003e Is there anything else I can help you with today?\u003c/speak\u003e"
+      } ],
+      "triggeredIntent": {
+        "name": "Dropoff_Address-yes-atDropoff-notAlcohol-wrongAddr"
+      },
+      "currentPage": {
+        "name": "Dropoff_Address-yes-atDropoff-notAlcohol-wrongAddr_Response",
+        "flow": "Orange Flow"
+      },
+      "textResponses": [ {
+        "text": [ "\u003cspeak\u003eI'm sorry to hear that. Once you've arrived at the drop off location by following the navigation on the app, \u003cemphasis level=\"strong\"\u003ecall\u003c/emphasis\u003e or text the customer to start the timer. If the customer has not responded, when the timer expires, you can cancel the order, and dispose of the items. Don't worry - you'll still be paid for the delivery.\u003cbreak time=\"750ms\"/\u003e \u003c/speak\u003e" ]
+      }, {
+        "text": [ "\u003cspeak\u003eTo listen to this message again, just say, repeat it. \u003cbreak time=\"700ms\"/\u003e Is there anything else I can help you with today?\u003c/speak\u003e" ]
+      } ],
+      "currentFlow": {
+        "name": "Orange Flow"
+      },
+      "actions": [ {
+        "userUtterance": {
+          "text": "the stores address"
+        }
+      }, {
+        "agentUtterance": {
+          "text": "\u003cspeak\u003eI'm sorry to hear that. Once you've arrived at the drop off location by following the navigation on the app, \u003cemphasis level=\"strong\"\u003ecall\u003c/emphasis\u003e or text the customer to start the timer. If the customer has not responded, when the timer expires, you can cancel the order, and dispose of the items. Don't worry - you'll still be paid for the delivery.\u003cbreak time=\"750ms\"/\u003e \u003c/speak\u003e\n\u003cspeak\u003eTo listen to this message again, just say, repeat it. \u003cbreak time=\"700ms\"/\u003e Is there anything else I can help you with today?\u003c/speak\u003e"
+        }
+      } ]
+    }
+  } ],
+  "creationTime": {
+    "seconds": 1705551571,
+    "nanos": 411609000
+  },
+  "testConfig": {
+    "flow": "Default Start Flow",
+    "page": "Start Page"
+  },
+  "languageCode": "en"
+}

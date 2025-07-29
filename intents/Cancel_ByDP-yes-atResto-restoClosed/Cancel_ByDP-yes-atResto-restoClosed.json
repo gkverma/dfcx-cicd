@@ -1,0 +1,11 @@
+{
+  "name": "6d3219ed-0627-4f46-8163-e0cf1b588dde",
+  "displayName": "Cancel_ByDP-yes-atResto-restoClosed",
+  "parameters": [ {
+    "id": "Store",
+    "entityType": "@Store",
+    "isList": true
+  } ],
+  "priority": 500000,
+  "numTrainingPhrases": 10
+}

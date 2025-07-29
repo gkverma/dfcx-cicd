@@ -1,0 +1,255 @@
+{
+  "name": "1c62ce1c-f7de-4257-81c6-7ed5476f3a04",
+  "tags": [ "#Live_Order_Bot", "#Green_Family_Intent", "#Resto_Vague", "#Happy_Path" ],
+  "displayName": "Resto_Vague_18_csv",
+  "testCaseConversationTurns": [ {
+    "userInput": {
+      "isWebhookEnabled": true,
+      "input": {
+        "languageCode": "en",
+        "event": {
+          "event": "WELCOME"
+        }
+      }
+    },
+    "virtualAgentOutput": {
+      "sessionParameters": {
+        "pcAddressChanged": "false",
+        "pcContainsAlcohol": "false",
+        "pcCourierPrestartOneTracking": "false",
+        "pcCourierPrestartTwoTracking": "false",
+        "pcDeliveryStatus": "default",
+        "pcInteractionType": "default",
+        "pcIsVirtualRestaurant": "false",
+        "pcMiscPaymentAbuseBlock": "false",
+        "pcStoreAddress": "default",
+        "pcStorePhoneNumber": "default"
+      },
+      "differences": [ {
+        "type": "PAGE",
+        "description": "Page mismatch:\nExpected: \nActual:   Main_Menu_Page",
+        "assertionType": "EQUAL",
+        "expectedValue": "",
+        "actualValue": "Main_Menu_Page"
+      }, {
+        "type": "UTTERANCE",
+        "description": "Agent response mismatch",
+        "warning": true,
+        "assertionType": "EQUAL",
+        "expectedValue": "",
+        "actualValue": "\u003cspeak\u003eIn a few words, how can I help you with your current order. You can say things like, the order was already picked up by someone else, ore, problem with customers address.\u003c/speak\u003e"
+      } ],
+      "currentPage": {
+        "name": "Main_Menu_Page",
+        "flow": "Default Start Flow"
+      },
+      "textResponses": [ {
+        "text": [ "\u003cspeak\u003eIn a few words, how can I help you with your current order. You can say things like, the order was already picked up by someone else, ore, problem with customers address.\u003c/speak\u003e" ]
+      } ],
+      "currentFlow": {
+        "name": "Default Start Flow"
+      },
+      "actions": [ {
+        "agentUtterance": {
+          "text": "\u003cspeak\u003eIn a few words, how can I help you with your current order. You can say things like, the order was already picked up by someone else, ore, problem with customers address.\u003c/speak\u003e"
+        }
+      } ]
+    }
+  }, {
+    "userInput": {
+      "isWebhookEnabled": true,
+      "input": {
+        "text": {
+          "text": "restaurant"
+        },
+        "languageCode": "en"
+      }
+    },
+    "virtualAgentOutput": {
+      "sessionParameters": {
+        "dfLastCallerIntent": "Resto_Vague",
+        "intentName": "Resto_Vague",
+        "isRepeat": "no",
+        "pcAddressChanged": "false",
+        "pcContainsAlcohol": "false",
+        "pcCourierPrestartOneTracking": "false",
+        "pcCourierPrestartTwoTracking": "false",
+        "pcDeliveryStatus": "default",
+        "pcInteractionType": "default",
+        "pcIsVirtualRestaurant": "false",
+        "pcMiscPaymentAbuseBlock": "false",
+        "pcStoreAddress": "default",
+        "pcStorePhoneNumber": "default",
+        "store": [ "store" ]
+      },
+      "differences": [ {
+        "type": "PAGE",
+        "description": "Page mismatch:\nExpected: \nActual:   Resto_Vague_Response",
+        "assertionType": "EQUAL",
+        "expectedValue": "",
+        "actualValue": "Resto_Vague_Response"
+      }, {
+        "type": "INTENT",
+        "description": "Intent mismatch:\nExpected: \nActual:   Resto_Vague",
+        "assertionType": "EQUAL",
+        "expectedValue": "",
+        "actualValue": "Resto_Vague"
+      }, {
+        "type": "UTTERANCE",
+        "description": "Agent response mismatch",
+        "warning": true,
+        "assertionType": "EQUAL",
+        "expectedValue": "",
+        "actualValue": "\u003cspeak\u003eWhat issue are you having at the store? You can say, \u003cbreak time=\"400ms\"/\u003e the store is closed, \u003cbreak time=\"500ms\"/\u003e the order already picked up, \u003cbreak time=\"500ms\"/\u003e the store can't prepare the order, \u003cbreak time=\"500ms\"/\u003e ore, \u003cbreak time=\"500ms\"/\u003e I waited a long time. You can also say, it is Something else.\u003c/speak\u003e"
+      } ],
+      "triggeredIntent": {
+        "name": "Resto_Vague"
+      },
+      "currentPage": {
+        "name": "Resto_Vague_Response",
+        "flow": "Green Flow"
+      },
+      "textResponses": [ {
+        "text": [ "\u003cspeak\u003eWhat issue are you having at the store? You can say, \u003cbreak time=\"400ms\"/\u003e the store is closed, \u003cbreak time=\"500ms\"/\u003e the order already picked up, \u003cbreak time=\"500ms\"/\u003e the store can't prepare the order, \u003cbreak time=\"500ms\"/\u003e ore, \u003cbreak time=\"500ms\"/\u003e I waited a long time. You can also say, it is Something else.\u003c/speak\u003e" ]
+      } ],
+      "currentFlow": {
+        "name": "Green Flow"
+      },
+      "actions": [ {
+        "userUtterance": {
+          "text": "restaurant"
+        }
+      }, {
+        "agentUtterance": {
+          "text": "\u003cspeak\u003eWhat issue are you having at the store? You can say, \u003cbreak time=\"400ms\"/\u003e the store is closed, \u003cbreak time=\"500ms\"/\u003e the order already picked up, \u003cbreak time=\"500ms\"/\u003e the store can't prepare the order, \u003cbreak time=\"500ms\"/\u003e ore, \u003cbreak time=\"500ms\"/\u003e I waited a long time. You can also say, it is Something else.\u003c/speak\u003e"
+        }
+      } ]
+    }
+  }, {
+    "userInput": {
+      "isWebhookEnabled": true,
+      "input": {
+        "text": {
+        
+        },
+        "languageCode": "en"
+      }
+    },
+    "virtualAgentOutput": {
+      "sessionParameters": {
+        "dfLastCallerIntent": "Resto_Vague",
+        "intentName": "Resto_Vague",
+        "isRepeat": "no",
+        "pcAddressChanged": "false",
+        "pcContainsAlcohol": "false",
+        "pcCourierPrestartOneTracking": "false",
+        "pcCourierPrestartTwoTracking": "false",
+        "pcDeliveryStatus": "default",
+        "pcInteractionType": "default",
+        "pcIsVirtualRestaurant": "false",
+        "pcMiscPaymentAbuseBlock": "false",
+        "pcStoreAddress": "default",
+        "pcStorePhoneNumber": "default",
+        "store": [ "store" ]
+      },
+      "differences": [ {
+        "type": "PAGE",
+        "description": "Page mismatch:\nExpected: \nActual:   Resto_Vague_Response",
+        "assertionType": "EQUAL",
+        "expectedValue": "",
+        "actualValue": "Resto_Vague_Response"
+      }, {
+        "type": "UTTERANCE",
+        "description": "Agent response mismatch",
+        "warning": true,
+        "assertionType": "EQUAL",
+        "expectedValue": "",
+        "actualValue": "\u003cspeak\u003eYou can say, \u003cbreak time=\"400ms\"/\u003e Store closed, \u003cbreak time=\"400ms\"/\u003e Order already picked up, \u003cbreak time=\"400ms\"/\u003e Store can't prepare order, ore, \u003cbreak time=\"400ms\"/\u003e Waited a long time. You can also say, it is something else.\u003c/speak\u003e"
+      } ],
+      "currentPage": {
+        "name": "Resto_Vague_Response",
+        "flow": "Green Flow"
+      },
+      "textResponses": [ {
+        "text": [ "\u003cspeak\u003eYou can say, \u003cbreak time=\"400ms\"/\u003e Store closed, \u003cbreak time=\"400ms\"/\u003e Order already picked up, \u003cbreak time=\"400ms\"/\u003e Store can't prepare order, ore, \u003cbreak time=\"400ms\"/\u003e Waited a long time. You can also say, it is something else.\u003c/speak\u003e" ]
+      } ],
+      "currentFlow": {
+        "name": "Green Flow"
+      },
+      "actions": [ {
+        "agentUtterance": {
+          "text": "\u003cspeak\u003eYou can say, \u003cbreak time=\"400ms\"/\u003e Store closed, \u003cbreak time=\"400ms\"/\u003e Order already picked up, \u003cbreak time=\"400ms\"/\u003e Store can't prepare order, ore, \u003cbreak time=\"400ms\"/\u003e Waited a long time. You can also say, it is something else.\u003c/speak\u003e"
+        }
+      } ]
+    }
+  }, {
+    "userInput": {
+      "isWebhookEnabled": true,
+      "input": {
+        "languageCode": "en",
+        "dtmf": {
+          "digits": "3"
+        }
+      }
+    },
+    "virtualAgentOutput": {
+      "sessionParameters": {
+        "dfLastCallerIntent": "Resto_Fault",
+        "dtmf_input": "3",
+        "isRepeat": "no",
+        "pcAddressChanged": "false",
+        "pcContainsAlcohol": "false",
+        "pcCourierPrestartOneTracking": "false",
+        "pcCourierPrestartTwoTracking": "false",
+        "pcDeliveryStatus": "default",
+        "pcInteractionType": "default",
+        "pcIsVirtualRestaurant": "false",
+        "pcMiscPaymentAbuseBlock": "false",
+        "pcStoreAddress": "default",
+        "pcStorePhoneNumber": "default",
+        "store": [ "store" ],
+        "zIntent": "ZAgent"
+      },
+      "differences": [ {
+        "type": "PAGE",
+        "description": "Page mismatch:\nExpected: \nActual:   End Session",
+        "assertionType": "EQUAL",
+        "expectedValue": "",
+        "actualValue": "End Session"
+      }, {
+        "type": "UTTERANCE",
+        "description": "Agent response mismatch",
+        "warning": true,
+        "assertionType": "EQUAL",
+        "expectedValue": "",
+        "actualValue": "\u003cspeak\u003eOkay, store couldn't complete order.\u003c/speak\u003e\u003cspeak\u003e\u003cbreak time=\"10ms\"/\u003e\u003c/speak\u003e"
+      } ],
+      "currentPage": {
+        "name": "End Session",
+        "flow": "ZExit"
+      },
+      "textResponses": [ {
+        "text": [ "\u003cspeak\u003eOkay, store couldn't complete order.\u003c/speak\u003e" ]
+      }, {
+        "text": [ "\u003cspeak\u003e\u003cbreak time=\"10ms\"/\u003e\u003c/speak\u003e" ]
+      } ],
+      "currentFlow": {
+        "name": "ZExit"
+      },
+      "actions": [ {
+        "agentUtterance": {
+          "text": "\u003cspeak\u003eOkay, store couldn't complete order.\u003c/speak\u003e\n\u003cspeak\u003e\u003cbreak time=\"10ms\"/\u003e\u003c/speak\u003e"
+        }
+      } ]
+    }
+  } ],
+  "creationTime": {
+    "seconds": 1705321944,
+    "nanos": 22681000
+  },
+  "testConfig": {
+    "flow": "Default Start Flow",
+    "page": "Start Page"
+  },
+  "languageCode": "en"
+}

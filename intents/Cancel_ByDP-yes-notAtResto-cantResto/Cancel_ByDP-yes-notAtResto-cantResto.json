@@ -1,0 +1,11 @@
+{
+  "name": "aba4e25a-d498-41c1-8263-7c1738413bf0",
+  "displayName": "Cancel_ByDP-yes-notAtResto-cantResto",
+  "parameters": [ {
+    "id": "Store",
+    "entityType": "@Store",
+    "isList": true
+  } ],
+  "priority": 500000,
+  "numTrainingPhrases": 10
+}

@@ -1,0 +1,35 @@
+{
+  "name": "1c87da69-1571-4969-b00a-a49305e938ae",
+  "displayName": "Cancel_ByCustResto_Confirmation",
+  "form": {
+  
+  },
+  "entryFulfillment": {
+  
+  },
+  "transitionRoutes": [ {
+    "condition": "$session.params.intentName = \"Cancel_ByCustResto\" AND ($session.params.pcDeliveryStatus = \"COMPLETED\" OR $session.params.pcDeliveryStatus = \"CANCELLED\")",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "intentName",
+        "value": "Cancel_ByCustResto-alreadyCancel"
+      } ]
+    },
+    "targetPage": "Cancel_ByCustResto-alreadyCancel_Confirmation",
+    "name": "0dc19945-5cc2-45f7-80f3-8c201536af90"
+  }, {
+    "condition": "$session.params.intentName = \"Cancel_ByCustResto\" AND ($session.params.pcDeliveryStatus = \"not_arrived_resto\" OR $session.params.pcDeliveryStatus = \"arrived_resto_1\" OR $session.params.pcDeliveryStatus = \"arrived_resto_2\" OR $session.params.pcDeliveryStatus = \"arrived_resto_3\" OR $session.params.pcDeliveryStatus = \"picked_up\" OR $session.params.pcDeliveryStatus = \"arrived_dropoff_1\" OR $session.params.pcDeliveryStatus = \"arrived_dropoff_2\" OR $session.params.pcDeliveryStatus = \"default\")",
+    "triggerFulfillment": {
+    
+    },
+    "targetPage": "Cancel_ByCustResto-toBeCancel_Confirmation",
+    "name": "ab813169-0428-4b7f-ba06-b42d689c4654"
+  }, {
+    "condition": "true",
+    "triggerFulfillment": {
+    
+    },
+    "targetPage": "Cancel_ByCustResto-toBeCancel_Confirmation",
+    "name": "a843e8be-6f5e-4c57-9aeb-ecd3bf0b9945"
+  } ]
+}

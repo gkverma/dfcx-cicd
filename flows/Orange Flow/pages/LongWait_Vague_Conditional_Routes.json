@@ -1,0 +1,112 @@
+{
+  "name": "555665b5-fcc9-4452-aa44-03f6596fe7fd",
+  "displayName": "LongWait_Vague_Conditional_Routes",
+  "form": {
+  
+  },
+  "entryFulfillment": {
+    "setParameterActions": [ {
+      "parameter": "dfLastCallerIntent",
+      "value": "LongWait_Vague"
+    } ]
+  },
+  "transitionRoutes": [ {
+    "condition": "($session.params.pcDeliveryStatus = \"arrived_dropoff_1\" OR $session.params.pcDeliveryStatus = \"arrived_dropoff_2\") AND $session.params.pcContainsAlcohol = \"true\"",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "intentName",
+        "value": "PINWheel_FAQ-alcohol"
+      } ]
+    },
+    "targetFlow": "FAQ Flow",
+    "name": "cd139491-3d14-4b65-ab90-65ad3c4cc260"
+  }, {
+    "condition": "($session.params.pcDeliveryStatus = \"arrived_dropoff_1\" OR $session.params.pcDeliveryStatus = \"arrived_dropoff_2\") AND $session.params.pcContainsAlcohol = \"false\"",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "intentName",
+        "value": "PINWheel_FAQ-notAlcohol"
+      } ]
+    },
+    "targetFlow": "FAQ Flow",
+    "name": "d235baa4-b736-4e3e-a264-d7f655a04862"
+  }, {
+    "condition": "$session.params.pcDeliveryStatus = \"COMPLETED\" OR $session.params.pcDeliveryStatus = \"CANCELLED\" OR $session.params.pcDeliveryStatus = \"picked_up\"",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "\u003cspeak\u003eOkay, long wait time.\u003c/speak\u003e" ]
+        },
+        "languageCode": "en"
+      } ],
+      "setParameterActions": [ {
+        "parameter": "zIntent",
+        "value": "ZAgent"
+      }, {
+        "parameter": "dfLastCallerIntent",
+        "value": "LongWait_Vague"
+      } ]
+    },
+    "targetFlow": "ZExit",
+    "name": "81fd9f16-0790-4e30-9bae-525dfae012ba"
+  }, {
+    "condition": "$session.params.pcDeliveryStatus = \"not_arrived_resto\"",
+    "triggerFulfillment": {
+    
+    },
+    "targetPage": "LongWait_Vague-yes-notAtResto_Response",
+    "name": "a2304bc5-3884-4a56-8842-a89f0c02a94a"
+  }, {
+    "condition": "$session.params.pcMiscPaymentAbuseBlock = \"true\"",
+    "triggerFulfillment": {
+    
+    },
+    "targetPage": "LongWait_Vague-yes-fraud_Response",
+    "name": "b1e7ddc7-45b0-4500-a834-7a8296817bc0"
+  }, {
+    "condition": "$session.params.pcMiscPaymentAbuseBlock = \"false\" AND $session.params.pcDeliveryStatus = \"arrived_resto_1\"",
+    "triggerFulfillment": {
+    
+    },
+    "targetPage": "LongWait_Vague-yes-notFraud-atResto1_Response",
+    "name": "9522cd0e-63be-4f61-b4c2-dc0f38c9e1a9"
+  }, {
+    "condition": "$session.params.pcMiscPaymentAbuseBlock = \"false\" AND ($session.params.pcDeliveryStatus = \"arrived_resto_2\" OR $session.params.pcDeliveryStatus = \"arrived_resto_3\")",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "\u003cspeak\u003eOkay, long wait time.\u003c/speak\u003e" ]
+        },
+        "languageCode": "en"
+      } ],
+      "setParameterActions": [ {
+        "parameter": "zIntent",
+        "value": "ZAgent"
+      }, {
+        "parameter": "dfLastCallerIntent",
+        "value": "LongWait_Vague"
+      } ]
+    },
+    "targetFlow": "ZExit",
+    "name": "33fde609-eb5a-4299-8138-84bf47883a7e"
+  }, {
+    "condition": "true",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "\u003cspeak\u003eOkay, long wait time.\u003c/speak\u003e" ]
+        },
+        "languageCode": "en"
+      } ],
+      "setParameterActions": [ {
+        "parameter": "zIntent",
+        "value": "ZAgent"
+      }, {
+        "parameter": "dfLastCallerIntent",
+        "value": "LongWait_Vague"
+      } ]
+    },
+    "targetFlow": "ZExit",
+    "name": "4067014a-08e5-404d-9609-bd7e1a34a623"
+  } ]
+}

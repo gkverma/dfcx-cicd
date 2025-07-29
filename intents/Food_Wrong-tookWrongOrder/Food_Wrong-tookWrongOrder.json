@@ -1,0 +1,11 @@
+{
+  "name": "fb54b328-2702-4baa-bd5c-0ca12d5b3c19",
+  "displayName": "Food_Wrong-tookWrongOrder",
+  "parameters": [ {
+    "id": "Store",
+    "entityType": "@Store",
+    "isList": true
+  } ],
+  "priority": 500000,
+  "numTrainingPhrases": 31
+}

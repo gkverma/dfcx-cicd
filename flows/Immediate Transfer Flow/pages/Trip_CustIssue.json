@@ -1,0 +1,23 @@
+{
+  "name": "3cbde153-af33-461f-9e72-46d760f98da7",
+  "displayName": "Trip_CustIssue",
+  "form": {
+  
+  },
+  "entryFulfillment": {
+    "messages": [ {
+      "text": {
+        "text": [ "\u003cspeak\u003eOkay, customer issue.\u003c/speak\u003e" ]
+      },
+      "languageCode": "en"
+    } ]
+  },
+  "transitionRoutes": [ {
+    "condition": "true",
+    "triggerFulfillment": {
+    
+    },
+    "targetFlow": "ZExit",
+    "name": "29817b69-1709-49bd-a6cf-344218785535"
+  } ]
+}

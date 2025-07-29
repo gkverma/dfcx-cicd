@@ -1,0 +1,25 @@
+{
+  "name": "58eb722d-045b-41c4-acbc-840b669aa091",
+  "displayName": "Dropoff_FoodPhoto_Conditional_Routes",
+  "form": {
+  
+  },
+  "entryFulfillment": {
+  
+  },
+  "transitionRoutes": [ {
+    "condition": "$session.params.pcInteractionType = \"INTERACTION_TYPE_leave_at_door\"",
+    "triggerFulfillment": {
+    
+    },
+    "targetPage": "Dropoff_FoodPhoto-leaveAtDoor_Response",
+    "name": "0240d0a6-5f14-4b6f-96a3-a7e82c06f03f"
+  }, {
+    "condition": "$session.params.pcInteractionType != \"INTERACTION_TYPE_leave_at_door\" OR $session.params.pcInteractionType = \"default\"",
+    "triggerFulfillment": {
+    
+    },
+    "targetPage": "Dropoff_FoodPhoto-notLeaveAtDoor_Response",
+    "name": "a56494ca-4335-4fce-b459-f5cfdc4c03a8"
+  } ]
+}

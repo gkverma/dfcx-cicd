@@ -1,0 +1,10 @@
+{
+  "name": "e6d10a3a-5897-400e-be83-44519c66edb3",
+  "displayName": "Cancel_Vague",
+  "parameters": [ {
+    "id": "dfLastCallerIntent",
+    "entityType": "@sys.any"
+  } ],
+  "priority": 500000,
+  "numTrainingPhrases": 68
+}

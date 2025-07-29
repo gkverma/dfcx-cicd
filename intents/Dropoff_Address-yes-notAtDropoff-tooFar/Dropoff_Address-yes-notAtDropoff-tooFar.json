@@ -1,0 +1,10 @@
+{
+  "name": "45ce4437-708b-428f-8227-880f1065d744",
+  "displayName": "Dropoff_Address-yes-notAtDropoff-tooFar",
+  "parameters": [ {
+    "id": "dfLastCallerIntent",
+    "entityType": "@sys.any"
+  } ],
+  "priority": 500000,
+  "numTrainingPhrases": 9
+}

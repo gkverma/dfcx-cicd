@@ -1,0 +1,14 @@
+{
+  "name": "5ed741b1-84d7-4555-b268-b1644a386cbf",
+  "displayName": "Safety_Vague",
+  "parameters": [ {
+    "id": "dfLastCallerIntent",
+    "entityType": "@sys.any"
+  }, {
+    "id": "Store",
+    "entityType": "@Store",
+    "isList": true
+  } ],
+  "priority": 500000,
+  "numTrainingPhrases": 17
+}

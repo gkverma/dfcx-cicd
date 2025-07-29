@@ -1,0 +1,195 @@
+{
+  "name": "6ed00f93-324d-461b-81d2-c2cb8a595ad1",
+  "displayName": "UberApp_CantEnd-yes-notComplete_Response",
+  "form": {
+    "parameters": [ {
+      "displayName": "dtmf_input",
+      "required": true,
+      "entityType": "@dtmf_123",
+      "fillBehavior": {
+        "initialPromptFulfillment": {
+        
+        },
+        "repromptEventHandlers": [ {
+          "event": "sys.no-match-1",
+          "triggerFulfillment": {
+            "messages": [ {
+              "text": {
+                "text": [ "\u003cspeak\u003eI didn't get that.\u003c/speak\u003e\n\n\u003cspeak\u003eYou can say, problem with the order photo, need a PIN from the customer. Or, it is something else.\u003c/speak\u003e" ]
+              },
+              "languageCode": "en"
+            } ]
+          },
+          "name": "ab144886-cf9e-41b9-9866-b646e7eab87e"
+        }, {
+          "event": "sys.no-match-2",
+          "triggerFulfillment": {
+            "messages": [ {
+              "text": {
+                "text": [ "\u003cspeak\u003eI'm having trouble understanding you.\u003c/speak\u003e\n\n\u003cspeak\u003eFor problems with the photo, press 1. For PIN number problem, press 2. For all other issues, press 3.\u003c/speak\u003e" ]
+              },
+              "languageCode": "en"
+            } ]
+          },
+          "name": "c2a04c28-ea51-42c1-bd08-e888704956ff"
+        }, {
+          "targetFlow": "ZExit",
+          "event": "sys.no-match-3",
+          "triggerFulfillment": {
+            "messages": [ {
+              "text": {
+                "text": [ "\u003cspeak\u003e\u003cbreak time=\"10ms\"/\u003e\u003c/speak\u003e" ]
+              },
+              "languageCode": "en"
+            } ],
+            "setParameterActions": [ {
+              "parameter": "zIntent",
+              "value": "ZAgent"
+            } ]
+          },
+          "name": "9c2c54a3-746a-47ed-9ef9-21d86bff663e"
+        }, {
+          "event": "sys.no-input-1",
+          "triggerFulfillment": {
+            "messages": [ {
+              "text": {
+                "text": [ "\u003cspeak\u003eYou can say, problem with the order photo, need a PIN from the customer. Or, it is something else.\u003c/speak\u003e" ]
+              },
+              "languageCode": "en"
+            } ]
+          },
+          "name": "fe821525-1cd7-4e13-9571-aaca897dad8b"
+        }, {
+          "event": "sys.no-input-2",
+          "triggerFulfillment": {
+            "messages": [ {
+              "text": {
+                "text": [ "\u003cspeak\u003eI didn't hear you.\u003c/speak\u003e\n\n\u003cspeak\u003eFor problems with the photo, press 1. For PIN number problem, press 2. For all other issues, press 3.\u003c/speak\u003e" ]
+              },
+              "languageCode": "en"
+            } ]
+          },
+          "name": "879665dd-b54b-4429-8b41-12c4fdfb292f"
+        }, {
+          "targetFlow": "ZExit",
+          "event": "sys.no-input-3",
+          "triggerFulfillment": {
+            "messages": [ {
+              "text": {
+                "text": [ "\u003cspeak\u003eI am having trouble hearing you.\u003c/speak\u003e" ]
+              },
+              "languageCode": "en"
+            } ],
+            "setParameterActions": [ {
+              "parameter": "zIntent",
+              "value": "ZHangup"
+            } ]
+          },
+          "name": "4a8e3a8f-14d3-4ee7-b88d-e6d82003da1e"
+        } ]
+      },
+      "advancedSettings": {
+        "dtmfSettings": {
+          "enabled": true,
+          "useSystemEntityRule": false
+        }
+      }
+    } ]
+  },
+  "entryFulfillment": {
+    "messages": [ {
+      "text": {
+        "text": [ "\u003cspeak\u003eWhat's preventing you from marking the order as delivered? You can say, problem with the order photo, or, I need a PIN from the customer. You can also say, it is Something else.\u003c/speak\u003e" ]
+      },
+      "languageCode": "en"
+    } ],
+    "setParameterActions": [ {
+      "parameter": "dfLastCallerIntent",
+      "value": "UberApp_CantEnd"
+    }, {
+      "parameter": "dtmf_input",
+      "value": null
+    } ]
+  },
+  "transitionRoutes": [ {
+    "intent": "UberApp_CantEnd-yes-notComplete-foodPhoto",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "intentName",
+        "value": "UberApp_CantEnd-yes-notComplete-foodPhoto"
+      } ]
+    },
+    "targetFlow": "Purple Flow",
+    "name": "d9d1def9-c427-4b0c-8c40-70786ac7ef3a"
+  }, {
+    "intent": "UberApp_CantEnd-yes-notComplete-PIN",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "intentName",
+        "value": "UberApp_CantEnd-yes-notComplete-PIN"
+      } ]
+    },
+    "targetFlow": "FAQ Flow",
+    "name": "47894c5f-9053-44d6-81b3-665c954b8be3"
+  }, {
+    "intent": "UberApp_CantEnd-yes-notComplete-other",
+    "triggerFulfillment": {
+    
+    },
+    "targetPage": "UberApp_CantEnd-yes-notComplete-other_Response",
+    "name": "2c7effd6-017f-4a72-80e4-e95c4f0ae2fc"
+  }, {
+    "intent": "UberApp_CantEnd-yes-notComplete-verifyID",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "\u003cspeak\u003eOkay, uber app support.\u003c/speak\u003e" ]
+        },
+        "languageCode": "en"
+      } ],
+      "setParameterActions": [ {
+        "parameter": "zIntent",
+        "value": "ZAgent"
+      } ]
+    },
+    "targetFlow": "ZExit",
+    "name": "e4f3e3ca-a213-482f-a81f-906ed90c2c2f"
+  }, {
+    "condition": "$session.params.dtmf_input = \"1\"",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "intentName",
+        "value": "UberApp_CantEnd-yes-notComplete-foodPhoto"
+      } ]
+    },
+    "targetFlow": "Purple Flow",
+    "name": "439df922-bdb0-48d1-859a-0c74ed34a1ff"
+  }, {
+    "condition": "$session.params.dtmf_input = \"2\"",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "intentName",
+        "value": "UberApp_CantEnd-yes-notComplete-PIN"
+      } ]
+    },
+    "targetFlow": "FAQ Flow",
+    "name": "8146dd9f-e388-4011-b21a-2ecdcf83a40f"
+  }, {
+    "condition": "$session.params.dtmf_input = \"3\"",
+    "triggerFulfillment": {
+    
+    },
+    "targetPage": "UberApp_CantEnd-yes-notComplete-other_Response",
+    "name": "58b783b6-b97c-4855-aae7-2ae57d816fbf"
+  }, {
+    "condition": "$session.params.dtmf_input = \"0\"",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "intentName",
+        "value": "Agent_Vague"
+      } ]
+    },
+    "targetFlow": "Immediate Transfer Flow",
+    "name": "f57ece4c-9af6-4ff9-9193-3c7600c0f706"
+  } ]
+}

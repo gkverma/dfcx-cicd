@@ -1,0 +1,254 @@
+{
+  "name": "2ffbc563-5fca-4233-bad6-b56fd01affdd",
+  "displayName": "Dropoff_Vague-yes-safety_Response",
+  "form": {
+    "parameters": [ {
+      "displayName": "dtmf_input",
+      "required": true,
+      "entityType": "@dtmf",
+      "fillBehavior": {
+        "initialPromptFulfillment": {
+        
+        },
+        "repromptEventHandlers": [ {
+          "event": "sys.no-input-1",
+          "triggerFulfillment": {
+            "messages": [ {
+              "text": {
+                "text": [ "\u003cspeak\u003eAre you in a safe place right now? Please say yes, or no.\u003c/speak\u003e" ]
+              },
+              "languageCode": "en"
+            } ]
+          },
+          "name": "c340a145-0503-462a-ab79-595d4af6e8b0"
+        }, {
+          "event": "sys.no-input-2",
+          "triggerFulfillment": {
+            "messages": [ {
+              "text": {
+                "text": [ "\u003cspeak\u003eI didn't hear you.\u003c/speak\u003e\n\u003cspeak\u003eIf you are in a safe place right now, press 1. Otherwise, press 2.\u003c/speak\u003e" ]
+              },
+              "languageCode": "en"
+            } ]
+          },
+          "name": "bf5541ab-9d1c-4068-ab0e-a3680ae449c6"
+        }, {
+          "targetFlow": "ZExit",
+          "event": "sys.no-input-3",
+          "triggerFulfillment": {
+            "messages": [ {
+              "text": {
+                "text": [ "\u003cspeak\u003eI am having trouble hearing you.\u003c/speak\u003e" ]
+              },
+              "languageCode": "en"
+            } ],
+            "setParameterActions": [ {
+              "parameter": "zIntent",
+              "value": "ZHangup"
+            } ]
+          },
+          "name": "95e0f54c-798f-4469-bf3b-67f9207d0be5"
+        }, {
+          "event": "sys.no-match-1",
+          "triggerFulfillment": {
+            "messages": [ {
+              "text": {
+                "text": [ "\u003cspeak\u003eI didn't get that.\u003c/speak\u003e\n\u003cspeak\u003eAre you in a safe place right now? Please say yes, or no.\u003c/speak\u003e" ]
+              },
+              "languageCode": "en"
+            } ]
+          },
+          "name": "91b2b3da-cf34-409f-af9b-1bfe9b3b33d9"
+        }, {
+          "event": "sys.no-match-2",
+          "triggerFulfillment": {
+            "messages": [ {
+              "text": {
+                "text": [ "\u003cspeak\u003eI'm having trouble understanding you. If you are in a safe place right now, press 1. Otherwise, press 2.\u003c/speak\u003e" ]
+              },
+              "languageCode": "en"
+            } ]
+          },
+          "name": "19b7bf8e-3060-419f-83e2-40331d961e0b"
+        }, {
+          "targetFlow": "ZExit",
+          "event": "sys.no-match-3",
+          "triggerFulfillment": {
+            "messages": [ {
+              "text": {
+                "text": [ "\u003cspeak\u003e\u003cbreak time=\"10ms\"/\u003e\u003c/speak\u003e" ]
+              },
+              "languageCode": "en"
+            } ],
+            "setParameterActions": [ {
+              "parameter": "zIntent",
+              "value": "ZAgent"
+            } ]
+          },
+          "name": "27d23da6-4d8c-4c76-93c3-d0c259a9def9"
+        } ]
+      },
+      "advancedSettings": {
+        "dtmfSettings": {
+          "enabled": true,
+          "useSystemEntityRule": false
+        }
+      }
+    } ]
+  },
+  "entryFulfillment": {
+    "messages": [ {
+      "text": {
+        "text": [ "\u003cspeak\u003eThanks for bringing this to our attention. Your safety and security is always our priority. \u003cbreak time=\"200ms\"/\u003e Are you in a safe place right at this moment?\u003c/speak\u003e" ]
+      },
+      "languageCode": "en"
+    } ],
+    "setParameterActions": [ {
+      "parameter": "dtmf_input",
+      "value": null
+    } ]
+  },
+  "transitionRoutes": [ {
+    "intent": "Dropoff_Vague-yes-safety-yesSafe",
+    "triggerFulfillment": {
+    
+    },
+    "targetPage": "Dropoff_Vague-yes-safety-yesSafe_Response",
+    "name": "0f4c16b2-7f8d-4ae2-b193-bfb1102092d0"
+  }, {
+    "intent": "Dropoff_Vague-yes-safety-notSafe",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "\u003cspeak\u003eOkay, calling about a safety issue.\u003c/speak\u003e" ]
+        },
+        "languageCode": "en"
+      } ],
+      "setParameterActions": [ {
+        "parameter": "zIntent",
+        "value": "ZAgent"
+      }, {
+        "parameter": "dfLastCallerIntent",
+        "value": "Safety_Accident"
+      } ]
+    },
+    "targetFlow": "ZExit",
+    "name": "b0abdeb4-5fde-4e40-ba61-a2851acd22ae"
+  }, {
+    "condition": "$session.params.dtmf_input = \"0\"",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "intentName",
+        "value": "Agent_Vague"
+      } ]
+    },
+    "targetFlow": "Immediate Transfer Flow",
+    "name": "a9960a69-e1f4-43d8-8df0-f7b32e85947e"
+  }, {
+    "condition": "$session.params.dtmf_input = \"1\"",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "dtmf_input",
+        "value": null
+      } ]
+    },
+    "targetPage": "Dropoff_Vague-yes-safety-yesSafe_Response",
+    "name": "631aec1f-d308-434d-9f5a-1865cedd3078"
+  }, {
+    "condition": "$session.params.dtmf_input = \"2\"",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "\u003cspeak\u003eOkay, calling about a safety issue.\u003c/speak\u003e" ]
+        },
+        "languageCode": "en"
+      } ],
+      "setParameterActions": [ {
+        "parameter": "zIntent",
+        "value": "ZAgent"
+      }, {
+        "parameter": "dfLastCallerIntent",
+        "value": "Safety_Accident"
+      } ]
+    },
+    "targetFlow": "ZExit",
+    "name": "89566488-9cae-446b-ad4c-afb040dc45f7"
+  } ],
+  "eventHandlers": [ {
+    "event": "sys.no-input-1",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "\u003cspeak\u003eAre you in a safe place right now? Please say yes, or no.\u003c/speak\u003e" ]
+        },
+        "languageCode": "en"
+      } ]
+    },
+    "name": "c89d0451-9552-4a32-978e-d7624cc948d3"
+  }, {
+    "event": "sys.no-input-2",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "\u003cspeak\u003eI didn't hear you.\u003c/speak\u003e\n\u003cspeak\u003eIf you are in a safe place right now, press 1. Otherwise, press 2.\u003c/speak\u003e" ]
+        },
+        "languageCode": "en"
+      } ]
+    },
+    "name": "21a3be57-ad4b-4fef-936e-26c4729b61e9"
+  }, {
+    "targetFlow": "ZExit",
+    "event": "sys.no-input-3",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "\u003cspeak\u003eI am having trouble hearing you.\u003c/speak\u003e" ]
+        },
+        "languageCode": "en"
+      } ],
+      "setParameterActions": [ {
+        "parameter": "zIntent",
+        "value": "ZHangup"
+      } ]
+    },
+    "name": "91fbd47d-f80b-47d9-b056-aa7bbf07f281"
+  }, {
+    "event": "sys.no-match-1",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "\u003cspeak\u003eI didn't get that.\u003c/speak\u003e\n\u003cspeak\u003eAre you in a safe place right now? Please say yes, or no.\u003c/speak\u003e" ]
+        },
+        "languageCode": "en"
+      } ]
+    },
+    "name": "10616cdd-5375-4e6b-a6be-25af1f005557"
+  }, {
+    "event": "sys.no-match-2",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "\u003cspeak\u003eI'm having trouble understanding you. If you are in a safe place right now, press 1. Otherwise, press 2.\u003c/speak\u003e" ]
+        },
+        "languageCode": "en"
+      } ]
+    },
+    "name": "f693b67c-0169-4d9e-9220-6fe8616b4d50"
+  }, {
+    "targetFlow": "ZExit",
+    "event": "sys.no-match-3",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "\u003cspeak\u003e\u003cbreak time=\"10ms\"/\u003e\u003c/speak\u003e" ]
+        },
+        "languageCode": "en"
+      } ],
+      "setParameterActions": [ {
+        "parameter": "zIntent",
+        "value": "ZAgent"
+      } ]
+    },
+    "name": "e29929a4-3652-40af-810c-1fcd98618518"
+  } ]
+}

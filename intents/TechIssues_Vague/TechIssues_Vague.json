@@ -1,0 +1,14 @@
+{
+  "name": "57fd6e85-9285-44d1-82c0-f83e65553776",
+  "displayName": "TechIssues_Vague",
+  "parameters": [ {
+    "id": "dfLastCallerIntent",
+    "entityType": "@sys.any"
+  }, {
+    "id": "Store",
+    "entityType": "@Store",
+    "isList": true
+  } ],
+  "priority": 500000,
+  "numTrainingPhrases": 75
+}

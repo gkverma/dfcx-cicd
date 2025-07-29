@@ -1,0 +1,170 @@
+{
+  "name": "ac807319-e7e5-4536-ab68-481a67136a6a",
+  "displayName": "Cancel_ByCustResto-alreadyCancel_Confirmation",
+  "form": {
+    "parameters": [ {
+      "displayName": "dtmf_input",
+      "required": true,
+      "entityType": "@dtmf",
+      "fillBehavior": {
+        "initialPromptFulfillment": {
+        
+        },
+        "repromptEventHandlers": [ {
+          "event": "sys.no-input-1",
+          "triggerFulfillment": {
+            "messages": [ {
+              "text": {
+                "text": [ "\u003cspeak\u003eIf the customer or the store ask you to cancel the order, say yes. Otherwise, say no.\u003c/speak\u003e" ]
+              },
+              "languageCode": "en"
+            } ]
+          },
+          "name": "78c3fc32-3d03-4b03-90f5-ccfbed6f08b4"
+        }, {
+          "event": "sys.no-input-2",
+          "triggerFulfillment": {
+            "messages": [ {
+              "text": {
+                "text": [ "\u003cspeak\u003eI didn't hear you.\u003c/speak\u003e\n\n\u003cspeak\u003eIf the customer or the store ask you to cancel the order, press 1. For something else, press 2.\u003c/speak\u003e" ]
+              },
+              "languageCode": "en"
+            } ]
+          },
+          "name": "0faf5c67-5e63-4f7f-82af-398ce027f731"
+        }, {
+          "targetFlow": "ZExit",
+          "event": "sys.no-input-3",
+          "triggerFulfillment": {
+            "messages": [ {
+              "text": {
+                "text": [ "\u003cspeak\u003eI am having trouble hearing you.\u003c/speak\u003e" ]
+              },
+              "languageCode": "en"
+            } ],
+            "setParameterActions": [ {
+              "parameter": "zIntent",
+              "value": "ZHangup"
+            } ]
+          },
+          "name": "596c5d74-cfe7-4f3c-8aaa-0e9f7dacce81"
+        }, {
+          "event": "sys.no-match-1",
+          "triggerFulfillment": {
+            "messages": [ {
+              "text": {
+                "text": [ "\u003cspeak\u003eI didn't get that.\u003c/speak\u003e\n\n\u003cspeak\u003eIf the customer or the store ask you to cancel the order, say yes. Otherwise, say no.\u003c/speak\u003e" ]
+              },
+              "languageCode": "en"
+            } ]
+          },
+          "name": "299729cf-f35d-4b5b-9111-479b10e7066c"
+        }, {
+          "event": "sys.no-match-2",
+          "triggerFulfillment": {
+            "messages": [ {
+              "text": {
+                "text": [ "\u003cspeak\u003eI'm having trouble understanding you. If the customer or the store ask you to cancel the order, press 1. For something else, press 2.\u003c/speak\u003e" ]
+              },
+              "languageCode": "en"
+            } ]
+          },
+          "name": "5f5fd068-1e15-4c57-8733-05ce8c1c9334"
+        }, {
+          "targetFlow": "ZExit",
+          "event": "sys.no-match-3",
+          "triggerFulfillment": {
+            "messages": [ {
+              "text": {
+                "text": [ "\u003cspeak\u003e\u003cbreak time=\"10ms\"/\u003e\u003c/speak\u003e" ]
+              },
+              "languageCode": "en"
+            } ],
+            "setParameterActions": [ {
+              "parameter": "zIntent",
+              "value": "ZAgent"
+            } ]
+          },
+          "name": "a8813a65-2bfb-42a8-b502-1eaf4fd0a96a"
+        } ]
+      },
+      "advancedSettings": {
+        "dtmfSettings": {
+          "enabled": true,
+          "useSystemEntityRule": false
+        }
+      }
+    } ]
+  },
+  "entryFulfillment": {
+    "messages": [ {
+      "text": {
+        "text": [ "\u003cspeak\u003eI think you're calling about an order that was canceled by the customer or the store, is that correct?\u003c/speak\u003e" ]
+      },
+      "languageCode": "en"
+    } ],
+    "setParameterActions": [ {
+      "parameter": "intentName",
+      "value": "Cancel_ByCustResto-alreadyCancel"
+    } ]
+  },
+  "transitionRoutes": [ {
+    "intent": "Confirmation.Yes",
+    "triggerFulfillment": {
+    
+    },
+    "targetPage": "Cancel_ByCustResto-alreadyCancel_Response",
+    "name": "19e313d5-15cf-4c8b-970c-f98de9bdac21"
+  }, {
+    "intent": "Cancel_ByCustResto-alreadyCancel-toBeCancel",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "intentName",
+        "value": "Cancel_ByCustResto-alreadyCancel-toBeCancel"
+      } ]
+    },
+    "targetPage": "Cancel_ByCustResto-alreadyCancel-toBeCancel_Response",
+    "name": "2650aee5-db3f-4fdd-8af0-fdb61ff4444a"
+  }, {
+    "intent": "Confirmation.No",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "\u003cspeak\u003eNo problem. How can I help?\u003c/speak\u003e\n\n\u003cspeak\u003eFor example, you can say, I can't find the customer, or, the store is taking too long.\u003c/speak\u003e" ]
+        },
+        "languageCode": "en"
+      } ]
+    },
+    "targetFlow": "Default Start Flow",
+    "name": "c0343ecd-365a-43ff-a6a7-055e82ec55e7"
+  }, {
+    "condition": "$session.params.dtmf_input = 1",
+    "triggerFulfillment": {
+    
+    },
+    "targetPage": "Cancel_ByCustResto-alreadyCancel_Response",
+    "name": "23147806-48fc-485e-8f8d-000d78715550"
+  }, {
+    "condition": "$session.params.dtmf_input = 2",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "\u003cspeak\u003eNo problem. How can I help?\u003c/speak\u003e\n\n\u003cspeak\u003eFor example, you can say, I can't find the customer, or, the store is taking too long.\u003c/speak\u003e" ]
+        },
+        "languageCode": "en"
+      } ]
+    },
+    "targetFlow": "Default Start Flow",
+    "name": "95d0120d-89c7-4d23-900d-5c1301030d54"
+  }, {
+    "condition": "$session.params.dtmf_input = \"0\"",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "intentName",
+        "value": "Agent_Vague"
+      } ]
+    },
+    "targetFlow": "Immediate Transfer Flow",
+    "name": "ef2db2c5-e32e-4e0d-96ec-300bc67519e7"
+  } ]
+}

@@ -1,0 +1,21 @@
+{
+  "name": "c32ab17d-1aa1-4c89-82d1-336228e9e41e",
+  "displayName": "PlusCard_Forgot_Conditional_Routes",
+  "form": {
+  
+  },
+  "entryFulfillment": {
+    "setParameterActions": [ {
+      "parameter": "dfLastCallerIntent",
+      "value": "PlusCard_Forgot"
+    } ]
+  },
+  "transitionRoutes": [ {
+    "condition": "true",
+    "triggerFulfillment": {
+    
+    },
+    "targetPage": "PlusCard_Forgot_Response",
+    "name": "51561568-f3d2-43e1-9a4f-a3a41710b69b"
+  } ]
+}

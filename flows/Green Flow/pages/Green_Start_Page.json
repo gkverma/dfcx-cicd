@@ -1,0 +1,59 @@
+{
+  "name": "46054d3d-d208-44fe-8832-9cdcc7d475ad",
+  "displayName": "Green_Start_Page",
+  "form": {
+  
+  },
+  "entryFulfillment": {
+    "setParameterActions": [ {
+      "parameter": "isRepeat",
+      "value": "no"
+    }, {
+      "parameter": "dtmf_input",
+      "value": null
+    } ]
+  },
+  "transitionRoutes": [ {
+    "condition": "$session.params.intentName = PlusCard_Vague",
+    "triggerFulfillment": {
+    
+    },
+    "targetPage": "PlusCard_Vague_Confirmation",
+    "name": "911c95c0-61b3-4689-b989-0a5ea2245d55"
+  }, {
+    "condition": "$session.params.intentName = Resto_Vague",
+    "triggerFulfillment": {
+    
+    },
+    "targetPage": "Resto_Vague_Response",
+    "name": "f6e57971-e08f-459b-952e-94231158c5e4"
+  }, {
+    "condition": "$session.params.intentName = \"UberApp_CantEnd\"",
+    "triggerFulfillment": {
+    
+    },
+    "targetPage": "UberApp_CantEnd_Confirmation",
+    "name": "3af6d269-d1f8-4620-b628-890697c4ed61"
+  }, {
+    "condition": "$session.params.intentName = \"Address_Vague\"",
+    "triggerFulfillment": {
+    
+    },
+    "targetPage": "Address_Vague_Conditional_Routes",
+    "name": "64b8c4b7-dc18-41e5-9766-6e2468658d99"
+  }, {
+    "condition": "$session.params.intentName = \"Cancel_Vague\"",
+    "triggerFulfillment": {
+    
+    },
+    "targetPage": "Cancel_Vague_Confirmation",
+    "name": "39c03f6f-efcc-4ae4-a5fc-a2d8913a322d"
+  }, {
+    "condition": "$session.params.intentName = \"Food_Wrong\"",
+    "triggerFulfillment": {
+    
+    },
+    "targetPage": "Food_Wrong_Response",
+    "name": "d7f7842d-b4dc-4c39-b8d7-bf73d7a56c84"
+  } ]
+}

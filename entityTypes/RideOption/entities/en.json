@@ -1,0 +1,7 @@
+{
+  "entities": [ {
+    "value": "RideOption",
+    "synonyms": [ "uber suv", "uber wav", "uber xl", "uber assist", "uber black", "uber comfort", "uber pool", "uber select", "uber wheelchair accessible ride", "uber x", "uber x plus" ],
+    "languageCode": "en"
+  } ]
+}

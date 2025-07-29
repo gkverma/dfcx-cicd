@@ -1,0 +1,14 @@
+{
+  "name": "5503a0ae-112d-401a-a0fe-c6d799155333",
+  "displayName": "UberApp_Error",
+  "parameters": [ {
+    "id": "dfLastCallerIntent",
+    "entityType": "@sys.any"
+  }, {
+    "id": "Store",
+    "entityType": "@Store",
+    "isList": true
+  } ],
+  "priority": 500000,
+  "numTrainingPhrases": 23
+}

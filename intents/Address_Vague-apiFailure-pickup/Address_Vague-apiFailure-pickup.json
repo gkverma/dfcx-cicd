@@ -1,0 +1,11 @@
+{
+  "name": "8c966ffc-a615-4aaa-b52a-f95f5d4146b0",
+  "displayName": "Address_Vague-apiFailure-pickup",
+  "parameters": [ {
+    "id": "Store",
+    "entityType": "@Store",
+    "isList": true
+  } ],
+  "priority": 500000,
+  "numTrainingPhrases": 9
+}

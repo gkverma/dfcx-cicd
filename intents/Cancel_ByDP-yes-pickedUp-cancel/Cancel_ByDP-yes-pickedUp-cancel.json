@@ -1,0 +1,11 @@
+{
+  "name": "4ccc36ba-8390-46d6-8604-7e034fb35e7e",
+  "displayName": "Cancel_ByDP-yes-pickedUp-cancel",
+  "parameters": [ {
+    "id": "Store",
+    "entityType": "@Store",
+    "isList": true
+  } ],
+  "priority": 500000,
+  "numTrainingPhrases": 20
+}

@@ -1,0 +1,14 @@
+{
+  "name": "72c6c62f-33e9-4ef8-9e4a-0252647520d7",
+  "displayName": "Dropoff_WrongHouse",
+  "parameters": [ {
+    "id": "dfLastCallerIntent",
+    "entityType": "@sys.any"
+  }, {
+    "id": "Store",
+    "entityType": "@Store",
+    "isList": true
+  } ],
+  "priority": 500000,
+  "numTrainingPhrases": 43
+}

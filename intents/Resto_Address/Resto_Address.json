@@ -1,0 +1,11 @@
+{
+  "name": "bac4ab7c-a4a4-4673-839d-e19e97eeb85c",
+  "displayName": "Resto_Address",
+  "parameters": [ {
+    "id": "Store",
+    "entityType": "@Store",
+    "isList": true
+  } ],
+  "priority": 500000,
+  "numTrainingPhrases": 144
+}

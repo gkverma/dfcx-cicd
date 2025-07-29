@@ -1,0 +1,35 @@
+{
+  "name": "6a91171b-b8ad-4eb3-b1fd-32d906035977",
+  "displayName": "Resto_Address_Conditional_Routes",
+  "form": {
+  
+  },
+  "entryFulfillment": {
+    "setParameterActions": [ {
+      "parameter": "dfLastCallerIntent",
+      "value": "Resto_Address"
+    } ]
+  },
+  "transitionRoutes": [ {
+    "condition": "$session.params.pcIsVirtualRestaurant = \"true\" AND $session.params.pcStorePhoneNumber != null AND $session.params.pcStoreAddress != null",
+    "triggerFulfillment": {
+    
+    },
+    "targetPage": "Resto_Address-yes-virtual_Response",
+    "name": "d243d237-877f-4273-a826-34ca85cb660a"
+  }, {
+    "condition": "$session.params.pcIsVirtualRestaurant = \"false\" OR $session.params.pcIsVirtualRestaurant = \"default\" OR $session.params.pcStorePhoneNumber = null OR $session.params.pcStoreAddress = null",
+    "triggerFulfillment": {
+    
+    },
+    "targetPage": "Resto_Address-yes-failOrNotVirtual_Response",
+    "name": "a6dcaa03-8708-489c-9520-09dd1999b0bb"
+  }, {
+    "condition": "true",
+    "triggerFulfillment": {
+    
+    },
+    "targetPage": "Resto_Address-yes-failOrNotVirtual_Response",
+    "name": "6b04a2d2-218a-48ec-922f-b2c34e13b343"
+  } ]
+}

@@ -1,0 +1,14 @@
+{
+  "name": "64f524c1-f1f5-4cc5-ad9a-d25171e6abc5",
+  "displayName": "Safety_Accident",
+  "parameters": [ {
+    "id": "dfLastCallerIntent",
+    "entityType": "@sys.any"
+  }, {
+    "id": "Store",
+    "entityType": "@Store",
+    "isList": true
+  } ],
+  "priority": 500000,
+  "numTrainingPhrases": 38
+}

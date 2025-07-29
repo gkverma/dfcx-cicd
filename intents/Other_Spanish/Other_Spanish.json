@@ -1,0 +1,14 @@
+{
+  "name": "f433db69-5b6c-4612-9993-031dcbc27f50",
+  "displayName": "Other_Spanish",
+  "parameters": [ {
+    "id": "dfLastCallerIntent",
+    "entityType": "@sys.any"
+  }, {
+    "id": "Store",
+    "entityType": "@Store",
+    "isList": true
+  } ],
+  "priority": 500000,
+  "numTrainingPhrases": 195
+}

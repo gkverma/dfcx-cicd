@@ -1,0 +1,11 @@
+{
+  "name": "3fc8c09e-c1c4-48d4-bc22-d842f69fea13",
+  "displayName": "Resto_Address-yes-virtual-called",
+  "parameters": [ {
+    "id": "Store",
+    "entityType": "@Store",
+    "isList": true
+  } ],
+  "priority": 500000,
+  "numTrainingPhrases": 9
+}

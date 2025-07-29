@@ -1,0 +1,52 @@
+{
+  "name": "c208868f-501d-45d1-b72c-ef1fe532a2b7",
+  "displayName": "Island_Start_Page",
+  "form": {
+  
+  },
+  "entryFulfillment": {
+    "setParameterActions": [ {
+      "parameter": "isRepeat",
+      "value": "no"
+    }, {
+      "parameter": "dtmf_input",
+      "value": null
+    } ]
+  },
+  "transitionRoutes": [ {
+    "condition": "$session.params.intentName = \"AccidentalAccept_Vague\"",
+    "triggerFulfillment": {
+    
+    },
+    "targetPage": "AccidentalAccept_Vague_Confirmation",
+    "name": "13f246ac-8214-4d5d-a546-75238db623e4"
+  }, {
+    "condition": "$session.params.intentName = \"AccidentalComplete_Vague\"",
+    "triggerFulfillment": {
+    
+    },
+    "targetPage": "AccidentalComplete_Vague_Confirmation",
+    "name": "1939b8db-888b-4681-b5c2-84cb181d743e"
+  }, {
+    "condition": "$session.params.intentName = \"Road_Blocked\"",
+    "triggerFulfillment": {
+    
+    },
+    "targetPage": "Road_Blocked_Confirmation",
+    "name": "0fdac416-501b-4e05-8494-09595d5f17c3"
+  }, {
+    "condition": "$session.params.intentName = \"TechIssues_Vague\"",
+    "triggerFulfillment": {
+    
+    },
+    "targetPage": "TechIssues_Vague_Confirmation",
+    "name": "85b60373-5cf4-4aec-ab94-2987118dc2e7"
+  }, {
+    "condition": "$session.params.intentName = \"UberApp_CantDeliver\"",
+    "triggerFulfillment": {
+    
+    },
+    "targetPage": "UberApp_CantDeliver_Confirmation",
+    "name": "390519e4-cfa5-4099-b4b1-c0aa0be8b3c1"
+  } ]
+}

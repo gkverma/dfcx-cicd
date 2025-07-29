@@ -1,0 +1,65 @@
+{
+  "name": "f84e76f1-c389-4e5b-b61c-4ddf47824a0b",
+  "displayName": "Dropoff_CustMissing_Conditional_Routes",
+  "form": {
+  
+  },
+  "entryFulfillment": {
+    "setParameterActions": [ {
+      "parameter": "dfLastCallerIntent",
+      "value": "Dropoff_CustMissing"
+    } ]
+  },
+  "transitionRoutes": [ {
+    "condition": "($session.params.pcDeliveryStatus = \"arrived_dropoff_1\" OR $session.params.pcDeliveryStatus = \"arrived_dropoff_2\") AND $session.params.pcContainsAlcohol = \"true\"",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "intentName",
+        "value": "PINWheel_FAQ-alcohol"
+      } ]
+    },
+    "targetFlow": "FAQ Flow",
+    "name": "393851d7-a5e8-4759-afd9-c17273eb27b5"
+  }, {
+    "condition": "($session.params.pcDeliveryStatus = \"arrived_dropoff_1\" OR $session.params.pcDeliveryStatus = \"arrived_dropoff_2\") AND $session.params.pcContainsAlcohol = \"false\"",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "intentName",
+        "value": "PINWheel_FAQ-notAlcohol"
+      } ]
+    },
+    "targetFlow": "FAQ Flow",
+    "name": "8659233a-2880-4746-b242-2bbc6f940ce6"
+  }, {
+    "condition": "$session.params.pcDeliveryStatus = \"picked_up\" AND $session.params.pcContainsAlcohol = \"false\" AND $session.params.pcInteractionType = \"INTERACTION_TYPE_leave_at_door\"",
+    "triggerFulfillment": {
+    
+    },
+    "targetPage": "Dropoff_CustMissing-yes-pickedUp-leaveAtDoor-notAlcohol_Response",
+    "name": "8e83992b-c1e6-41fd-9977-f50afbc8c5a8"
+  }, {
+    "condition": "$session.params.pcDeliveryStatus = \"picked_up\" AND ($session.params.pcContainsAlcohol = \"true\" OR $session.params.pcInteractionType != \"INTERACTION_TYPE_leave_at_door\")",
+    "triggerFulfillment": {
+    
+    },
+    "targetPage": "Dropoff_CustMissing-yes-pickedUp-meetAtDoor-OrAlcohol_Response",
+    "name": "38a4e137-fe33-4300-9800-579a7d4e855a"
+  }, {
+    "condition": "true",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "\u003cspeak\u003eOkay, cant find customer.\u003c/speak\u003e" ]
+        },
+        "languageCode": "en"
+      } ],
+      "setParameterActions": [ {
+        "parameter": "zIntent",
+        "value": "ZAgent"
+      } ]
+    },
+    "targetFlow": "ZExit",
+    "name": "c5facf04-834a-4fab-ad59-1b88687f8777",
+    "description": "This condition written for Default one"
+  } ]
+}

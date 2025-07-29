@@ -1,0 +1,11 @@
+{
+  "name": "fd023c6b-245a-4aed-b178-3371c9aec0d4",
+  "displayName": "Cancel_Vague-alreadyCancel",
+  "parameters": [ {
+    "id": "Store",
+    "entityType": "@Store",
+    "isList": true
+  } ],
+  "priority": 500000,
+  "numTrainingPhrases": 33
+}

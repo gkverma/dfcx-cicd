@@ -1,0 +1,11 @@
+{
+  "name": "2a6ace0d-7445-4d4a-9cc0-0c7e6da1a986",
+  "displayName": "Food_Wrong-restoFault",
+  "parameters": [ {
+    "id": "Store",
+    "entityType": "@Store",
+    "isList": true
+  } ],
+  "priority": 500000,
+  "numTrainingPhrases": 13
+}

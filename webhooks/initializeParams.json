@@ -1,0 +1,13 @@
+{
+  "name": "507267ed-60e7-414f-94a5-737de87782cd",
+  "displayName": "initializeParams",
+  "genericWebService": {
+    "uri": "https://us-central1-prjservice-project-3.cloudfunctions.net/liveorder_pc_param_initialize",
+    "username": "usa-dp-liveorder-hmihy-voice",
+    "password": "KXVJaReNsFXQNHXXFScHA9VDQXZ9d2danm5QH2Jg2LkbgRT4Ym7tkGruxHay43TL",
+    "webhookType": "STANDARD"
+  },
+  "timeout": {
+    "seconds": 5
+  }
+}

@@ -1,0 +1,151 @@
+{
+  "name": "8c6e2a9a-a863-41ec-a911-70b78db9c442",
+  "displayName": "Orange_Start_Page",
+  "form": {
+  
+  },
+  "entryFulfillment": {
+    "setParameterActions": [ {
+      "parameter": "isRepeat",
+      "value": "no"
+    }, {
+      "parameter": "dtmf_input",
+      "value": null
+    } ]
+  },
+  "transitionRoutes": [ {
+    "condition": "$session.params.intentName = LongWait_Vague",
+    "triggerFulfillment": {
+    
+    },
+    "targetPage": "LongWait_Vague_Confirmation",
+    "name": "c3fffa2c-7f15-4355-a77c-586457da2f59",
+    "description": "For Testing Purpose add Parameter here"
+  }, {
+    "condition": "$session.params.intentName = \"Resto_Vague-longWait\" OR $session.params.intentName = \"Cancel_ByDP-yes-atResto-longWait\"",
+    "triggerFulfillment": {
+    
+    },
+    "targetPage": "LongWait_Vague_Conditional_Routes",
+    "name": "7ad7824f-1b3c-402b-bbb5-2bcb6995a1b5"
+  }, {
+    "condition": "$session.params.intentName = \"Dropoff_Vague\"",
+    "triggerFulfillment": {
+    
+    },
+    "targetPage": "Dropoff_Vague_Confirmation",
+    "name": "d803c8ae-94db-416d-b271-e5c8828712e2"
+  }, {
+    "condition": "$session.params.intentName = \"Dropoff_Address\"",
+    "triggerFulfillment": {
+    
+    },
+    "targetPage": "Dropoff_Address_Confirmation",
+    "name": "9c85a678-f531-440b-81af-bfd83b593dd1"
+  }, {
+    "condition": "$session.params.intentName = Dropoff_CustMissing",
+    "triggerFulfillment": {
+    
+    },
+    "targetPage": "Dropoff_CustMissing_Confirmation",
+    "name": "14b51888-b307-46bf-83d0-0b2eafddb664"
+  }, {
+    "condition": "$session.params.intentName = \"Dropoff_Vague-yes-custMissing\"",
+    "triggerFulfillment": {
+    
+    },
+    "targetPage": "Dropoff_CustMissing_Conditional_Routes",
+    "name": "0892c328-3ad7-43dd-ae97-1728db821c23"
+  }, {
+    "condition": "$session.params.intentName = \"Dropoff_CustMissing-yes-pickedUp-leaveAtDoor-notAlcohol-cantLoc\" OR $session.params.intentName = \"Dropoff_CustMissing-yes-pickedUp-meetAtDoor-OrAlcohol-cantLoc\" OR $session.params.intentName = \"Dropoff_Vague-yes-address\" OR $session.params.intentName = \"Resto_Address-custAddr\" OR $session.params.intentName = \"Address_Vague-dropoff\" OR $session.params.intentName = \"Address_Vague-apiFailure-dropoff\"",
+    "triggerFulfillment": {
+    
+    },
+    "targetPage": "Dropoff_Address_Conditional_Routes",
+    "name": "d3bb3253-2a45-4103-aba4-f8dc02ad85b9"
+  }, {
+    "condition": "$session.params.intentName = \"PlusCard_Declined\"",
+    "triggerFulfillment": {
+    
+    },
+    "targetPage": "PlusCard_Declined_Confirmation",
+    "name": "15b953b2-77c7-49d1-b214-fdd617f1740f"
+  }, {
+    "condition": "$session.params.intentName = \"PlusCard_Vague-yes-plusCard-declined\"",
+    "triggerFulfillment": {
+    
+    },
+    "targetPage": "PlusCard_Declined_Conditional_Routes",
+    "name": "24459f75-7e74-4271-a872-1f49aa096b93"
+  }, {
+    "condition": "$session.params.intentName = \"PlusCard_Forgot\"",
+    "triggerFulfillment": {
+    
+    },
+    "targetPage": "PlusCard_Forgot_Confirmation",
+    "name": "632dbd5b-0b2e-4a18-a168-a8c4f3792b8c"
+  }, {
+    "condition": "$session.params.intentName = \"PlusCard_Vague-yes-plusCard-forgot\"",
+    "triggerFulfillment": {
+    
+    },
+    "targetPage": "PlusCard_Forgot_Conditional_Routes",
+    "name": "24e03bfe-ba8d-4aa2-8062-2b037c0ecad5"
+  }, {
+    "condition": "$session.params.intentName = \"Resto_Address\"",
+    "triggerFulfillment": {
+    
+    },
+    "targetPage": "Resto_Address_Confirmation",
+    "name": "6e3b0f7a-4351-4b65-849f-02e2e594e4ed"
+  }, {
+    "condition": "$session.params.intentName = \"Cancel_ByDP-yes-notAtResto-cantResto\" OR $session.params.intentName = \"Dropoff_Address-restoAddr\" OR $session.params.intentName = \"Address_Vague-pickup\" OR $session.params.intentName = \"Address_Vague-apiFailure-pickup\"",
+    "triggerFulfillment": {
+    
+    },
+    "targetPage": "Resto_Address_Conditional_Routes",
+    "name": "65243ccd-e3a6-494d-950a-261800dfa9aa"
+  }, {
+    "condition": "$session.params.intentName = \"Cancel_ByDP\"",
+    "triggerFulfillment": {
+    
+    },
+    "targetPage": "Cancel_ByDP_Confirmation",
+    "name": "33b0ee23-d9b4-4374-8f19-5cd46d3343fe"
+  }, {
+    "condition": "$session.params.intentName = \"Cancel_Vague-byDP\"",
+    "triggerFulfillment": {
+    
+    },
+    "targetPage": "Cancel_ByDP_Conditional_Routes",
+    "name": "5089b76d-0233-4351-ad92-c2ae229a9e5c"
+  }, {
+    "condition": "$session.params.intentName = \"Cancel_ByDP-yes-pickedUp-cantCust\"",
+    "triggerFulfillment": {
+    
+    },
+    "targetPage": "Dropoff_Vague-yes_Response",
+    "name": "bff5089b-585a-46fb-bab7-918945815f24"
+  }, {
+    "condition": "$session.params.intentName = \"Cancel_ByDP-yes-pickedUp-tooFar\" OR $session.params.intentName = \"Dropoff_Address-yes-notAtDropoff-tooFar\"",
+    "triggerFulfillment": {
+    
+    },
+    "targetPage": "Address_TooFar-yes-customer_Confirmation",
+    "name": "1355ea18-5e2c-4f60-9de4-2fa6490997b6"
+  }, {
+    "condition": "$session.params.intentName = \"Cancel_ByDP-yes-notAtResto-tooFar\"",
+    "triggerFulfillment": {
+    
+    },
+    "targetPage": "Address_TooFar-yes-resto_Conditional_Routes",
+    "name": "8437a72d-d037-4c52-88a2-579cbb114abc"
+  }, {
+    "condition": "$session.params.intentName = \"Address_TooFar\"",
+    "triggerFulfillment": {
+    
+    },
+    "targetPage": "Address_TooFar_Confirmation",
+    "name": "ba3365ec-dde4-4bab-9cfc-fada6c0bbbf4"
+  } ]
+}

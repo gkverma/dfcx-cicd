@@ -1,0 +1,11 @@
+{
+  "name": "95bf8bd9-04dd-4427-9fb5-97b176a98df1",
+  "displayName": "PlusCard_Vague-yes-plusCard-declined",
+  "parameters": [ {
+    "id": "Store",
+    "entityType": "@Store",
+    "isList": true
+  } ],
+  "priority": 500000,
+  "numTrainingPhrases": 6
+}

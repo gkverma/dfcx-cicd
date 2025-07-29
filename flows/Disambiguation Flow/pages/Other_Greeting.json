@@ -1,0 +1,23 @@
+{
+  "name": "e82797d1-33b2-4f8b-ac5b-a72060136ffc",
+  "displayName": "Other_Greeting",
+  "form": {
+  
+  },
+  "entryFulfillment": {
+    "messages": [ {
+      "text": {
+        "text": [ "\u003cspeak\u003eHello. Thanks for giving us a call. In your own words, describe why you're calling today. For example, you can say, long wait at the store, or, customer changed address.\u003c/speak\u003e" ]
+      },
+      "languageCode": "en"
+    } ]
+  },
+  "transitionRoutes": [ {
+    "condition": "true",
+    "triggerFulfillment": {
+    
+    },
+    "targetFlow": "Default Start Flow",
+    "name": "3df653bd-3836-473d-bdd4-2093b8501594"
+  } ]
+}

@@ -1,0 +1,49 @@
+{
+  "name": "3cc68a58-5f45-461e-8e40-a760737cc36e",
+  "displayName": "ZExit_Page",
+  "form": {
+  
+  },
+  "entryFulfillment": {
+    "setParameterActions": [ {
+      "parameter": "intentName",
+      "value": null
+    } ]
+  },
+  "transitionRoutes": [ {
+    "condition": "$session.params.zIntent = \"ZHangup\"",
+    "triggerFulfillment": {
+    
+    },
+    "targetPage": "ZHangup",
+    "name": "10fc3bfe-d2e4-4de6-9517-1396fa8fcc64"
+  }, {
+    "condition": "$session.params.zIntent = \"ZAgent\"",
+    "triggerFulfillment": {
+    
+    },
+    "targetPage": "ZAgent",
+    "name": "89346ae8-293f-406d-ae1f-ad66b0d0c059"
+  }, {
+    "condition": "$session.params.zIntent = \"ZDFMainMenu\"",
+    "triggerFulfillment": {
+    
+    },
+    "targetPage": "ZDFMainMenu",
+    "name": "16b191e7-15af-4ba2-a8ab-1fcb37d9dc60"
+  }, {
+    "condition": "$session.params.zIntent = \"ZPCIVR\"",
+    "triggerFulfillment": {
+    
+    },
+    "targetPage": "ZPCIVR",
+    "name": "a5bfae1f-e0e1-45f6-8fcf-21aaadf3815b"
+  }, {
+    "condition": "$session.params.zIntent = \"ZPCMainMenuLiveOrder\"",
+    "triggerFulfillment": {
+    
+    },
+    "targetPage": "ZPCMainMenuLiveOrder",
+    "name": "ce66e31e-83cc-471e-ba1a-379f01ace7a4"
+  } ]
+}

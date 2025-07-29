@@ -1,0 +1,14 @@
+{
+  "name": "a0ce518f-9756-4fdc-a201-ab9b92a93193",
+  "displayName": "Other_InDomain",
+  "parameters": [ {
+    "id": "dfLastCallerIntent",
+    "entityType": "@sys.any"
+  }, {
+    "id": "Store",
+    "entityType": "@Store",
+    "isList": true
+  } ],
+  "priority": 500000,
+  "numTrainingPhrases": 510
+}

@@ -1,0 +1,14 @@
+{
+  "name": "fb7b31dd-0e25-461d-981e-59be6bf52639",
+  "displayName": "UberApp_Nav",
+  "parameters": [ {
+    "id": "dfLastCallerIntent",
+    "entityType": "@sys.any"
+  }, {
+    "id": "Store",
+    "entityType": "@Store",
+    "isList": true
+  } ],
+  "priority": 500000,
+  "numTrainingPhrases": 135
+}

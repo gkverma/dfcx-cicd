@@ -1,0 +1,14 @@
+{
+  "name": "4097c3ca-3217-427e-bcdc-62684bf8f6da",
+  "displayName": "Food_Wrong",
+  "parameters": [ {
+    "id": "dfLastCallerIntent",
+    "entityType": "@sys.any"
+  }, {
+    "id": "Store",
+    "entityType": "@Store",
+    "isList": true
+  } ],
+  "priority": 500000,
+  "numTrainingPhrases": 185
+}

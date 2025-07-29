@@ -1,0 +1,129 @@
+{
+  "name": "590519b7-7f03-47d1-a65d-88a2b016f09a",
+  "displayName": "Purple_Start_Page",
+  "form": {
+  
+  },
+  "entryFulfillment": {
+    "setParameterActions": [ {
+      "parameter": "isRepeat",
+      "value": "no"
+    }, {
+      "parameter": "dtmf_input",
+      "value": null
+    } ]
+  },
+  "transitionRoutes": [ {
+    "condition": "$session.params.intentName = \"Food_Taken\"",
+    "triggerFulfillment": {
+    
+    },
+    "targetPage": "Food_Taken_Confirmation",
+    "name": "548fe269-82a6-4fea-8886-b80e50aa068f"
+  }, {
+    "condition": "$session.params.intentName = \"Resto_Vague-foodTaken\"",
+    "triggerFulfillment": {
+    
+    },
+    "targetPage": "Food_Taken_Conditional_Routes",
+    "name": "54684611-bc9c-4780-abb1-bf22b9917f9c"
+  }, {
+    "condition": "$session.params.intentName = \"Resto_Vague-foodTaken\" OR $session.params.intentName = \"Cancel_ByDP-yes-atResto-orderIssue-taken\"",
+    "triggerFulfillment": {
+    
+    },
+    "targetPage": "Food_Taken_Conditional_Routes",
+    "name": "ffd5bffa-437e-40fb-9b69-ec68d80f9167"
+  }, {
+    "condition": "$session.params.intentName = \"Dropoff_FoodPhoto\"",
+    "triggerFulfillment": {
+    
+    },
+    "targetPage": "Dropoff_FoodPhoto_Confirmation",
+    "name": "5157acf3-0c4e-4ed0-b948-3dc11499215a"
+  }, {
+    "condition": "$session.params.intentName = \"UberApp_CantEnd-yes-notComplete-foodPhoto\" OR $session.params.intentName = \"Dropoff_Vague-yes-foodPhoto\"",
+    "triggerFulfillment": {
+    
+    },
+    "targetPage": "Dropoff_FoodPhoto_Conditional_Routes",
+    "name": "c4b847de-5ab6-4795-a192-16bce5f90c01"
+  }, {
+    "condition": "$session.params.intentName = \"Dropoff_CustChangedAddr\"",
+    "triggerFulfillment": {
+    
+    },
+    "targetPage": "Dropoff_CustChangedAddr_Confirmation",
+    "name": "8ac668d1-5ca1-4d05-b6c7-a8ce3f275d5d"
+  }, {
+    "condition": "$session.params.intentName = \"Dropoff_Address-yes-atDropoff-notAlcohol-custChangedAddr\" OR $session.params.intentName = \"Address_TooFar-yes-customer-changed\" OR $session.params.intentName = \"Dropoff_Address-yes-notAtDropoff-custChangedAddr\" OR $session.params.intentName = \"yBO_DefaultWelcomeIntent-custChangedAddress\"",
+    "triggerFulfillment": {
+    
+    },
+    "targetPage": "Dropoff_CustChangedAddr_Conditional_Routes",
+    "name": "7afe246f-4557-4335-92c7-ba3c776dd0b7"
+  }, {
+    "condition": "$session.params.intentName = \"Food_Damaged\"",
+    "triggerFulfillment": {
+    
+    },
+    "targetPage": "Food_Damaged_Confirmation",
+    "name": "91b933f7-1397-4fce-b99c-a091a27924d6"
+  }, {
+    "condition": "$session.params.intentName = \"Resto_Closed\"",
+    "triggerFulfillment": {
+    
+    },
+    "targetPage": "Resto_Closed_Confirmation",
+    "name": "d53a1ace-0229-47a3-9123-dc2a73a42cf4"
+  }, {
+    "condition": "$session.params.intentName = \"Cancel_ByCustResto\"",
+    "triggerFulfillment": {
+    
+    },
+    "targetPage": "Cancel_ByCustResto_Confirmation",
+    "name": "2a19ec08-6e5c-4d68-8329-a07ad2befce8"
+  }, {
+    "condition": "$session.params.intentName = \"Cancel_Vague-alreadyCancel\"",
+    "triggerFulfillment": {
+    
+    },
+    "targetPage": "Cancel_ByCustResto-alreadyCancel_Response",
+    "name": "c5e41968-39fc-4e82-a882-4832a3267929"
+  }, {
+    "condition": "$session.params.intentName = \"Cancel_Vague-toBeCancel\"",
+    "triggerFulfillment": {
+    
+    },
+    "targetPage": "Cancel_ByCustResto-toBeCancel_Response",
+    "name": "b08c2ea6-f3f1-4aa8-8237-50a36fb6a8d6"
+  }, {
+    "condition": "$session.params.intentName = \"Food_ItemMissing\"",
+    "triggerFulfillment": {
+    
+    },
+    "targetPage": "Food_ItemMissing_Confirmation",
+    "name": "40dad44a-2a3a-4b6e-871a-43eeb01b6039"
+  }, {
+    "condition": "$session.params.intentName = \"Cancel_ByDP-yes-atResto-restoClosed\" OR $session.params.intentName = \"Resto_Vague-restoClosed\"",
+    "triggerFulfillment": {
+    
+    },
+    "targetPage": "Resto_Closed_Conditional_Routes",
+    "name": "353708e9-3f77-49e3-a6ed-c1ac9c4d0d5f"
+  }, {
+    "condition": "$session.params.intentName = \"Cancel_ByDP-yes-pickedUp-damaged\" OR $session.params.intentName = \"Cancel_ByDP-yes-atResto-orderIssue-damaged\"",
+    "triggerFulfillment": {
+    
+    },
+    "targetPage": "Food_Damaged_Conditional_Routes",
+    "name": "47c37d5d-dcec-4d56-83f1-a9b5a1b49d5b"
+  }, {
+    "condition": "$session.params.intentName = \"Cancel_ByDP-yes-atResto-itemMissing\" OR $session.params.intentName = \"Food_Wrong-itemMissing\"",
+    "triggerFulfillment": {
+    
+    },
+    "targetPage": "Food_ItemMissing_Conditional_Routes",
+    "name": "aa157b11-cc71-42ac-bf03-b073e7b17b4b"
+  } ]
+}

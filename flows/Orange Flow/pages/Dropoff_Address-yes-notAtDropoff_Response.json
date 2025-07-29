@@ -1,0 +1,322 @@
+{
+  "name": "573746e4-88d7-4cb2-9f2d-c4512e271cf9",
+  "displayName": "Dropoff_Address-yes-notAtDropoff_Response",
+  "form": {
+    "parameters": [ {
+      "displayName": "dtmf_input",
+      "required": true,
+      "entityType": "@dtmf_1234",
+      "fillBehavior": {
+        "initialPromptFulfillment": {
+        
+        },
+        "repromptEventHandlers": [ {
+          "event": "sys.no-match-1",
+          "triggerFulfillment": {
+            "messages": [ {
+              "text": {
+                "text": [ "\u003cspeak\u003eI didn't get that.\u003c/speak\u003e\n\n\u003cspeak\u003eAre you able to leave the order somewhere safe? Please say Yes, or No.\u003c/speak\u003e" ]
+              },
+              "languageCode": "en"
+            } ]
+          },
+          "name": "1b419486-c51b-43ac-967f-375f76e119ca"
+        }, {
+          "event": "sys.no-match-2",
+          "triggerFulfillment": {
+            "messages": [ {
+              "text": {
+                "text": [ "\u003cspeak\u003eI'm having trouble understanding you. If you're able to leave the order somewhere safe, press 1. Otherwise, press 2.\u003c/speak\u003e" ]
+              },
+              "languageCode": "en"
+            } ]
+          },
+          "name": "5ffc9a89-de9b-4d8d-8f29-f2cb96c0694f"
+        }, {
+          "targetFlow": "ZExit",
+          "event": "sys.no-match-3",
+          "triggerFulfillment": {
+            "messages": [ {
+              "text": {
+                "text": [ "\u003cspeak\u003e\u003cbreak time=\"10ms\"/\u003e\u003c/speak\u003e" ]
+              },
+              "languageCode": "en"
+            } ],
+            "setParameterActions": [ {
+              "parameter": "zIntent",
+              "value": "ZAgent"
+            } ]
+          },
+          "name": "d76df53f-b07f-495c-af03-623d570611bc"
+        }, {
+          "event": "sys.no-input-1",
+          "triggerFulfillment": {
+            "messages": [ {
+              "text": {
+                "text": [ "\u003cspeak\u003eAre you able to leave the order somewhere safe? Please say Yes, or No.\u003c/speak\u003e" ]
+              },
+              "languageCode": "en"
+            } ]
+          },
+          "name": "48dff397-97d2-4719-8ef0-79feb9d3a715"
+        }, {
+          "event": "sys.no-input-2",
+          "triggerFulfillment": {
+            "messages": [ {
+              "text": {
+                "text": [ "\u003cspeak\u003eI didn't hear you.\u003c/speak\u003e\n\n\u003cspeak\u003eIf you're able to leave the order somewhere safe, press 1. Otherwise, press 2.\u003c/speak\u003e" ]
+              },
+              "languageCode": "en"
+            } ]
+          },
+          "name": "f1bf4de9-5a57-4480-be49-f3e92aba3580"
+        }, {
+          "targetFlow": "ZExit",
+          "event": "sys.no-input-3",
+          "triggerFulfillment": {
+            "messages": [ {
+              "text": {
+                "text": [ "\u003cspeak\u003eI am having trouble hearing you.\u003c/speak\u003e" ]
+              },
+              "languageCode": "en"
+            } ],
+            "setParameterActions": [ {
+              "parameter": "zIntent",
+              "value": "ZHangup"
+            } ]
+          },
+          "name": "c22891dd-1893-434a-9b29-f74c940a0437"
+        } ]
+      },
+      "advancedSettings": {
+        "dtmfSettings": {
+          "enabled": true,
+          "useSystemEntityRule": false
+        }
+      }
+    } ]
+  },
+  "entryFulfillment": {
+    "messages": [ {
+      "text": {
+        "text": [ "\u003cspeak\u003eWhat issue are you having with the drop off address? You can say, accidentally completed an order. \u003cbreak time=\"400ms\"/\u003e address is too far. \u003cbreak time=\"400ms\"/\u003e Customer changed the address. \u003cbreak time=\"400ms\"/\u003e Or, it is something else.\u003c/speak\u003e" ]
+      },
+      "languageCode": "en"
+    } ],
+    "setParameterActions": [ {
+      "parameter": "dfLastCallerIntent",
+      "value": "Dropoff_Address"
+    }, {
+      "parameter": "dtmf_input",
+      "value": null
+    } ]
+  },
+  "transitionRoutes": [ {
+    "intent": "Dropoff_Address-yes-notAtDropoff-accidentalComp",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "\u003cspeak\u003eOkay, accidentally completed a delivery.\u003c/speak\u003e" ]
+        },
+        "languageCode": "en"
+      } ],
+      "setParameterActions": [ {
+        "parameter": "zIntent",
+        "value": "ZAgent"
+      } ]
+    },
+    "targetFlow": "ZExit",
+    "name": "2817f192-ccfd-4df8-be74-dd355631dda0"
+  }, {
+    "intent": "Dropoff_Address-yes-notAtDropoff-tooFar",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "intentName",
+        "value": "Dropoff_Address-yes-notAtDropoff-tooFar"
+      } ]
+    },
+    "targetFlow": "Orange Flow",
+    "name": "a63358ed-5f31-4801-bf62-8f55500c724d"
+  }, {
+    "intent": "Dropoff_Address-yes-notAtDropoff-custChangedAddr",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "intentName",
+        "value": "Dropoff_Address-yes-notAtDropoff-custChangedAddr"
+      } ]
+    },
+    "targetFlow": "Purple Flow",
+    "name": "3d9bf0c2-fec7-413b-b9c7-cdd37376e83b"
+  }, {
+    "intent": "Dropoff_Address-yes-notAtDropoff-other",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "\u003cspeak\u003eOkay, other drop off issue.\u003c/speak\u003e" ]
+        },
+        "languageCode": "en"
+      } ],
+      "setParameterActions": [ {
+        "parameter": "intentName",
+        "value": "Dropoff_Address-yes-notAtDropoff-other"
+      }, {
+        "parameter": "zIntent",
+        "value": "ZAgent"
+      } ]
+    },
+    "targetFlow": "ZExit",
+    "name": "fa78a4fa-5d0d-4ed8-bfef-5a08f36c19a4"
+  }, {
+    "intent": "Dropoff_Address-yes-notAtDropoff-gated",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "intentName",
+        "value": "Dropoff_Address-yes-notAtDropoff-gated"
+      } ]
+    },
+    "targetFlow": "FAQ Flow",
+    "name": "7d2c70b6-dba4-4bba-83ac-7767dd4ec9d9"
+  }, {
+    "condition": "$session.params.dtmf_input = \"1\"",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "\u003cspeak\u003eOkay, accidentally completed a delivery.\u003c/speak\u003e" ]
+        },
+        "languageCode": "en"
+      } ],
+      "setParameterActions": [ {
+        "parameter": "zIntent",
+        "value": "ZAgent"
+      } ]
+    },
+    "targetFlow": "ZExit",
+    "name": "e2d11738-cfde-429d-ad40-ce3cf69e9961"
+  }, {
+    "condition": "$session.params.dtmf_input = \"2\"",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "intentName",
+        "value": "Dropoff_Address-yes-notAtDropoff-tooFar"
+      } ]
+    },
+    "targetFlow": "Orange Flow",
+    "name": "f6eb8bb7-e04d-48f7-ab07-1cfc589eb1d7"
+  }, {
+    "condition": "$session.params.dtmf_input = \"3\"",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "intentName",
+        "value": "Dropoff_Address-yes-notAtDropoff-custChangedAddr"
+      } ]
+    },
+    "targetFlow": "Purple Flow",
+    "name": "f8ffbf93-2bf6-4fe6-a5e3-56979aaf44be"
+  }, {
+    "condition": "$session.params.dtmf_input = \"4\"",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "\u003cspeak\u003eOkay, other drop off issue.\u003c/speak\u003e" ]
+        },
+        "languageCode": "en"
+      } ],
+      "setParameterActions": [ {
+        "parameter": "zIntent",
+        "value": "ZAgent"
+      }, {
+        "parameter": "intentName",
+        "value": "Dropoff_Address-yes-notAtDropoff-other"
+      } ]
+    },
+    "targetFlow": "ZExit",
+    "name": "225b6881-8117-4ee7-88b0-ba35f73a21eb"
+  }, {
+    "condition": "$session.params.dtmf_input = \"0\"",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "intentName",
+        "value": "Agent_Vague"
+      } ]
+    },
+    "targetFlow": "Immediate Transfer Flow",
+    "name": "6765ad24-5c54-4c8b-bbd9-73d07024ec11"
+  } ],
+  "eventHandlers": [ {
+    "event": "sys.no-match-1",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "\u003cspeak\u003eI didn't get that.\u003c/speak\u003e\n\n\u003cspeak\u003eAre you able to leave the order somewhere safe? Please say Yes, or No.\u003c/speak\u003e" ]
+        },
+        "languageCode": "en"
+      } ]
+    },
+    "name": "fab5276e-4510-4830-8e69-633460c93046"
+  }, {
+    "event": "sys.no-match-2",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "\u003cspeak\u003eI'm having trouble understanding you. If you're able to leave the order somewhere safe, press 1. Otherwise, press 2.\u003c/speak\u003e" ]
+        },
+        "languageCode": "en"
+      } ]
+    },
+    "name": "cf3efee1-8276-49b7-960f-a8d970133086"
+  }, {
+    "targetFlow": "ZExit",
+    "event": "sys.no-match-3",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "\u003cspeak\u003e\u003cbreak time=\"10ms\"/\u003e\u003c/speak\u003e" ]
+        },
+        "languageCode": "en"
+      } ],
+      "setParameterActions": [ {
+        "parameter": "zIntent",
+        "value": "ZAgent"
+      } ]
+    },
+    "name": "41eac547-5084-4a9d-8fea-c71eee37e1bb"
+  }, {
+    "event": "sys.no-input-1",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "\u003cspeak\u003eAre you able to leave the order somewhere safe? Please say Yes, or No.\u003c/speak\u003e" ]
+        },
+        "languageCode": "en"
+      } ]
+    },
+    "name": "754febaa-ca97-4ea0-8019-d927cdec087a"
+  }, {
+    "event": "sys.no-input-2",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "\u003cspeak\u003eI didn't hear you.\u003c/speak\u003e\n\n\u003cspeak\u003eIf you're able to leave the order somewhere safe, press 1. Otherwise, press 2.\u003c/speak\u003e" ]
+        },
+        "languageCode": "en"
+      } ]
+    },
+    "name": "5ce97baf-3d1a-4c13-a3c3-352c420f0ca2"
+  }, {
+    "targetFlow": "ZExit",
+    "event": "sys.no-input-3",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "\u003cspeak\u003eI am having trouble hearing you.\u003c/speak\u003e" ]
+        },
+        "languageCode": "en"
+      } ],
+      "setParameterActions": [ {
+        "parameter": "zIntent",
+        "value": "ZHangup"
+      } ]
+    },
+    "name": "a3a5d7f8-8ec1-45f9-8678-af6420245afd"
+  } ]
+}

@@ -1,0 +1,11 @@
+{
+  "name": "f29d7124-1048-4269-9b79-1b94df8a8301",
+  "displayName": "LongWait_Vague",
+  "parameters": [ {
+    "id": "Store",
+    "entityType": "@Store",
+    "isList": true
+  } ],
+  "priority": 500000,
+  "numTrainingPhrases": 286
+}

@@ -1,0 +1,11 @@
+{
+  "name": "48e5f525-afcb-4a04-9a12-23adb91d75aa",
+  "displayName": "Food_Taken",
+  "parameters": [ {
+    "id": "Store",
+    "entityType": "@Store",
+    "isList": true
+  } ],
+  "priority": 500000,
+  "numTrainingPhrases": 374
+}

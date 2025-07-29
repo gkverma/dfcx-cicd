@@ -1,0 +1,14 @@
+{
+  "name": "48dd8d8d-6ed2-41a0-8657-d02a7951f3ae",
+  "displayName": "Resto_NoOrder",
+  "parameters": [ {
+    "id": "dfLastCallerIntent",
+    "entityType": "@sys.any"
+  }, {
+    "id": "Store",
+    "entityType": "@Store",
+    "isList": true
+  } ],
+  "priority": 500000,
+  "numTrainingPhrases": 316
+}

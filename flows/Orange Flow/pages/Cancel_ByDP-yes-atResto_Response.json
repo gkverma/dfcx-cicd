@@ -1,0 +1,283 @@
+{
+  "name": "99434418-2d66-430d-b927-6164f0c12c82",
+  "displayName": "Cancel_ByDP-yes-atResto_Response",
+  "form": {
+    "parameters": [ {
+      "displayName": "dtmf_input",
+      "required": true,
+      "entityType": "@dtmf_1234",
+      "fillBehavior": {
+        "initialPromptFulfillment": {
+        
+        },
+        "repromptEventHandlers": [ {
+          "event": "sys.no-input-1",
+          "triggerFulfillment": {
+            "messages": [ {
+              "text": {
+                "text": [ "\u003cspeak\u003eYou can say, Order Issue, Long wait at the store, store closed, or, it is something else.\u003c/speak\u003e" ]
+              },
+              "languageCode": "en"
+            } ]
+          },
+          "name": "9ac28250-3624-4359-aa92-472d0ab7d267"
+        }, {
+          "event": "sys.no-input-2",
+          "triggerFulfillment": {
+            "messages": [ {
+              "text": {
+                "text": [ "\u003cspeak\u003eI didn't hear you.\u003c/speak\u003e\n\u003cspeak\u003eFor Order Issue, press 1. For Long wait at the store, press 2. For store closed, press 3. For another reason, press 4.\u003c/speak\u003e" ]
+              },
+              "languageCode": "en"
+            } ]
+          },
+          "name": "924da32b-f0df-47ef-9826-ea05785209fc"
+        }, {
+          "targetFlow": "ZExit",
+          "event": "sys.no-input-3",
+          "triggerFulfillment": {
+            "messages": [ {
+              "text": {
+                "text": [ "\u003cspeak\u003eI am having trouble hearing you.\u003c/speak\u003e" ]
+              },
+              "languageCode": "en"
+            } ],
+            "setParameterActions": [ {
+              "parameter": "zIntent",
+              "value": "ZHangup"
+            } ]
+          },
+          "name": "fe08ebd2-3ab2-4d70-abc4-d5271be62b5e"
+        }, {
+          "event": "sys.no-match-1",
+          "triggerFulfillment": {
+            "messages": [ {
+              "text": {
+                "text": [ "\u003cspeak\u003eI didn't get that.\u003c/speak\u003e\n\u003cspeak\u003eYou can say, Order Issue, Long wait at the store, store closed, or, it is something else.\u003c/speak\u003e" ]
+              },
+              "languageCode": "en"
+            } ]
+          },
+          "name": "0933e643-6354-4d50-8fcc-748d6d974592"
+        }, {
+          "event": "sys.no-match-2",
+          "triggerFulfillment": {
+            "messages": [ {
+              "text": {
+                "text": [ "\u003cspeak\u003eI'm having trouble understanding you. For Order Issue, press 1. For Long wait at the store, press 2. For store closed, press 3. For another reason, press 4.\u003c/speak\u003e" ]
+              },
+              "languageCode": "en"
+            } ]
+          },
+          "name": "1efc267e-4397-4c64-b688-b946a3c91270"
+        }, {
+          "targetFlow": "ZExit",
+          "event": "sys.no-match-3",
+          "triggerFulfillment": {
+            "messages": [ {
+              "text": {
+                "text": [ "\u003cspeak\u003e\u003cbreak time=\"10ms\"/\u003e\u003c/speak\u003e" ]
+              },
+              "languageCode": "en"
+            } ],
+            "setParameterActions": [ {
+              "parameter": "zIntent",
+              "value": "ZAgent"
+            } ]
+          },
+          "name": "ed1a3d1b-0e82-4c10-87f1-07a3890a2b70"
+        } ]
+      },
+      "advancedSettings": {
+        "dtmfSettings": {
+          "enabled": true,
+          "useSystemEntityRule": false
+        }
+      }
+    } ]
+  },
+  "entryFulfillment": {
+    "messages": [ {
+      "text": {
+        "text": [ "\u003cspeak\u003eI see you're currently at the pick up location. So I can better understand why you'd like to cancel. is there an issue with the order? \u003cbreak time=\"600ms\"/\u003e is there a long wait at the store? \u003cbreak time=\"600ms\"/\u003e or, is the store closed. \u003cbreak time=\"600ms\"/\u003e Or, you can say, it is for another reason.\u003c/speak\u003e" ]
+      },
+      "languageCode": "en"
+    } ],
+    "setParameterActions": [ {
+      "parameter": "dtmf_input",
+      "value": null
+    } ]
+  },
+  "transitionRoutes": [ {
+    "intent": "Cancel_ByDP-yes-atResto-orderIssue",
+    "triggerFulfillment": {
+    
+    },
+    "targetPage": "Cancel_ByDP-yes-atResto-orderIssue_Response",
+    "name": "a344dbe7-c6ef-4bb3-9d5d-a983b03ccae4"
+  }, {
+    "intent": "Cancel_ByDP-yes-atResto-longWait",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "intentName",
+        "value": "Cancel_ByDP-yes-atResto-longWait"
+      } ]
+    },
+    "targetFlow": "Orange Flow",
+    "name": "d20b77f5-7bda-4545-b2e7-3c514cf6ac36"
+  }, {
+    "intent": "Cancel_ByDP-yes-atResto-restoClosed",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "intentName",
+        "value": "Cancel_ByDP-yes-atResto-restoClosed"
+      } ]
+    },
+    "targetFlow": "Purple Flow",
+    "name": "7a7fb90c-348d-45f8-b88c-3f9c6cbf8eea"
+  }, {
+    "intent": "Cancel_ByDP-yes-atResto-itemMissing",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "intentName",
+        "value": "Cancel_ByDP-yes-atResto-itemMissing"
+      } ]
+    },
+    "targetFlow": "Purple Flow",
+    "name": "9645bf3c-6936-48e6-bf02-07755b3834a2"
+  }, {
+    "intent": "Cancel_ByDP-yes-atResto-cancel",
+    "triggerFulfillment": {
+    
+    },
+    "targetPage": "Cancel_ByDP-yes-atResto-cancel_Response",
+    "name": "65a53f11-1f7c-4d8d-8afe-a379c5ed1f68"
+  }, {
+    "condition": "$session.params.dtmf_input = \"1\"",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "dtmf_input",
+        "value": null
+      } ]
+    },
+    "targetPage": "Cancel_ByDP-yes-atResto-orderIssue_Response",
+    "name": "0ad84b94-d21c-43ef-af8c-62aababbb9f4"
+  }, {
+    "condition": "$session.params.dtmf_input = \"2\"",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "intentName",
+        "value": "Cancel_ByDP-yes-atResto-longWait"
+      } ]
+    },
+    "targetFlow": "Orange Flow",
+    "name": "ab175045-a29b-4ed5-b866-3c4068e5be47"
+  }, {
+    "condition": "$session.params.dtmf_input = \"3\"",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "intentName",
+        "value": "Cancel_ByDP-yes-atResto-restoClosed"
+      } ]
+    },
+    "targetFlow": "Purple Flow",
+    "name": "8bd6a09e-0c03-44ea-8855-fd57cd93447e"
+  }, {
+    "condition": "$session.params.dtmf_input = \"4\"",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "dtmf_input",
+        "value": null
+      } ]
+    },
+    "targetPage": "Cancel_ByDP-yes-atResto-cancel_Response",
+    "name": "605cdfad-ab0f-4c6c-aafd-c198f80a48f2"
+  }, {
+    "condition": "$session.params.dtmf_input = \"0\"",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "intentName",
+        "value": "Agent_Vague"
+      } ]
+    },
+    "targetFlow": "Immediate Transfer Flow",
+    "name": "f227053c-556c-4259-b5c8-899113ccedce"
+  } ],
+  "eventHandlers": [ {
+    "event": "sys.no-input-1",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "\u003cspeak\u003eYou can say, Order Issue, Long wait at the store, store closed, or, it is something else.\u003c/speak\u003e" ]
+        },
+        "languageCode": "en"
+      } ]
+    },
+    "name": "81091b60-b539-4adb-aee1-e89957dd0ec8"
+  }, {
+    "event": "sys.no-input-2",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "\u003cspeak\u003eI didn't hear you.\u003c/speak\u003e\n\u003cspeak\u003eFor Order Issue, press 1. For Long wait at the store, press 2. For store closed, press 3. For another reason, press 4.\u003c/speak\u003e" ]
+        },
+        "languageCode": "en"
+      } ]
+    },
+    "name": "46872885-e42f-4029-aa5e-b2a5a8b6dd43"
+  }, {
+    "targetFlow": "ZExit",
+    "event": "sys.no-input-3",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "\u003cspeak\u003eI am having trouble hearing you.\u003c/speak\u003e" ]
+        },
+        "languageCode": "en"
+      } ],
+      "setParameterActions": [ {
+        "parameter": "zIntent",
+        "value": "ZHangup"
+      } ]
+    },
+    "name": "10cd0506-221f-4ffd-9e72-f9cde709af2b"
+  }, {
+    "event": "sys.no-match-1",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "\u003cspeak\u003eI didn't get that.\u003c/speak\u003e\n\u003cspeak\u003eYou can say, Order Issue, Long wait at the store, store closed, or, it is something else.\u003c/speak\u003e" ]
+        },
+        "languageCode": "en"
+      } ]
+    },
+    "name": "ef2b53aa-7c7f-4c36-add3-a822e05d4b38"
+  }, {
+    "event": "sys.no-match-2",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "\u003cspeak\u003eI'm having trouble understanding you. For Order Issue, press 1. For Long wait at the store, press 2. For store closed, press 3. For another reason, press 4.\u003c/speak\u003e" ]
+        },
+        "languageCode": "en"
+      } ]
+    },
+    "name": "16378e16-2b95-46fe-9aa5-e0c97ee8c5b2"
+  }, {
+    "targetFlow": "ZExit",
+    "event": "sys.no-match-3",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "\u003cspeak\u003e\u003cbreak time=\"10ms\"/\u003e\u003c/speak\u003e" ]
+        },
+        "languageCode": "en"
+      } ],
+      "setParameterActions": [ {
+        "parameter": "zIntent",
+        "value": "ZAgent"
+      } ]
+    },
+    "name": "5aab4db4-14a1-4116-9e0b-64433883b57d"
+  } ]
+}

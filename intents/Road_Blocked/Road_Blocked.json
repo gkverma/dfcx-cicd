@@ -1,0 +1,11 @@
+{
+  "name": "b2c147a2-269f-4e70-9ac0-3894a968898b",
+  "displayName": "Road_Blocked",
+  "parameters": [ {
+    "id": "Store",
+    "entityType": "@Store",
+    "isList": true
+  } ],
+  "priority": 500000,
+  "numTrainingPhrases": 120
+}

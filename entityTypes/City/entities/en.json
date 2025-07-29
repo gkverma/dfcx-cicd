@@ -1,0 +1,199 @@
+{
+  "entities": [ {
+    "value": "AL",
+    "synonyms": [ "birmingham", "montgomery", "huntsville" ],
+    "languageCode": "en"
+  }, {
+    "value": "AK",
+    "synonyms": [ "anchorage" ],
+    "languageCode": "en"
+  }, {
+    "value": "AZ",
+    "synonyms": [ "phoenix", "tucson", "mesa", "chandler", "glendale", "scottsdale", "gilbert", "tempe", "peoria", "surprise" ],
+    "languageCode": "en"
+  }, {
+    "value": "AR",
+    "synonyms": [ "little rock" ],
+    "languageCode": "en"
+  }, {
+    "value": "CA",
+    "synonyms": [ "los angeles", "san francisco", "san diego", "san jose", "fresno", "sacramento", "long beach", "oakland", "bakersfield", "anaheim", "santa ana", "riverside", "stockton", "chula vista", "fremont", "irvine", "san bernardino", "modesto", "moreno valley", "huntington beach", "santa clarita", "garden grove", "santa rosa", "oceanside", "rancho cucamonga", "ontario", "lancaster", "elk grove", "palmdale", "corona", "salinas", "pomona", "torrance", "hayward", "escondido", "sunnyvale", "pasadena", "fullerton", "orange", "thousand oaks", "visalia", "simi valley", "concord", "roseville", "santa clara", "vallejo", "victorville", "el monte", "berkeley", "downey", "costa mesa", "inglewood", "ventura", "west covina", "norwalk", "calsbad", "fairfield", "richmond", "murrieta", "burbank", "antioch", "daly city", "temecula" ],
+    "languageCode": "en"
+  }, {
+    "value": "CO",
+    "synonyms": [ "denver", "colorado springs", "aurora", "fort collins", "lakewood", "thornton", "arvada", "westminster", "pueblo", "centennial", "boulder" ],
+    "languageCode": "en"
+  }, {
+    "value": "CT",
+    "synonyms": [ "bridgeport", "new haven", "hartford", "stamford", "waterbury" ],
+    "languageCode": "en"
+  }, {
+    "value": "DE",
+    "synonyms": [ "wilmington", "dover" ],
+    "languageCode": "en"
+  }, {
+    "value": "FL",
+    "synonyms": [ "jacksonville", "miami", "tampa", "orlando", "saint petersburg", "hialeah", "port saint lucie", "tallahassee", "cape coral", "fort lauderdale", "pembroke pines", "hollywood", "miramar", "gainesville", "coral springs", "clearwater", "palm bay", "miami gardens", "pompano beach", "west palm beach", "lakeland", "davie" ],
+    "languageCode": "en"
+  }, {
+    "value": "GA",
+    "synonyms": [ "atlanta", "augusta", "columbus", "macon", "savannah", "athens", "sandy springs" ],
+    "languageCode": "en"
+  }, {
+    "value": "HI",
+    "synonyms": [ "honolulu" ],
+    "languageCode": "en"
+  }, {
+    "value": "ID",
+    "synonyms": [ "boise" ],
+    "languageCode": "en"
+  }, {
+    "value": "IL",
+    "synonyms": [ "chicago", "rockford", "joliet", "naperville", "springfield", "elgin" ],
+    "languageCode": "en"
+  }, {
+    "value": "IN",
+    "synonyms": [ "indianapolis", "evansville", "south bend" ],
+    "languageCode": "en"
+  }, {
+    "value": "IA",
+    "synonyms": [ "des moines", "cedar rapids" ],
+    "languageCode": "en"
+  }, {
+    "value": "KS",
+    "synonyms": [ "wichita", "overland park", "kansas city", "olathe", "topeka" ],
+    "languageCode": "en"
+  }, {
+    "value": "KY",
+    "synonyms": [ "louisville", "lexington" ],
+    "languageCode": "en"
+  }, {
+    "value": "LA",
+    "synonyms": [ "new orleans", "baton rouge", "shreveport", "lafayette" ],
+    "languageCode": "en"
+  }, {
+    "value": "ME",
+    "synonyms": [ "portland" ],
+    "languageCode": "en"
+  }, {
+    "value": "MD",
+    "synonyms": [ "baltimore", "columbia" ],
+    "languageCode": "en"
+  }, {
+    "value": "MA",
+    "synonyms": [ "boston", "worcester", "lowell", "cambridge" ],
+    "languageCode": "en"
+  }, {
+    "value": "MI",
+    "synonyms": [ "detroit", "grand rapids", "warren", "sterling heights", "lansing", "ann arbor", "flint" ],
+    "languageCode": "en"
+  }, {
+    "value": "MN",
+    "synonyms": [ "minneapolis", "saint paul", "rochester" ],
+    "languageCode": "en"
+  }, {
+    "value": "MS",
+    "synonyms": [ "jackson" ],
+    "languageCode": "en"
+  }, {
+    "value": "MO",
+    "synonyms": [ "saint louis", "independence" ],
+    "languageCode": "en"
+  }, {
+    "value": "MT",
+    "synonyms": [ "billings" ],
+    "languageCode": "en"
+  }, {
+    "value": "NE",
+    "synonyms": [ "omaha", "lincoln" ],
+    "languageCode": "en"
+  }, {
+    "value": "NV",
+    "synonyms": [ "las vegas", "henderson", "reno", "north las vegas" ],
+    "languageCode": "en"
+  }, {
+    "value": "NH",
+    "synonyms": [ "manchester" ],
+    "languageCode": "en"
+  }, {
+    "value": "NJ",
+    "synonyms": [ "newark", "jersey city", "paterson", "elizabeth" ],
+    "languageCode": "en"
+  }, {
+    "value": "NM",
+    "synonyms": [ "albuquerque" ],
+    "languageCode": "en"
+  }, {
+    "value": "NY",
+    "synonyms": [ "new york city", "the bronx", "queens", "brooklyn", "manhattan", "staten island", "buffalo", "yonkers", "syracuse" ],
+    "languageCode": "en"
+  }, {
+    "value": "NC",
+    "synonyms": [ "charlotte", "raleigh", "greensboro", "durham", "winston-salem", "fayetteville", "cary", "high point" ],
+    "languageCode": "en"
+  }, {
+    "value": "ND",
+    "synonyms": [ "fargo" ],
+    "languageCode": "en"
+  }, {
+    "value": "OH",
+    "synonyms": [ "cleveland", "cincinnati", "toledo", "akron", "dayton" ],
+    "languageCode": "en"
+  }, {
+    "value": "OK",
+    "synonyms": [ "oklahoma city", "tulsa", "norman" ],
+    "languageCode": "en"
+  }, {
+    "value": "OR",
+    "synonyms": [ "salem", "eugene", "gresham" ],
+    "languageCode": "en"
+  }, {
+    "value": "PA",
+    "synonyms": [ "philadelphia", "pittsburgh", "allentown" ],
+    "languageCode": "en"
+  }, {
+    "value": "RI",
+    "synonyms": [ "providence" ],
+    "languageCode": "en"
+  }, {
+    "value": "SC",
+    "synonyms": [ "charleston" ],
+    "languageCode": "en"
+  }, {
+    "value": "SD",
+    "synonyms": [ "sioux falls" ],
+    "languageCode": "en"
+  }, {
+    "value": "TN",
+    "synonyms": [ "memphis", "nashville", "knoxville", "chattanooga", "clarksville", "murfreesboro" ],
+    "languageCode": "en"
+  }, {
+    "value": "TX",
+    "synonyms": [ "houston", "san antonio", "dallas", "austin", "fort worth", "el paso", "arlington", "corpus christi", "plano", "laredo", "lubbock", "irving", "garland", "amarillo", "grand prairie", "brownsville", "mckinney", "frisco", "killeen", "mesquite", "mcallen", "waco", "denton", "midland", "carrollton", "round rock", "abilene", "pearland", "beaumont", "odessa", "richardson", "college station", "lewisville", "tyler", "league city", "wichita falls", "allen", "san angelo" ],
+    "languageCode": "en"
+  }, {
+    "value": "UT",
+    "synonyms": [ "salt lake city", "west valley city", "provo", "west jordan" ],
+    "languageCode": "en"
+  }, {
+    "value": "VT",
+    "synonyms": [ "burlington" ],
+    "languageCode": "en"
+  }, {
+    "value": "VA",
+    "synonyms": [ "virginia beach", "norfolk", "chesapeake", "newport news", "alexandria", "hampton" ],
+    "languageCode": "en"
+  }, {
+    "value": "WA",
+    "synonyms": [ "seattle", "spokane", "tacoma", "vancouver", "bellevue" ],
+    "languageCode": "en"
+  }, {
+    "value": "WI",
+    "synonyms": [ "milwaukee", "madison", "green bay" ],
+    "languageCode": "en"
+  }, {
+    "value": "DC",
+    "synonyms": [ "washington d c", "d c", "washington dc", "dc" ],
+    "languageCode": "en"
+  } ]
+}

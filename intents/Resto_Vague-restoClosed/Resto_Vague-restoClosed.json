@@ -1,0 +1,10 @@
+{
+  "name": "0001f230-4379-44e7-899a-70f7804e74d5",
+  "displayName": "Resto_Vague-restoClosed",
+  "parameters": [ {
+    "id": "dfLastCallerIntent",
+    "entityType": "@sys.any"
+  } ],
+  "priority": 500000,
+  "numTrainingPhrases": 1
+}

@@ -1,0 +1,11 @@
+{
+  "name": "87d8318c-9bfc-4a33-98a2-eeadbc4f9832",
+  "displayName": "Cancel_ByCustResto-alreadyCancel-toBeCancel",
+  "parameters": [ {
+    "id": "Store",
+    "entityType": "@Store",
+    "isList": true
+  } ],
+  "priority": 500000,
+  "numTrainingPhrases": 4
+}

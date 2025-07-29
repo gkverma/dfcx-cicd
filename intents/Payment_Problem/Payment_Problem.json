@@ -1,0 +1,11 @@
+{
+  "name": "777612d4-776c-49e5-a9a0-9ec64a3f804e",
+  "displayName": "Payment_Problem",
+  "parameters": [ {
+    "id": "Store",
+    "entityType": "@Store",
+    "isList": true
+  } ],
+  "priority": 500000,
+  "numTrainingPhrases": 274
+}

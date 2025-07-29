@@ -1,0 +1,10 @@
+{
+  "name": "b301fda4-52b9-4f67-a6f3-8f7e4457af2d",
+  "displayName": "Resto_Vague-restoFault",
+  "parameters": [ {
+    "id": "dfLastCallerIntent",
+    "entityType": "@sys.any"
+  } ],
+  "priority": 500000,
+  "numTrainingPhrases": 1
+}

@@ -1,0 +1,211 @@
+{
+  "name": "38262cc1-0646-40ab-b157-91b7169c24cd",
+  "tags": [ "#Live_Order_Bot", "#Green_Family_Intent", "#Address_Vague", "#Happy_Path" ],
+  "displayName": "Address_Vague_b_04",
+  "testCaseConversationTurns": [ {
+    "userInput": {
+      "injectedParameters": {
+        "pcDeliveryStatus": "arrived_resto_1"
+      },
+      "isWebhookEnabled": true,
+      "input": {
+        "languageCode": "en",
+        "event": {
+          "event": "WELCOME"
+        }
+      }
+    },
+    "virtualAgentOutput": {
+      "sessionParameters": {
+        "pcAddressChanged": "false",
+        "pcContainsAlcohol": "false",
+        "pcCourierPrestartOneTracking": "false",
+        "pcCourierPrestartTwoTracking": "false",
+        "pcDeliveryStatus": "arrived_resto_1",
+        "pcInteractionType": "default",
+        "pcIsVirtualRestaurant": "false",
+        "pcMiscPaymentAbuseBlock": "false",
+        "pcStoreAddress": "default",
+        "pcStorePhoneNumber": "default"
+      },
+      "differences": [ {
+        "type": "PAGE",
+        "description": "Page mismatch:\nExpected: \nActual:   Main_Menu_Page",
+        "assertionType": "EQUAL",
+        "expectedValue": "",
+        "actualValue": "Main_Menu_Page"
+      }, {
+        "type": "UTTERANCE",
+        "description": "Agent response mismatch",
+        "warning": true,
+        "assertionType": "EQUAL",
+        "expectedValue": "",
+        "actualValue": "\u003cspeak\u003eIn a few words, how can I help you with your current order. You can say things like, the order was already picked up by someone else, ore, problem with customers address.\u003c/speak\u003e"
+      } ],
+      "currentPage": {
+        "name": "Main_Menu_Page",
+        "flow": "Default Start Flow"
+      },
+      "textResponses": [ {
+        "text": [ "\u003cspeak\u003eIn a few words, how can I help you with your current order. You can say things like, the order was already picked up by someone else, ore, problem with customers address.\u003c/speak\u003e" ]
+      } ],
+      "currentFlow": {
+        "name": "Default Start Flow"
+      },
+      "actions": [ {
+        "agentUtterance": {
+          "text": "\u003cspeak\u003eIn a few words, how can I help you with your current order. You can say things like, the order was already picked up by someone else, ore, problem with customers address.\u003c/speak\u003e"
+        }
+      } ]
+    }
+  }, {
+    "userInput": {
+      "isWebhookEnabled": true,
+      "input": {
+        "text": {
+          "text": "address"
+        },
+        "languageCode": "en"
+      }
+    },
+    "virtualAgentOutput": {
+      "sessionParameters": {
+        "dfLastCallerIntent": "Dropoff_Address",
+        "intentName": "Dropoff_Address-yes-notAtDropoff",
+        "isRepeat": "no",
+        "pcAddressChanged": "false",
+        "pcContainsAlcohol": "false",
+        "pcCourierPrestartOneTracking": "false",
+        "pcCourierPrestartTwoTracking": "false",
+        "pcDeliveryStatus": "arrived_resto_1",
+        "pcInteractionType": "default",
+        "pcIsVirtualRestaurant": "false",
+        "pcMiscPaymentAbuseBlock": "false",
+        "pcStoreAddress": "default",
+        "pcStorePhoneNumber": "default"
+      },
+      "differences": [ {
+        "type": "PAGE",
+        "description": "Page mismatch:\nExpected: \nActual:   Dropoff_Address-yes-notAtDropoff_Response",
+        "assertionType": "EQUAL",
+        "expectedValue": "",
+        "actualValue": "Dropoff_Address-yes-notAtDropoff_Response"
+      }, {
+        "type": "INTENT",
+        "description": "Intent mismatch:\nExpected: \nActual:   Address_Vague",
+        "assertionType": "EQUAL",
+        "expectedValue": "",
+        "actualValue": "Address_Vague"
+      }, {
+        "type": "UTTERANCE",
+        "description": "Agent response mismatch",
+        "warning": true,
+        "assertionType": "EQUAL",
+        "expectedValue": "",
+        "actualValue": "\u003cspeak\u003eWhat issue are you having with the drop off address? You can say, accidentally completed an order. \u003cbreak time=\"400ms\"/\u003e address is too far. \u003cbreak time=\"400ms\"/\u003e Customer changed the address. \u003cbreak time=\"400ms\"/\u003e Or, it is something else.\u003c/speak\u003e"
+      } ],
+      "triggeredIntent": {
+        "name": "Address_Vague"
+      },
+      "currentPage": {
+        "name": "Dropoff_Address-yes-notAtDropoff_Response",
+        "flow": "Orange Flow"
+      },
+      "textResponses": [ {
+        "text": [ "\u003cspeak\u003eWhat issue are you having with the drop off address? You can say, accidentally completed an order. \u003cbreak time=\"400ms\"/\u003e address is too far. \u003cbreak time=\"400ms\"/\u003e Customer changed the address. \u003cbreak time=\"400ms\"/\u003e Or, it is something else.\u003c/speak\u003e" ]
+      } ],
+      "currentFlow": {
+        "name": "Orange Flow"
+      },
+      "actions": [ {
+        "userUtterance": {
+          "text": "address"
+        }
+      }, {
+        "agentUtterance": {
+          "text": "\u003cspeak\u003eWhat issue are you having with the drop off address? You can say, accidentally completed an order. \u003cbreak time=\"400ms\"/\u003e address is too far. \u003cbreak time=\"400ms\"/\u003e Customer changed the address. \u003cbreak time=\"400ms\"/\u003e Or, it is something else.\u003c/speak\u003e"
+        }
+      } ]
+    }
+  }, {
+    "userInput": {
+      "isWebhookEnabled": true,
+      "input": {
+        "text": {
+          "text": "customer changed the address"
+        },
+        "languageCode": "en"
+      }
+    },
+    "virtualAgentOutput": {
+      "sessionParameters": {
+        "dfLastCallerIntent": "Dropoff_CustChangedAddr",
+        "intentName": "Dropoff_CustChangedAddr-yes-notS4",
+        "isRepeat": "no",
+        "pcAddressChanged": "false",
+        "pcContainsAlcohol": "false",
+        "pcCourierPrestartOneTracking": "false",
+        "pcCourierPrestartTwoTracking": "false",
+        "pcDeliveryStatus": "arrived_resto_1",
+        "pcInteractionType": "default",
+        "pcIsVirtualRestaurant": "false",
+        "pcMiscPaymentAbuseBlock": "false",
+        "pcStoreAddress": "default",
+        "pcStorePhoneNumber": "default"
+      },
+      "differences": [ {
+        "type": "PAGE",
+        "description": "Page mismatch:\nExpected: \nActual:   Dropoff_CustChangedAddr-notS4_Response",
+        "assertionType": "EQUAL",
+        "expectedValue": "",
+        "actualValue": "Dropoff_CustChangedAddr-notS4_Response"
+      }, {
+        "type": "INTENT",
+        "description": "Intent mismatch:\nExpected: \nActual:   Dropoff_Address-yes-notAtDropoff-custChangedAddr",
+        "assertionType": "EQUAL",
+        "expectedValue": "",
+        "actualValue": "Dropoff_Address-yes-notAtDropoff-custChangedAddr"
+      }, {
+        "type": "UTTERANCE",
+        "description": "Agent response mismatch",
+        "warning": true,
+        "assertionType": "EQUAL",
+        "expectedValue": "",
+        "actualValue": "\u003cspeak\u003eGot it. If you are able to go to the new location, please do! You'll be paid for any extra time, and distance traveled, if the delivery address is further. Any applicable compensation will reflect on your trip statement as a delivery adjustment. Your payment won't be lower than the upfront fare. If you are unable, or unwilling to deliver to the new address, you can cancel the delivery yourself in the app, by selecting the order, then tap Cancel. For the reason, select \"the customer changed the delivery address.\"\u003c/speak\u003e\u003cspeak\u003eTo listen to this message again, just say, repeat it. \u003cbreak time=\"700ms\"/\u003e Is there anything else I can help you with today?\u003c/speak\u003e"
+      } ],
+      "triggeredIntent": {
+        "name": "Dropoff_Address-yes-notAtDropoff-custChangedAddr"
+      },
+      "currentPage": {
+        "name": "Dropoff_CustChangedAddr-notS4_Response",
+        "flow": "Purple Flow"
+      },
+      "textResponses": [ {
+        "text": [ "\u003cspeak\u003eGot it. If you are able to go to the new location, please do! You'll be paid for any extra time, and distance traveled, if the delivery address is further. Any applicable compensation will reflect on your trip statement as a delivery adjustment. Your payment won't be lower than the upfront fare. If you are unable, or unwilling to deliver to the new address, you can cancel the delivery yourself in the app, by selecting the order, then tap Cancel. For the reason, select \"the customer changed the delivery address.\"\u003c/speak\u003e" ]
+      }, {
+        "text": [ "\u003cspeak\u003eTo listen to this message again, just say, repeat it. \u003cbreak time=\"700ms\"/\u003e Is there anything else I can help you with today?\u003c/speak\u003e" ]
+      } ],
+      "currentFlow": {
+        "name": "Purple Flow"
+      },
+      "actions": [ {
+        "userUtterance": {
+          "text": "customer changed the address"
+        }
+      }, {
+        "agentUtterance": {
+          "text": "\u003cspeak\u003eGot it. If you are able to go to the new location, please do! You'll be paid for any extra time, and distance traveled, if the delivery address is further. Any applicable compensation will reflect on your trip statement as a delivery adjustment. Your payment won't be lower than the upfront fare. If you are unable, or unwilling to deliver to the new address, you can cancel the delivery yourself in the app, by selecting the order, then tap Cancel. For the reason, select \"the customer changed the delivery address.\"\u003c/speak\u003e\n\u003cspeak\u003eTo listen to this message again, just say, repeat it. \u003cbreak time=\"700ms\"/\u003e Is there anything else I can help you with today?\u003c/speak\u003e"
+        }
+      } ]
+    }
+  } ],
+  "creationTime": {
+    "seconds": 1705491666,
+    "nanos": 327211000
+  },
+  "testConfig": {
+    "flow": "Default Start Flow",
+    "page": "Start Page"
+  },
+  "languageCode": "en"
+}

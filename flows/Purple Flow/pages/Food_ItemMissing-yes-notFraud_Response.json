@@ -1,0 +1,255 @@
+{
+  "name": "0665622e-9b5a-4013-aeb4-4ad1c68921f4",
+  "displayName": "Food_ItemMissing-yes-notFraud_Response",
+  "form": {
+    "parameters": [ {
+      "displayName": "dtmf_input",
+      "required": true,
+      "entityType": "@dtmf",
+      "fillBehavior": {
+        "initialPromptFulfillment": {
+        
+        },
+        "repromptEventHandlers": [ {
+          "event": "sys.no-input-1",
+          "triggerFulfillment": {
+            "messages": [ {
+              "text": {
+                "text": [ "\u003cspeak\u003eAre you able to deliver the order to the customer? Please say yes, or no.\u003c/speak\u003e" ]
+              },
+              "languageCode": "en"
+            } ]
+          },
+          "name": "23c4b0a3-5b75-4ecc-95ac-4ee623bf789e"
+        }, {
+          "event": "sys.no-input-2",
+          "triggerFulfillment": {
+            "messages": [ {
+              "text": {
+                "text": [ "\u003cspeak\u003eI didn't hear you.\u003c/speak\u003e\n\u003cspeak\u003eIf you can still deliver the order to the customer, press 1. Otherwise, if there are too many missing items, press 2.\u003c/speak\u003e" ]
+              },
+              "languageCode": "en"
+            } ]
+          },
+          "name": "df2995ef-c2b8-4185-bfc0-8b4054f9a327"
+        }, {
+          "targetFlow": "ZExit",
+          "event": "sys.no-input-3",
+          "triggerFulfillment": {
+            "messages": [ {
+              "text": {
+                "text": [ "\u003cspeak\u003eI am having trouble hearing you.\u003c/speak\u003e" ]
+              },
+              "languageCode": "en"
+            } ],
+            "setParameterActions": [ {
+              "parameter": "zIntent",
+              "value": "ZHangup"
+            } ]
+          },
+          "name": "369dfed3-c5f7-4edc-9917-7cb964152bbc"
+        }, {
+          "event": "sys.no-match-1",
+          "triggerFulfillment": {
+            "messages": [ {
+              "text": {
+                "text": [ "\u003cspeak\u003eI didn't get that.\u003c/speak\u003e\n\u003cspeak\u003eAre you able to deliver the order to the customer? Please say yes, or no.\u003c/speak\u003e" ]
+              },
+              "languageCode": "en"
+            } ]
+          },
+          "name": "ef89eca3-d931-446c-8a2a-19ab7c94ba2e"
+        }, {
+          "event": "sys.no-match-2",
+          "triggerFulfillment": {
+            "messages": [ {
+              "text": {
+                "text": [ "\u003cspeak\u003eI'm having trouble understanding you.\u003c/speak\u003e\n\u003cspeak\u003eIf you can still deliver the order to the customer, press 1. Otherwise, if there are too many missing items, press 2.\u003c/speak\u003e" ]
+              },
+              "languageCode": "en"
+            } ]
+          },
+          "name": "447ba393-1f56-479f-9cb4-43d913e4ee35"
+        }, {
+          "targetFlow": "ZExit",
+          "event": "sys.no-match-3",
+          "triggerFulfillment": {
+            "messages": [ {
+              "text": {
+                "text": [ "\u003cspeak\u003e\u003cbreak time=\"10ms\"/\u003e\u003c/speak\u003e" ]
+              },
+              "languageCode": "en"
+            } ],
+            "setParameterActions": [ {
+              "parameter": "zIntent",
+              "value": "ZAgent"
+            } ]
+          },
+          "name": "d28aefc1-3249-446b-8842-fadbe59deb3c"
+        } ]
+      },
+      "advancedSettings": {
+        "dtmfSettings": {
+          "enabled": true,
+          "useSystemEntityRule": false
+        }
+      }
+    } ]
+  },
+  "entryFulfillment": {
+    "messages": [ {
+      "text": {
+        "text": [ "\u003cspeak\u003eI understand the order is missing items. Are you still able to deliver the order to the customer, or, is it missing too many items.\u003c/speak\u003e" ]
+      },
+      "languageCode": "en"
+    } ],
+    "setParameterActions": [ {
+      "parameter": "dfLastCallerIntent",
+      "value": "Food_ItemMissing"
+    }, {
+      "parameter": "dtmf_input",
+      "value": null
+    } ]
+  },
+  "transitionRoutes": [ {
+    "intent": "Food_ItemMissing-yes-notFraud-okay",
+    "triggerFulfillment": {
+    
+    },
+    "targetPage": "Food_ItemMissing-yes-notFraud-okay_Response",
+    "name": "0cc8b80a-608f-40d8-bc04-99000ed323ef"
+  }, {
+    "intent": "Food_ItemMissing-yes-notFraud-notOkay",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "\u003cspeak\u003eOK, I am sorry that the order was missing too many items.\u003c/speak\u003e" ]
+        },
+        "languageCode": "en"
+      } ],
+      "setParameterActions": [ {
+        "parameter": "zIntent",
+        "value": "ZAgent"
+      } ]
+    },
+    "targetFlow": "ZExit",
+    "name": "60c3acfd-2e3e-462a-b1cd-221c9ecf8c83"
+  }, {
+    "intent": "Food_ItemMissing-yes-notFraud-delivered",
+    "triggerFulfillment": {
+    
+    },
+    "targetPage": "Food_ItemMissing-yes-notFraud-delivered_Response",
+    "name": "9d54acf5-1831-4bfa-8f6f-b1dd79cc916f"
+  }, {
+    "condition": "$session.params.dtmf_input = \"0\"",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "intentName",
+        "value": "Agent_Vague"
+      } ]
+    },
+    "targetFlow": "Immediate Transfer Flow",
+    "name": "08e20623-10fa-498e-be22-090b96776f91"
+  }, {
+    "condition": "$session.params.dtmf_input = 1",
+    "triggerFulfillment": {
+    
+    },
+    "targetPage": "Food_ItemMissing-yes-notFraud-okay_Response",
+    "name": "a2090783-88f8-42d5-aa0a-15933ec4580e"
+  }, {
+    "condition": "$session.params.dtmf_input = 2",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "\u003cspeak\u003eOK, I am sorry that the order was missing too many items.\u003c/speak\u003e" ]
+        },
+        "languageCode": "en"
+      } ],
+      "setParameterActions": [ {
+        "parameter": "zIntent",
+        "value": "ZAgent"
+      } ]
+    },
+    "targetFlow": "ZExit",
+    "name": "3ce3b3f4-d9bc-4420-871d-1e257365899a"
+  } ],
+  "eventHandlers": [ {
+    "event": "sys.no-input-1",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "\u003cspeak\u003eAre you able to deliver the order to the customer? Please say yes, or no.\u003c/speak\u003e" ]
+        },
+        "languageCode": "en"
+      } ]
+    },
+    "name": "c2d78e0b-a94b-45b3-96e7-ec8b23cc548d"
+  }, {
+    "event": "sys.no-input-2",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "\u003cspeak\u003eI didn't hear you.\u003c/speak\u003e\n\u003cspeak\u003eIf you can still deliver the order to the customer, press 1. Otherwise, if there are too many missing items, press 2.\u003c/speak\u003e" ]
+        },
+        "languageCode": "en"
+      } ]
+    },
+    "name": "a8369c99-5393-42ca-ace0-a6a35b3858c9"
+  }, {
+    "targetFlow": "ZExit",
+    "event": "sys.no-input-3",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "\u003cspeak\u003eI am having trouble hearing you.\u003c/speak\u003e" ]
+        },
+        "languageCode": "en"
+      } ],
+      "setParameterActions": [ {
+        "parameter": "zIntent",
+        "value": "ZHangup"
+      } ]
+    },
+    "name": "1e40e8d4-47cf-47ca-94f8-9b8c04bb4e0c"
+  }, {
+    "event": "sys.no-match-1",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "\u003cspeak\u003eI didn't get that.\u003c/speak\u003e\n\u003cspeak\u003eAre you able to deliver the order to the customer? Please say yes, or no.\u003c/speak\u003e" ]
+        },
+        "languageCode": "en"
+      } ]
+    },
+    "name": "469807cf-e152-4576-b863-5be2355a9bdd"
+  }, {
+    "event": "sys.no-match-2",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "\u003cspeak\u003eI'm having trouble understanding you.\u003c/speak\u003e\n\u003cspeak\u003eIf you can still deliver the order to the customer, press 1. Otherwise, if there are too many missing items, press 2.\u003c/speak\u003e" ]
+        },
+        "languageCode": "en"
+      } ]
+    },
+    "name": "b6b925b0-f6e3-4d57-aec6-57bc5b76ed0e"
+  }, {
+    "targetFlow": "ZExit",
+    "event": "sys.no-match-3",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "\u003cspeak\u003e\u003cbreak time=\"10ms\"/\u003e\u003c/speak\u003e" ]
+        },
+        "languageCode": "en"
+      } ],
+      "setParameterActions": [ {
+        "parameter": "zIntent",
+        "value": "ZAgent"
+      } ]
+    },
+    "name": "caf07e92-4224-409c-951d-0ae28234682d"
+  } ]
+}

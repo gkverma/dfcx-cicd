@@ -1,0 +1,51 @@
+{
+  "name": "06082d78-8523-4da6-bb2a-0cb8bdab3abb",
+  "displayName": "Food_Taken_Conditional_Routes",
+  "form": {
+  
+  },
+  "entryFulfillment": {
+    "setParameterActions": [ {
+      "parameter": "dfLastCallerIntent",
+      "value": "Food_Taken"
+    } ]
+  },
+  "transitionRoutes": [ {
+    "condition": "$session.params.pcMiscPaymentAbuseBlock = \"true\" OR $session.params.pcDeliveryStatus = \"CANCELLED\"",
+    "triggerFulfillment": {
+    
+    },
+    "targetPage": "Food_Taken-yes-fraud_Response",
+    "name": "0adeb93d-9552-4fbe-87a5-9fef201be850"
+  }, {
+    "condition": "$session.params.pcMiscPaymentAbuseBlock = \"false\" AND $session.params.pcDeliveryStatus = \"not_arrived_resto\"",
+    "triggerFulfillment": {
+    
+    },
+    "targetPage": "Food_Taken-yes-notFraud-notBeenToResto_Response",
+    "name": "8da44763-048c-46b0-a94a-f07943c1f9bf"
+  }, {
+    "condition": "$session.params.pcMiscPaymentAbuseBlock = \"false\" AND $session.params.pcDeliveryStatus != \"not_arrived_resto\"",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "\u003cspeak\u003eOkay, food is taken by someone else.\u003c/speak\u003e" ]
+        },
+        "languageCode": "en"
+      } ],
+      "setParameterActions": [ {
+        "parameter": "zIntent",
+        "value": "ZAgent"
+      } ]
+    },
+    "targetFlow": "ZExit",
+    "name": "5cd938ff-6c20-45f9-9108-3f85b7faaee6"
+  }, {
+    "condition": "true",
+    "triggerFulfillment": {
+    
+    },
+    "targetPage": "Food_Taken-yes-fraud_Response",
+    "name": "017984f0-2e68-4ff7-ae1d-f0ddefd91ece"
+  } ]
+}

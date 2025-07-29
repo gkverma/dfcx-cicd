@@ -1,0 +1,10 @@
+{
+  "name": "bf4af8cc-fa63-4d2b-9890-63a840da5531",
+  "displayName": "Dropoff_Address-yes-atDropoff-notAlcohol-custChangedAddr",
+  "parameters": [ {
+    "id": "dfLastCallerIntent",
+    "entityType": "@sys.any"
+  } ],
+  "priority": 500000,
+  "numTrainingPhrases": 22
+}

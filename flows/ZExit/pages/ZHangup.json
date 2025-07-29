@@ -1,0 +1,31 @@
+{
+  "name": "e7a9e957-7ec6-4f18-8912-5426a5d1c3c1",
+  "displayName": "ZHangup",
+  "form": {
+  
+  },
+  "entryFulfillment": {
+    "messages": [ {
+      "text": {
+        "text": [ "\u003cspeak\u003e\u003cbreak time=\"10ms\"/\u003e\u003c/speak\u003e" ]
+      },
+      "languageCode": "en"
+    }, {
+      "liveAgentHandoff": {
+        "metadata": {
+          "dfLastCallerIntent": "$session.params.dfLastCallerIntent",
+          "zIntent": "$session.params.zIntent"
+        }
+      },
+      "languageCode": "en"
+    } ]
+  },
+  "transitionRoutes": [ {
+    "condition": "true",
+    "triggerFulfillment": {
+    
+    },
+    "targetPage": "End Session",
+    "name": "9cbea3c8-deb4-4b05-b617-2750aaee3c12"
+  } ]
+}

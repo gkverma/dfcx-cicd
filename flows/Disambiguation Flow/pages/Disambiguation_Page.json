@@ -1,0 +1,33 @@
+{
+  "name": "b3de199c-e214-47e5-b448-2c79c52664ec",
+  "displayName": "Disambiguation_Page",
+  "form": {
+  
+  },
+  "entryFulfillment": {
+  
+  },
+  "transitionRoutes": [ {
+    "condition": "$session.params.intentName = \"Liveorder_Vague\"",
+    "triggerFulfillment": {
+    
+    },
+    "targetPage": "Liveorder_Vague",
+    "name": "f1faeb41-5413-49a9-b86e-1e4325cd241a"
+  }, {
+    "condition": "$session.params.intentName = \"Other_Greeting\"",
+    "triggerFulfillment": {
+    
+    },
+    "targetPage": "Other_Greeting",
+    "name": "c3388bcc-c3f8-449d-adf8-e48b0595a1bc"
+  }, {
+    "condition": "$session.params.intentName = \"Other_Help\"",
+    "triggerFulfillment": {
+    
+    },
+    "targetPage": "Other_Help",
+    "name": "e4addde6-0bf1-4c62-9ad9-eb7baa099e73"
+  } ],
+  "agentTransitionRouteGroups": [ "RouteGroups-FAQ" ]
+}

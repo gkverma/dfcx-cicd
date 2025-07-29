@@ -1,0 +1,205 @@
+{
+  "name": "5d0937fc-7a49-4212-9649-cbf5bca8754b",
+  "displayName": "PlusCard_Vague_Response",
+  "form": {
+    "parameters": [ {
+      "displayName": "dtmf_input",
+      "required": true,
+      "entityType": "@dtmf_1234",
+      "fillBehavior": {
+        "initialPromptFulfillment": {
+        
+        },
+        "repromptEventHandlers": [ {
+          "event": "sys.no-match-1",
+          "triggerFulfillment": {
+            "messages": [ {
+              "text": {
+                "text": [ "\u003cspeak\u003eI didn't get that.\u003c/speak\u003e\n\n\u003cspeak\u003eYou can say, \u003cbreak time=\"400ms\"/\u003e help with the Plus card, \u003cbreak time=\"700ms\"/\u003e how to get reimbursement, \u003cbreak time=\"700ms\"/\u003e I haven't been reimbursed yet, \u003cbreak time=\"700ms\"/\u003e ore, \u003cbreak time=\"700ms\"/\u003e I can't upload the receipt.\u003c/speak\u003e" ]
+              },
+              "languageCode": "en"
+            } ]
+          },
+          "name": "64e1fd99-4f38-4032-a3f1-ddce1562fdb4"
+        }, {
+          "event": "sys.no-match-2",
+          "triggerFulfillment": {
+            "messages": [ {
+              "text": {
+                "text": [ "\u003cspeak\u003eI'm having trouble understanding you.\u003c/speak\u003e\n\n\u003cspeak\u003eIf you need help with the Plus card, press 1.\u003cbreak time=\"700ms\"/\u003e Learn how to get reimbursement, press 2.\u003cbreak time=\"700ms\"/\u003e For reimbursement status, press 3. \u003cbreak time=\"700ms\"/\u003e Or, \u003cbreak time=\"300ms\"/\u003e for help with receipt upload, press 4.\u003c/speak\u003e" ]
+              },
+              "languageCode": "en"
+            } ]
+          },
+          "name": "62fa918d-7dd0-48c0-83fb-99db99ffa6f6"
+        }, {
+          "targetFlow": "ZExit",
+          "event": "sys.no-match-3",
+          "triggerFulfillment": {
+            "messages": [ {
+              "text": {
+                "text": [ "\u003cspeak\u003e\u003cbreak time=\"10ms\"/\u003e\u003c/speak\u003e" ]
+              },
+              "languageCode": "en"
+            } ],
+            "setParameterActions": [ {
+              "parameter": "zIntent",
+              "value": "ZAgent"
+            } ]
+          },
+          "name": "ec4bbf9c-4608-4481-8c53-4396eb5473e0"
+        }, {
+          "event": "sys.no-input-1",
+          "triggerFulfillment": {
+            "messages": [ {
+              "text": {
+                "text": [ "\u003cspeak\u003eYou can say \u003cbreak time=\"700ms\"/\u003e help with the Plus card, \u003cbreak time=\"700ms\"/\u003e how to get reimbursement, \u003cbreak time=\"700ms\"/\u003e I haven't been reimbursed yet, \u003cbreak time=\"700ms\"/\u003e ore, \u003cbreak time=\"700ms\"/\u003e I can't upload the receipt.\u003c/speak\u003e" ]
+              },
+              "languageCode": "en"
+            } ]
+          },
+          "name": "eecb74a3-69d7-43c9-85b3-2ba846926eb3"
+        }, {
+          "event": "sys.no-input-2",
+          "triggerFulfillment": {
+            "messages": [ {
+              "text": {
+                "text": [ "\u003cspeak\u003eI didn't hear you.\u003c/speak\u003e\n\n\u003cspeak\u003eIf you need help with the Plus card, press 1.\u003cbreak time=\"700ms\"/\u003e Learn how to get reimbursement, press 2.\u003cbreak time=\"700ms\"/\u003e For reimbursement status, press 3. \u003cbreak time=\"700ms\"/\u003e Or, \u003cbreak time=\"300ms\"/\u003e for help with receipt upload, press 4.\u003c/speak\u003e" ]
+              },
+              "languageCode": "en"
+            } ]
+          },
+          "name": "f46d2fbc-6ecd-4cbb-8f09-ae507907ed71"
+        }, {
+          "targetFlow": "ZExit",
+          "event": "sys.no-input-3",
+          "triggerFulfillment": {
+            "messages": [ {
+              "text": {
+                "text": [ "\u003cspeak\u003eI am having trouble hearing you.\u003c/speak\u003e" ]
+              },
+              "languageCode": "en"
+            } ],
+            "setParameterActions": [ {
+              "parameter": "zIntent",
+              "value": "ZHangup"
+            } ]
+          },
+          "name": "43bcda19-a50e-4a8f-a42e-7adc3bb1874a"
+        } ]
+      },
+      "advancedSettings": {
+        "dtmfSettings": {
+          "enabled": true,
+          "useSystemEntityRule": false
+        }
+      }
+    } ]
+  },
+  "entryFulfillment": {
+    "messages": [ {
+      "text": {
+        "text": [ "\u003cspeak\u003eI understand you're calling about problem with store payment. To better assist you, which of these would you like. \u003cbreak time=\"700ms\"/\u003e help with the Plus card, \u003cbreak time=\"700ms\"/\u003e how to get reimbursement, \u003cbreak time=\"700ms\"/\u003e I haven't been reimbursed yet, \u003cbreak time=\"700ms\"/\u003e ore, \u003cbreak time=\"700ms\"/\u003e I can't upload the receipt.\u003c/speak\u003e" ]
+      },
+      "languageCode": "en"
+    } ],
+    "setParameterActions": [ {
+      "parameter": "dfLastCallerIntent",
+      "value": "PlusCard_Vague"
+    }, {
+      "parameter": "dtmf_input",
+      "value": null
+    } ]
+  },
+  "transitionRoutes": [ {
+    "intent": "PlusCard_Vague-yes-plusCard",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "dtmf_input",
+        "value": null
+      } ]
+    },
+    "targetPage": "PlusCard_Vague-yes-plusCard_Response",
+    "name": "4dea8358-dc34-4916-bd85-9e8b0e287c79"
+  }, {
+    "intent": "PlusCard_Vague-yes-reimburseHow",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "intentName",
+        "value": "PlusCard_Vague-yes-reimburseHow"
+      } ]
+    },
+    "targetFlow": "FAQ Flow",
+    "name": "7d22c21f-02d8-49ff-9449-a79bc29d1d83"
+  }, {
+    "intent": "PlusCard_Vague-yes-reimburseStatus",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "intentName",
+        "value": "PlusCard_Vague-yes-reimburseStatus"
+      } ]
+    },
+    "targetFlow": "FAQ Flow",
+    "name": "3d00cd45-f4b9-4749-8508-c4d7892d9f66"
+  }, {
+    "intent": "PlusCard_Vague-yes-receipt",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "intentName",
+        "value": "PlusCard_Vague-yes-receipt"
+      } ]
+    },
+    "targetFlow": "FAQ Flow",
+    "name": "a574323c-3701-47b7-912b-b027b9eb9df3"
+  }, {
+    "condition": "$session.params.dtmf_input = \"1\"",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "dtmf_input",
+        "value": null
+      } ]
+    },
+    "targetPage": "PlusCard_Vague-yes-plusCard_Response",
+    "name": "8ddfb464-ab3e-4543-8a59-d9978facebe0"
+  }, {
+    "condition": "$session.params.dtmf_input = \"2\"",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "intentName",
+        "value": "PlusCard_Vague-yes-reimburseHow"
+      } ]
+    },
+    "targetFlow": "FAQ Flow",
+    "name": "2f0f655d-ceec-42cc-b575-ee8c7cce3951"
+  }, {
+    "condition": "$session.params.dtmf_input = \"3\"",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "intentName",
+        "value": "PlusCard_Vague-yes-reimburseStatus"
+      } ]
+    },
+    "targetFlow": "FAQ Flow",
+    "name": "97c97ccb-1c57-498c-9b78-06a778242a38"
+  }, {
+    "condition": "$session.params.dtmf_input = \"4\"",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "intentName",
+        "value": "PlusCard_Vague-yes-receipt"
+      } ]
+    },
+    "targetFlow": "FAQ Flow",
+    "name": "2afc2fee-ff65-4409-806d-cde16b1fef8b"
+  }, {
+    "condition": "$session.params.dtmf_input = \"0\"",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "intentName",
+        "value": "Agent_Vague"
+      } ]
+    },
+    "targetFlow": "Immediate Transfer Flow",
+    "name": "1626d5f9-0e7c-44eb-be60-4d7750bc6d6d"
+  } ]
+}

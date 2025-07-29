@@ -1,0 +1,7 @@
+{
+  "entities": [ {
+    "value": "store",
+    "synonyms": [ "store", "restaurant", "merchant", "stores", "restaurants", "merchants", "business", "merchant's", "store's", "restaurant's" ],
+    "languageCode": "en"
+  } ]
+}

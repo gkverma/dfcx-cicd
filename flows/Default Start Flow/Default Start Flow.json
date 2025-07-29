@@ -1,0 +1,202 @@
+{
+  "name": "00000000-0000-0000-0000-000000000000",
+  "displayName": "Default Start Flow",
+  "description": "A start flow created along with the agent",
+  "transitionRoutes": [ {
+    "intent": "Default Welcome Intent",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "\u003cspeak\u003eIn a few words, how can I help you with your current order. You can say things like, the order was already picked up by someone else, ore, problem with customers address.\u003c/speak\u003e" ]
+        },
+        "languageCode": "en"
+      }, {
+        "text": {
+          "text": [ "नमस्ते!", "नमस्कार!", "आपका दिन शुभ हो!" ]
+        },
+        "languageCode": "hi"
+      }, {
+        "text": {
+          "text": [ "こんにちは！" ]
+        },
+        "languageCode": "ja"
+      }, {
+        "text": {
+          "text": [ "嘿！", "你好！", "嘿！ 好久不见！", "欢迎归来。", "嘿！欢迎你回来。" ]
+        },
+        "languageCode": "zh-cn"
+      } ],
+      "webhook": "initializeParams",
+      "tag": "pc params"
+    },
+    "targetPage": "Main_Menu_Page",
+    "name": "8030ef8b-259e-490e-b3fa-f68ebdb68c20"
+  }, {
+    "intent": "Intent.Repeat",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "\u003cspeak\u003eIn a few words, how can I help you with your current order. You can say things like, order was already picked up by someone else, or, problem with customer's address. Now, what can I help you with?\u003c/speak\u003e\n" ]
+        },
+        "languageCode": "en"
+      } ]
+    },
+    "targetPage": "Current Page",
+    "name": "05b5d1bf-4ed5-44d3-9792-9141bff02cd7"
+  }, {
+    "condition": "true",
+    "triggerFulfillment": {
+    
+    },
+    "targetPage": "Main_Menu_Page",
+    "name": "62b4e075-b43d-495c-8a59-86062a5a12f6"
+  } ],
+  "eventHandlers": [ {
+    "event": "sys.no-match-default",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "\u003cspeak\u003e\u003cbreak time=\"10ms\"/\u003e\u003c/speak\u003e" ]
+        },
+        "languageCode": "en"
+      }, {
+        "text": {
+          "text": [ "मुझे समझ नहीं आया. क्या आप अपनी बात दोहरा सकते हैं?", "आपने क्या कहा, मुझे समझ नहीं आया. फिर से कहें?", "माफ़ करें, क्या आप अपनी बात दोहरा सकते हैं?", "माफ़ करें, क्या आप अपनी बात फिर से कह सकते हैं?", "क्या आप अपनी बात दोहरा सकते हैं?", "माफ़ करें, मुझे समझ नहीं आया|", "माफ़ करें, क्या कहा आपने?", "एक बार फिर से कह सकते हैं?", "क्या कहा आपने?", "एक बार फिर से कहिए?", "मुझे समझ नहीं आया|" ]
+        },
+        "languageCode": "hi"
+      }, {
+        "text": {
+          "text": [ "すみません。よく分かりませんでした。", "今のは少しわかりにくかったです。", "少し言い換えていただけませんか。", "失礼ですが、もう一度おねがいします。", "ちょっと分かりませんでした。", "今、なんておっしゃいましたか？" ]
+        },
+        "languageCode": "ja"
+      }, {
+        "text": {
+          "text": [ "对不起，我听不懂你的问题。", "请你再说一遍。", "我怕我听不懂你的话。", "我对最后的部分还有一些糊涂。", "请再讲一次好吗？" ]
+        },
+        "languageCode": "zh-cn"
+      } ]
+    },
+    "name": "1ba59c71-5d6e-402d-b75b-253a3bf07ce2"
+  }, {
+    "event": "sys.no-input-default",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "\u003cspeak\u003eI didn't hear you.\u003c/speak\u003e\n\n\u003cspeak\u003eIn your own words, describe why you're calling today. For example, you can say things like, order was already picked up, or, customer gave wrong address. Now, what can I help you with?\u003c/speak\u003e" ]
+        },
+        "languageCode": "en"
+      }, {
+        "text": {
+          "text": [ "मुझे समझ नहीं आया. क्या आप अपनी बात दोहरा सकते हैं?", "आपने क्या कहा, मुझे समझ नहीं आया. फिर से कहें?", "माफ़ करें, क्या आप अपनी बात दोहरा सकते हैं?", "माफ़ करें, क्या आप अपनी बात फिर से कह सकते हैं?", "क्या आप अपनी बात दोहरा सकते हैं?", "माफ़ करें, मुझे समझ नहीं आया|", "माफ़ करें, क्या कहा आपने?", "एक बार फिर से कह सकते हैं?", "क्या कहा आपने?", "एक बार फिर से कहिए?", "मुझे समझ नहीं आया|" ]
+        },
+        "languageCode": "hi"
+      }, {
+        "text": {
+          "text": [ "すみません。よく分かりませんでした。", "今のは少しわかりにくかったです。", "少し言い換えていただけませんか。", "失礼ですが、もう一度おねがいします。", "ちょっと分かりませんでした。", "今、なんておっしゃいましたか？" ]
+        },
+        "languageCode": "ja"
+      }, {
+        "text": {
+          "text": [ "对不起，我听不懂你的问题。", "请你再说一遍。", "我怕我听不懂你的话。", "我对最后的部分还有一些糊涂。", "请再讲一次好吗？" ]
+        },
+        "languageCode": "zh-cn"
+      } ]
+    },
+    "name": "77b2cd4c-64d2-4e5a-a4aa-22b86b1f4fb2"
+  }, {
+    "targetPage": "Main_Menu_Page",
+    "event": "welcome",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "\u003cspeak\u003eIn a few words, how can I help you with your current order. You can say things like, the order was already picked up by someone else, ore, problem with customers address.\u003c/speak\u003e" ]
+        },
+        "languageCode": "en"
+      } ],
+      "webhook": "initializeParams",
+      "tag": "pc params"
+    },
+    "name": "d931933d-435f-4c8e-ac3b-bc362963c92a"
+  }, {
+    "event": "sys.no-match-1",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "\u003cspeak\u003eSorry.\u003c/speak\u003e\n\n\u003cspeak\u003eIn your own words, describe why you're calling today. For example, you can say, the store is closed, or, I can't find the customer.\u003c/speak\u003e" ]
+        },
+        "languageCode": "en"
+      } ]
+    },
+    "name": "048f0601-1344-45fa-919b-cd3ef071d385"
+  }, {
+    "event": "sys.no-match-2",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "\u003cspeak\u003eLet's try this another way. You can say, store is closed, \u003cbreak time=\"300ms\"/\u003e customer changed address, \u003cbreak time=\"500ms\"/\u003e store can't complete order, \u003cbreak time=\"500ms\"/\u003e  long wait time, \u003cbreak time=\"500ms\"/\u003e ore, \u003cbreak time=\"500ms\"/\u003e contact customer. For everything else, say, Agent, to be connected with a team member.\u003c/speak\u003e" ]
+        },
+        "languageCode": "en"
+      } ]
+    },
+    "name": "3a034780-9176-4b2f-adb9-eee4dedb61bb"
+  }, {
+    "targetFlow": "ZExit",
+    "event": "sys.no-match-3",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "\u003cspeak\u003e\u003cbreak time=\"10ms\"/\u003e\u003c/speak\u003e" ]
+        },
+        "languageCode": "en"
+      } ],
+      "setParameterActions": [ {
+        "parameter": "zIntent",
+        "value": "ZAgent"
+      } ]
+    },
+    "name": "80086d96-6702-4b5b-9558-943952ac2018"
+  }, {
+    "event": "sys.no-input-1",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "\u003cspeak\u003eI didn't hear you.\u003c/speak\u003e\n\n\u003cspeak\u003eIn your own words, describe why you're calling today. For example, you can say, the store is closed, or, I can't find the customer.\u003c/speak\u003e" ]
+        },
+        "languageCode": "en"
+      } ]
+    },
+    "name": "8b65e5d1-741a-45f2-adef-5c152b842020"
+  }, {
+    "event": "sys.no-input-2",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "\u003cspeak\u003eI'm having trouble hearing you.\u003c/speak\u003e\n\n\u003cspeak\u003eIn your own words, tell us why you're calling today. For example, you can say, the order was cancelled, or, the store is taking too long.\u003c/speak\u003e" ]
+        },
+        "languageCode": "en"
+      } ]
+    },
+    "name": "1b0d27d0-4efa-44c9-b9a6-34bae5d73b4b"
+  }, {
+    "targetFlow": "ZExit",
+    "event": "sys.no-input-3",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "\u003cspeak\u003eI am having trouble hearing you.\u003c/speak\u003e" ]
+        },
+        "languageCode": "en"
+      } ],
+      "setParameterActions": [ {
+        "parameter": "zIntent",
+        "value": "ZHangup"
+      } ]
+    },
+    "name": "58a703fd-3d00-436a-b542-67ca9601cae0"
+  } ],
+  "nluSettings": {
+    "modelType": "MODEL_TYPE_STANDARD",
+    "classificationThreshold": 0.60000002,
+    "modelTrainingMode": "MODEL_TRAINING_MODE_AUTOMATIC"
+  }
+}

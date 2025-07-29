@@ -1,0 +1,31 @@
+{
+  "name": "270fc885-acb8-4dd7-ba28-7bc9a1c8de01",
+  "displayName": "ZAgent",
+  "form": {
+  
+  },
+  "entryFulfillment": {
+    "messages": [ {
+      "liveAgentHandoff": {
+        "metadata": {
+          "dfLastCallerIntent": "$session.params.dfLastCallerIntent",
+          "zIntent": "$session.params.zIntent"
+        }
+      },
+      "languageCode": "en"
+    }, {
+      "text": {
+        "text": [ "\u003cspeak\u003e\u003cbreak time=\"10ms\"/\u003e\u003c/speak\u003e" ]
+      },
+      "languageCode": "en"
+    } ]
+  },
+  "transitionRoutes": [ {
+    "condition": "true",
+    "triggerFulfillment": {
+    
+    },
+    "targetPage": "End Session",
+    "name": "f4bbac60-2118-4e66-b6e6-2db3710ca1ac"
+  } ]
+}

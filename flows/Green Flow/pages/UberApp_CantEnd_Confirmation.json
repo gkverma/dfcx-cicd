@@ -1,0 +1,200 @@
+{
+  "name": "f20a4bef-1430-4df0-beb0-30786e68b870",
+  "displayName": "UberApp_CantEnd_Confirmation",
+  "form": {
+    "parameters": [ {
+      "displayName": "dtmf_input",
+      "required": true,
+      "entityType": "@dtmf",
+      "fillBehavior": {
+        "initialPromptFulfillment": {
+        
+        },
+        "repromptEventHandlers": [ {
+          "event": "sys.no-match-1",
+          "triggerFulfillment": {
+            "messages": [ {
+              "text": {
+                "text": [ "\u003cspeak\u003eI didn't get that.\u003c/speak\u003e\n\n\u003cspeak\u003eIf you are having problem \u003cbreak time=\"20ms\"/\u003e marking an order \u003cbreak time=\"20ms\"/\u003e as delivered \u003cbreak time=\"20ms\"/\u003e on the Uber app, say yes. Otherwise, say no.\u003c/speak\u003e" ]
+              },
+              "languageCode": "en"
+            } ]
+          },
+          "name": "064f0ddc-f0e9-427d-b401-9b52b24712c4"
+        }, {
+          "event": "sys.no-match-2",
+          "triggerFulfillment": {
+            "messages": [ {
+              "text": {
+                "text": [ "\u003cspeak\u003eI'm having trouble understanding you.\u003c/speak\u003e\n\n\u003cspeak\u003eFor problem marking an order as delivered, press 1. For something else, press 2.\u003c/speak\u003e" ]
+              },
+              "languageCode": "en"
+            } ]
+          },
+          "name": "8230b082-bc45-449d-bda4-5bc1fde8455a"
+        }, {
+          "targetFlow": "ZExit",
+          "event": "sys.no-match-3",
+          "triggerFulfillment": {
+            "messages": [ {
+              "text": {
+                "text": [ "\u003cspeak\u003e\u003cbreak time=\"10ms\"/\u003e\u003c/speak\u003e" ]
+              },
+              "languageCode": "en"
+            } ],
+            "setParameterActions": [ {
+              "parameter": "zIntent",
+              "value": "ZAgent"
+            } ]
+          },
+          "name": "b1893770-799c-4b82-a17c-e9f68e6c410a"
+        }, {
+          "event": "sys.no-input-1",
+          "triggerFulfillment": {
+            "messages": [ {
+              "text": {
+                "text": [ "\u003cspeak\u003eIf you are having problem \u003cbreak time=\"20ms\"/\u003e marking an order \u003cbreak time=\"20ms\"/\u003e as delivered \u003cbreak time=\"20ms\"/\u003e on the Uber app, say yes. Otherwise, say no.\u003c/speak\u003e" ]
+              },
+              "languageCode": "en"
+            } ]
+          },
+          "name": "9e3d6e92-f304-468a-b546-3f4879578130"
+        }, {
+          "event": "sys.no-input-2",
+          "triggerFulfillment": {
+            "messages": [ {
+              "text": {
+                "text": [ "\u003cspeak\u003eI didn't hear you.\u003c/speak\u003e\n\n\u003cspeak\u003eFor problem marking an order as delivered, press 1. For something else, press 2.\u003c/speak\u003e" ]
+              },
+              "languageCode": "en"
+            } ]
+          },
+          "name": "0ebdf7d9-5fb4-4a08-b893-3f570b6ee489"
+        }, {
+          "targetFlow": "ZExit",
+          "event": "sys.no-input-3",
+          "triggerFulfillment": {
+            "messages": [ {
+              "text": {
+                "text": [ "\u003cspeak\u003eI am having trouble hearing you.\u003c/speak\u003e" ]
+              },
+              "languageCode": "en"
+            } ],
+            "setParameterActions": [ {
+              "parameter": "zIntent",
+              "value": "ZHangup"
+            } ]
+          },
+          "name": "10fc1d61-99ea-4209-a34c-8e050a9a1875"
+        } ]
+      },
+      "advancedSettings": {
+        "dtmfSettings": {
+          "enabled": true,
+          "useSystemEntityRule": false
+        }
+      }
+    }, {
+      "displayName": "Store",
+      "entityType": "@Store",
+      "isList": true,
+      "fillBehavior": {
+        "initialPromptFulfillment": {
+        
+        }
+      }
+    } ]
+  },
+  "entryFulfillment": {
+    "messages": [ {
+      "text": {
+        "text": [ "\u003cspeak\u003eI think you're having problem \u003cbreak time=\"20ms\"/\u003e marking an order \u003cbreak time=\"20ms\"/\u003e as delivered \u003cbreak time=\"20ms\"/\u003e on the Uber app. Is that correct?\u003c/speak\u003e" ]
+      },
+      "languageCode": "en"
+    } ]
+  },
+  "transitionRoutes": [ {
+    "intent": "Confirmation.Yes",
+    "condition": "$session.params.pcDeliveryStatus = \"COMPLETED\"",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "\u003cspeak\u003eOkay, uber app support.\u003c/speak\u003e" ]
+        },
+        "languageCode": "en"
+      } ],
+      "setParameterActions": [ {
+        "parameter": "zIntent",
+        "value": "ZAgent"
+      }, {
+        "parameter": "dfLastCallerIntent",
+        "value": "UberApp_CantEnd"
+      } ]
+    },
+    "targetFlow": "ZExit",
+    "name": "1d9dd707-2313-4c28-8def-c75cde7aab74"
+  }, {
+    "intent": "Confirmation.Yes",
+    "condition": "$session.params.pcDeliveryStatus = \"not_arrived_resto\" OR $session.params.pcDeliveryStatus = \"arrived_resto_1\" OR $session.params.pcDeliveryStatus = \"arrived_resto_2\" OR $session.params.pcDeliveryStatus = \"arrived_resto_3\" OR $session.params.pcDeliveryStatus = \"picked_up\" OR $session.params.pcDeliveryStatus = \"arrived_dropoff_1\" OR $session.params.pcDeliveryStatus = \"arrived_dropoff_2\" OR $session.params.pcDeliveryStatus = \"CANCELLED\"",
+    "triggerFulfillment": {
+    
+    },
+    "targetPage": "UberApp_CantEnd-yes-notComplete_Response",
+    "name": "05730a31-7a18-4870-abe4-14bf5cd90b9e"
+  }, {
+    "intent": "Confirmation.Yes",
+    "triggerFulfillment": {
+    
+    },
+    "targetPage": "UberApp_CantEnd-yes-notComplete_Response",
+    "name": "1b4ace01-4c28-40aa-b749-cd422e009474"
+  }, {
+    "intent": "Confirmation.No",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "\u003cspeak\u003eNo problem. How can I help?\u003c/speak\u003e\n\n\u003cspeak\u003eFor example, you can say, I cannot take a photo of the order, or, need a PIN from the customer.\u003c/speak\u003e" ]
+        },
+        "languageCode": "en"
+      } ]
+    },
+    "targetFlow": "Default Start Flow",
+    "name": "65240d54-ca4a-4f24-a08d-12849a3e8f42"
+  }, {
+    "condition": "$session.params.dtmf_input = \"1\"",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "dtmf_input",
+        "value": null
+      } ]
+    },
+    "targetPage": "UberApp_CantEnd-yes-notComplete_Response",
+    "name": "9d5798e1-3bd8-4a61-b033-521896112a45"
+  }, {
+    "condition": "$session.params.dtmf_input = \"2\"",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "\u003cspeak\u003eNo problem. How can I help?\u003c/speak\u003e\n\n\u003cspeak\u003eFor example, you can say, I cannot take a photo of the order, or, need a PIN from the customer.\u003c/speak\u003e" ]
+        },
+        "languageCode": "en"
+      } ],
+      "setParameterActions": [ {
+        "parameter": "dtmf_input",
+        "value": null
+      } ]
+    },
+    "targetFlow": "Default Start Flow",
+    "name": "b35b143e-a661-438d-a6d4-e89d0035acbe"
+  }, {
+    "condition": "$session.params.dtmf_input = \"0\"",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "intentName",
+        "value": "Agent_Vague"
+      } ]
+    },
+    "targetFlow": "Immediate Transfer Flow",
+    "name": "7cd436e3-6b1c-4dc7-9665-eb6ca5b9fadb"
+  } ]
+}

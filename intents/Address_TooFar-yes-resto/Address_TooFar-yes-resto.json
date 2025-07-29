@@ -1,0 +1,14 @@
+{
+  "name": "6a3d0331-8701-486c-8a2c-901c7003d799",
+  "displayName": "Address_TooFar-yes-resto",
+  "parameters": [ {
+    "id": "Store",
+    "entityType": "@Store",
+    "isList": true
+  }, {
+    "id": "dfLastCallerIntent",
+    "entityType": "@sys.any"
+  } ],
+  "priority": 500000,
+  "numTrainingPhrases": 9
+}

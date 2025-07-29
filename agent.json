@@ -1,0 +1,37 @@
+{
+  "displayName": "[Ayush][UBER][TEST]-LIVE-ORDER",
+  "defaultLanguageCode": "en",
+  "supportedLanguageCodes": [ "hi", "zh-cn", "ja" ],
+  "timeZone": "America/Los_Angeles",
+  "enableLogging": true,
+  "projectNumber": 537606308243,
+  "speechToTextSettings": {
+  
+  },
+  "startFlow": "Default Start Flow",
+  "enableStackdriverLogging": true,
+  "advancedSettings": {
+    "audioExportGcsDestination": {
+    
+    },
+    "speechSettings": {
+      "endpointerSensitivity": 90,
+      "noSpeechTimeout": {
+        "seconds": 5
+      }
+    },
+    "loggingSettings": {
+      "enableStackdriverLogging": true,
+      "enableInteractionLogging": true
+    }
+  },
+  "textToSpeechSettings": {
+  
+  },
+  "answerFeedbackSettings": {
+  
+  },
+  "webClientSettings": {
+    "boxBorderRadius": "0"
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "name": "b519a5a4-418a-45b0-ac13-11391221f0bb",
+  "displayName": "AccidentalCancel_Vague",
+  "form": {
+  
+  },
+  "entryFulfillment": {
+    "messages": [ {
+      "text": {
+        "text": [ "\u003cspeak\u003eOkay, accidentally cancelled a delivery.\u003c/speak\u003e" ]
+      },
+      "languageCode": "en"
+    } ]
+  },
+  "transitionRoutes": [ {
+    "condition": "true",
+    "triggerFulfillment": {
+    
+    },
+    "targetFlow": "ZExit",
+    "name": "3df5536d-5f12-4026-abc7-482fbda7d479"
+  } ]
+}

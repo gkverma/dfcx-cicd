@@ -1,0 +1,11 @@
+{
+  "name": "473bf672-7ab2-4ba1-a557-b3e0872b6e32",
+  "displayName": "Cancel_ByCustResto",
+  "parameters": [ {
+    "id": "Store",
+    "entityType": "@Store",
+    "isList": true
+  } ],
+  "priority": 500000,
+  "numTrainingPhrases": 316
+}

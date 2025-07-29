@@ -1,0 +1,14 @@
+{
+  "name": "1af0d4b6-d6bb-4e70-897d-e5c4cdf19e20",
+  "displayName": "AccidentalCancel_Vague",
+  "parameters": [ {
+    "id": "dfLastCallerIntent",
+    "entityType": "@sys.any"
+  }, {
+    "id": "Store",
+    "entityType": "@Store",
+    "isList": true
+  } ],
+  "priority": 500000,
+  "numTrainingPhrases": 29
+}

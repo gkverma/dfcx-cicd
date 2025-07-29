@@ -1,0 +1,10 @@
+{
+  "name": "32189f64-0048-486a-8e41-46b168bc0d7e",
+  "displayName": "Address_TooFar-yes-customer",
+  "parameters": [ {
+    "id": "dfLastCallerIntent",
+    "entityType": "@sys.any"
+  } ],
+  "priority": 500000,
+  "numTrainingPhrases": 31
+}

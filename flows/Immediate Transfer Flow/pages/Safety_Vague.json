@@ -1,0 +1,23 @@
+{
+  "name": "3a2297aa-acd7-461b-b1bb-ce8cec6ee64b",
+  "displayName": "Safety_Vague",
+  "form": {
+  
+  },
+  "entryFulfillment": {
+    "messages": [ {
+      "text": {
+        "text": [ "\u003cspeak\u003eOkay, calling about a safety issue.\u003c/speak\u003e" ]
+      },
+      "languageCode": "en"
+    } ]
+  },
+  "transitionRoutes": [ {
+    "condition": "true",
+    "triggerFulfillment": {
+    
+    },
+    "targetFlow": "ZExit",
+    "name": "9d93bc43-61b0-4f45-8ccf-970dbd63e61b"
+  } ]
+}

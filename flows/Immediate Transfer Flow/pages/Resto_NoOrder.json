@@ -1,0 +1,23 @@
+{
+  "name": "5f56c996-e65f-486f-9802-6411fe17eb4b",
+  "displayName": "Resto_NoOrder",
+  "form": {
+  
+  },
+  "entryFulfillment": {
+    "messages": [ {
+      "text": {
+        "text": [ "\u003cspeak\u003eOkay, store didnt receive order.\u003c/speak\u003e" ]
+      },
+      "languageCode": "en"
+    } ]
+  },
+  "transitionRoutes": [ {
+    "condition": "true",
+    "triggerFulfillment": {
+    
+    },
+    "targetFlow": "ZExit",
+    "name": "bc1dd8c7-3b67-4dfe-a9eb-a258d57a1938"
+  } ]
+}

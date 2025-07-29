@@ -1,0 +1,23 @@
+{
+  "name": "a97930de-fe88-4410-9972-9d6b137ff309",
+  "displayName": "Resto_Fault",
+  "form": {
+  
+  },
+  "entryFulfillment": {
+    "messages": [ {
+      "text": {
+        "text": [ "\u003cspeak\u003eOkay, order issue.\u003c/speak\u003e" ]
+      },
+      "languageCode": "en"
+    } ]
+  },
+  "transitionRoutes": [ {
+    "condition": "true",
+    "triggerFulfillment": {
+    
+    },
+    "targetFlow": "ZExit",
+    "name": "fb108787-5259-4077-8871-85ab7a9ca6f9"
+  } ]
+}

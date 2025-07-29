@@ -1,0 +1,21 @@
+{
+  "name": "7addb262-c504-47f6-88c6-5257dd1bc69b",
+  "displayName": "PlusCard_Declined_Conditional_Routes",
+  "form": {
+  
+  },
+  "entryFulfillment": {
+    "setParameterActions": [ {
+      "parameter": "dfLastCallerIntent",
+      "value": "PlusCard_Declined"
+    } ]
+  },
+  "transitionRoutes": [ {
+    "condition": "true",
+    "triggerFulfillment": {
+    
+    },
+    "targetPage": "PlusCard_Declined_Response",
+    "name": "0003fe59-8f17-40b2-91ee-a2a9236a37a7"
+  } ]
+}

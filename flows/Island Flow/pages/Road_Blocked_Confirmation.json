@@ -1,0 +1,195 @@
+{
+  "name": "1ca717e6-d7d2-485b-9532-13ca850237f2",
+  "displayName": "Road_Blocked_Confirmation",
+  "form": {
+    "parameters": [ {
+      "displayName": "dtmf_input",
+      "required": true,
+      "entityType": "@dtmf",
+      "fillBehavior": {
+        "initialPromptFulfillment": {
+        
+        },
+        "repromptEventHandlers": [ {
+          "event": "sys.no-match-1",
+          "triggerFulfillment": {
+            "messages": [ {
+              "text": {
+                "text": [ "\u003cspeak\u003eI didn't get that.\u003c/speak\u003e\n\n\u003cspeak\u003eFor road and traffic issues, say yes. Otherwise, say no.\u003c/speak\u003e" ]
+              },
+              "languageCode": "en"
+            } ]
+          },
+          "name": "7e08607c-aa03-4a96-89af-b2c7d04d616d"
+        }, {
+          "event": "sys.no-match-2",
+          "triggerFulfillment": {
+            "messages": [ {
+              "text": {
+                "text": [ "\u003cspeak\u003eI'm having trouble understanding you. For traffic problems, press 1. For something else, press 2.\u003c/speak\u003e" ]
+              },
+              "languageCode": "en"
+            } ]
+          },
+          "name": "a5e27cb3-8a87-4aea-a57f-bfd617f69d06"
+        }, {
+          "targetFlow": "ZExit",
+          "event": "sys.no-match-3",
+          "triggerFulfillment": {
+            "messages": [ {
+              "text": {
+                "text": [ "\u003cspeak\u003e\u003cbreak time=\"10ms\"/\u003e\u003c/speak\u003e" ]
+              },
+              "languageCode": "en"
+            } ],
+            "setParameterActions": [ {
+              "parameter": "zIntent",
+              "value": "ZAgent"
+            } ]
+          },
+          "name": "1dd7c74d-8b8d-4c83-b9eb-576a3ed0a96d"
+        }, {
+          "event": "sys.no-input-1",
+          "triggerFulfillment": {
+            "messages": [ {
+              "text": {
+                "text": [ "\u003cspeak\u003eFor road and traffic issues, say yes. Otherwise, say no.\u003c/speak\u003e" ]
+              },
+              "languageCode": "en"
+            } ]
+          },
+          "name": "9fa31022-b83f-47d1-aa58-2cbd03f6f867"
+        }, {
+          "event": "sys.no-input-2",
+          "triggerFulfillment": {
+            "messages": [ {
+              "text": {
+                "text": [ "\u003cspeak\u003eI didn't hear you.\u003c/speak\u003e\n\n\u003cspeak\u003eFor traffic problems, press 1. For something else, press 2.\u003c/speak\u003e" ]
+              },
+              "languageCode": "en"
+            } ]
+          },
+          "name": "c8df18df-5c79-48c7-94cb-833096abc65a"
+        }, {
+          "targetFlow": "ZExit",
+          "event": "sys.no-input-3",
+          "triggerFulfillment": {
+            "messages": [ {
+              "text": {
+                "text": [ "\u003cspeak\u003eI am having trouble hearing you.\u003c/speak\u003e" ]
+              },
+              "languageCode": "en"
+            } ],
+            "setParameterActions": [ {
+              "parameter": "zIntent",
+              "value": "ZHangup"
+            } ]
+          },
+          "name": "0d21ea89-26d6-4111-8613-a8bf6aaedecb"
+        } ]
+      },
+      "advancedSettings": {
+        "dtmfSettings": {
+          "enabled": true,
+          "useSystemEntityRule": false
+        }
+      }
+    }, {
+      "displayName": "Store",
+      "entityType": "@Store",
+      "isList": true,
+      "fillBehavior": {
+        "initialPromptFulfillment": {
+        
+        }
+      }
+    } ]
+  },
+  "entryFulfillment": {
+    "messages": [ {
+      "text": {
+        "text": [ "\u003cspeak\u003eI think you're calling about road and traffic issues, is that correct?\u003c/speak\u003e" ]
+      },
+      "languageCode": "en"
+    } ]
+  },
+  "transitionRoutes": [ {
+    "intent": "Confirmation.Yes",
+    "condition": "$session.params.pcDeliveryStatus = \"not_arrived_resto\"",
+    "triggerFulfillment": {
+    
+    },
+    "targetPage": "Road_Blocked-yes-notBeenToResto_Response",
+    "name": "2540636e-e135-400a-87b3-38d61cf055cb"
+  }, {
+    "intent": "Confirmation.Yes",
+    "condition": "$session.params.pcDeliveryStatus != \"not_arrived_resto\" OR $session.params.pcDeliveryStatus != \"default\"",
+    "triggerFulfillment": {
+    
+    },
+    "targetPage": "Road_Blocked-yes-beenToResto_Response",
+    "name": "f97448c8-c084-4935-935f-843437fb8c35"
+  }, {
+    "intent": "Confirmation.Yes",
+    "triggerFulfillment": {
+    
+    },
+    "targetPage": "Road_Blocked-yes-beenToResto_Response",
+    "name": "4724b841-8700-47e3-a5ab-7faf471b1794"
+  }, {
+    "intent": "Confirmation.No",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "\u003cspeak\u003eNo problem. How can I help?\u003c/speak\u003e\n\n\u003cspeak\u003eFor example, you can say, the order was cancelled, or, the store is taking too long.\u003c/speak\u003e" ]
+        },
+        "languageCode": "en"
+      } ]
+    },
+    "targetFlow": "Default Start Flow",
+    "name": "6d4a27c8-ae31-4423-9a69-32b9d8c88cd6"
+  }, {
+    "condition": "$session.params.dtmf_input = \"1\" AND $session.params.pcDeliveryStatus = \"not_arrived_resto\"",
+    "triggerFulfillment": {
+    
+    },
+    "targetPage": "Road_Blocked-yes-notBeenToResto_Response",
+    "name": "af158037-17a8-4b6b-9986-724f0f19a7ca"
+  }, {
+    "condition": "$session.params.dtmf_input = \"1\" AND ($session.params.pcDeliveryStatus != \"not_arrived_resto\" OR $session.params.pcDeliveryStatus != \"default\")",
+    "triggerFulfillment": {
+    
+    },
+    "targetPage": "Road_Blocked-yes-beenToResto_Response",
+    "name": "1b9b0f8a-0520-4acd-bf0e-b455faed90ee"
+  }, {
+    "condition": "$session.params.dtmf_input = \"1\"",
+    "triggerFulfillment": {
+    
+    },
+    "targetPage": "Road_Blocked-yes-beenToResto_Response",
+    "name": "193b30a0-0bbb-442d-a494-0d9241e0f99c"
+  }, {
+    "condition": "$session.params.dtmf_input = \"2\"",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "\u003cspeak\u003eNo problem. How can I help?\u003c/speak\u003e\n\n\u003cspeak\u003eFor example, you can say, the order was cancelled, or, the store is taking too long.\u003c/speak\u003e" ]
+        },
+        "languageCode": "en"
+      } ]
+    },
+    "targetFlow": "Default Start Flow",
+    "name": "e1f9279b-a889-403b-b298-ff24ab4939d4"
+  }, {
+    "condition": "$session.params.dtmf_input = \"0\"",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "intentName",
+        "value": "Agent_Vague"
+      } ]
+    },
+    "targetFlow": "Immediate Transfer Flow",
+    "name": "44882ecc-3844-4ed6-9805-e1771b8172fd"
+  } ]
+}

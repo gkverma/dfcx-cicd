@@ -1,0 +1,285 @@
+{
+  "name": "7e132971-cfd7-4ef9-aecf-1e60fe3edb07",
+  "displayName": "Cancel_ByDP-yes-notAtResto_Response",
+  "form": {
+    "parameters": [ {
+      "displayName": "dtmf_input",
+      "required": true,
+      "entityType": "@dtmf_1234",
+      "fillBehavior": {
+        "initialPromptFulfillment": {
+        
+        },
+        "repromptEventHandlers": [ {
+          "event": "sys.no-input-1",
+          "triggerFulfillment": {
+            "messages": [ {
+              "text": {
+                "text": [ "\u003cspeak\u003eAre you having trouble finding the store, \u003cbreak time=\"400ms\"/\u003e is the location too far, \u003cbreak time=\"400ms\"/\u003e or, having problem parking your car? Or, you can say, it is something else.\u003c/speak\u003e" ]
+              },
+              "languageCode": "en"
+            } ]
+          },
+          "name": "cf7137c1-4cc7-48f1-94f1-984c8cbf937a"
+        }, {
+          "event": "sys.no-input-2",
+          "triggerFulfillment": {
+            "messages": [ {
+              "text": {
+                "text": [ "\u003cspeak\u003eI didn't hear you.\u003c/speak\u003e\n\u003cspeak\u003eIf you can't find the store, press 1. If location is too far, press 2. If you can't find parking, press 3. For something else, press 4.\u003c/speak\u003e" ]
+              },
+              "languageCode": "en"
+            } ]
+          },
+          "name": "9675c635-eab1-4cba-8f98-afb020241434"
+        }, {
+          "targetFlow": "ZExit",
+          "event": "sys.no-input-3",
+          "triggerFulfillment": {
+            "messages": [ {
+              "text": {
+                "text": [ "\u003cspeak\u003eI am having trouble hearing you.\u003c/speak\u003e" ]
+              },
+              "languageCode": "en"
+            } ],
+            "setParameterActions": [ {
+              "parameter": "zIntent",
+              "value": "ZHangup"
+            } ]
+          },
+          "name": "c6286d5e-069c-48d9-a06c-f0894ea0dfb8"
+        }, {
+          "event": "sys.no-match-1",
+          "triggerFulfillment": {
+            "messages": [ {
+              "text": {
+                "text": [ "\u003cspeak\u003eI didn't get that.\u003c/speak\u003e\n\u003cspeak\u003eAre you having trouble finding the store, \u003cbreak time=\"400ms\"/\u003e is the location too far, \u003cbreak time=\"400ms\"/\u003e or, having problem parking your car? Or, you can say, it is something else.\u003c/speak\u003e" ]
+              },
+              "languageCode": "en"
+            } ]
+          },
+          "name": "f2223f02-0b0a-43d4-aa67-f6db75161309"
+        }, {
+          "event": "sys.no-match-2",
+          "triggerFulfillment": {
+            "messages": [ {
+              "text": {
+                "text": [ "\u003cspeak\u003eI'm having trouble understanding you. If you can't find the store, press 1. If location is too far, press 2. If you can't find parking, press 3. For something else, press 4.\u003c/speak\u003e" ]
+              },
+              "languageCode": "en"
+            } ]
+          },
+          "name": "ce7a31b1-0b73-45be-91ec-fd88230a3dda"
+        }, {
+          "targetFlow": "ZExit",
+          "event": "sys.no-match-3",
+          "triggerFulfillment": {
+            "messages": [ {
+              "text": {
+                "text": [ "\u003cspeak\u003e\u003cbreak time=\"10ms\"/\u003e\u003c/speak\u003e" ]
+              },
+              "languageCode": "en"
+            } ],
+            "setParameterActions": [ {
+              "parameter": "zIntent",
+              "value": "ZAgent"
+            } ]
+          },
+          "name": "230b040d-fb27-4f3e-8f27-5fd8322fddc1"
+        } ]
+      },
+      "advancedSettings": {
+        "dtmfSettings": {
+          "enabled": true,
+          "useSystemEntityRule": false
+        }
+      }
+    } ]
+  },
+  "entryFulfillment": {
+    "messages": [ {
+      "text": {
+        "text": [ "\u003cspeak\u003eI see that you're on your way to the pick up location. So I can better understand why you'd like to cancel, are you having trouble finding the store, \u003cbreak time=\"400ms\"/\u003e is the location too far, \u003cbreak time=\"400ms\"/\u003e or, having problem parking your car? You can also say, it is something else.\u003c/speak\u003e" ]
+      },
+      "languageCode": "en"
+    } ],
+    "setParameterActions": [ {
+      "parameter": "dtmf_input",
+      "value": null
+    } ]
+  },
+  "transitionRoutes": [ {
+    "intent": "Cancel_ByDP-yes-notAtResto-cantResto",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "intentName",
+        "value": "Cancel_ByDP-yes-notAtResto-cantResto"
+      } ]
+    },
+    "targetFlow": "Orange Flow",
+    "name": "d753d3ab-deab-41a2-822c-33b58ece5353"
+  }, {
+    "intent": "Cancel_ByDP-yes-notAtResto-tooFar",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "intentName",
+        "value": "Cancel_ByDP-yes-notAtResto-tooFar"
+      } ]
+    },
+    "targetFlow": "Orange Flow",
+    "name": "13817ce8-8f3e-44b7-89cd-fcf4e1d35dbc"
+  }, {
+    "intent": "Cancel_ByDP-yes-notAtResto-cantPark",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "\u003cspeak\u003e\u003cbreak time=\"10ms\"/\u003e\u003c/speak\u003e" ]
+        },
+        "languageCode": "en"
+      } ],
+      "setParameterActions": [ {
+        "parameter": "zIntent",
+        "value": "ZAgent"
+      } ]
+    },
+    "targetFlow": "ZExit",
+    "name": "dcac11d8-0297-4faa-8a1e-499088723758"
+  }, {
+    "intent": "Cancel_ByDP-yes-notAtResto-cancel",
+    "triggerFulfillment": {
+    
+    },
+    "targetPage": "Cancel_ByDP-yes-notAtResto-cancel_Response",
+    "name": "7e27067c-a4c7-4ed9-b8c8-7cabff12bed1"
+  }, {
+    "condition": "$session.params.dtmf_input = \"1\"",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "intentName",
+        "value": "Cancel_ByDP-yes-notAtResto-cantResto"
+      } ]
+    },
+    "targetFlow": "Orange Flow",
+    "name": "f6b48518-6060-4fdc-a975-0829ce9e2f39"
+  }, {
+    "condition": "$session.params.dtmf_input = \"2\"",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "intentName",
+        "value": "Cancel_ByDP-yes-notAtResto-tooFar"
+      } ]
+    },
+    "targetFlow": "Orange Flow",
+    "name": "7ae864c9-08ef-4208-9290-c846d4e842d0"
+  }, {
+    "condition": "$session.params.dtmf_input = \"3\"",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "\u003cspeak\u003e\u003cbreak time=\"10ms\"/\u003e\u003c/speak\u003e" ]
+        },
+        "languageCode": "en"
+      } ],
+      "setParameterActions": [ {
+        "parameter": "zIntent",
+        "value": "ZAgent"
+      } ]
+    },
+    "targetFlow": "ZExit",
+    "name": "9c6beb2f-56c0-4549-96aa-7e19ab248123"
+  }, {
+    "condition": "$session.params.dtmf_input = \"4\"",
+    "triggerFulfillment": {
+    
+    },
+    "targetPage": "Cancel_ByDP-yes-notAtResto-cancel_Response",
+    "name": "c354a4f6-e476-45f5-ab9d-ae0553f23d3f"
+  }, {
+    "condition": "$session.params.dtmf_input = \"0\"",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "intentName",
+        "value": "Agent_Vague"
+      } ]
+    },
+    "targetFlow": "Immediate Transfer Flow",
+    "name": "9eb1b0f1-f528-44cb-9d46-9b0cb64457ce"
+  } ],
+  "eventHandlers": [ {
+    "event": "sys.no-input-1",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "\u003cspeak\u003eAre you having trouble finding the store, \u003cbreak time=\"400ms\"/\u003e is the location too far, \u003cbreak time=\"400ms\"/\u003e or, having problem parking your car? Or, you can say, it is something else.\u003c/speak\u003e" ]
+        },
+        "languageCode": "en"
+      } ]
+    },
+    "name": "d093dadf-3d78-4d72-a907-c64ca9b3414f"
+  }, {
+    "event": "sys.no-input-2",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "\u003cspeak\u003eI didn't hear you.\u003c/speak\u003e\n\u003cspeak\u003eIf you can't find the store, press 1. If location is too far, press 2. If you can't find parking, press 3. For something else, press 4.\u003c/speak\u003e" ]
+        },
+        "languageCode": "en"
+      } ]
+    },
+    "name": "d1d09e92-dc4c-484b-a2e8-ca1dd20fb99b"
+  }, {
+    "targetFlow": "ZExit",
+    "event": "sys.no-input-3",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "\u003cspeak\u003eI am having trouble hearing you.\u003c/speak\u003e" ]
+        },
+        "languageCode": "en"
+      } ],
+      "setParameterActions": [ {
+        "parameter": "zIntent",
+        "value": "ZHangup"
+      } ]
+    },
+    "name": "723f2815-f92e-4a71-ae28-03829f2aabef"
+  }, {
+    "event": "sys.no-match-1",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "\u003cspeak\u003eI didn't get that.\u003c/speak\u003e\n\u003cspeak\u003eAre you having trouble finding the store, \u003cbreak time=\"400ms\"/\u003e is the location too far, \u003cbreak time=\"400ms\"/\u003e or, having problem parking your car? Or, you can say, it is something else.\u003c/speak\u003e" ]
+        },
+        "languageCode": "en"
+      } ]
+    },
+    "name": "8dfabc38-0c73-4b97-b0df-11e3ec1513d6"
+  }, {
+    "event": "sys.no-match-2",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "\u003cspeak\u003eI'm having trouble understanding you. If you can't find the store, press 1. If location is too far, press 2. If you can't find parking, press 3. For something else, press 4.\u003c/speak\u003e" ]
+        },
+        "languageCode": "en"
+      } ]
+    },
+    "name": "5ddd5d41-dc47-4032-b175-f6d0be926ff6"
+  }, {
+    "targetFlow": "ZExit",
+    "event": "sys.no-match-3",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "\u003cspeak\u003e\u003cbreak time=\"10ms\"/\u003e\u003c/speak\u003e" ]
+        },
+        "languageCode": "en"
+      } ],
+      "setParameterActions": [ {
+        "parameter": "zIntent",
+        "value": "ZAgent"
+      } ]
+    },
+    "name": "92d1491d-d220-4653-a288-de6cc1595c06"
+  } ]
+}

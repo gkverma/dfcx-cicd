@@ -1,0 +1,23 @@
+{
+  "name": "197f12ee-6aa6-4c64-b6a6-bc3e1b5ddc6e",
+  "displayName": "Other_Help",
+  "form": {
+  
+  },
+  "entryFulfillment": {
+    "messages": [ {
+      "text": {
+        "text": [ "\u003cspeak\u003eI'm here to help. In a few words, please describe your issue. You can say things like, I can't find the customer, ore, the store doesn't have the order.\u003c/speak\u003e" ]
+      },
+      "languageCode": "en"
+    } ]
+  },
+  "transitionRoutes": [ {
+    "condition": "true",
+    "triggerFulfillment": {
+    
+    },
+    "targetFlow": "Default Start Flow",
+    "name": "739f4423-ba27-4fbb-9db9-70c54f321cc8"
+  } ]
+}

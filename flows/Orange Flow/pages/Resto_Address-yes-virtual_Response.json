@@ -1,0 +1,316 @@
+{
+  "name": "12183217-4ac6-4fa5-833d-536492724ab4",
+  "displayName": "Resto_Address-yes-virtual_Response",
+  "form": {
+    "parameters": [ {
+      "displayName": "dtmf_input",
+      "required": true,
+      "entityType": "@dtmf_123",
+      "fillBehavior": {
+        "initialPromptFulfillment": {
+        
+        },
+        "repromptEventHandlers": [ {
+          "event": "sys.no-input-1",
+          "triggerFulfillment": {
+            "messages": [ {
+              "text": {
+                "text": [ "\u003cspeak\u003eThe store is located at $session.params.pcStoreAddress. If you're having trouble finding it, it is best to call them directly at \u003csay-as interpret-as=\"telephone\"\u003e$session.params.pcStorePhoneNumber\u003c/say-as\u003e. \u003c/speak\u003e\n\u003cspeak\u003eYou can say, Repeat it, or, I already called them. For help with something else, say, Main Menu.\u003c/speak\u003e" ]
+              },
+              "languageCode": "en"
+            } ]
+          },
+          "name": "cb65cbf8-f836-4311-9c1f-6485f49ad757"
+        }, {
+          "event": "sys.no-input-2",
+          "triggerFulfillment": {
+            "messages": [ {
+              "text": {
+                "text": [ "\u003cspeak\u003eI didn't hear you. The store is located at $session.params.pcStoreAddress. If you're having trouble finding it, it is best to call them directly at \u003csay-as interpret-as=\"telephone\"\u003e$session.params.pcStorePhoneNumber\u003c/say-as\u003e. \u003c/speak\u003e\n\u003cspeak\u003eTo hear the store's location and phone number again, press 1. If you already tried to call them, press 2. Or, to get help with something else, press 3.\u003c/speak\u003e" ]
+              },
+              "languageCode": "en"
+            } ]
+          },
+          "name": "2c55796a-9a59-4f43-83af-a394c25e0136"
+        }, {
+          "targetFlow": "ZExit",
+          "event": "sys.no-input-3",
+          "triggerFulfillment": {
+            "messages": [ {
+              "text": {
+                "text": [ "\u003cspeak\u003eI am having trouble hearing you.\u003c/speak\u003e" ]
+              },
+              "languageCode": "en"
+            } ],
+            "setParameterActions": [ {
+              "parameter": "zIntent",
+              "value": "ZHangup"
+            } ]
+          },
+          "name": "fb7971fa-39cc-40c8-af95-c3525bf360dd"
+        }, {
+          "event": "sys.no-match-1",
+          "triggerFulfillment": {
+            "messages": [ {
+              "text": {
+                "text": [ "\u003cspeak\u003eI didn't get that.\u003c/speak\u003e\n\u003cspeak\u003eYou can say, Repeat it, or, I already called them. Or, for help with something else, say, Main Menu.\u003c/speak\u003e" ]
+              },
+              "languageCode": "en"
+            } ]
+          },
+          "name": "25bb3774-bd54-41a5-854e-a8c6a6f3fec6"
+        }, {
+          "event": "sys.no-match-2",
+          "triggerFulfillment": {
+            "messages": [ {
+              "text": {
+                "text": [ "\u003cspeak\u003eI'm having trouble understanding you. To hear the store's location and phone number again, press 1. If you already tried to call them, press 2. Or, to get help with something else, press 3.\u003c/speak\u003e" ]
+              },
+              "languageCode": "en"
+            } ]
+          },
+          "name": "40a417c2-413a-4dfd-af00-3187ab7318af"
+        }, {
+          "targetFlow": "ZExit",
+          "event": "sys.no-match-3",
+          "triggerFulfillment": {
+            "messages": [ {
+              "text": {
+                "text": [ "\u003cspeak\u003e\u003cbreak time=\"10ms\"/\u003e\u003c/speak\u003e" ]
+              },
+              "languageCode": "en"
+            } ],
+            "setParameterActions": [ {
+              "parameter": "zIntent",
+              "value": "ZAgent"
+            } ]
+          },
+          "name": "d1d4d3ae-153c-4760-b71b-a959e94f6ec5"
+        } ]
+      },
+      "advancedSettings": {
+        "dtmfSettings": {
+          "enabled": true,
+          "useSystemEntityRule": false
+        }
+      }
+    }, {
+      "displayName": "Store",
+      "entityType": "@Store",
+      "fillBehavior": {
+        "initialPromptFulfillment": {
+        
+        }
+      }
+    } ]
+  },
+  "entryFulfillment": {
+    "setParameterActions": [ {
+      "parameter": "dtmf_input",
+      "value": null
+    } ],
+    "conditionalCases": [ {
+      "cases": [ {
+        "condition": "$session.params.isRepeat != \"yes\"",
+        "caseContent": [ {
+          "message": {
+            "text": {
+              "text": [ "\u003cspeak\u003eThe store is located at $session.params.pcStoreAddress. If you're having trouble finding it, it is best to call them directly at \u003csay-as interpret-as=\"telephone\"\u003e $session.params.pcStorePhoneNumber \u003c/say-as\u003e. Or you can say, I already called them.\u003c/speak\u003e" ]
+            },
+            "languageCode": "en"
+          }
+        }, {
+          "message": {
+            "text": {
+              "text": [ "\u003cspeak\u003eTo listen to this message again, just say, repeat it. \u003cbreak time=\"700ms\"/\u003e Is there anything else I can help you with today?\u003c/speak\u003e" ]
+            },
+            "languageCode": "en"
+          }
+        } ]
+      }, {
+        "caseContent": [ {
+          "message": {
+            "text": {
+              "text": [ "\u003cspeak\u003eThe store is located at $session.params.pcStoreAddress. If you're having trouble finding it, it is best to call them directly at \u003csay-as interpret-as=\"telephone\"\u003e $session.params.pcStorePhoneNumber \u003c/say-as\u003e. Or you can say, I already called them.\u003c/speak\u003e" ]
+            },
+            "languageCode": "en"
+          }
+        }, {
+          "message": {
+            "text": {
+              "text": [ "\u003cspeak\u003eIs there anything else I can help you with today? Or, if you're done, you can hang up.\u003c/speak\u003e" ]
+            },
+            "languageCode": "en"
+          }
+        } ]
+      } ]
+    } ]
+  },
+  "transitionRoutes": [ {
+    "intent": "Intent.Repeat",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "isRepeat",
+        "value": "yes"
+      } ]
+    },
+    "targetPage": "Current Page",
+    "name": "d6146fa6-dcb5-44eb-ab3c-1164cff12d2f"
+  }, {
+    "intent": "Resto_Address-yes-virtual-called",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "\u003cspeak\u003eOkay, help with the store address.\u003c/speak\u003e" ]
+        },
+        "languageCode": "en"
+      } ],
+      "setParameterActions": [ {
+        "parameter": "zIntent",
+        "value": "ZAgent"
+      } ]
+    },
+    "targetFlow": "ZExit",
+    "name": "11dfb746-c0c6-4117-871a-7327281f6fa1"
+  }, {
+    "intent": "Resto_Address-yes-virtual-other",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "\u003cspeak\u003eSure, main menu.\u003c/speak\u003e \u003cspeak\u003eIn your own words, please tell me what you are calling about. For example, you can say, i picked up the wrong order, or, customer changed the address.\u003c/speak\u003e" ]
+        },
+        "languageCode": "en"
+      } ]
+    },
+    "targetFlow": "Default Start Flow",
+    "name": "eaceb423-22c7-4f0d-aa49-006c12a69c96"
+  }, {
+    "condition": "$session.params.dtmf_input = \"0\"",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "intentName",
+        "value": "Agent_Vague"
+      } ]
+    },
+    "targetFlow": "Immediate Transfer Flow",
+    "name": "55263d25-f135-483a-98b5-e197660266e9"
+  }, {
+    "condition": "$session.params.dtmf_input = 1",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "dtmf_input",
+        "value": null
+      }, {
+        "parameter": "isRepeat",
+        "value": "yes"
+      } ]
+    },
+    "targetPage": "Current Page",
+    "name": "7be43c0c-284f-4581-95ac-3f34dbf232e3"
+  }, {
+    "condition": "$session.params.dtmf_input = 2",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "\u003cspeak\u003eOkay, help with the store address.\u003c/speak\u003e" ]
+        },
+        "languageCode": "en"
+      } ],
+      "setParameterActions": [ {
+        "parameter": "zIntent",
+        "value": "ZAgent"
+      } ]
+    },
+    "targetFlow": "ZExit",
+    "name": "6718e760-5c98-40fe-9c02-143e96889c55"
+  }, {
+    "condition": "$session.params.dtmf_input = 3",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "\u003cspeak\u003eSure, main menu.\u003c/speak\u003e \u003cspeak\u003eIn your own words, please tell me what you are calling about. For example, you can say, i picked up the wrong order, or, customer changed the address.\u003c/speak\u003e" ]
+        },
+        "languageCode": "en"
+      } ]
+    },
+    "targetFlow": "Default Start Flow",
+    "name": "25288855-ed52-45bd-a73f-8516e32a052f"
+  } ],
+  "eventHandlers": [ {
+    "event": "sys.no-input-1",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "\u003cspeak\u003eThe store is located at $session.params.pcStoreAddress. If you're having trouble finding it, it is best to call them directly at \u003csay-as interpret-as=\"telephone\"\u003e$session.params.pcStorePhoneNumber\u003c/say-as\u003e. \u003c/speak\u003e\n\u003cspeak\u003eYou can say, Repeat it, or, I already called them. For help with something else, say, Main Menu.\u003c/speak\u003e" ]
+        },
+        "languageCode": "en"
+      } ]
+    },
+    "name": "d2cf2d76-c2a0-4419-9f8c-3613b16e9f55"
+  }, {
+    "event": "sys.no-input-2",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "\u003cspeak\u003eI didn't hear you. The store is located at $session.params.pcStoreAddress. If you're having trouble finding it, it is best to call them directly at \u003csay-as interpret-as=\"telephone\"\u003e$session.params.pcStorePhoneNumber\u003c/say-as\u003e. \u003c/speak\u003e\n\u003cspeak\u003eTo hear the store's location and phone number again, press 1. If you already tried to call them, press 2. Or, to get help with something else, press 3.\u003c/speak\u003e" ]
+        },
+        "languageCode": "en"
+      } ]
+    },
+    "name": "16c418d7-14af-444f-a60e-b01105584740"
+  }, {
+    "targetFlow": "ZExit",
+    "event": "sys.no-input-3",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "\u003cspeak\u003eI am having trouble hearing you.\u003c/speak\u003e" ]
+        },
+        "languageCode": "en"
+      } ],
+      "setParameterActions": [ {
+        "parameter": "zIntent",
+        "value": "ZHangup"
+      } ]
+    },
+    "name": "02017fb9-ae9e-4281-a550-8ab43d5b480d"
+  }, {
+    "event": "sys.no-match-1",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "\u003cspeak\u003eI didn't get that.\u003c/speak\u003e\n\u003cspeak\u003eYou can say, Repeat it, or, I already called them. Or, for help with something else, say, Main Menu.\u003c/speak\u003e" ]
+        },
+        "languageCode": "en"
+      } ]
+    },
+    "name": "a924bf4c-366d-4baa-97fb-90b84ebae936"
+  }, {
+    "event": "sys.no-match-2",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "\u003cspeak\u003eI'm having trouble understanding you. To hear the store's location and phone number again, press 1. If you already tried to call them, press 2. Or, to get help with something else, press 3.\u003c/speak\u003e" ]
+        },
+        "languageCode": "en"
+      } ]
+    },
+    "name": "64db90be-9c3f-4895-93c1-756c273aa1a7"
+  }, {
+    "targetFlow": "ZExit",
+    "event": "sys.no-match-3",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "\u003cspeak\u003e\u003cbreak time=\"10ms\"/\u003e\u003c/speak\u003e" ]
+        },
+        "languageCode": "en"
+      } ],
+      "setParameterActions": [ {
+        "parameter": "zIntent",
+        "value": "ZAgent"
+      } ]
+    },
+    "name": "916b7a1e-20bf-4480-b077-90cd1789a2af"
+  } ]
+}

@@ -1,0 +1,23 @@
+{
+  "name": "bd3cce62-7b81-4fe8-8e99-a2aeb2d02548",
+  "displayName": "Liveorder_Vague",
+  "form": {
+  
+  },
+  "entryFulfillment": {
+    "messages": [ {
+      "text": {
+        "text": [ "\u003cspeak\u003eI understand you are calling about an issue with your delivery. Can you provide a bit more details? For example, you can say things like, the order is missing items, ore, i picked up the wrong order.\u003c/speak\u003e" ]
+      },
+      "languageCode": "en"
+    } ]
+  },
+  "transitionRoutes": [ {
+    "condition": "true",
+    "triggerFulfillment": {
+    
+    },
+    "targetFlow": "Default Start Flow",
+    "name": "bd99fe4f-9443-4d39-80d6-323ec3a6c9fa"
+  } ]
+}

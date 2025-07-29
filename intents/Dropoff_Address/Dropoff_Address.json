@@ -1,0 +1,11 @@
+{
+  "name": "0a4ccd6b-2fde-47c5-9e65-8e2404dc582f",
+  "displayName": "Dropoff_Address",
+  "parameters": [ {
+    "id": "Store",
+    "entityType": "@Store",
+    "isList": true
+  } ],
+  "priority": 500000,
+  "numTrainingPhrases": 433
+}

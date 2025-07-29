@@ -1,0 +1,11 @@
+{
+  "name": "cdbe4008-791f-4603-af20-2f6b1e4ed536",
+  "displayName": "Resto_Closed",
+  "parameters": [ {
+    "id": "Store",
+    "entityType": "@Store",
+    "isList": true
+  } ],
+  "priority": 500000,
+  "numTrainingPhrases": 903
+}

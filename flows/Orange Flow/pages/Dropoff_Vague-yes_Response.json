@@ -1,0 +1,311 @@
+{
+  "name": "89f5841a-068f-47a7-a659-457b0bdceec5",
+  "displayName": "Dropoff_Vague-yes_Response",
+  "form": {
+    "parameters": [ {
+      "displayName": "dtmf_input",
+      "required": true,
+      "entityType": "@dtmf_12345",
+      "fillBehavior": {
+        "initialPromptFulfillment": {
+        
+        },
+        "repromptEventHandlers": [ {
+          "event": "sys.no-input-1",
+          "triggerFulfillment": {
+            "messages": [ {
+              "text": {
+                "text": [ "\u003cspeak\u003e You can say, the customer isn't answering the door. \u003cbreak time=\"400ms\"/\u003e I can't get to the delivery location. \u003cbreak time=\"400ms\"/\u003e I don't feel safe. or, it is something else.\u003c/speak\u003e" ]
+              },
+              "languageCode": "en"
+            } ]
+          },
+          "name": "6124d8f5-2e5f-470e-aa3b-30a2fe9f2107"
+        }, {
+          "event": "sys.no-input-2",
+          "triggerFulfillment": {
+            "messages": [ {
+              "text": {
+                "text": [ "\u003cspeak\u003eI didn't hear you.\u003c/speak\u003e\n\u003cspeak\u003eIf you're at the drop off location, but you can't reach the customer, press 1. If you can't get to the delivery location, press 2. For help with the order photo, press 3. Or, if you don't feel safe, press 4. For everything else, press 5.\u003c/speak\u003e" ]
+              },
+              "languageCode": "en"
+            } ]
+          },
+          "name": "6d99ebff-2e31-43f3-bf64-7a8b65f1c267"
+        }, {
+          "targetFlow": "ZExit",
+          "event": "sys.no-input-3",
+          "triggerFulfillment": {
+            "messages": [ {
+              "text": {
+                "text": [ "\u003cspeak\u003eI am having trouble hearing you.\u003c/speak\u003e" ]
+              },
+              "languageCode": "en"
+            } ],
+            "setParameterActions": [ {
+              "parameter": "zIntent",
+              "value": "ZHangup"
+            } ]
+          },
+          "name": "ebba7f6b-efe9-4c91-8248-cd72e6038f94"
+        }, {
+          "event": "sys.no-match-1",
+          "triggerFulfillment": {
+            "messages": [ {
+              "text": {
+                "text": [ "\u003cspeak\u003eI didn't get that.\u003c/speak\u003e\n\u003cspeak\u003e You can say, the customer isn't answering the door. \u003cbreak time=\"400ms\"/\u003e I can't get to the delivery location. \u003cbreak time=\"400ms\"/\u003e I don't feel safe. or, it is something else.\u003c/speak\u003e" ]
+              },
+              "languageCode": "en"
+            } ]
+          },
+          "name": "7cfdd105-91c0-4dc8-a1d9-6b9dd13e72b6"
+        }, {
+          "event": "sys.no-match-2",
+          "triggerFulfillment": {
+            "messages": [ {
+              "text": {
+                "text": [ "\u003cspeak\u003eI'm having trouble understanding you. If you're at the drop off location, but you can't reach the customer, press 1. If you can't get to the delivery location, press 2. For help with the order photo, press 3. Or, if you don't feel safe, press 4. For everything else, press 5.\u003c/speak\u003e" ]
+              },
+              "languageCode": "en"
+            } ]
+          },
+          "name": "f9252bf1-b5d9-4479-9330-498a41c52686"
+        }, {
+          "targetFlow": "ZExit",
+          "event": "sys.no-match-3",
+          "triggerFulfillment": {
+            "messages": [ {
+              "text": {
+                "text": [ "\u003cspeak\u003e\u003cbreak time=\"10ms\"/\u003e\u003c/speak\u003e" ]
+              },
+              "languageCode": "en"
+            } ],
+            "setParameterActions": [ {
+              "parameter": "zIntent",
+              "value": "ZAgent"
+            } ]
+          },
+          "name": "29669258-6dc7-407c-9919-e8435743f0f3"
+        } ]
+      },
+      "advancedSettings": {
+        "dtmfSettings": {
+          "enabled": true,
+          "useSystemEntityRule": false
+        }
+      }
+    } ]
+  },
+  "entryFulfillment": {
+    "messages": [ {
+      "text": {
+        "text": [ "\u003cspeak\u003eWhat issue are you having with the drop off? You can say. The customer isn't answering the door. I can't get to the delivery location. Or, I don't feel safe. You can also say, it is something else.\u003c/speak\u003e" ]
+      },
+      "languageCode": "en"
+    } ],
+    "setParameterActions": [ {
+      "parameter": "dfLastCallerIntent",
+      "value": "Dropoff_Vague"
+    }, {
+      "parameter": "dtmf_input",
+      "value": null
+    } ]
+  },
+  "transitionRoutes": [ {
+    "intent": "Dropoff_Vague-yes-other",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "\u003cspeak\u003eOkay, other drop off issue.\u003c/speak\u003e" ]
+        },
+        "languageCode": "en"
+      } ],
+      "setParameterActions": [ {
+        "parameter": "zIntent",
+        "value": "ZAgent"
+      } ]
+    },
+    "targetFlow": "ZExit",
+    "name": "34aff30e-8dfd-4d8c-b40d-f6033a5f53d3"
+  }, {
+    "intent": "Dropoff_Vague-yes-safety",
+    "triggerFulfillment": {
+    
+    },
+    "targetPage": "Dropoff_Vague-yes-safety_Response",
+    "name": "b3c5ad4d-529d-4cad-8eaa-6bdb2c83340e"
+  }, {
+    "intent": "Dropoff_Vague-yes-custMissing",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "intentName",
+        "value": "Dropoff_Vague-yes-custMissing"
+      } ]
+    },
+    "targetFlow": "Orange Flow",
+    "name": "135a2b07-21e4-4581-a0f7-8f5072689972"
+  }, {
+    "intent": "Dropoff_Vague-yes-address",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "intentName",
+        "value": "Dropoff_Vague-yes-address"
+      } ]
+    },
+    "targetFlow": "Orange Flow",
+    "name": "f9005f3a-58ed-411c-bcef-c6a51c05ac88"
+  }, {
+    "intent": "Dropoff_Vague-yes-foodPhoto",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "intentName",
+        "value": "Dropoff_Vague-yes-foodPhoto"
+      } ]
+    },
+    "targetFlow": "Purple Flow",
+    "name": "ca4ac2b5-d311-45f5-8a5c-e2d3dc061187"
+  }, {
+    "condition": "$session.params.dtmf_input = \"0\"",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "intentName",
+        "value": "Agent_Vague"
+      } ]
+    },
+    "targetFlow": "Immediate Transfer Flow",
+    "name": "7e87c6e7-2eaa-43f0-a055-67b9e3e450a4"
+  }, {
+    "condition": "$session.params.dtmf_input = \"1\"",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "intentName",
+        "value": "Dropoff_Vague-yes-custMissing"
+      } ]
+    },
+    "targetFlow": "Orange Flow",
+    "name": "0f3de5c5-ba3a-40f6-bde8-4a9167e70862"
+  }, {
+    "condition": "$session.params.dtmf_input = \"2\"",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "intentName",
+        "value": "Dropoff_Vague-yes-address"
+      } ]
+    },
+    "targetFlow": "Orange Flow",
+    "name": "af356f68-2263-4c87-87d2-b605b06a7e3b"
+  }, {
+    "condition": "$session.params.dtmf_input = \"3\"",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "intentName",
+        "value": "Dropoff_Vague-yes-foodPhoto"
+      } ]
+    },
+    "targetFlow": "Purple Flow",
+    "name": "142506f0-d27a-4339-8aae-bc9546043529"
+  }, {
+    "condition": "$session.params.dtmf_input = \"4\"",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "dtmf_input",
+        "value": null
+      } ]
+    },
+    "targetPage": "Dropoff_Vague-yes-safety_Response",
+    "name": "9753bb74-513f-463f-adf8-e84bb5932df1"
+  }, {
+    "condition": "$session.params.dtmf_input = \"5\"",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "\u003cspeak\u003eOkay, other drop off issue.\u003c/speak\u003e" ]
+        },
+        "languageCode": "en"
+      } ],
+      "setParameterActions": [ {
+        "parameter": "zIntent",
+        "value": "ZAgent"
+      } ]
+    },
+    "targetFlow": "ZExit",
+    "name": "e96e14c6-4c60-4b8d-aa2d-4d01c7ae8c2d"
+  } ],
+  "eventHandlers": [ {
+    "event": "sys.no-input-1",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "\u003cspeak\u003e You can say, the customer isn't answering the door. \u003cbreak time=\"400ms\"/\u003e I can't get to the delivery location. \u003cbreak time=\"400ms\"/\u003e I don't feel safe. or, it is something else.\u003c/speak\u003e" ]
+        },
+        "languageCode": "en"
+      } ]
+    },
+    "name": "7b252718-c06e-4d06-a210-9f1091572cd7"
+  }, {
+    "event": "sys.no-input-2",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "\u003cspeak\u003eI didn't hear you.\u003c/speak\u003e\n\u003cspeak\u003eIf you're at the drop off location, but you can't reach the customer, press 1. If you can't get to the delivery location, press 2. For help with the order photo, press 3. Or, if you don't feel safe, press 4. For everything else, press 5.\u003c/speak\u003e" ]
+        },
+        "languageCode": "en"
+      } ]
+    },
+    "name": "c9050593-3793-4509-a08d-c48ad8c882d6"
+  }, {
+    "targetFlow": "ZExit",
+    "event": "sys.no-input-3",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "\u003cspeak\u003eI am having trouble hearing you.\u003c/speak\u003e" ]
+        },
+        "languageCode": "en"
+      } ],
+      "setParameterActions": [ {
+        "parameter": "zIntent",
+        "value": "ZHangup"
+      } ]
+    },
+    "name": "8e0a2d9d-1290-433c-bb6b-926874c56314"
+  }, {
+    "event": "sys.no-match-1",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "\u003cspeak\u003eI didn't get that.\u003c/speak\u003e\n\u003cspeak\u003e You can say, the customer isn't answering the door. \u003cbreak time=\"400ms\"/\u003e I can't get to the delivery location. \u003cbreak time=\"400ms\"/\u003e I don't feel safe. or, it is something else.\u003c/speak\u003e" ]
+        },
+        "languageCode": "en"
+      } ]
+    },
+    "name": "996972a5-8d40-45b5-bdb1-10dbd3e01257"
+  }, {
+    "event": "sys.no-match-2",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "\u003cspeak\u003eI'm having trouble understanding you. If you're at the drop off location, but you can't reach the customer, press 1. If you can't get to the delivery location, press 2. For help with the order photo, press 3. Or, if you don't feel safe, press 4. For everything else, press 5.\u003c/speak\u003e" ]
+        },
+        "languageCode": "en"
+      } ]
+    },
+    "name": "b36a4fce-3038-422e-b9ed-67f480ebde4f"
+  }, {
+    "targetFlow": "ZExit",
+    "event": "sys.no-match-3",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "\u003cspeak\u003e\u003cbreak time=\"10ms\"/\u003e\u003c/speak\u003e" ]
+        },
+        "languageCode": "en"
+      } ],
+      "setParameterActions": [ {
+        "parameter": "zIntent",
+        "value": "ZAgent"
+      } ]
+    },
+    "name": "7cef6b14-9448-410a-b48c-1c0fb5e3992a"
+  } ]
+}

@@ -1,0 +1,11 @@
+{
+  "name": "78ed15fb-a674-4538-9e17-d794e0cc81ee",
+  "displayName": "Cancel_ByDP-yes-atResto-longWait",
+  "parameters": [ {
+    "id": "Store",
+    "entityType": "@Store",
+    "isList": true
+  } ],
+  "priority": 500000,
+  "numTrainingPhrases": 14
+}

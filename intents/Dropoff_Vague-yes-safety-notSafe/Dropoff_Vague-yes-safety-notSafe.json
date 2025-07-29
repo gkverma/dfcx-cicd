@@ -1,0 +1,10 @@
+{
+  "name": "e0055d4a-0971-4eff-bf69-ccaf85cd0b02",
+  "displayName": "Dropoff_Vague-yes-safety-notSafe",
+  "parameters": [ {
+    "id": "dfLastCallerIntent",
+    "entityType": "@sys.any"
+  } ],
+  "priority": 500000,
+  "numTrainingPhrases": 13
+}

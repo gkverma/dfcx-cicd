@@ -1,0 +1,39 @@
+{
+  "name": "6d3b069e-3b9d-4655-9125-f481dbd2e7c1",
+  "displayName": "Address_TooFar-yes-customer-notChanged_Conditational_Routes",
+  "form": {
+  
+  },
+  "entryFulfillment": {
+  
+  },
+  "transitionRoutes": [ {
+    "condition": "($session.params.pcDeliveryStatus = \"not_arrived_resto\" OR $session.params.pcDeliveryStatus = \"arrived_resto_1\" OR $session.params.pcDeliveryStatus = \"arrived_resto_2\" OR $session.params.pcDeliveryStatus = \"arrived_resto_3\" OR $session.params.pcDeliveryStatus = \"CANCELLED\") AND ($session.params.pcCourierPrestartOneTracking = \"true\" OR $session.params.pcCourierPrestartTwoTracking = \"true\")",
+    "triggerFulfillment": {
+    
+    },
+    "targetPage": "Address_TooFar-yes-customer-notChanged-notFood-prestart_Response",
+    "name": "82850d78-aed2-454e-b3de-f0b7179a4c38"
+  }, {
+    "condition": "($session.params.pcDeliveryStatus = \"not_arrived_resto\" OR $session.params.pcDeliveryStatus = \"arrived_resto_1\" OR $session.params.pcDeliveryStatus = \"arrived_resto_2\" OR $session.params.pcDeliveryStatus = \"arrived_resto_3\") AND ($session.params.pcCourierPrestartOneTracking = \"false\" OR $session.params.pcCourierPrestartTwoTracking = \"false\")",
+    "triggerFulfillment": {
+    
+    },
+    "targetPage": "Address_TooFar-yes-customer-notChanged-notFood-notPrestart_Response",
+    "name": "22daa577-5910-42ec-b2d7-bf52393cb7be"
+  }, {
+    "condition": "$session.params.pcDeliveryStatus = \"picked_up\" OR $session.params.pcDeliveryStatus = \"arrived_dropoff_1\" OR $session.params.pcDeliveryStatus = \"arrived_dropoff_2\" OR $session.params.pcDeliveryStatus = \"COMPLETED\"",
+    "triggerFulfillment": {
+    
+    },
+    "targetPage": "Address_TooFar-yes-customer-notChanged-hasFood_Response",
+    "name": "6f248d9b-266b-45c5-8bb6-50468490a4fa"
+  }, {
+    "condition": "true",
+    "triggerFulfillment": {
+    
+    },
+    "targetPage": "Address_TooFar-yes-customer-notChanged-notFood-prestart_Response",
+    "name": "b43c7ed2-d318-4c42-a71a-83f38449ad2f"
+  } ]
+}

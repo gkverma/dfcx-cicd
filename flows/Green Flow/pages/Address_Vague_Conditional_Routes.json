@@ -1,0 +1,48 @@
+{
+  "name": "0ebdb94b-51c6-4e66-9ddf-abdf0b4d097d",
+  "displayName": "Address_Vague_Conditional_Routes",
+  "form": {
+  
+  },
+  "entryFulfillment": {
+    "setParameterActions": [ {
+      "parameter": "dfLastCallerIntent",
+      "value": "Address_Vague"
+    } ]
+  },
+  "transitionRoutes": [ {
+    "condition": "$session.params.pcDeliveryStatus = \"not_arrived_resto\"",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "intentName",
+        "value": "Address_Vague-pickup"
+      } ]
+    },
+    "targetFlow": "Orange Flow",
+    "name": "271eab39-46ce-46af-904f-0506a7699f4a"
+  }, {
+    "condition": "$session.params.pcDeliveryStatus = \"arrived_resto_1\" OR $session.params.pcDeliveryStatus = \"arrived_resto_2\" OR $session.params.pcDeliveryStatus = \"arrived_resto_3\" OR $session.params.pcDeliveryStatus = \"picked_up\" OR $session.params.pcDeliveryStatus = \"arrived_dropoff_1\" OR $session.params.pcDeliveryStatus = \"arrived_dropoff_2\"",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "intentName",
+        "value": "Address_Vague-dropoff"
+      } ]
+    },
+    "targetFlow": "Orange Flow",
+    "name": "af165aee-a61c-4e0b-9d35-7a6b29156e54"
+  }, {
+    "condition": "$session.params.pcDeliveryStatus = \"default\" OR $session.params.pcDeliveryStatus = \"COMPLETED\" OR $session.params.pcDeliveryStatus = \"CANCELLED\"",
+    "triggerFulfillment": {
+    
+    },
+    "targetPage": "Address_Vague-apiFailure_Confirmation",
+    "name": "30af1346-4029-4ec2-a16f-d2b96fd68bc9"
+  }, {
+    "condition": "true",
+    "triggerFulfillment": {
+    
+    },
+    "targetPage": "Address_Vague-apiFailure_Confirmation",
+    "name": "6cf63b0c-3c1b-4992-b981-eda73596b32c"
+  } ]
+}

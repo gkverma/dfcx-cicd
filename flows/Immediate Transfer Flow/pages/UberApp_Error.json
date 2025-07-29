@@ -1,0 +1,23 @@
+{
+  "name": "055f9ba6-01b4-4195-8563-3bf3667d4be3",
+  "displayName": "UberApp_Error",
+  "form": {
+  
+  },
+  "entryFulfillment": {
+    "messages": [ {
+      "text": {
+        "text": [ "\u003cspeak\u003eOkay, Uber app support.\u003c/speak\u003e" ]
+      },
+      "languageCode": "en"
+    } ]
+  },
+  "transitionRoutes": [ {
+    "condition": "true",
+    "triggerFulfillment": {
+    
+    },
+    "targetFlow": "ZExit",
+    "name": "1f12684a-8ccc-4254-a365-e0c32b4f4dcd"
+  } ]
+}

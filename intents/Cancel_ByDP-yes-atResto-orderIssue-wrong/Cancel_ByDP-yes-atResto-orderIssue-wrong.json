@@ -1,0 +1,11 @@
+{
+  "name": "18d4fe73-03f7-4584-8d65-a6b9b991e996",
+  "displayName": "Cancel_ByDP-yes-atResto-orderIssue-wrong",
+  "parameters": [ {
+    "id": "Store",
+    "entityType": "@Store",
+    "isList": true
+  } ],
+  "priority": 500000,
+  "numTrainingPhrases": 38
+}

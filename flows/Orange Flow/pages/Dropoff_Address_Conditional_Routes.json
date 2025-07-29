@@ -1,0 +1,106 @@
+{
+  "name": "114b35ce-05d0-420c-9db9-61eaf860d04e",
+  "displayName": "Dropoff_Address_Conditional_Routes",
+  "form": {
+  
+  },
+  "entryFulfillment": {
+    "setParameterActions": [ {
+      "parameter": "dfLastCallerIntent",
+      "value": "Dropoff_Address"
+    } ]
+  },
+  "transitionRoutes": [ {
+    "condition": "$session.params.pcDeliveryStatus = \"COMPLETED\"",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "intentName",
+        "value": "Dropoff_Address-yes-CO"
+      } ]
+    },
+    "targetPage": "Dropoff_Address-yes-CO_Response",
+    "name": "9004f34f-c273-4021-93e0-10391a5f3b48"
+  }, {
+    "condition": "($session.params.pcDeliveryStatus = \"arrived_dropoff_1\" OR $session.params.pcDeliveryStatus = \"arrived_dropoff_2\") AND $session.params.pcContainsAlcohol = \"true\"",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "intentName",
+        "value": "Dropoff_Address-yes-atDropoff-alcohol"
+      } ]
+    },
+    "targetPage": "Dropoff_Address-yes-atDropoff-alcohol_Response",
+    "name": "0bd07564-95da-45d2-8b63-dc777be9a353"
+  }, {
+    "condition": "($session.params.pcDeliveryStatus = \"arrived_dropoff_1\" OR $session.params.pcDeliveryStatus = \"arrived_dropoff_2\") AND $session.params.pcContainsAlcohol = \"false\" AND $session.params.pcInteractionType = \"INTERACTION_TYPE_leave_at_door\"",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "intentName",
+        "value": "Dropoff_Address-yes-atDropoff-notAlcohol-leaveAtDoor"
+      } ]
+    },
+    "targetPage": "Dropoff_Address-yes-atDropoff-notAlcohol-leaveAtDoor_Response",
+    "name": "a4a70c22-a507-4d98-9d28-8658f6bca42d"
+  }, {
+    "condition": "($session.params.pcDeliveryStatus = \"arrived_dropoff_1\" OR $session.params.pcDeliveryStatus = \"arrived_dropoff_2\") AND $session.params.pcContainsAlcohol = \"false\" AND $session.params.pcInteractionType != \"leave_at_door\"",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "intentName",
+        "value": "Dropoff_Address-yes-atDropoff-notAlcohol-meetAtDoor"
+      } ]
+    },
+    "targetPage": "Dropoff_Address-yes-atDropoff-notAlcohol-meetAtDoor_Response",
+    "name": "ac33f658-3e8e-4d2d-af0e-57ea50e4b319"
+  }, {
+    "condition": "$session.params.pcDeliveryStatus != \"COMPLETED\" AND $session.params.pcDeliveryStatus != \"CANCELLED\" AND $session.params.pcAddressChanged = \"true\"",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "intentName",
+        "value": "Dropoff_Address-yes-notCO-S4"
+      } ]
+    },
+    "targetPage": "Dropoff_Address-yes-notCO-S4_Response",
+    "name": "6ec788ca-dd40-40e4-a730-b5ff5910cd36"
+  }, {
+    "condition": "$session.params.pcDeliveryStatus = \"default\" OR $session.params.pcDeliveryStatus = \"CANCELLED\"",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "\u003cspeak\u003eOkay, drop off issue.\u003c/speak\u003e" ]
+        },
+        "languageCode": "en"
+      } ],
+      "setParameterActions": [ {
+        "parameter": "zIntent",
+        "value": "ZAgent"
+      } ]
+    },
+    "targetFlow": "ZExit",
+    "name": "d8a71bf1-a34f-4547-876f-0ba317bd9089"
+  }, {
+    "condition": "($session.params.pcDeliveryStatus = \"not_arrived_resto\" OR $session.params.pcDeliveryStatus = \"arrived_resto_1\" OR $session.params.pcDeliveryStatus = \"arrived_resto_2\" OR $session.params.pcDeliveryStatus = \"arrived_resto_3\" OR $session.params.pcDeliveryStatus = \"picked_up\") AND $session.params.pcAddressChanged = \"false\"",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "intentName",
+        "value": "Dropoff_Address-yes-notAtDropoff"
+      } ]
+    },
+    "targetPage": "Dropoff_Address-yes-notAtDropoff_Response",
+    "name": "3c330e35-0fa2-4dc4-9196-a1bd23cfce93"
+  }, {
+    "condition": "true",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "\u003cspeak\u003eOkay, drop off issue.\u003c/speak\u003e" ]
+        },
+        "languageCode": "en"
+      } ],
+      "setParameterActions": [ {
+        "parameter": "zIntent",
+        "value": "ZAgent"
+      } ]
+    },
+    "targetFlow": "ZExit",
+    "name": "e2837a5c-3543-4134-93ad-2227b041f013"
+  } ]
+}

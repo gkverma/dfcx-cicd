@@ -1,0 +1,23 @@
+{
+  "name": "450bdd34-3ef3-4cbe-8110-87bbcd255a25",
+  "displayName": "Safety_Accident",
+  "form": {
+  
+  },
+  "entryFulfillment": {
+    "messages": [ {
+      "text": {
+        "text": [ "\u003cspeak\u003eOkay, calling about a safety issue.\u003c/speak\u003e" ]
+      },
+      "languageCode": "en"
+    } ]
+  },
+  "transitionRoutes": [ {
+    "condition": "true",
+    "triggerFulfillment": {
+    
+    },
+    "targetFlow": "ZExit",
+    "name": "6ee18391-6187-4c5e-9cab-02aa500ecca7"
+  } ]
+}

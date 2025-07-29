@@ -1,0 +1,234 @@
+{
+  "name": "ac7e7a97-c56b-4fde-b645-9c99c67ad812",
+  "displayName": "AccidentalAccept_Vague_Confirmation",
+  "form": {
+    "parameters": [ {
+      "displayName": "dtmf_input",
+      "required": true,
+      "entityType": "@dtmf",
+      "fillBehavior": {
+        "initialPromptFulfillment": {
+        
+        },
+        "repromptEventHandlers": [ {
+          "event": "sys.no-match-1",
+          "triggerFulfillment": {
+            "messages": [ {
+              "text": {
+                "text": [ "\u003cspeak\u003eI didn't get that.\u003c/speak\u003e\n\n\u003cspeak\u003eIf you have accidentally accepted an order, say yes. Otherwise, say no.\u003c/speak\u003e" ]
+              },
+              "languageCode": "en"
+            } ]
+          },
+          "name": "f601dd86-0808-4578-b48a-2b607ebfe7db"
+        }, {
+          "event": "sys.no-match-2",
+          "triggerFulfillment": {
+            "messages": [ {
+              "text": {
+                "text": [ "\u003cspeak\u003eI'm having trouble understanding you. If you have accidentally accepted an order, press 1. For something else, press 2.\u003c/speak\u003e" ]
+              },
+              "languageCode": "en"
+            } ]
+          },
+          "name": "a9959acc-9b5b-4914-b03a-884a688f11bc"
+        }, {
+          "targetFlow": "ZExit",
+          "event": "sys.no-match-3",
+          "triggerFulfillment": {
+            "messages": [ {
+              "text": {
+                "text": [ "\u003cspeak\u003e\u003cbreak time=\"10ms\"/\u003e\u003c/speak\u003e" ]
+              },
+              "languageCode": "en"
+            } ],
+            "setParameterActions": [ {
+              "parameter": "zIntent",
+              "value": "ZAgent"
+            } ]
+          },
+          "name": "07ff930c-5ca9-4af8-a923-1bae5a401431"
+        }, {
+          "event": "sys.no-input-1",
+          "triggerFulfillment": {
+            "messages": [ {
+              "text": {
+                "text": [ "\u003cspeak\u003eIf you have accidentally accepted an order, say yes. Otherwise, say no.\u003c/speak\u003e" ]
+              },
+              "languageCode": "en"
+            } ]
+          },
+          "name": "ea9e8847-7752-4a8a-b30e-d18d7f438be2"
+        }, {
+          "event": "sys.no-input-2",
+          "triggerFulfillment": {
+            "messages": [ {
+              "text": {
+                "text": [ "\u003cspeak\u003eI didn't hear you.\u003c/speak\u003e\n\n\u003cspeak\u003eIf you have accidentally accepted an order, press 1. For something else, press 2.\u003c/speak\u003e" ]
+              },
+              "languageCode": "en"
+            } ]
+          },
+          "name": "1c691d42-08a8-4f2f-8b9b-1f4a00371f0e"
+        }, {
+          "targetFlow": "ZExit",
+          "event": "sys.no-input-3",
+          "triggerFulfillment": {
+            "messages": [ {
+              "text": {
+                "text": [ "\u003cspeak\u003eI am having trouble hearing you.\u003c/speak\u003e" ]
+              },
+              "languageCode": "en"
+            } ],
+            "setParameterActions": [ {
+              "parameter": "zIntent",
+              "value": "ZHangup"
+            } ]
+          },
+          "name": "908c2763-9605-4f11-bdba-c5551a97fc95"
+        } ]
+      },
+      "advancedSettings": {
+        "dtmfSettings": {
+          "enabled": true,
+          "useSystemEntityRule": false
+        }
+      }
+    } ]
+  },
+  "entryFulfillment": {
+    "messages": [ {
+      "text": {
+        "text": [ "\u003cspeak\u003eI think you're calling about an accidentally accepted order, is that correct?\u003c/speak\u003e" ]
+      },
+      "languageCode": "en"
+    } ]
+  },
+  "transitionRoutes": [ {
+    "intent": "Confirmation.Yes",
+    "condition": "$session.params.pcDeliveryStatus = \"not_arrived_resto\" OR $session.params.pcDeliveryStatus = \"arrived_resto_1\" OR $session.params.pcDeliveryStatus = \"arrived_resto_2\" OR $session.params.pcDeliveryStatus = \"arrived_resto_3\"",
+    "triggerFulfillment": {
+    
+    },
+    "targetPage": "AccidentalAccept_Vague_Response",
+    "name": "7f35c493-ca5c-4b93-bf5e-4a5838569250"
+  }, {
+    "intent": "Confirmation.Yes",
+    "condition": "$session.params.pcDeliveryStatus = \"picked_up\" OR $session.params.pcDeliveryStatus = \"arrived_dropoff_1\" OR $session.params.pcDeliveryStatus = \"arrived_dropoff_2\" OR $session.params.pcDeliveryStatus = \"COMPLETED\" OR $session.params.pcDeliveryStatus = \"CANCELLED\" OR $session.params.pcDeliveryStatus = \"default\"",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "\u003cspeak\u003eOkay, accidentally accepted an order.\u003c/speak\u003e" ]
+        },
+        "languageCode": "en"
+      } ],
+      "setParameterActions": [ {
+        "parameter": "zIntent",
+        "value": "ZAgent"
+      }, {
+        "parameter": "dfLastCallerIntent",
+        "value": "AccidentalAccept_Vague"
+      } ]
+    },
+    "targetFlow": "ZExit",
+    "name": "23b27e49-2632-4a6e-90b1-a82bbfdc92ea"
+  }, {
+    "intent": "Confirmation.Yes",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "\u003cspeak\u003eOkay, accidentally accepted an order.\u003c/speak\u003e" ]
+        },
+        "languageCode": "en"
+      } ],
+      "setParameterActions": [ {
+        "parameter": "zIntent",
+        "value": "ZAgent"
+      }, {
+        "parameter": "dfLastCallerIntent",
+        "value": "AccidentalAccept_Vague"
+      } ]
+    },
+    "targetFlow": "ZExit",
+    "name": "f14ce43c-9ea1-4440-855e-5c5420b4bb53"
+  }, {
+    "intent": "Confirmation.No",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "\u003cspeak\u003eNo problem. How can I help?\u003c/speak\u003e\n\n\u003cspeak\u003eFor example, you can say, the order is missing items, or, question about a recent fare.\u003c/speak\u003e" ]
+        },
+        "languageCode": "en"
+      } ]
+    },
+    "targetFlow": "Default Start Flow",
+    "name": "bc7435ef-f83a-4160-be4d-52bb3c21e2df"
+  }, {
+    "condition": "$session.params.dtmf_input = \"1\" AND ($session.params.pcDeliveryStatus = \"not_arrived_resto\" OR $session.params.pcDeliveryStatus = \"arrived_resto_1\" OR $session.params.pcDeliveryStatus = \"arrived_resto_2\" OR $session.params.pcDeliveryStatus = \"arrived_resto_3\")",
+    "triggerFulfillment": {
+    
+    },
+    "targetPage": "AccidentalAccept_Vague_Response",
+    "name": "587f77bb-89b3-40c7-aa6d-62647f9cb0e5"
+  }, {
+    "condition": "$session.params.dtmf_input = \"1\" AND ($session.params.pcDeliveryStatus = \"picked_up\" OR $session.params.pcDeliveryStatus = \"arrived_dropoff_1\" OR $session.params.pcDeliveryStatus = \"arrived_dropoff_2\" OR $session.params.pcDeliveryStatus = \"COMPLETED\" OR $session.params.pcDeliveryStatus = \"CANCELLED\" OR $session.params.pcDeliveryStatus = \"default\")",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "\u003cspeak\u003eOkay, accidentally accepted an order.\u003c/speak\u003e" ]
+        },
+        "languageCode": "en"
+      } ],
+      "setParameterActions": [ {
+        "parameter": "zIntent",
+        "value": "ZAgent"
+      }, {
+        "parameter": "dfLastCallerIntent",
+        "value": "AccidentalAccept_Vague"
+      } ]
+    },
+    "targetFlow": "ZExit",
+    "name": "664bf1a5-f6d3-4c10-8089-648752de9af7"
+  }, {
+    "condition": "$session.params.dtmf_input = \"1\"",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "\u003cspeak\u003eOkay, accidentally accepted an order.\u003c/speak\u003e" ]
+        },
+        "languageCode": "en"
+      } ],
+      "setParameterActions": [ {
+        "parameter": "zIntent",
+        "value": "ZAgent"
+      }, {
+        "parameter": "dfLastCallerIntent",
+        "value": "AccidentalAccept_Vague"
+      } ]
+    },
+    "targetFlow": "ZExit",
+    "name": "76fb23ad-8296-4a48-a60b-49c79d153269"
+  }, {
+    "condition": "$session.params.dtmf_input = \"2\"",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "\u003cspeak\u003eNo problem. How can I help?\u003c/speak\u003e\n\n\u003cspeak\u003eFor example, you can say, the order is missing items, or, question about a recent fare.\u003c/speak\u003e" ]
+        },
+        "languageCode": "en"
+      } ]
+    },
+    "targetFlow": "Default Start Flow",
+    "name": "5ac32055-2901-4948-8f98-72f4ba70b977"
+  }, {
+    "condition": "$session.params.dtmf_input = \"0\"",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "intentName",
+        "value": "Agent_Vague"
+      } ]
+    },
+    "targetFlow": "Immediate Transfer Flow",
+    "name": "250b5578-6afd-4770-a044-e12b7f02a915"
+  } ]
+}

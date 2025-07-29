@@ -1,0 +1,11 @@
+{
+  "name": "69f7e3ed-76ac-43d5-bc87-a2f80be922f4",
+  "displayName": "LiveOrder_Vague",
+  "parameters": [ {
+    "id": "Store",
+    "entityType": "@Store",
+    "isList": true
+  } ],
+  "priority": 500000,
+  "numTrainingPhrases": 1164
+}

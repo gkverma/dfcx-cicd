@@ -1,0 +1,23 @@
+{
+  "name": "49cf0031-0130-4464-b867-9af4bd93b1b5",
+  "displayName": "Agent_Vague",
+  "form": {
+  
+  },
+  "entryFulfillment": {
+    "messages": [ {
+      "text": {
+        "text": [ "\u003cspeak\u003e\u003cbreak time=\"10ms\"/\u003e\u003c/speak\u003e" ]
+      },
+      "languageCode": "en"
+    } ]
+  },
+  "transitionRoutes": [ {
+    "condition": "true",
+    "triggerFulfillment": {
+    
+    },
+    "targetFlow": "ZExit",
+    "name": "6b387f7f-ef5e-4dc3-901c-d3c2f931c255"
+  } ]
+}

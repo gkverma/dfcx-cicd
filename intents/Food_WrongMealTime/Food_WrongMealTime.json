@@ -1,0 +1,14 @@
+{
+  "name": "0ea09ee5-fefe-4d19-8256-322f325c4425",
+  "displayName": "Food_WrongMealTime",
+  "parameters": [ {
+    "id": "dfLastCallerIntent",
+    "entityType": "@sys.any"
+  }, {
+    "id": "Store",
+    "entityType": "@Store",
+    "isList": true
+  } ],
+  "priority": 500000,
+  "numTrainingPhrases": 18
+}

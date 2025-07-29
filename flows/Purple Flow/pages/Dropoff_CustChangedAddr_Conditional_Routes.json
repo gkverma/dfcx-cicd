@@ -1,0 +1,25 @@
+{
+  "name": "d0f63719-41e5-46d9-81aa-a714db34c9ee",
+  "displayName": "Dropoff_CustChangedAddr_Conditional_Routes",
+  "form": {
+  
+  },
+  "entryFulfillment": {
+  
+  },
+  "transitionRoutes": [ {
+    "condition": "$session.params.pcAddressChanged = \"default\" OR $session.params.pcAddressChanged = \"false\"",
+    "triggerFulfillment": {
+    
+    },
+    "targetPage": "Dropoff_CustChangedAddr-notS4_Response",
+    "name": "67b9813a-1e12-4441-a38d-071f139b54d5"
+  }, {
+    "condition": "$session.params.pcAddressChanged = \"true\"",
+    "triggerFulfillment": {
+    
+    },
+    "targetPage": "Dropoff_CustChangedAddr-S4_Response",
+    "name": "cbe45860-5d15-49c8-8b8e-cde318204cfd"
+  } ]
+}

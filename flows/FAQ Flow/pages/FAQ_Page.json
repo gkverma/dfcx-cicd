@@ -1,0 +1,178 @@
+{
+  "name": "1de5efb6-a91e-4f0f-8ab0-cb92d32bfb14",
+  "displayName": "FAQ_Page",
+  "form": {
+  
+  },
+  "entryFulfillment": {
+    "setParameterActions": [ {
+      "parameter": "isRepeat",
+      "value": "no"
+    }, {
+      "parameter": "dtmf_input",
+      "value": null
+    } ]
+  },
+  "transitionRoutes": [ {
+    "condition": "$session.params.intentName = \"Alcohol_Vague\"",
+    "triggerFulfillment": {
+    
+    },
+    "targetPage": "Alcohol_Vague_Confirmation",
+    "name": "17400205-8cd1-42c7-b9dd-8ac6a168d7b3"
+  }, {
+    "condition": "$session.params.intentName = \"Dropoff_Gated\"",
+    "triggerFulfillment": {
+    
+    },
+    "targetPage": "Dropoff_Gated_Confirmation",
+    "name": "632dee7a-acdc-42b8-b07e-b8ed76fc6825"
+  }, {
+    "condition": "$session.params.intentName = \"Payment_Problem\"",
+    "triggerFulfillment": {
+    
+    },
+    "targetPage": "Payment_Problem_Confirmation",
+    "name": "74814da7-60e8-4c3d-965c-aa97c12e4d0e"
+  }, {
+    "condition": "$session.params.intentName = \"Payment_Vague\"",
+    "triggerFulfillment": {
+    
+    },
+    "targetPage": "Payment_Vague_Confirmation",
+    "name": "daa8a3b7-5d96-45a3-9f90-c00f809149e1"
+  }, {
+    "condition": "$session.params.intentName = \"Dropoff_PIN\"",
+    "triggerFulfillment": {
+    
+    },
+    "targetPage": "Dropoff_PIN_Confirmation",
+    "name": "0ecf8528-a5de-4e69-a377-57c1d1549b2c"
+  }, {
+    "condition": "$session.params.intentName = \"UberApp_CantEnd-yes-notComplete-PIN\"",
+    "triggerFulfillment": {
+    
+    },
+    "targetPage": "Dropoff_PIN_Response",
+    "name": "eb65b21b-371f-4927-8ec0-e6bda83e6c00"
+  }, {
+    "condition": "$session.params.intentName = \"PlusCard_CantActivate\"",
+    "triggerFulfillment": {
+    
+    },
+    "targetPage": "PlusCard_CantActivate_Confirmation",
+    "name": "106d4b6b-f1b3-4b57-aa5d-ecbac7413116"
+  }, {
+    "condition": "$session.params.intentName = \"PlusCard_Vague-yes-plusCard-activation\"",
+    "triggerFulfillment": {
+    
+    },
+    "targetPage": "PlusCard_CantActivate_Response",
+    "name": "c1641de9-6802-4be7-92cf-8e1421d6156f"
+  }, {
+    "condition": "$session.params.intentName = \"PlusCard_Lost\"",
+    "triggerFulfillment": {
+    
+    },
+    "targetPage": "PlusCard_Lost_Confirmation",
+    "name": "550f794d-8340-445a-b3dc-be8f8aa4ccf1"
+  }, {
+    "condition": "$session.params.intentName = \"PlusCard_Vague-yes-plusCard-lost\"",
+    "triggerFulfillment": {
+    
+    },
+    "targetPage": "PlusCard_Lost_Response",
+    "name": "76b7fbc0-3f7b-43d5-8db3-c59a85b3cad2"
+  }, {
+    "condition": "$session.params.intentName = \"PlusCard_Receipt\"",
+    "triggerFulfillment": {
+    
+    },
+    "targetPage": "PlusCard_Receipt_Confirmation",
+    "name": "8868a3de-7727-4e73-a004-8ff3da380329"
+  }, {
+    "condition": "$session.params.intentName = \"PlusCard_Vague-yes-receipt\"",
+    "triggerFulfillment": {
+    
+    },
+    "targetPage": "PlusCard_Receipt_Response",
+    "name": "5c77f543-0137-4dea-b4bd-6c480d1bd214"
+  }, {
+    "condition": "$session.params.intentName = \"PlusCard_ReimburseStatus\"",
+    "triggerFulfillment": {
+    
+    },
+    "targetPage": "PlusCard_ReimburseStatus_Confirmation",
+    "name": "fb761844-8097-4a35-a987-ad6ce755dc7b"
+  }, {
+    "condition": "$session.params.intentName = \"PlusCard_Vague-yes-reimburseStatus\"",
+    "triggerFulfillment": {
+    
+    },
+    "targetPage": "PlusCard_ReimburseStatus_Response",
+    "name": "e2ae551b-9524-4cc4-87e4-f91654beb34e"
+  }, {
+    "condition": "$session.params.intentName = \"Safety_VehicleBroke\"",
+    "triggerFulfillment": {
+    
+    },
+    "targetPage": "Safety_VehicleBroke_Confirmation",
+    "name": "17f843b0-70c0-4c96-8cab-0c58cef06c65"
+  }, {
+    "condition": "$session.params.intentName = Trip_FareReview",
+    "triggerFulfillment": {
+    
+    },
+    "targetPage": "Trip_FareReview_Confirmation",
+    "name": "94541990-5dfa-40c0-ba57-f5ffa3a171fd"
+  }, {
+    "condition": "$session.params.intentName = Trip_Missing",
+    "triggerFulfillment": {
+    
+    },
+    "targetPage": "Trip_Missing_Confirmation",
+    "name": "f9de3e42-c563-43bc-a654-bb78a2fab8e2"
+  }, {
+    "condition": "$session.params.intentName = Trip_ThankCust",
+    "triggerFulfillment": {
+    
+    },
+    "targetPage": "Trip_ThankCust_Confirmation",
+    "name": "259f4ac4-a06a-4528-ae19-77ccd2747fe2"
+  }, {
+    "condition": "$session.params.intentName = Other_Spanish",
+    "triggerFulfillment": {
+    
+    },
+    "targetPage": "Other_Spanish_Confirmation",
+    "name": "a522e5fe-b30b-4515-bd06-d84a53669370"
+  }, {
+    "condition": "$session.params.intentName = \"PlusCard_Declined-yes-reimburse\" OR $session.params.intentName = \"PlusCard_Forgot-yes-reimburse\" OR $session.params.intentName = \"PlusCard_Vague-yes-reimburseHow\"",
+    "triggerFulfillment": {
+    
+    },
+    "targetPage": "PlusCard_ReimburseHow_Response",
+    "name": "f35ac819-3090-429e-accc-faf33d8a733e"
+  }, {
+    "condition": "$session.params.intentName = PINWheel_FAQ-alcohol",
+    "triggerFulfillment": {
+    
+    },
+    "targetPage": "PINWheel_FAQ-alcohol_Response",
+    "name": "a496131d-c9f2-4a38-8f4c-0e76832d8d1f"
+  }, {
+    "condition": "$session.params.intentName = PINWheel_FAQ-notAlcohol",
+    "triggerFulfillment": {
+    
+    },
+    "targetPage": "PINWheel_FAQ-notAlcohol_Response",
+    "name": "9fc0e33d-0d42-4db2-a36f-319ed2ab1828"
+  }, {
+    "condition": "$session.params.intentName = \"Dropoff_Address-yes-notAtDropoff-gated\"",
+    "triggerFulfillment": {
+    
+    },
+    "targetPage": "Dropoff_Gated_Response",
+    "name": "88a85406-7f33-4469-9dfe-e79a7e75f1af"
+  } ]
+}

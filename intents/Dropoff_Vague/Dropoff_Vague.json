@@ -1,0 +1,11 @@
+{
+  "name": "ac91878c-ec97-44fe-954d-b165b408dea5",
+  "displayName": "Dropoff_Vague",
+  "parameters": [ {
+    "id": "Store",
+    "entityType": "@Store",
+    "isList": true
+  } ],
+  "priority": 500000,
+  "numTrainingPhrases": 214
+}

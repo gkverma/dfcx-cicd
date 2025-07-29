@@ -1,0 +1,11 @@
+{
+  "name": "4f238c67-2feb-4caa-bc6b-049887002082",
+  "displayName": "Food_Wrong-itemMissing",
+  "parameters": [ {
+    "id": "Store",
+    "entityType": "@Store",
+    "isList": true
+  } ],
+  "priority": 500000,
+  "numTrainingPhrases": 20
+}

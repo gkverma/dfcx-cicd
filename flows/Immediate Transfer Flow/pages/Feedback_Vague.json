@@ -1,0 +1,28 @@
+{
+  "name": "a9d1dd7c-ef9c-4c0c-8287-daf08b98c4ec",
+  "displayName": "Feedback_Vague",
+  "form": {
+  
+  },
+  "entryFulfillment": {
+    "messages": [ {
+      "text": {
+        "text": [ "\u003cspeak\u003eOkay, feedback.\u003c/speak\u003e" ]
+      },
+      "languageCode": "en"
+    } ]
+  },
+  "transitionRoutes": [ {
+    "condition": "true",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "\u003cspeak\u003eOkay, feedback.\u003c/speak\u003e" ]
+        },
+        "languageCode": "en"
+      } ]
+    },
+    "targetFlow": "ZExit",
+    "name": "9a26225c-c20a-4418-be3e-bdcbd98e465e"
+  } ]
+}

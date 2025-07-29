@@ -1,0 +1,11 @@
+{
+  "name": "c00ea846-7e19-42ae-81ac-d4bb5b356e27",
+  "displayName": "Food_ItemMissing",
+  "parameters": [ {
+    "id": "Store",
+    "entityType": "@Store",
+    "isList": true
+  } ],
+  "priority": 500000,
+  "numTrainingPhrases": 203
+}

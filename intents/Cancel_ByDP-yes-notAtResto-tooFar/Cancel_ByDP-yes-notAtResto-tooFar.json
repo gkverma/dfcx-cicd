@@ -1,0 +1,11 @@
+{
+  "name": "b911e77a-8dd6-4807-9a55-5e33b279c107",
+  "displayName": "Cancel_ByDP-yes-notAtResto-tooFar",
+  "parameters": [ {
+    "id": "Store",
+    "entityType": "@Store",
+    "isList": true
+  } ],
+  "priority": 500000,
+  "numTrainingPhrases": 9
+}

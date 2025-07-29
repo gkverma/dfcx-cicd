@@ -1,0 +1,30 @@
+{
+  "name": "edc418fd-c9dc-49da-a9ef-ca9126d0441a",
+  "displayName": "AccidentalComplete_Vague_Response",
+  "form": {
+  
+  },
+  "entryFulfillment": {
+    "messages": [ {
+      "text": {
+        "text": [ "\u003cspeak\u003eOkay, accidentally completed a delivery.\u003c/speak\u003e" ]
+      },
+      "languageCode": "en"
+    } ],
+    "setParameterActions": [ {
+      "parameter": "dfLastCallerIntent",
+      "value": "AccidentalComplete_Vague"
+    } ]
+  },
+  "transitionRoutes": [ {
+    "condition": "true",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "zIntent",
+        "value": "ZAgent"
+      } ]
+    },
+    "targetFlow": "ZExit",
+    "name": "114ee2dc-3695-4682-8ba4-243464a36fe0"
+  } ]
+}

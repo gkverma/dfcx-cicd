@@ -1,0 +1,308 @@
+{
+  "name": "2d1c9c37-99a6-4041-8d7c-baf5e0c42dd9",
+  "displayName": "Cancel_ByDP-yes-pickedUp_Response",
+  "form": {
+    "parameters": [ {
+      "displayName": "dtmf_input",
+      "required": true,
+      "entityType": "@dtmf_12345",
+      "fillBehavior": {
+        "initialPromptFulfillment": {
+        
+        },
+        "repromptEventHandlers": [ {
+          "event": "sys.no-input-1",
+          "triggerFulfillment": {
+            "messages": [ {
+              "text": {
+                "text": [ "\u003cspeak\u003eYou can say, Order damaged, Picked up wrong order, Can't reach customer, or, it is something else.\u003c/speak\u003e" ]
+              },
+              "languageCode": "en"
+            } ]
+          },
+          "name": "69110a7a-abbf-48c2-b931-1d3b3e950d10"
+        }, {
+          "event": "sys.no-input-2",
+          "triggerFulfillment": {
+            "messages": [ {
+              "text": {
+                "text": [ "\u003cspeak\u003eI didn't hear you.\u003c/speak\u003e\n\u003cspeak\u003eIf the order is damaged, press 1. If you picked up the wrong order, press 2. If you can't reach the customer, press 3. or, for something else, press 4.\u003c/speak\u003e" ]
+              },
+              "languageCode": "en"
+            } ]
+          },
+          "name": "7c5e34da-1d22-4c10-9b36-6bbd3e53c400"
+        }, {
+          "targetFlow": "ZExit",
+          "event": "sys.no-input-3",
+          "triggerFulfillment": {
+            "messages": [ {
+              "text": {
+                "text": [ "\u003cspeak\u003eI am having trouble hearing you.\u003c/speak\u003e" ]
+              },
+              "languageCode": "en"
+            } ],
+            "setParameterActions": [ {
+              "parameter": "zIntent",
+              "value": "ZHangup"
+            } ]
+          },
+          "name": "f48b4d54-57f4-40f1-b0d3-159d82c16e7c"
+        }, {
+          "event": "sys.no-match-1",
+          "triggerFulfillment": {
+            "messages": [ {
+              "text": {
+                "text": [ "\u003cspeak\u003eI didn't get that.\u003c/speak\u003e\n\u003cspeak\u003eYou can say, order damaged, Picked up wrong order, Can't reach customer, or, it is something else.\u003c/speak\u003e" ]
+              },
+              "languageCode": "en"
+            } ]
+          },
+          "name": "622786dc-470e-418c-b913-1a164c30ad02"
+        }, {
+          "event": "sys.no-match-2",
+          "triggerFulfillment": {
+            "messages": [ {
+              "text": {
+                "text": [ "\u003cspeak\u003eI'm having trouble understanding you. If the order is damaged, press 1. If you picked up the wrong order, press 2. If you can't reach the customer, press 3. or, for something else, press 4.\u003c/speak\u003e" ]
+              },
+              "languageCode": "en"
+            } ]
+          },
+          "name": "6a2012b1-301d-4ea8-aad0-ec38e59638ac"
+        }, {
+          "targetFlow": "ZExit",
+          "event": "sys.no-match-3",
+          "triggerFulfillment": {
+            "messages": [ {
+              "text": {
+                "text": [ "\u003cspeak\u003e\u003cbreak time=\"10ms\"/\u003e\u003c/speak\u003e" ]
+              },
+              "languageCode": "en"
+            } ],
+            "setParameterActions": [ {
+              "parameter": "zIntent",
+              "value": "ZAgent"
+            } ]
+          },
+          "name": "cc1a3426-9b59-4a7c-a441-000939ca4e3d"
+        } ]
+      },
+      "advancedSettings": {
+        "dtmfSettings": {
+          "enabled": true,
+          "useSystemEntityRule": false
+        }
+      }
+    } ]
+  },
+  "entryFulfillment": {
+    "messages": [ {
+      "text": {
+        "text": [ "\u003cspeak\u003eI see you've picked up the delivery already. What's going on? You can say, the order is damaged, I picked up the wrong order, or, I am unable to find or get to the customer? Or, you can say, it is something else.\u003c/speak\u003e" ]
+      },
+      "languageCode": "en"
+    } ],
+    "setParameterActions": [ {
+      "parameter": "dtmf_input",
+      "value": null
+    } ]
+  },
+  "transitionRoutes": [ {
+    "intent": "Cancel_ByDP-yes-pickedUp-damaged",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "intentName",
+        "value": "Cancel_ByDP-yes-pickedUp-damaged"
+      } ]
+    },
+    "targetFlow": "Purple Flow",
+    "name": "e0310031-12c2-426c-a0c8-1aeca6db61e8"
+  }, {
+    "intent": "Cancel_ByDP-yes-pickedUp-wrong",
+    "triggerFulfillment": {
+    
+    },
+    "targetPage": "Cancel_ByDP-yes-pickedUp-wrong_Response",
+    "name": "4ab6ab3a-43be-4df3-b2ae-065c49d7c61c"
+  }, {
+    "intent": "Cancel_ByDP-yes-pickedUp-cantCust",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "intentName",
+        "value": "Cancel_ByDP-yes-pickedUp-cantCust"
+      } ]
+    },
+    "targetFlow": "Orange Flow",
+    "name": "44b919b8-0a43-4ed3-bea1-7bbc4050ca1d"
+  }, {
+    "intent": "Cancel_ByDP-yes-pickedUp-tooFar",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "intentName",
+        "value": "Cancel_ByDP-yes-pickedUp-tooFar"
+      } ]
+    },
+    "targetFlow": "Orange Flow",
+    "name": "eb92b767-d525-4f40-87cb-c9863b8148d9"
+  }, {
+    "intent": "Cancel_ByDP-yes-pickedUp-cancel",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "\u003cspeak\u003eOkay, cancelling an order.\u003c/speak\u003e" ]
+        },
+        "languageCode": "en"
+      } ],
+      "setParameterActions": [ {
+        "parameter": "zIntent",
+        "value": "ZAgent"
+      } ]
+    },
+    "targetFlow": "ZExit",
+    "name": "73951381-72d8-4121-a7b0-21316561f271"
+  }, {
+    "condition": "$session.params.dtmf_input = \"1\"",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "intentName",
+        "value": "Cancel_ByDP-yes-pickedUp-damaged"
+      } ]
+    },
+    "targetFlow": "Purple Flow",
+    "name": "10898c95-edba-4d86-acf3-3d453df60931"
+  }, {
+    "condition": "$session.params.dtmf_input = \"2\"",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "dtmf_input",
+        "value": null
+      } ]
+    },
+    "targetPage": "Cancel_ByDP-yes-pickedUp-wrong_Response",
+    "name": "7f13eab1-7eb4-49df-9a2b-a18f72931301"
+  }, {
+    "condition": "$session.params.dtmf_input = \"3\"",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "intentName",
+        "value": "Cancel_ByDP-yes-pickedUp-cantCust"
+      } ]
+    },
+    "targetFlow": "Orange Flow",
+    "name": "16abbd62-a146-4c82-b14e-34d96d39d8ed"
+  }, {
+    "condition": "$session.params.dtmf_input = \"4\"",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "intentName",
+        "value": "Cancel_ByDP-yes-pickedUp-tooFar"
+      } ]
+    },
+    "targetFlow": "Orange Flow",
+    "name": "6cc5d08d-aa4e-476f-892d-bf9f1f60f335"
+  }, {
+    "condition": "$session.params.dtmf_input = \"5\"",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "\u003cspeak\u003eOkay, cancelling an order.\u003c/speak\u003e" ]
+        },
+        "languageCode": "en"
+      } ],
+      "setParameterActions": [ {
+        "parameter": "zIntent",
+        "value": "ZAgent"
+      } ]
+    },
+    "targetFlow": "ZExit",
+    "name": "b9514b23-5348-4386-b0df-a7f6c98e9652"
+  }, {
+    "condition": "$session.params.dtmf_input = \"0\"",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "intentName",
+        "value": "Agent_Vague"
+      } ]
+    },
+    "targetFlow": "Immediate Transfer Flow",
+    "name": "66f93d67-d458-4f36-87fe-fa8eb6c9757c"
+  } ],
+  "eventHandlers": [ {
+    "event": "sys.no-input-1",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "\u003cspeak\u003eYou can say, Order damaged, Picked up wrong order, Can't reach customer, or, it is something else.\u003c/speak\u003e" ]
+        },
+        "languageCode": "en"
+      } ]
+    },
+    "name": "c866643b-b6d7-459d-b818-df8df9298947"
+  }, {
+    "event": "sys.no-input-2",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "\u003cspeak\u003eI didn't hear you.\u003c/speak\u003e\n\u003cspeak\u003eIf the order is damaged, press 1. If you picked up the wrong order, press 2. If you can't reach the customer, press 3. or, for something else, press 4.\u003c/speak\u003e" ]
+        },
+        "languageCode": "en"
+      } ]
+    },
+    "name": "f30a204b-5625-4800-8cd3-614c59d60b70"
+  }, {
+    "targetFlow": "ZExit",
+    "event": "sys.no-input-3",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "\u003cspeak\u003eI am having trouble hearing you.\u003c/speak\u003e" ]
+        },
+        "languageCode": "en"
+      } ],
+      "setParameterActions": [ {
+        "parameter": "zIntent",
+        "value": "ZHangup"
+      } ]
+    },
+    "name": "4330a932-8774-4d7d-8b54-dde8fdd7aa5c"
+  }, {
+    "event": "sys.no-match-1",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "\u003cspeak\u003eI didn't get that.\u003c/speak\u003e\n\u003cspeak\u003eYou can say, order damaged, Picked up wrong order, Can't reach customer, or, it is something else.\u003c/speak\u003e" ]
+        },
+        "languageCode": "en"
+      } ]
+    },
+    "name": "1b5dd94b-fb30-4e80-a0ac-fcfad1553b1b"
+  }, {
+    "event": "sys.no-match-2",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "\u003cspeak\u003eI'm having trouble understanding you. If the order is damaged, press 1. If you picked up the wrong order, press 2. If you can't reach the customer, press 3. or, for something else, press 4.\u003c/speak\u003e" ]
+        },
+        "languageCode": "en"
+      } ]
+    },
+    "name": "ef4df3cc-eb8d-4181-bef6-7b8a12ce18ee"
+  }, {
+    "targetFlow": "ZExit",
+    "event": "sys.no-match-3",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "\u003cspeak\u003e\u003cbreak time=\"10ms\"/\u003e\u003c/speak\u003e" ]
+        },
+        "languageCode": "en"
+      } ],
+      "setParameterActions": [ {
+        "parameter": "zIntent",
+        "value": "ZAgent"
+      } ]
+    },
+    "name": "9bec3255-ef99-4344-b44f-96c89bdb989d"
+  } ]
+}

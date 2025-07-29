@@ -1,0 +1,14 @@
+{
+  "name": "d90af7d6-b5b6-4ee9-8997-6a733eb6c78c",
+  "displayName": "Resto_Vague",
+  "parameters": [ {
+    "id": "dfLastCallerIntent",
+    "entityType": "@sys.any"
+  }, {
+    "id": "Store",
+    "entityType": "@Store",
+    "isList": true
+  } ],
+  "priority": 500000,
+  "numTrainingPhrases": 411
+}

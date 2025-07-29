@@ -1,0 +1,283 @@
+{
+  "name": "9dd51d5b-d1fa-4fe6-bb9a-923b0c5be276",
+  "displayName": "Cancel_Vague_Confirmation",
+  "form": {
+    "parameters": [ {
+      "displayName": "dtmf_input",
+      "required": true,
+      "entityType": "@dtmf_1234",
+      "fillBehavior": {
+        "initialPromptFulfillment": {
+        
+        },
+        "repromptEventHandlers": [ {
+          "event": "sys.no-match-1",
+          "triggerFulfillment": {
+            "messages": [ {
+              "text": {
+                "text": [ "\u003cspeak\u003eI didn't get that.\u003c/speak\u003e\n\n\u003cspeak\u003eYou can say, I want to cancel my order. someone ask me to cancel the order. or, the order was already canceled by someone else\u003c/speak\u003e" ]
+              },
+              "languageCode": "en"
+            } ]
+          },
+          "name": "aea7a870-202e-4bb8-b1ad-2fd53d6eee57"
+        }, {
+          "event": "sys.no-match-2",
+          "triggerFulfillment": {
+            "messages": [ {
+              "text": {
+                "text": [ "\u003cspeak\u003eI'm having trouble understanding you. If you want to cancel the order, press 1. If someone ask you to cancel, press 2. If the order was already canceled, press 3. Or, to get help with something else, press 4.\u003c/speak\u003e" ]
+              },
+              "languageCode": "en"
+            } ]
+          },
+          "name": "5b42afd9-cbec-43a8-98d3-0dbfddda53a1"
+        }, {
+          "targetFlow": "ZExit",
+          "event": "sys.no-match-3",
+          "triggerFulfillment": {
+            "messages": [ {
+              "text": {
+                "text": [ "\u003cspeak\u003e\u003cbreak time=\"10ms\"/\u003e\u003c/speak\u003e" ]
+              },
+              "languageCode": "en"
+            } ],
+            "setParameterActions": [ {
+              "parameter": "zIntent",
+              "value": "ZAgent"
+            } ]
+          },
+          "name": "213fc8be-9013-437a-b78a-0207b1bc8366"
+        }, {
+          "event": "sys.no-input-1",
+          "triggerFulfillment": {
+            "messages": [ {
+              "text": {
+                "text": [ "\u003cspeak\u003eYou can say, I want to cancel my order. someone ask me to cancel the order. or, the order was already canceled by someone else\u003c/speak\u003e" ]
+              },
+              "languageCode": "en"
+            } ]
+          },
+          "name": "9b93e8e7-8145-4e94-b16b-c9a0578a3dc6"
+        }, {
+          "event": "sys.no-input-2",
+          "triggerFulfillment": {
+            "messages": [ {
+              "text": {
+                "text": [ "\u003cspeak\u003eI didn't hear you.\u003c/speak\u003e\n\n\u003cspeak\u003eIf you want to cancel the order, press 1. If someone ask you to cancel, press 2. If the order was already canceled, press 3. Or, to get help with something else, press 4.\u003c/speak\u003e" ]
+              },
+              "languageCode": "en"
+            } ]
+          },
+          "name": "8fa96f54-7e2c-4393-899f-85b76c514767"
+        }, {
+          "targetFlow": "ZExit",
+          "event": "sys.no-input-3",
+          "triggerFulfillment": {
+            "messages": [ {
+              "text": {
+                "text": [ "\u003cspeak\u003eI am having trouble hearing you.\u003c/speak\u003e" ]
+              },
+              "languageCode": "en"
+            } ],
+            "setParameterActions": [ {
+              "parameter": "zIntent",
+              "value": "ZHangup"
+            } ]
+          },
+          "name": "75cdfac7-b1ac-44c1-9973-06ba24389cd1"
+        } ]
+      },
+      "advancedSettings": {
+        "dtmfSettings": {
+          "enabled": true,
+          "useSystemEntityRule": false
+        }
+      }
+    } ]
+  },
+  "entryFulfillment": {
+    "messages": [ {
+      "text": {
+        "text": [ "\u003cspeak\u003eTo confirm, which would you like? Do you want to cancel the order.  or, was the order already canceled by someone else? You can also say, Get help with something else.\u003c/speak\u003e" ]
+      },
+      "languageCode": "en"
+    } ],
+    "setParameterActions": [ {
+      "parameter": "dfLastCallerIntent",
+      "value": "Cancel_Vague"
+    } ]
+  },
+  "transitionRoutes": [ {
+    "intent": "Cancel_Vague-byDP",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "intentName",
+        "value": "Cancel_Vague-byDP"
+      } ]
+    },
+    "targetFlow": "Orange Flow",
+    "name": "d9244bb1-aa39-48c0-8b4d-fcd55b56bfba"
+  }, {
+    "intent": "Cancel_Vague-toBeCancel",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "intentName",
+        "value": "Cancel_Vague-toBeCancel"
+      } ]
+    },
+    "targetFlow": "Purple Flow",
+    "name": "cbba19b2-4fb5-4557-8138-00e4ccce0b4e"
+  }, {
+    "intent": "Cancel_Vague-alreadyCancel",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "intentName",
+        "value": "Cancel_Vague-alreadyCancel"
+      } ]
+    },
+    "targetFlow": "Purple Flow",
+    "name": "e065af3b-5a2c-4f56-b38e-c9c55a5db1ce"
+  }, {
+    "intent": "Cancel_Vague-other",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "\u003cspeak\u003eSure. Let's try this again.\u003c/speak\u003e\n\n\u003cspeak\u003eIn your own words, please tell me what you are calling about. For example, you can say, I can't find the customer, or, the store is taking too long.\u003c/speak\u003e" ]
+        },
+        "languageCode": "en"
+      } ]
+    },
+    "targetFlow": "Default Start Flow",
+    "name": "25a0407a-5c46-474b-8412-4b04d1dc72db"
+  }, {
+    "condition": "$session.params.dtmf_input = \"1\"",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "intentName",
+        "value": "Cancel_Vague-byDP"
+      } ]
+    },
+    "targetFlow": "Orange Flow",
+    "name": "1437d361-8ed3-417b-8c2b-2f2035e6a2ab"
+  }, {
+    "condition": "$session.params.dtmf_input = \"2\"",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "intentName",
+        "value": "Cancel_Vague-toBeCancel"
+      } ]
+    },
+    "targetFlow": "Purple Flow",
+    "name": "c800443e-e107-4d11-b199-78dc975514e4"
+  }, {
+    "condition": "$session.params.dtmf_input = \"3\"",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "intentName",
+        "value": "Cancel_Vague-alreadyCancel"
+      } ]
+    },
+    "targetFlow": "Purple Flow",
+    "name": "3e7e9765-3299-4592-920c-70f4ff978dd6"
+  }, {
+    "condition": "$session.params.dtmf_input = \"4\"",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "\u003cspeak\u003eSure. Let's try this again.\u003c/speak\u003e\n\n\u003cspeak\u003eIn your own words, please tell me what you are calling about. For example, you can say, I can't find the customer, or, the store is taking too long.\u003c/speak\u003e" ]
+        },
+        "languageCode": "en"
+      } ]
+    },
+    "targetFlow": "Default Start Flow",
+    "name": "257ee784-c920-47f4-b17a-2ffd700a3d33"
+  }, {
+    "condition": "$session.params.dtmf_input = \"0\"",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "intentName",
+        "value": "Agent_Vague"
+      } ]
+    },
+    "targetFlow": "Immediate Transfer Flow",
+    "name": "2274a659-1bda-4de7-8284-6a118d260794"
+  } ],
+  "eventHandlers": [ {
+    "event": "sys.no-match-1",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "\u003cspeak\u003eI didn't get that.\u003c/speak\u003e\n\n\u003cspeak\u003eYou can say, I want to cancel my order. someone ask me to cancel the order. or, the order was already canceled by someone else\u003c/speak\u003e" ]
+        },
+        "languageCode": "en"
+      } ]
+    },
+    "name": "28ee7da2-720d-4beb-ba46-f2c2bd52c52b"
+  }, {
+    "event": "sys.no-match-2",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "\u003cspeak\u003eI'm having trouble understanding you. If you want to cancel the order, press 1. If someone ask you to cancel, press 2. If the order was already canceled, press 3. Or, to get help with something else, press 4.\u003c/speak\u003e" ]
+        },
+        "languageCode": "en"
+      } ]
+    },
+    "name": "a3200a96-e4ed-4bb4-8892-21f89821e73a"
+  }, {
+    "targetFlow": "ZExit",
+    "event": "sys.no-match-3",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "\u003cspeak\u003e\u003cbreak time=\"10ms\"/\u003e\u003c/speak\u003e" ]
+        },
+        "languageCode": "en"
+      } ],
+      "setParameterActions": [ {
+        "parameter": "zIntent",
+        "value": "ZAgent"
+      } ]
+    },
+    "name": "e3660a5d-f7c0-40d0-99ce-3cdbe14bf5cb"
+  }, {
+    "event": "sys.no-input-1",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "\u003cspeak\u003eYou can say, I want to cancel my order. someone ask me to cancel the order. or, the order was already canceled by someone else\u003c/speak\u003e" ]
+        },
+        "languageCode": "en"
+      } ]
+    },
+    "name": "e2d54e53-9472-4b2d-bfd9-4074696c4d01"
+  }, {
+    "event": "sys.no-input-2",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "\u003cspeak\u003eI didn't hear you.\u003c/speak\u003e\n\n\u003cspeak\u003eIf you want to cancel the order, press 1. If someone ask you to cancel, press 2. If the order was already canceled, press 3. Or, to get help with something else, press 4.\u003c/speak\u003e" ]
+        },
+        "languageCode": "en"
+      } ]
+    },
+    "name": "b07b30a9-aa66-42bc-b2e3-2b651a147647"
+  }, {
+    "targetFlow": "ZExit",
+    "event": "sys.no-input-3",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "\u003cspeak\u003eI am having trouble hearing you.\u003c/speak\u003e" ]
+        },
+        "languageCode": "en"
+      } ],
+      "setParameterActions": [ {
+        "parameter": "zIntent",
+        "value": "ZHangup"
+      } ]
+    },
+    "name": "2654a2b5-0527-4072-a3b3-ba3b757c2bd5"
+  } ]
+}
